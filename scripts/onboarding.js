@@ -398,6 +398,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
       renderProgressAnswers();
       updateProgress(5);
+      document.querySelectorAll("[data-insured]").forEach((button) => {
+        button.addEventListener("click", () => {
+          caseProfile.insured = button.dataset.insured;
+
+          document.getElementById("selectedInsuredType").value =
+            button.dataset.insured;
+
+          renderProgressAnswers();
+
+          const progressWrapper = document.getElementById(
+            "wizardProgressWrapper",
+          );
+
+          if (progressWrapper) {
+            progressWrapper.classList.add("fade-out");
+
+            setTimeout(() => {
+              progressWrapper.style.display = "none";
+            }, 400);
+          }
+
+          buildSummary();
+
+          revealSection(qualificationComplete);
+        });
+      });
       buildSummary();
 
       revealSection(qualificationComplete);
@@ -429,3 +455,6 @@ document.addEventListener("DOMContentLoaded", () => {
   updateProgress(1);
   renderProgressAnswers();
 });
+document
+  .getElementById("wizardProgressWrapper")
+  .classList.add("progress-complete");

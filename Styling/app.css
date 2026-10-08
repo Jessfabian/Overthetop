@@ -651,3 +651,28 @@ body {
 
     justify-content: center;
 }
+.progress-complete {
+
+    opacity: 0;
+
+    transform:
+        translateY(-20px);
+
+    pointer-events: none;
+
+    transition:
+        all .4s ease;
+}
+
+#wizardProgressWrapper.fade-out {
+
+    opacity: 0;
+
+    transform:
+        translateY(-24px);
+
+    transition:
+        opacity .4s ease,
+        transform .4s ease;
+}
+
