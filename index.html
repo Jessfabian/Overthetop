@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Full Initial Review</title>
-    <link rel="stylesheet" href="Styling/backup.css" />
+    <link rel="stylesheet" href="Styling/app.css" />
   </head>
 
   <body>
@@ -37,7 +37,8 @@
           <div class="scroll-arrow">↓</div>
         </div>
       </div>
-      <section class="welcome-transition">
+</section>
+ <section class="welcome-transition">
 
     <h2>
 
@@ -45,8 +46,6 @@
         let's understand the case.
 
     </h2>
-
-</section>
     </section>
 
     <!-- =======================================================
@@ -55,12 +54,19 @@
  <main class="review-workspace">
     <section id="qualificationFlow">
 
+<div id="wizardProgress">
+
+    <div id="wizardProgressFill">
+
+    </div>
+
+</div>
     <!-- QUESTION 1 -->
 
     <section
         class="question-panel active"
         id="questionProduct">
-
+<div class="question-container">
         <span class="question-counter">
 
                 Question 1 of 5
@@ -94,7 +100,7 @@
                 </button>
 
             </div>
-
+</div>
     </section>
 
     <!-- QUESTION 2 -->
@@ -103,7 +109,7 @@
         class="question-panel"
         id="questionState"
         hidden>
-
+<div class="question-container">
        <span class="question-counter">
 
                 Question 2 of 5
@@ -170,6 +176,7 @@
                   <option value="WY">Wyoming</option>
                 </select>
                 </div>
+          </div>
     </section>
 
     <!-- QUESTION 3 -->
@@ -178,6 +185,7 @@
         class="question-panel"
         id="questionBot"
         hidden>
+        <div class="question-container">
 <span class="question-counter">
 
                 Question 3 of 5
@@ -211,7 +219,7 @@
                 </button>
 
             </div>
-
+</div>
     </section>
 
     <!-- QUESTION 4 -->
@@ -220,6 +228,7 @@
         class="question-panel"
         id="questionReplacement"
         hidden>
+        <div class="question-container">
 <span class="question-counter">
 
                 Question 4 of 5
@@ -262,7 +271,7 @@
                 </button>
 
             </div>
-
+</div>
 
     </section>
 
@@ -272,7 +281,7 @@
         class="question-panel"
         id="questionInsured"
         hidden>
-
+<div class="question-container">
         <span class="question-counter">
 
                 Question 5 of 5
@@ -306,8 +315,58 @@
                 </button>
 
             </div>
-
+</div>
     </section>
+
+</section>
+<input
+    type="hidden"
+    id="selectedProduct">
+
+<input
+    type="hidden"
+    id="selectedBOT">
+
+<input
+    type="hidden"
+    id="selectedReplacement">
+
+<input
+    type="hidden"
+    id="selectedInsuredType">
+
+<div
+    id="qualificationSummary"
+    hidden>
+
+    <h3>
+        Case Profile
+    </h3>
+
+    <div id="qualificationSummaryContent">
+
+    </div>
+
+</div>
+
+<section id="qualificationComplete" hidden>
+
+    <h2>
+        Perfect.
+    </h2>
+
+    <p>
+
+        Your review workspace is ready.
+
+    </p>
+
+    <button
+        id="launchWorkbench">
+
+        Begin Review
+
+    </button>
 
 </section>
 
@@ -367,6 +426,7 @@
       </section>
     </main>
     <script src="scripts/scroll.js"></script>
+    <script src="scripts/onboarding.js"></script>
     <script src="scripts/stateLoader.js"></script>
     <script src="scripts/amendment-engine.js"></script>
     <script src="scripts/initial-review.js"></script>
