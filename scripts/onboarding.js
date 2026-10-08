@@ -121,57 +121,57 @@ document.addEventListener("DOMContentLoaded", () => {
    * UPDATE ANSWER CHIPS
    */
 
- function renderProgressAnswers() {
-   const summary = document.getElementById("wizardAnswerSummary");
+  function renderProgressAnswers() {
+    const summary = document.getElementById("wizardAnswerSummary");
 
-   if (!summary) return;
+    if (!summary) return;
 
-   const answers = [];
+    const answers = [];
 
-   if (caseProfile.product) {
-     answers.push(caseProfile.product === "perm" ? "Permanent" : "Term");
-   }
+    if (caseProfile.product) {
+      answers.push(caseProfile.product === "perm" ? "Permanent" : "Term");
+    }
 
-   if (caseProfile.state) {
-     answers.push(caseProfile.state);
-   }
+    if (caseProfile.state) {
+      answers.push(caseProfile.state);
+    }
 
-   if (caseProfile.bot) {
-     answers.push(`BOT: ${caseProfile.bot === "yes" ? "Yes" : "No"}`);
-   }
+    if (caseProfile.bot) {
+      answers.push(`BOT: ${caseProfile.bot === "yes" ? "Yes" : "No"}`);
+    }
 
-   if (caseProfile.replacement) {
-     const replacementLabels = {
-       none: "No Replacement",
-       internal: "Internal",
-       external: "External",
-     };
+    if (caseProfile.replacement) {
+      const replacementLabels = {
+        none: "No Replacement",
+        internal: "Internal",
+        external: "External",
+      };
 
-     answers.push(replacementLabels[caseProfile.replacement]);
-   }
+      answers.push(replacementLabels[caseProfile.replacement]);
+    }
 
-   if (caseProfile.insured) {
-     answers.push(caseProfile.insured === "single" ? "Single" : "Joint");
-   }
+    if (caseProfile.insured) {
+      answers.push(caseProfile.insured === "single" ? "Single" : "Joint");
+    }
 
-   summary.innerHTML = "";
+    summary.innerHTML = "";
 
-   if (answers.length === 0) {
-     summary.innerHTML = `
+    if (answers.length === 0) {
+      summary.innerHTML = `
             <span class="wizard-answer-empty">
                 Your selections will appear here.
             </span>
             `;
 
-     return;
-   }
+      return;
+    }
 
-   summary.innerHTML = `
+    summary.innerHTML = `
         <span class="wizard-answer-inline">
             ${answers.join(" • ")}
         </span>
         `;
- }
+  }
 
   /*
    * GENTLY REVEAL AND SCROLL TO NEXT SECTION
