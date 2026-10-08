@@ -397,33 +397,17 @@ document.addEventListener("DOMContentLoaded", () => {
       selectOption(button, "[data-insured]");
 
       renderProgressAnswers();
-      updateProgress(5);
-      document.querySelectorAll("[data-insured]").forEach((button) => {
-        button.addEventListener("click", () => {
-          caseProfile.insured = button.dataset.insured;
 
-          document.getElementById("selectedInsuredType").value =
-            button.dataset.insured;
+      const progressWrapper = document.getElementById("wizardProgressWrapper");
 
-          renderProgressAnswers();
+      if (progressWrapper) {
+        progressWrapper.classList.add("fade-out");
 
-          const progressWrapper = document.getElementById(
-            "wizardProgressWrapper",
-          );
+        setTimeout(() => {
+          progressWrapper.style.display = "none";
+        }, 400);
+      }
 
-          if (progressWrapper) {
-            progressWrapper.classList.add("fade-out");
-
-            setTimeout(() => {
-              progressWrapper.style.display = "none";
-            }, 400);
-          }
-
-          buildSummary();
-
-          revealSection(qualificationComplete);
-        });
-      });
       buildSummary();
 
       revealSection(qualificationComplete);
