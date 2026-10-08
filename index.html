@@ -50,12 +50,42 @@
     ======================================================== -->
     <main class="review-workspace">
       <section id="qualificationFlow">
-        <div id="wizardProgress">
-          <div id="wizardProgressFill"></div>
-        </div>
 
-        <div id="wizardProgressLabel">Question 1 of 5</div>
+<!----Progrss Bar-->
+       <div id="wizardProgressWrapper">
 
+  <div class="wizard-progress-top">
+
+    <span id="wizardProgressLabel">
+      Question 1 of 5
+    </span>
+
+    <span id="wizardProgressPercent">
+      20%
+    </span>
+
+  </div>
+
+  <div id="wizardProgress">
+
+    <div id="wizardProgressFill"></div>
+
+  </div>
+
+  <div
+    id="wizardAnswerSummary"
+    class="wizard-answer-summary"
+    aria-live="polite">
+
+    <span class="wizard-answer-empty">
+      Your selections will appear here.
+    </span>
+
+  </div>
+
+</div>
+
+</div>
         <!-- QUESTION 1 -->
 
         <section class="question-panel active" id="questionProduct">

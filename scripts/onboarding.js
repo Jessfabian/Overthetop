@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  updateProgress(1);
 
   const caseProfile = {
     product: null,
@@ -25,19 +24,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const launchWorkbench = document.getElementById("launchWorkbench");
 
-  function updateProgress(step) {
-    const fill = document.getElementById("wizardProgressFill");
+function updateProgress(step) {
+  const fill = document.getElementById("wizardProgressFill");
 
-    const label = document.getElementById("wizardProgressLabel");
+  const label = document.getElementById("wizardProgressLabel");
 
-    if (!fill || !label) return;
+  const percentLabel = document.getElementById("wizardProgressPercent");
 
-    const percent = (step / 5) * 100;
+  const percent = Math.min(100, Math.max(0, (step / 5) * 100));
 
+  if (fill) {
     fill.style.width = `${percent}%`;
+  }
 
+  if (label) {
     label.textContent = `Question ${step} of 5`;
   }
+
+  if (percentLabel) {
+    percentLabel.textContent = `${Math.round(percent)}%`;
+  }
+}
 
   function revealSection(section) {
     if (!section) return;
@@ -97,13 +104,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll("[data-product]").forEach((button) => {
     button.addEventListener("click", () => {
-      caseProfile.product = button.dataset.product;
+     caseProfile.product = button.dataset.product;
 
-      document.getElementById("selectedProduct").value = button.dataset.product;
+     document.getElementById("selectedProduct").value = button.dataset.product;
 
-      updateProgress(2);
-
-      revealSection(questionState);
+     renderProgressAnswers();
+     updateProgress(2);
+     revealSection(questionState);
     });
   });
 
@@ -113,17 +120,17 @@ document.addEventListener("DOMContentLoaded", () => {
     stateDropdown.addEventListener("change", () => {
       if (!stateDropdown.value) return;
 
-      caseProfile.state = stateDropdown.value;
+    caseProfile.state = stateDropdown.value;
 
-      const selectedState = document.getElementById("selectedState");
+    const selectedState = document.getElementById("selectedState");
 
-      if (selectedState) {
-        selectedState.value = stateDropdown.value;
-      }
+    if (selectedState) {
+      selectedState.value = stateDropdown.value;
+    }
 
-      updateProgress(3);
-
-      revealSection(questionBot);
+    renderProgressAnswers();
+    updateProgress(3);
+    revealSection(questionBot);
     });
   }
 
@@ -133,8 +140,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       document.getElementById("selectedBOT").value = button.dataset.bot;
 
+      renderProgressAnswers();
       updateProgress(4);
-
       revealSection(questionReplacement);
     });
   });
@@ -146,8 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("selectedReplacement").value =
         button.dataset.replacement;
 
+      renderProgressAnswers();
       updateProgress(5);
-
       revealSection(questionInsured);
     });
   });
@@ -159,8 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("selectedInsuredType").value =
         button.dataset.insured;
 
+      renderProgressAnswers();
       buildSummary();
-
       revealSection(qualificationComplete);
     });
   });
@@ -176,3 +183,85 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+function renderProgressAnswers() {
+  const summary = document.getElementById("wizardAnswerSummary");
+
+  if (!summary) return;
+
+  summary.replaceChildren();
+
+  const answers = [];
+
+  if (caseProfile.product) {
+    answers.push({
+      label: "Product",
+      value: caseProfile.product === "perm" ? "Permanent" : "Term",
+    });
+  }
+
+  if (caseProfile.state) {
+    answers.push({
+      label: "State",
+      value: caseProfile.state,
+    });
+  }
+
+  if (caseProfile.bot) {
+    answers.push({
+      label: "BOT",
+      value: caseProfile.bot === "yes" ? "Yes" : "No",
+    });
+  }
+
+  if (caseProfile.replacement) {
+    const replacementLabels = {
+      none: "No Replacement",
+      internal: "Internal",
+      external: "External",
+    };
+
+    answers.push({
+      label: "Replacement",
+      value:
+        replacementLabels[caseProfile.replacement] || caseProfile.replacement,
+    });
+  }
+
+  if (caseProfile.insured) {
+    answers.push({
+      label: "Insured",
+      value: caseProfile.insured === "single" ? "Single" : "Joint",
+    });
+  }
+
+  if (answers.length === 0) {
+    const emptyMessage = document.createElement("span");
+
+    emptyMessage.className = "wizard-answer-empty";
+
+    emptyMessage.textContent = "Your selections will appear here.";
+
+    summary.appendChild(emptyMessage);
+
+    return;
+  }
+
+  answers.forEach((answer) => {
+    const chip = document.createElement("span");
+
+    chip.className = "wizard-answer-chip";
+
+    const label = document.createElement("strong");
+
+    label.textContent = `${answer.label}:`;
+
+    const value = document.createElement("span");
+
+    value.textContent = answer.value;
+
+    chip.append(label, value);
+    summary.appendChild(chip);
+  });
+  updateProgress(1);
+  renderProgressAnswers();
+}

@@ -5,10 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (beginButton && questionOne) {
     beginButton.addEventListener("click", () => {
-      questionOne.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
+     window.scrollTo({
+       top: questionOne.offsetTop - 100,
+       behavior: "smooth",
+     });
+
     });
   }
 
@@ -32,17 +33,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 wizardProgress.classList.add("visible");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const beginButton = document.getElementById("beginReviewButton");
-
-  const questionOne = document.getElementById("questionProduct");
-
-  if (!beginButton || !questionOne) return;
-
-  beginButton.addEventListener("click", () => {
-    questionOne.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
-  });
-});
