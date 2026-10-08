@@ -157,8 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
-
+selectedState.value = contractState.value;
 
 const caseProfile = {
   product: null,
@@ -171,3 +170,21 @@ const caseProfile = {
 
   insured: null,
 };
+
+function updateProgress(step) {
+  const fill = document.getElementById("wizardProgressFill");
+
+  const label = document.getElementById("wizardProgressLabel");
+
+  const percent = (step / 5) * 100;
+
+  fill.style.width = `${percent}%`;
+
+  label.textContent = `Question ${step} of 5`;
+}
+``;
+
+updateProgress(2);
+updateProgress(3);
+updateProgress(4);
+updateProgress(5);

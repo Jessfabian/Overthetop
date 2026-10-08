@@ -56,11 +56,12 @@
 
 <div id="wizardProgress">
 
-    <div id="wizardProgressFill">
-      <div id="wizardProgressLabel">
+    <div id="wizardProgressFill"></div>
 
+</div>
+
+<div id="wizardProgressLabel">
     Question 1 of 5
-
 </div>
 
     </div>
@@ -253,7 +254,7 @@
                     class="question-option"
                     data-replacement="none">
 
-                    None
+                    No Replacement
 
                 </button>
 
@@ -262,7 +263,7 @@
                     class="question-option"
                     data-replacement="internal">
 
-                    Internal
+                   Internal Replacement
 
                 </button>
 
@@ -271,7 +272,7 @@
                     class="question-option"
                     data-replacement="external">
 
-                    External
+                   External Replacement
 
                 </button>
 
@@ -324,34 +325,17 @@
     </section>
 
 </section>
-<input
-    type="hidden"
-    id="selectedProduct">
 
-<input
-    type="hidden"
-    id="selectedBOT">
+<div id="caseProfileData" hidden>
 
-<input
-    type="hidden"
-    id="selectedReplacement">
+    <input type="hidden" id="selectedProduct">
+    <input type="hidden" id="selectedState">
 
-<input
-    type="hidden"
-    id="selectedInsuredType">
+    <input type="hidden" id="selectedBOT">
 
-<div
-    id="qualificationSummary"
-    hidden>
+    <input type="hidden" id="selectedReplacement">
 
-    <h3>
-        Case Profile
-    </h3>
-
-   <div id="qualificationSummaryContent"
-     class="profile-summary-grid">
-
-</div>
+    <input type="hidden" id="selectedInsuredType">
 
 
 </div>
@@ -367,6 +351,12 @@
         Your review workspace is ready.
 
     </p>
+
+<section
+    id="qualificationSummary"
+    class="summary-card"
+    hidden>
+
 
     <button
         id="launchWorkbench">
