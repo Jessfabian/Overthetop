@@ -1,147 +1,154 @@
 #welcomeHero {
+  min-height: 100vh;
 
-    min-height: 100vh;
+  display: flex;
 
-    display: flex;
+  align-items: center;
 
-    align-items: center;
+  justify-content: center;
 
-    justify-content: center;
+  text-align: center;
 
-    position: relative;
-
-    text-align: center;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            180deg,
-            #f8fbff 0%,
-            #eef4ff 100%
-        );
+  background: linear-gradient(180deg, #f8fbff, #eef4ff);
 }
+.welcome-content {
+  animation: heroReveal 1.5s ease;
+}
+
 .welcome-eyebrow {
+  display: block;
 
-    display: block;
+  margin-bottom: 16px;
 
-    margin-bottom: 16px;
+  color: #0057b8;
 
-    color: #0057b8;
+  font-size: 12px;
 
-    font-size: 12px;
+  font-weight: 800;
 
-    font-weight: 800;
-
-    letter-spacing: 0.2em;
+  letter-spacing: 0.2em;
 }
 .welcome-title {
+  margin: 0;
 
-    margin: 0;
+  font-size: clamp(70px, 12vw, 130px);
 
-    font-size:
-        clamp(
-            70px,
-            12vw,
-            130px
-        );
+  font-weight: 800;
 
-    font-weight: 800;
+  line-height: 1;
 
-    line-height: 1;
+  letter-spacing: -0.06em;
 
-    letter-spacing: -0.06em;
-
-    color: #102a43;
+  color: #102a43;
 }
 .welcome-subtitle {
+  margin-top: 24px;
 
-    margin-top: 24px;
+  font-size: 24px;
 
-    font-size: 24px;
-
-    color: #6b7785;
+  color: #6b7785;
 }
 .scroll-indicator {
+  margin-top: 80px;
 
-    margin-top: 80px;
+  display: flex;
 
-    display: flex;
+  flex-direction: column;
 
-    flex-direction: column;
+  align-items: center;
 
-    align-items: center;
+  gap: 12px;
 
-    gap: 12px;
-
-    color: #6b7785;
+  color: #6b7785;
 }
 .scroll-arrow {
+  font-size: 24px;
 
-    font-size: 24px;
-
-    animation:
-        bounce 2s infinite;
+  animation: bounce 2s infinite;
 }
 @keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
 
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
+  40% {
+    transform: translateY(8px);
+  }
 
-        transform:
-            translateY(0);
-
-    }
-
-    40% {
-
-        transform:
-            translateY(8px);
-
-    }
-
-    60% {
-
-        transform:
-            translateY(4px);
-
-    }
+  60% {
+    transform: translateY(4px);
+  }
 }
-.welcome-transition {
+@keyframes heroReveal {
+  from {
+    opacity: 0;
 
-    min-height: 50vh;
+    transform: translateY(25px);
+  }
 
-    display: flex;
+  to {
+    opacity: 1;
 
-    align-items: center;
+    transform: translateY(0);
+  }
+}
+ .welcome-transition {
+  min-height: 100vh;
 
-    justify-content: center;
+  display: flex;
 
-    text-align: center;
+  align-items: center;
 
-    padding: 40px;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 60px;
+}
+.transition-step {
+  display: block;
+
+  margin-bottom: 20px;
+
+  letter-spacing: 0.25em;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  color: #0057b8;
+}
+.transition-content h2 {
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  font-size: clamp(42px, 6vw, 72px);
+
+  line-height: 1.1;
+}
+.transition-content p {
+  margin-top: 24px;
+
+  font-size: 22px;
+
+  color: #6b7785;
 }
 .welcome-transition h2 {
+  max-width: 800px;
 
-    max-width: 800px;
+  font-size: clamp(32px, 6vw, 56px);
 
-    font-size:
-        clamp(
-            32px,
-            6vw,
-            56px
-        );
+  font-weight: 700;
 
-    font-weight: 700;
-
-    color: #102a43;
+  color: #102a43;
 }
 body {
-
-    margin: 0;
+  margin: 0;
 }
 .question-panel {
   min-height: 100vh;
@@ -152,7 +159,19 @@ body {
 
   justify-content: center;
 
+  opacity: 0;
+
+  transform: translateY(50px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
   padding: 80px 20px;
+}
+.question-panel.in-view {
+  opacity: 1;
+
+  transform: translateY(0);
 }
 .question-container {
   width: min(700px, 100%);
@@ -176,33 +195,25 @@ body {
 }
 
 #wizardProgressFill {
+  width: 20%;
 
-    width: 20%;
+  height: 100%;
 
-    height: 100%;
+  background: linear-gradient(90deg, #0057b8, #0078d4);
 
-    background:
-        linear-gradient(
-            90deg,
-            #0057b8,
-            #0078d4
-        );
-
-    transition:
-        width .4s ease;
+  transition: width 0.4s ease;
 }
 #wizardProgressLabel {
+  text-align: center;
 
-    text-align: center;
+  margin-bottom: 40px;
 
-    margin-bottom: 40px;
+  font-size: 12px;
 
-    font-size: 12px;
+  font-weight: 700;
 
-    font-weight: 700;
-
-    color: #6a7687;
+  color: #6a7687;
 }
 [hidden] {
-    display: none !important;
+  display: none !important;
 }
