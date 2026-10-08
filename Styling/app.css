@@ -209,22 +209,24 @@ body {
   margin: 0;
 }
 .question-panel {
-  min-height: 100vh;
 
-  display: flex;
+    min-height: 100vh;
 
-  align-items: center;
+    display: flex;
 
-  justify-content: center;
+    align-items: center;
 
-  opacity: 0;
+    justify-content: center;
 
-  transform: translateY(120px);
+    padding-top: 0;
 
-  transition:
-    opacity 1.5s ease,
-    transform 1.5s ease;
-  padding: 80px 20px;
+    transform:
+        translateY(-80px);
+}
+.question-container {
+  position: relative;
+
+  top: -80px;
 }
 
 .question-panel.in-view {
@@ -247,7 +249,6 @@ body {
     transform: translateY(0);
   }
 }
-
 
 [hidden] {
   display: none !important;
@@ -297,35 +298,26 @@ html {
   font-weight: 700;
 }
 .question-panel h2 {
+  font-family: "MM Sharp Sans", "Century Gothic", "Futura", sans-serif;
 
-    font-family:
-        "MM Sharp Sans",
-        "Century Gothic",
-        "Futura",
-        sans-serif;
+  color: #001735;
 
-    color: #001735;
+  font-weight: 700;
 
-    font-weight: 700;
+  letter-spacing: -0.03em;
 
-    letter-spacing: -.03em;
-
-    line-height: 1.1;
+  line-height: 1.1;
 }
 #wizardAnswerSummary {
+  margin-top: 10px;
 
-    margin-top: 10px;
+  color: #002e6b;
 
-    color: #002E6B;
+  font-family: "Lato", Arial, sans-serif;
 
-    font-family:
-        "Lato",
-        Arial,
-        sans-serif;
+  font-size: 14px;
 
-    font-size: 14px;
-
-    font-weight: 700;
+  font-weight: 700;
 }
 .question-option {
   min-width: 240px;
@@ -335,12 +327,9 @@ html {
   padding: 20px;
 
   border-radius: 20px;
- font-family:
-        "Lato",
-        Arial,
-        sans-serif;
+  font-family: "Lato", Arial, sans-serif;
 
-    font-weight: 700;
+  font-weight: 700;
   border: 2px solid #d7e6f5;
 
   background: white;
@@ -470,18 +459,13 @@ html {
   line-height: 1.5;
 }
 .question-container {
+  width: min(900px, 100%);
 
-    width:
-        min(
-            900px,
-            100%
-        );
+  margin: 0 auto;
 
-    margin: 0 auto;
+  padding: 40px;
 
-    padding: 40px;
-
-    text-align: center;
+  text-align: center;
 }
 
 @keyframes answerChipReveal {
