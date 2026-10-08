@@ -22,6 +22,9 @@ h3 {
   background: linear-gradient(180deg, #eef2f8, #eef2f8);
 }
 
+
+
+
 .ir-header {
   background: transparent;
   border-bottom: none;
@@ -40,11 +43,11 @@ h3 {
   margin: 0;
 }
 .ir-navigation img:hover {
-    opacity: 1.0;
+  opacity: 1;
 }
 .ir-navigation img {
-  height: 28px;
-  width: auto;
+  width: clamp(20px, 3vw, 32px);
+  height: auto;
   vertical-align: middle;
   transition: transform 0.2s ease;
   margin-bottom: 2px;
@@ -57,9 +60,8 @@ h3 {
   opacity: 0.5;
 }
 .ir-navigation span:hover {
-  opacity: 1.0;
+  opacity: 1;
 }
-
 
 .ir-navigation li {
   text-align: center;
@@ -76,7 +78,7 @@ h3 {
 }
 
 .ir-navigation a:hover {
-   opacity: 1.0;
+  opacity: 1;
   transform: scale(1.08);
 }
 
@@ -696,23 +698,9 @@ body {
 
   box-shadow: 0 18px 40px rgba(2, 101, 255, 0.25);
 }
-#qualificationComplete {
-  display: flex;
 
-  flex-direction: column;
 
-  align-items: center;
 
-  justify-content: center;
-
-  text-align: center;
-
-  min-height: 50vh;
-}
-#qualificationComplete h2,
-#qualificationComplete p {
-  text-align: center;
-}
 .completion-container {
   width: 100%;
 
@@ -746,4 +734,137 @@ body {
   transition:
     opacity 0.4s ease,
     transform 0.4s ease;
+}
+
+
+
+
+
+#launchWorkbench {
+  position: relative;
+  overflow: visible;
+}
+
+/* =========================================================
+   COMPLETION AND WORKSPACE LAUNCH
+========================================================= */
+
+body {
+  overflow-x: hidden;
+}
+
+/* Case Profile exit */
+
+#qualificationSummary {
+  transition:
+    opacity 500ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#qualificationSummary.is-launching {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+/* Completion screen */
+
+#qualificationComplete {
+  position: relative;
+  overflow: hidden;
+}
+
+#qualificationComplete h2 {
+  transition:
+    opacity 500ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#qualificationComplete p {
+  transition: opacity 500ms ease 80ms;
+}
+
+#qualificationComplete #launchWorkbench {
+  transition:
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 500ms ease,
+    box-shadow 500ms ease;
+}
+
+/* Perfect. slides upward */
+
+#qualificationComplete.is-launching h2 {
+  opacity: 0;
+  transform: translateY(-60px);
+}
+
+/* Subtitle fades */
+
+#qualificationComplete.is-launching p {
+  opacity: 0;
+}
+
+/* Button grows slightly and fades */
+
+#qualificationComplete.is-launching #launchWorkbench {
+  transform: scale(1.15);
+  opacity: 0;
+  box-shadow: 0 24px 60px rgba(2, 101, 255, 0.3);
+}
+
+/* Blue page wash */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+
+  background: #0057b8;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 500ms ease,
+    visibility 0s linear 500ms;
+}
+
+body.workspace-launching::after {
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity 500ms ease 300ms,
+    visibility 0s linear 0s;
+}
+
+/* Workbench entrance */
+
+#reviewWorkbench.workbench-opening {
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#reviewWorkbench.workbench-opening.workbench-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced-motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  #qualificationSummary,
+  #qualificationComplete h2,
+  #qualificationComplete p,
+  #qualificationComplete #launchWorkbench,
+  #reviewWorkbench,
+  body::after {
+    transition-duration: 1ms;
+    transition-delay: 0ms;
+  }
 }

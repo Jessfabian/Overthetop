@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Full Initial Review</title>
     <link rel="stylesheet" href="Styling/app.css" />
+  </head>
+<body>
 <header class="ir-header">
     <nav class="ir-navigation">
         <ul>
@@ -33,7 +35,7 @@
         </ul>
     </nav>
 </header>
-
+<!------------Welcome --------------->
     <section id="welcomeHero">
       <div class="welcome-background"></div>
 
@@ -45,17 +47,21 @@
         <p class="welcome-subtitle">Let's review this application.</p>
 
    <button
-    id="beginReviewButton"
-    class="scroll-indicator">
+  id="beginReviewButton"
+  class="scroll-indicator"
+  type="button"
+>
+  <span>Begin Review</span>
 
-    <span>Begin Review</span>
-
-    <div class="scroll-arrow">
-        ↓
-    </div>
+  <div class="scroll-arrow" aria-hidden="true">
+    ↓
+  </div>
 
 </button>
-    </section>
+
+</div>
+
+</section>
 
 
     <!-- =======================================================
@@ -93,11 +99,7 @@
     <span class="wizard-answer-empty">
       Your selections will appear here.
     </span>
-
   </div>
-
-</div>
-
 </div>
         <!-- QUESTION 1 -->
 
@@ -290,7 +292,9 @@
 
         <p>Your review workspace is ready.</p>
 
-        <button id="launchWorkbench">Begin Review</button>
+      <button id="launchWorkbench" type="button">
+  Begin Review
+      </button>
       </section>
 
         <!-- ===================================================
@@ -299,57 +303,59 @@
         ==================================================== -->
 
       <section id="reviewWorkbench" hidden>
-        <!-- Dashboard -->
 
-        <section id="dashboardStrip" class="dashboard-strip"></section>
+  <!-- Dashboard -->
+  <section id="dashboardStrip" class="dashboard-strip"></section>
 
-        <!-- Workflow -->
+  <!-- Workflow -->
+  <aside class="review-sidebar"></aside>
 
-        <aside class="review-sidebar"></aside>
+  <!-- Case Setup -->
+  <section
+    id="caseSetupSection"
+    class="card case-setup-card"
+  ></section>
 
-        <!-- Case Setup -->
+  <!-- Ownership -->
+  <section class="ownership-panel"></section>
 
-        <section id="caseSetupSection" class="card case-setup-card"></section>
+  <!-- Policy Design -->
+  <section class="policy-design-panel"></section>
 
-        <!-- Ownership -->
+  <!-- Validation -->
+  <section class="validation-tools-panel"></section>
 
-        <section class="ownership-panel"></section>
+  <!-- State Requirements -->
+  <details id="stateRequirements"></details>
 
-        <!-- Policy Design -->
+  <!-- Requirements -->
+  <section id="requirementsSection"></section>
 
-        <section class="policy-design-panel"></section>
+  <!-- Deliverables -->
+  <details id="reviewOutputPackage"></details>
 
-        <!-- Validation -->
+  <!-- Email -->
+  <section id="emailSection" class="card">
+    <h2>Initial Review Email</h2>
 
-        <section class="validation-tools-panel"></section>
+    <div
+      id="emailOutput"
+      class="email-preview"
+      contenteditable="true"
+    ></div>
 
-        <!-- State Requirements -->
+    <button id="copyEmail" type="button">
+      Copy Email
+    </button>
+  </section>
 
-        <details id="stateRequirements"></details>
-
-        <!-- Requirements -->
-
-        <section id="requirementsSection"></section>
-
-        <!-- Deliverables -->
-
-        <details id="reviewOutputPackage"></details>
-
-        <!-- Email -->
-
-        <section id="emailSection" class="card">
-          <h2>Initial Review Email</h2>
-          <div
-            id="emailOutput"
-            class="email-preview"
-            contenteditable="true"></div>
-          <button id="copyEmail">Copy Email</button>
-        </section>
-      </section>
+</section>
     </main>
+
+      <footer>Jessie Fabian ©2026</footer>
     <script src="scripts/scroll.js"></script>
     <script src="scripts/onboarding.js"></script>
 
   </body>
-  <footer>Jessie Fabian ©2026</footer>
+
 </html>

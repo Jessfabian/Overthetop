@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   console.log("Onboarding loaded");
 
   const caseProfile = {
@@ -408,30 +408,74 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 400);
       }
 
-      buildSummary();
+     buildSummary();
 
-      revealSection(qualificationComplete);
+     if (qualificationComplete) {
+       qualificationComplete.hidden = false;
+
+       requestAnimationFrame(function () {
+         qualificationComplete.classList.add("in-view");
+       });
+     }
+
+     window.setTimeout(function () {
+       if (qualificationSummary) {
+         gentleScrollTo(qualificationSummary, 900);
+       }
+     }, 450);
     });
   });
 
   /*
-   * BEGIN REVIEW BUTTON
-   */
+ * BEGIN REVIEW BUTTON
+ */
 
-  if (launchWorkbench && reviewWorkbench) {
-    launchWorkbench.addEventListener("click", () => {
+if (launchWorkbench && qualificationComplete && reviewWorkbench) {
+  launchWorkbench.addEventListener("click", function () {
+    const button = this;
+
+    button.textContent = "Launching Workspace...";
+    button.disabled = true;
+
+    document.body.classList.add("workspace-launching");
+
+    qualificationComplete.classList.add("is-launching");
+
+    if (qualificationSummary) {
+      qualificationSummary.classList.add("is-launching");
+    }
+
+    window.setTimeout(function () {
+      const qualificationFlow =
+        document.getElementById("qualificationFlow");
+
+      qualificationComplete.hidden = true;
+
+      if (qualificationSummary) {
+        qualificationSummary.hidden = true;
+      }
+
+      if (qualificationFlow) {
+        qualificationFlow.hidden = true;
+      }
+
       reviewWorkbench.hidden = false;
+      reviewWorkbench.classList.add("workbench-opening");
 
-      requestAnimationFrame(() => {
-        reviewWorkbench.classList.add("in-view");
+      reviewWorkbench.scrollIntoView({
+        behavior: "auto",
+        block: "start"
       });
 
-      window.setTimeout(() => {
-        gentleScrollTo(reviewWorkbench, 1200);
-      }, 100);
-    });
-  }
-
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          reviewWorkbench.classList.add("workbench-visible");
+          document.body.classList.remove("workspace-launching");
+        });
+      });
+    }, 900);
+  });
+}
   /*
    * INITIALIZE
    */
@@ -439,6 +483,3 @@ document.addEventListener("DOMContentLoaded", () => {
   updateProgress(1);
   renderProgressAnswers();
 });
-document
-  .getElementById("wizardProgressWrapper")
-  .classList.add("progress-complete");
