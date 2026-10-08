@@ -1,11 +1,22 @@
 .question-panel {
-  min-height: 80vh;
+    min-height: 100vh;
 
-  display: flex;
+    display: flex;
 
-  justify-content: center;
+    align-items: center;
 
-  align-items: center;
+    justify-content: center;
 
-  text-align: center;
+    padding: 80px 20px;
+}
+.question-container {
+
+    width: min(700px, 100%);
+
+    text-align: center;
+}
+
+
+#wizardProgress {
+    opacity: 0;
 }

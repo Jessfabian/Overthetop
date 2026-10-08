@@ -29,3 +29,6 @@ document.querySelectorAll("[data-product]").forEach((button) => {
     });
   });
 });
+
+
+wizardProgress.classList.add("visible");
