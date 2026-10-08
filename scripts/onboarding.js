@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("Onboarding loaded");
 
   const caseProfile = {
     product: null,
@@ -20,138 +21,360 @@ document.addEventListener("DOMContentLoaded", () => {
     "qualificationComplete",
   );
 
+  const qualificationSummary = document.getElementById("qualificationSummary");
+
   const reviewWorkbench = document.getElementById("reviewWorkbench");
 
   const launchWorkbench = document.getElementById("launchWorkbench");
 
-function updateProgress(step) {
-  const fill = document.getElementById("wizardProgressFill");
+  const stateDropdown = document.getElementById("contractState");
 
-  const label = document.getElementById("wizardProgressLabel");
+  /*
+   * INITIAL PAGE STATE
+   * Ensures only Question 1 is visible on load.
+   */
 
-  const percentLabel = document.getElementById("wizardProgressPercent");
-
-  const percent = Math.min(100, Math.max(0, (step / 5) * 100));
-
-  if (fill) {
-    fill.style.width = `${percent}%`;
+  if (questionState) {
+    questionState.hidden = true;
   }
 
-  if (label) {
-    label.textContent = `Question ${step} of 5`;
+  if (questionBot) {
+    questionBot.hidden = true;
   }
 
-  if (percentLabel) {
-    percentLabel.textContent = `${Math.round(percent)}%`;
+  if (questionReplacement) {
+    questionReplacement.hidden = true;
   }
-}
+
+  if (questionInsured) {
+    questionInsured.hidden = true;
+  }
+
+  if (qualificationComplete) {
+    qualificationComplete.hidden = true;
+  }
+
+  if (qualificationSummary) {
+    qualificationSummary.hidden = true;
+  }
+
+  if (reviewWorkbench) {
+    reviewWorkbench.hidden = true;
+  }
+
+  /*
+   * HELPER: safely store a hidden-field value
+   */
+
+  function setHiddenValue(elementId, value) {
+    const field = document.getElementById(elementId);
+
+    if (field) {
+      field.value = value;
+    }
+  }
+
+  /*
+   * HELPER: visually mark an option as selected
+   */
+
+  function selectOption(button, selector) {
+    document.querySelectorAll(selector).forEach((option) => {
+      option.classList.remove("selected");
+      option.setAttribute("aria-pressed", "false");
+    });
+
+    button.classList.add("selected");
+
+    button.setAttribute("aria-pressed", "true");
+  }
+
+  /*
+   * UPDATE STICKY PROGRESS PILL
+   */
+
+  function updateProgress(step) {
+    const fill = document.getElementById("wizardProgressFill");
+
+    const label = document.getElementById("wizardProgressLabel");
+
+    const percentLabel = document.getElementById("wizardProgressPercent");
+
+    const normalizedStep = Math.min(5, Math.max(1, step));
+
+    const percent = (normalizedStep / 5) * 100;
+
+    if (fill) {
+      fill.style.width = `${percent}%`;
+    }
+
+    if (label) {
+      label.textContent = `Question ${normalizedStep} of 5`;
+    }
+
+    if (percentLabel) {
+      percentLabel.textContent = `${Math.round(percent)}%`;
+    }
+  }
+
+  /*
+   * UPDATE ANSWER CHIPS
+   */
+
+ function renderProgressAnswers() {
+   const summary = document.getElementById("wizardAnswerSummary");
+
+   if (!summary) return;
+
+   const answers = [];
+
+   if (caseProfile.product) {
+     answers.push(caseProfile.product === "perm" ? "Permanent" : "Term");
+   }
+
+   if (caseProfile.state) {
+     answers.push(caseProfile.state);
+   }
+
+   if (caseProfile.bot) {
+     answers.push(`BOT: ${caseProfile.bot === "yes" ? "Yes" : "No"}`);
+   }
+
+   if (caseProfile.replacement) {
+     const replacementLabels = {
+       none: "No Replacement",
+       internal: "Internal",
+       external: "External",
+     };
+
+     answers.push(replacementLabels[caseProfile.replacement]);
+   }
+
+   if (caseProfile.insured) {
+     answers.push(caseProfile.insured === "single" ? "Single" : "Joint");
+   }
+
+   summary.innerHTML = "";
+
+   if (answers.length === 0) {
+     summary.innerHTML = `
+            <span class="wizard-answer-empty">
+                Your selections will appear here.
+            </span>
+            `;
+
+     return;
+   }
+
+   summary.innerHTML = `
+        <span class="wizard-answer-inline">
+            ${answers.join(" • ")}
+        </span>
+        `;
+ }
+
+  /*
+   * GENTLY REVEAL AND SCROLL TO NEXT SECTION
+   */
 
   function revealSection(section) {
-    if (!section) return;
+    if (!section) {
+      return;
+    }
 
     section.hidden = false;
 
-    setTimeout(() => {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-    }, 250);
+    requestAnimationFrame(() => {
+      section.classList.add("in-view");
+    });
+
+    window.setTimeout(() => {
+      gentleScrollTo(section, 1100);
+    }, 150);
   }
+
+  /*
+   * CUSTOM GENTLE SCROLL
+   */
+
+  function gentleScrollTo(element, duration) {
+    const startPosition = window.scrollY;
+
+    const targetPosition = element.getBoundingClientRect().top + window.scrollY;
+
+    const stickyOffset = 95;
+
+    const distance = targetPosition - stickyOffset - startPosition;
+
+    let startTime = null;
+
+    function easeInOutCubic(progress) {
+      if (progress < 0.5) {
+        return 4 * progress * progress * progress;
+      }
+
+      return 1 - Math.pow(-2 * progress + 2, 3) / 2;
+    }
+
+    function animateScroll(timestamp) {
+      if (startTime === null) {
+        startTime = timestamp;
+      }
+
+      const elapsed = timestamp - startTime;
+
+      const progress = Math.min(elapsed / duration, 1);
+
+      const easedProgress = easeInOutCubic(progress);
+
+      window.scrollTo(0, startPosition + distance * easedProgress);
+
+      if (progress < 1) {
+        window.requestAnimationFrame(animateScroll);
+      }
+    }
+
+    window.requestAnimationFrame(animateScroll);
+  }
+
+  /*
+   * BUILD FINAL PROFILE SUMMARY
+   */
 
   function buildSummary() {
     const summaryContainer = document.getElementById(
       "qualificationSummaryContent",
     );
 
-    const summaryWrapper = document.getElementById("qualificationSummary");
+    if (!summaryContainer) {
+      return;
+    }
 
-    if (!summaryContainer) return;
+    const selectedStateName =
+      stateDropdown?.options[stateDropdown.selectedIndex]?.textContent.trim() ||
+      caseProfile.state ||
+      "Not selected";
+
+    const productLabel = caseProfile.product === "perm" ? "Permanent" : "Term";
+
+    const botLabel = caseProfile.bot === "yes" ? "Yes" : "No";
+
+    const replacementLabels = {
+      none: "No Replacement",
+      internal: "Internal Replacement",
+      external: "External Replacement",
+    };
+
+    const insuredLabel = caseProfile.insured === "single" ? "Single" : "Joint";
 
     summaryContainer.innerHTML = `
+      <div class="profile-summary-item">
+        <strong>Product</strong>
+        <span>${productLabel}</span>
+      </div>
 
-            <div class="profile-summary-item">
-                <strong>Product</strong>
-                <span>${caseProfile.product}</span>
-            </div>
+      <div class="profile-summary-item">
+        <strong>State</strong>
+        <span>${selectedStateName}</span>
+      </div>
 
-            <div class="profile-summary-item">
-                <strong>State</strong>
-                <span>${caseProfile.state}</span>
-            </div>
+      <div class="profile-summary-item">
+        <strong>BOT</strong>
+        <span>${botLabel}</span>
+      </div>
 
-            <div class="profile-summary-item">
-                <strong>BOT</strong>
-                <span>${caseProfile.bot}</span>
-            </div>
+      <div class="profile-summary-item">
+        <strong>Replacement</strong>
+        <span>
+          ${replacementLabels[caseProfile.replacement] || "Not selected"}
+        </span>
+      </div>
 
-            <div class="profile-summary-item">
-                <strong>Replacement</strong>
-                <span>${caseProfile.replacement}</span>
-            </div>
+      <div class="profile-summary-item">
+        <strong>Insured</strong>
+        <span>${insuredLabel}</span>
+      </div>
+    `;
 
-            <div class="profile-summary-item">
-                <strong>Insured</strong>
-                <span>${caseProfile.insured}</span>
-            </div>
-
-        `;
-
-    if (summaryWrapper) {
-      summaryWrapper.hidden = false;
+    if (qualificationSummary) {
+      qualificationSummary.hidden = false;
     }
   }
 
+  /*
+   * QUESTION 1: PRODUCT
+   */
+
   document.querySelectorAll("[data-product]").forEach((button) => {
+    button.setAttribute("aria-pressed", "false");
+
     button.addEventListener("click", () => {
-     caseProfile.product = button.dataset.product;
+      caseProfile.product = button.dataset.product;
 
-     document.getElementById("selectedProduct").value = button.dataset.product;
+      setHiddenValue("selectedProduct", caseProfile.product);
 
-     renderProgressAnswers();
-     updateProgress(2);
-     revealSection(questionState);
+      selectOption(button, "[data-product]");
+
+      renderProgressAnswers();
+      updateProgress(2);
+      revealSection(questionState);
     });
   });
 
-  const stateDropdown = document.getElementById("contractState");
+  /*
+   * QUESTION 2: STATE
+   */
 
   if (stateDropdown) {
     stateDropdown.addEventListener("change", () => {
-      if (!stateDropdown.value) return;
+      if (!stateDropdown.value) {
+        return;
+      }
 
-    caseProfile.state = stateDropdown.value;
+      caseProfile.state = stateDropdown.value;
 
-    const selectedState = document.getElementById("selectedState");
+      setHiddenValue("selectedState", caseProfile.state);
 
-    if (selectedState) {
-      selectedState.value = stateDropdown.value;
-    }
-
-    renderProgressAnswers();
-    updateProgress(3);
-    revealSection(questionBot);
+      renderProgressAnswers();
+      updateProgress(3);
+      revealSection(questionBot);
     });
   }
 
+  /*
+   * QUESTION 3: BOT
+   */
+
   document.querySelectorAll("[data-bot]").forEach((button) => {
+    button.setAttribute("aria-pressed", "false");
+
     button.addEventListener("click", () => {
       caseProfile.bot = button.dataset.bot;
 
-      document.getElementById("selectedBOT").value = button.dataset.bot;
+      setHiddenValue("selectedBOT", caseProfile.bot);
+
+      selectOption(button, "[data-bot]");
 
       renderProgressAnswers();
       updateProgress(4);
+
       revealSection(questionReplacement);
     });
   });
 
+  /*
+   * QUESTION 4: REPLACEMENT
+   */
+
   document.querySelectorAll("[data-replacement]").forEach((button) => {
+    button.setAttribute("aria-pressed", "false");
+
     button.addEventListener("click", () => {
       caseProfile.replacement = button.dataset.replacement;
 
-      document.getElementById("selectedReplacement").value =
-        button.dataset.replacement;
+      setHiddenValue("selectedReplacement", caseProfile.replacement);
+
+      selectOption(button, "[data-replacement]");
 
       renderProgressAnswers();
       updateProgress(5);
@@ -159,109 +382,50 @@ function updateProgress(step) {
     });
   });
 
+  /*
+   * QUESTION 5: INSURED
+   */
+
   document.querySelectorAll("[data-insured]").forEach((button) => {
+    button.setAttribute("aria-pressed", "false");
+
     button.addEventListener("click", () => {
       caseProfile.insured = button.dataset.insured;
 
-      document.getElementById("selectedInsuredType").value =
-        button.dataset.insured;
+      setHiddenValue("selectedInsuredType", caseProfile.insured);
+
+      selectOption(button, "[data-insured]");
 
       renderProgressAnswers();
+      updateProgress(5);
       buildSummary();
+
       revealSection(qualificationComplete);
     });
   });
 
-  if (launchWorkbench) {
+  /*
+   * BEGIN REVIEW BUTTON
+   */
+
+  if (launchWorkbench && reviewWorkbench) {
     launchWorkbench.addEventListener("click", () => {
       reviewWorkbench.hidden = false;
 
-      reviewWorkbench.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
+      requestAnimationFrame(() => {
+        reviewWorkbench.classList.add("in-view");
       });
-    });
-  }
-});
-function renderProgressAnswers() {
-  const summary = document.getElementById("wizardAnswerSummary");
 
-  if (!summary) return;
-
-  summary.replaceChildren();
-
-  const answers = [];
-
-  if (caseProfile.product) {
-    answers.push({
-      label: "Product",
-      value: caseProfile.product === "perm" ? "Permanent" : "Term",
+      window.setTimeout(() => {
+        gentleScrollTo(reviewWorkbench, 1200);
+      }, 100);
     });
   }
 
-  if (caseProfile.state) {
-    answers.push({
-      label: "State",
-      value: caseProfile.state,
-    });
-  }
+  /*
+   * INITIALIZE
+   */
 
-  if (caseProfile.bot) {
-    answers.push({
-      label: "BOT",
-      value: caseProfile.bot === "yes" ? "Yes" : "No",
-    });
-  }
-
-  if (caseProfile.replacement) {
-    const replacementLabels = {
-      none: "No Replacement",
-      internal: "Internal",
-      external: "External",
-    };
-
-    answers.push({
-      label: "Replacement",
-      value:
-        replacementLabels[caseProfile.replacement] || caseProfile.replacement,
-    });
-  }
-
-  if (caseProfile.insured) {
-    answers.push({
-      label: "Insured",
-      value: caseProfile.insured === "single" ? "Single" : "Joint",
-    });
-  }
-
-  if (answers.length === 0) {
-    const emptyMessage = document.createElement("span");
-
-    emptyMessage.className = "wizard-answer-empty";
-
-    emptyMessage.textContent = "Your selections will appear here.";
-
-    summary.appendChild(emptyMessage);
-
-    return;
-  }
-
-  answers.forEach((answer) => {
-    const chip = document.createElement("span");
-
-    chip.className = "wizard-answer-chip";
-
-    const label = document.createElement("strong");
-
-    label.textContent = `${answer.label}:`;
-
-    const value = document.createElement("span");
-
-    value.textContent = answer.value;
-
-    chip.append(label, value);
-    summary.appendChild(chip);
-  });
   updateProgress(1);
   renderProgressAnswers();
-}
+});
