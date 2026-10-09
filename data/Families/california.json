@@ -1,0 +1,16 @@
+{
+  "family": "california",
+  "forms": {
+    "additionalInsured": "A1001CA",
+    "part2": "A52CA",
+    "juvenilePart2": "A55CA",
+    "beneficiary": "F5159CA",
+    "conversionSupplement": "FR2089CA",
+    "foreignSupplement": "F6290CA",
+    "hipaa": "F8186GEN",
+    "ltcWorksheet": "FR2118CA",
+    "ltcPackage": "LTCR-CA",
+    "ownerDesignation": "F5248CA",
+    "replacement": "F5436CA"
+  }
+}

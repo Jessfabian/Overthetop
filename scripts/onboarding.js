@@ -458,7 +458,19 @@ if (launchWorkbench && qualificationComplete && reviewWorkbench) {
       if (qualificationFlow) {
         qualificationFlow.hidden = true;
       }
+window.initialReviewCaseProfile = {
+  product: caseProfile.product,
+  state: caseProfile.state,
+  bot: caseProfile.bot,
+  replacement: caseProfile.replacement,
+  insured: caseProfile.insured,
+};
 
+document.dispatchEvent(
+  new CustomEvent("initialReviewProfileReady", {
+    detail: window.initialReviewCaseProfile,
+  }),
+);
       reviewWorkbench.hidden = false;
       reviewWorkbench.classList.add("workbench-opening");
 
@@ -482,4 +494,19 @@ if (launchWorkbench && qualificationComplete && reviewWorkbench) {
 
   updateProgress(1);
   renderProgressAnswers();
+});
+document.addEventListener("initialReviewProfileReady", function (event) {
+  const profile = event.detail;
+
+  const contractState = document.getElementById("contractState");
+
+  if (contractState && profile.state) {
+    contractState.value = profile.state;
+
+    contractState.dispatchEvent(
+      new Event("change", {
+        bubbles: true,
+      }),
+    );
+  }
 });

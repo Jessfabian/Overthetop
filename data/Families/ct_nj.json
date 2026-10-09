@@ -1,0 +1,9 @@
+{
+  "family": "ct_nj",
+  "forms": {
+    "ltcWorksheet": "FR2118GEN",
+    "hipaaGenericForA1500": true,
+    "ownerGenericForA1500": true,
+    "beneficiaryGenericForA1500": true
+  }
+}

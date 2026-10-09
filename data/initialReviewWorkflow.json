@@ -1,0 +1,62 @@
+{
+  "caseSetup": {
+    "title": "Case Setup",
+    "steps": [
+      "Confirm policy number",
+      "Confirm insured name",
+      "Confirm contract state",
+      "Confirm system",
+      "Confirm signature method",
+      "Review companion cases"
+    ]
+  },
+
+  "trexReview": {
+    "title": "TreX Review",
+    "steps": [
+      "Review all images in TreX",
+      "Verify all Part 1 pages received",
+      "Verify correct state version",
+      "Review Misc Contractual images",
+      "Review email images",
+      "Review APS images",
+      "Review Part 2 images",
+      "Determine if reindexing is required"
+    ]
+  },
+
+  "campirReview": {
+    "title": "CaMPIR Review",
+    "steps": [
+      "Place of Birth Unknown",
+      "PO Box Address",
+      "Entity Owner",
+      "Trust Owner",
+      "Group Bill",
+      "Alternate or Additional Policy",
+      "Premium Financing",
+      "Loan Carryover",
+      "Sales Illustration",
+      "Employee Sponsored Plan",
+      "Viatical",
+      "SPIA",
+      "Beneficiary Dollar Amounts",
+      "Unadmitted Replacement",
+      "Source Of Funds Review",
+      "Trusted ID",
+      "PCR"
+    ]
+  },
+
+  "completion": {
+    "title": "Completion",
+    "steps": [
+      "General Note Completed",
+      "Requirements Posted",
+      "Amendments Entered",
+      "BINGO Completed",
+      "Status Changed To Underwriter Review",
+      "Initial Review Email Sent"
+    ]
+  }
+}

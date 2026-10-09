@@ -310,51 +310,245 @@
   <!-- Workflow -->
   <aside class="review-sidebar"></aside>
 
-  <!-- Case Setup -->
-  <section
-    id="caseSetupSection"
-    class="card case-setup-card"
-  ></section>
+  <section id="reviewWorkbench" hidden>
 
-  <!-- Ownership -->
-  <section class="ownership-panel"></section>
+  <div class="workbench-layout">
 
-  <!-- Policy Design -->
-  <section class="policy-design-panel"></section>
+    <aside class="review-sidebar">
+      <button
+        type="button"
+        class="step-btn active"
+        data-target="caseSetupSection"
+      >
+        Case Setup
+      </button>
 
-  <!-- Validation -->
-  <section class="validation-tools-panel"></section>
+      <button
+        type="button"
+        class="step-btn"
+        data-target="stateRequirements"
+      >
+        State Requirements
+      </button>
 
-  <!-- State Requirements -->
-  <details id="stateRequirements"></details>
+      <button
+        type="button"
+        class="step-btn"
+        data-target="trexReview"
+      >
+        TREX Review
+      </button>
 
-  <!-- Requirements -->
-  <section id="requirementsSection"></section>
+      <button
+        type="button"
+        class="step-btn"
+        data-target="applicationReview"
+      >
+        Application Review
+      </button>
 
-  <!-- Deliverables -->
-  <details id="reviewOutputPackage"></details>
+      <button
+        type="button"
+        class="step-btn"
+        data-target="requirementsSection"
+      >
+        Requirements
+      </button>
 
-  <!-- Email -->
-  <section id="emailSection" class="card">
-    <h2>Initial Review Email</h2>
+      <button
+        type="button"
+        class="step-btn"
+        data-target="amendmentsSection"
+      >
+        Amendments
+      </button>
 
-    <div
-      id="emailOutput"
-      class="email-preview"
-      contenteditable="true"
-    ></div>
+      <button
+        type="button"
+        class="step-btn"
+        data-target="bingoSection"
+      >
+        BINGO
+      </button>
 
-    <button id="copyEmail" type="button">
-      Copy Email
-    </button>
-  </section>
+      <button
+        type="button"
+        class="step-btn"
+        data-target="emailSection"
+      >
+        Email
+      </button>
+    </aside>
+
+    <div class="workbench-main">
+
+      <section class="workbench-progress">
+        <div class="progress-track">
+          <div id="progressFill"></div>
+        </div>
+
+        <span id="progressText">
+          0 of 0 steps complete
+        </span>
+      </section>
+
+      <section
+        id="caseSetupSection"
+        class="card case-setup-card"
+      >
+        <h2>Case Setup</h2>
+      </section>
+
+      <details id="stateRequirements" class="card">
+        <summary>State Requirements</summary>
+
+        <div id="stateImportantNotices" hidden></div>
+        <div id="stateNotes" hidden></div>
+
+        <h3 id="stateRequirementSummary">
+          Select a state
+        </h3>
+
+        <div id="requiredForms"></div>
+
+        <div id="reviewCompletionBanner" hidden>
+          State form review complete.
+        </div>
+      </details>
+
+      <section id="trexReview" class="card">
+        <h2>TREX Review</h2>
+        <div id="reviewChecklist"></div>
+      </section>
+
+      <section id="applicationReview" class="card"></section>
+
+      <section id="requirementsSection" class="card">
+        <h2>Requirements</h2>
+
+        <select id="globalRequirementTemplate">
+          <option value="">Select Requirement</option>
+        </select>
+
+        <div id="globalRequirementFields"></div>
+
+        <textarea
+          id="globalGeneratedRequirement"
+          readonly
+        ></textarea>
+      </section>
+
+      <section id="amendmentsSection" class="card">
+        <h2>Amendments</h2>
+
+        <select id="globalAmendmentForm">
+          <option value="">Select Form</option>
+        </select>
+      </section>
+
+      <section id="bingoSection" class="card">
+        <h2>BINGO Review</h2>
+      </section>
+
+      <details id="reviewOutputPackage" class="card">
+        <summary>Review Output Package</summary>
+
+        <div>
+          <span id="reviewOutputStatus">No Outputs</span>
+          <span id="compiledTotalCount">0</span>
+        </div>
+
+        <section>
+          <span id="compiledAmendmentBadge">
+            0 amendments
+          </span>
+
+          <span id="compiledAmendmentCount">0</span>
+
+          <textarea
+            id="compiledAmendments"
+            readonly
+          ></textarea>
+
+          <button
+            id="copyAllAmendments"
+            type="button"
+            disabled
+          >
+            Copy All Amendments
+          </button>
+        </section>
+
+        <section>
+          <span id="compiledRequirementBadge">
+            0 requirements
+          </span>
+
+          <span id="compiledRequirementCount">0</span>
+
+          <textarea
+            id="compiledRequirements"
+            readonly
+          ></textarea>
+
+          <button
+            id="copyAllRequirements"
+            type="button"
+            disabled
+          >
+            Copy All Requirements
+          </button>
+        </section>
+
+        <div
+          id="reviewOutputCopyStatus"
+          aria-live="polite"
+        ></div>
+      </details>
+
+      <section id="emailSection" class="card">
+        <h2>Initial Review Email</h2>
+
+        <button id="generateEmail" type="button">
+          Generate Email
+        </button>
+
+        <div
+          id="emailOutput"
+          class="email-preview"
+          contenteditable="true"
+        ></div>
+
+        <button id="copyEmail" type="button">
+          Copy Email
+        </button>
+      </section>
+
+    </div>
+  </div>
 
 </section>
+
     </main>
 
       <footer>Jessie Fabian ©2026</footer>
+      <!-- Onboarding -->
     <script src="scripts/scroll.js"></script>
     <script src="scripts/onboarding.js"></script>
+    <!-- Data and template foundation -->
+       <script src="scripts/library.js"></script>
+       <!-- Workbench engines -->
+  <script src="scripts/amendment-engine.js"></script>
+  <script src="scripts/stateLoader.js"></script>
+  <script src="scripts/illustration-validation.js"></script>
+
+  <!-- Core review workflow -->
+  <script src="scripts/initial-review.js"></script>
+   <!-- Output and supporting tools -->
+  <script src="scripts/review-output-package.js"></script>
+  <script src="review-timer.js"></script>
+  <script src="review-assistant.js"></script>
+
 
   </body>
 

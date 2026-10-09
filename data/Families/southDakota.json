@@ -1,0 +1,12 @@
+{
+  "family": "southDakota",
+  "forms": {
+    "additionalInsured": "A1001SD",
+    "part2": "A50SD",
+    "beneficiary": "F5159SD",
+    "conversionSupplement": "FR2089SD",
+    "ltcWorksheet": "FR2118SD",
+    "ltcPackage": "LTCR-SD",
+    "ownerDesignation": "F5248SD"
+  }
+}

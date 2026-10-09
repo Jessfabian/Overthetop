@@ -1,0 +1,6 @@
+{
+  "family": "washington",
+  "extends": "standardICC_HIV",
+  "extraForms": ["F5436WA", "F7011WA"],
+  "rules": ["UW cannot begin without F5436WA", "Cross-outs must be amended"]
+}

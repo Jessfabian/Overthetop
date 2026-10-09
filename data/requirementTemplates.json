@@ -1,0 +1,225 @@
+{
+  "templates": {
+    "newSignedForm": {
+      "label": "New Signed Form",
+      "category": "Forms",
+      "template": "Please submit a newly signed {formName} with updated signatures and dates as, {reason}",
+      "fields": ["formName", "reason"]
+    },
+    "correctedForm": {
+      "label": "Corrected Form - Initials Required",
+      "category": "Forms",
+      "template": "Please resubmit the {formName} reflecting {correctionReason}. Please have the {persom} initial and date by the correction(s).",
+      "fields": ["formName", "correctionReason", "person"]
+    },
+    "correctedsForm": {
+      "label": "Corrected Form - No Initials Required",
+      "category": "Forms",
+      "template": "Please resubmit the {formName} reflecting {correctionReason}.",
+      "fields": ["formName", "correctionReason", "person"]
+    },
+    "unsignedForm": {
+      "label": "Unsigned Form",
+      "category": "Forms",
+      "template": "Please resubmit the {formName} with the required signatures and dates, as the form submitted was unsigned.",
+      "fields": ["formName"]
+    },
+    "unauthorizedDigitalSignature": {
+      "label": "Unauthorized Digital Signature",
+      "category": "Forms",
+      "template": "Please submit the following forms as an unauthorized digital signature was used. Please note we currently only accept MassMutual DocuSign, Approved Agency DocuSign, and hand-signed signatures. \n\nForms requiring correction:\n{forms}",
+      "fields": ["forms"]
+    },
+    "outdatedForm": {
+      "label": "Outdated Form",
+      "category": "Forms",
+      "template": "The {formName} submitted is an outdated version.",
+      "fields": ["formName", "acceptanceDetail"]
+    },
+    "missingForm": {
+      "label": "Missing Form",
+      "category": "Forms",
+      "template": "Please submit the {formName} as it was not included with the application and is required.",
+      "fields": ["formName"]
+    },
+    "blankForm": {
+      "label": "Blank Form Submitted",
+      "category": "Forms",
+      "template": "Please resubmit the {formName}, as the form submitted was blank.",
+      "fields": ["formName"]
+    },
+    "questionMissing": {
+      "label": "Question Not Answered",
+      "category": "Questions",
+      "template": "Please provide a response to question {questionNumber} as it was unanswered.",
+      "fields": ["questionNumber"]
+    },
+    "questionConflicts": {
+      "label": "Conflicting Answers",
+      "category": "Questions",
+      "template": "Please clarify the response to questions {questionOne} and {questionTwo}, as the answers conflict.",
+      "fields": ["questionOne", "questionTwo"]
+    },
+
+    "questionsNotAnswered": {
+      "label": "Multiple Questions Not Answered",
+      "category": "Questions",
+      "template": "Please provide answers for questions {questionNumbers} of the {formName}, as they were not answered.",
+      "fields": ["questionNumbers", "formName"]
+    },
+
+    "questionConflict": {
+      "label": "Conflicting Question Responses",
+      "category": "Questions",
+      "template": "Please confirm {subject}. {formName} indicates {answerOne}; however, {formTwo} indicates {answerTwo}.",
+      "fields": ["subject", "formName", "answerOne", "formTwo", "answerTwo"]
+    },
+    "missingPersonInformation": {
+      "label": "Missing Person Information",
+      "category": "Questions",
+      "template": "Please provide the {personType}'s {informationNeeded}, as it was not provided.",
+      "fields": ["personType", "informationNeeded"]
+    },
+    "missingEntityInformation": {
+      "label": "Missing Entity Information",
+      "category": "Questions",
+      "template": "Please provide the owner entity's {informationNeeded}.",
+      "fields": ["informationNeeded"]
+    },
+
+    "signerTitleRequired": {
+      "label": "Entity Signer Title Required",
+      "category": "Questions",
+      "template": "Please provide the title of the individual signing on behalf of the {entityName}.",
+      "fields": ["entityName"]
+    },
+    "policyDesignMismatch": {
+      "label": "Policy Design Mismatch",
+      "category": "Policy Design",
+      "template": "Please confirm the {designElement}: The Part 1 indicates {applicationValue}; however, the illustration indicates {illustrationValue}.",
+      "fields": ["designElement", "applicationValue", "illustrationValue"]
+    },
+
+    "multiplePolicyDesignIssues": {
+      "label": "Multiple Policy Design Issues",
+      "category": "Policy Design",
+      "template": "Please confirm the intended policy design for the following items:\n{designIssues}",
+      "fields": ["designIssues"]
+    },
+
+    "planTypeMissing": {
+      "label": "Plan Type Not Answered",
+      "category": "Policy Design",
+      "template": "Please confirm the {applicationValue}, as question {questionNumber} of the Part 1 was not answered.",
+      "fields": ["questionNumber"]
+    },
+
+    "riderIllustrationRequired": {
+      "label": "Rider Illustration Required",
+      "category": "Policy Design",
+      "template": "Please submit an unsigned illustration reflecting the {riderName} rider.",
+      "fields": ["riderName"]
+    },
+    "formSignatureLocation": {
+      "label": "Form Signature Location",
+      "category": "General",
+      "template": "Please provide the city and state in which the {formName} was signed by the {signer}.",
+      "fields": ["formName", "signer"]
+    },
+
+    "beneficiaryMismatch": {
+      "label": "Beneficiary Mismatch",
+      "category": "Owner/Bene",
+      "template": "Please confirm the intended beneficiary designation. The Part 1 indicates {partOneValue}; however, the Beneficiary Designation Form indicates {beneficiaryFormValue}.",
+      "fields": ["partOneValue", "beneficiaryFormValue"]
+    },
+
+    "beneficiaryRelationship": {
+      "label": "Beneficiary Relationship",
+      "category": "Owner/Bene",
+      "template": "Please provide the relationship of the beneficiary or beneficiaries to the insured.",
+      "fields": []
+    },
+
+    "beneficiaryPercentageMissing": {
+      "label": "Beneficiary Percentage Missing",
+      "category": "Owner/Bene",
+      "template": "Please confirm the beneficiary percentage, as it was not provided.",
+      "fields": []
+    },
+
+    "beneficiaryPercentageInvalid": {
+      "label": "Beneficiary Percentage Invalid",
+      "category": "Owner/Bene",
+      "template": "Please confirm the intended beneficiary percentage. The form indicates {currentValue}; however, the total beneficiary allocation must equal 100%.",
+      "fields": ["currentValue"]
+    },
+
+    "ownerMismatch": {
+      "label": "Owner Mismatch",
+      "category": "Owner/Bene",
+      "template": "Please confirm the owner of the policy."
+    },
+ "confirmInformation": {
+      "label": "Confirm Information",
+      "category": "Clarification",
+      "template": "Please confirm the {personType}'s {informationType}.",
+      "fields": ["personType", "informationType"]
+    },
+    "template": "Please submit a signed sales illustration matching the Part 1. The illustration submitted is {illustrationIssue}. This is required for New York policies under Regulation 74.",
+     "category": "NY",
+      "fields": ["illustrationIssue"]
+    },
+
+    "nyIllustrationAtApproval": {
+      "label": "New York Illustration Required at Approval",
+      "category": "Forms",
+      "template": "Please submit a signed sales illustration as applied for. This is required before issue.",
+      "fields": []
+    },
+
+    "unsignedIllustration": {
+      "label": "Unsigned Illustration Required",
+      "category": "Forms",
+      "template": "Please submit an unsigned sales illustration {illustrationDetail}.",
+      "fields": ["illustrationDetail"]
+    },
+        "NYnewSignedForm": {
+      "label": "New NY Signed Form",
+      "category": "NYs",
+      "template": "Please resubmit the Part 1 Application with updated signatures and dates as, it must be signed before the illustration. This is required for all NY polcies to comply with Regulation 74.",
+      "fields": []
+    },
+
+ "licensingRequirement": {
+      "label": "Licensing NIGO",
+      "category": "General",
+      "template": "Please note, this case currently has an open licensing requirement. Most requirements are resolved prior to approval; however, if the outstanding requirement is due to an inactive license resulting in incorrect signatures date, new paperwork will need to be signed by both the client and the advisor. A follow-up email will be sent from one of our Field Service Specialists in advisor Operations on the next steps to clear the licensing requirement.",
+      "fields": []
+    },
+     "ageChangeConfirmation": {
+      "label": "Age Change Confirmation",
+      "category": "General",
+      "template": "An age change occurred after the application was submitted. Please advise whether the policy should be issued at current age or with saved age.",
+      "fields": []
+    },
+ "absoluteAssignment1035": {
+      "label": "1035 Exchange Absolute Assignment",
+      "category": "General",
+      "template": "We are missing a fully completed Absolute Assignment form (P4051) for the 1035x. This form will need to be wet signed, and we can obtain this form on delivery.",
+      "fields": []
+    },
+  "IDRequired": {
+      "label": "Copy Required",
+      "category": "General",
+      "template": "Please provide a copy of the insured's visa.",
+      "fields": ["personType", "informationNeeded"]
+    },
+      "generalRequirement": {
+      "label": "General Requirement",
+      "category": "General",
+      "template": "Please provide {requirementDetail}.",
+      "fields": ["requirementDetail"]
+    }
+  }
+

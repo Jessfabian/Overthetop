@@ -1,0 +1,10 @@
+{
+  "family": "minnesota",
+  "extends": "standardICC",
+  "forms": {
+    "disclosureAuthorization": "A61MN"
+  },
+  "notes": [
+    "MNGA no longer required"
+  ]
+}

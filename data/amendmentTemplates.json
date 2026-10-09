@@ -1,0 +1,193 @@
+  {
+    "templates": {
+      "questionShouldInclude": {
+        "label": "Question Should Include",
+        "category": "General",
+        "template": "Question {question} of the {form} should include: {value}.",
+        "fields": ["question", "form", "value"]
+      },
+
+      "questionIs": {
+        "label": "Question Is",
+        "category": "General",
+        "template": "Question {question} of the {form} is {value}.",
+        "fields": ["question", "form", "value"]
+      },
+
+      "questionNotApplicable": {
+        "label": "Question Not Applicable",
+        "category": "General",
+        "template": "Question {question} of the {form} is not applicable.",
+        "fields": ["question", "form"]
+      },
+
+      "questionRangeIs": {
+        "label": "Question Range Is",
+        "category": "General",
+        "template": "Questions {questionRange} of the {form} are {value}.",
+        "fields": ["questionRange", "form", "value"]
+      },
+
+      "questionRangeNotApplicable": {
+        "label": "Question Range Not Applicable",
+        "category": "General",
+        "template": "Questions {questionRange} of the {form} are not applicable.",
+        "fields": ["questionRange", "form"]
+      },
+
+      "sectionShouldInclude": {
+        "label": "Section Should Include",
+        "category": "General",
+        "template": "Section {section} of the {form} should include: {value}.",
+        "fields": ["section", "form", "value"]
+      },
+
+      "ownerNameCorrection": {
+        "label": "Owner Name Correction",
+        "category": "Global Amendments",
+        "template": "The owner's name reflected on all forms in the application should read {value}.",
+        "fields": ["value"]
+      },
+
+      "ownerAddressCorrection": {
+        "label": "Owner Address Correction",
+        "category": "Global Amendments",
+        "template": "The owner's address reflected on all forms in the application should read {value}.",
+        "fields": ["value"]
+      },
+
+      "insuredNameCorrection": {
+        "label": "Insured Name Correction",
+        "category": "Global Amendments",
+        "template": "The insured's name reflected on all forms in the application should read {value}.",
+        "fields": ["value"]
+      },
+
+      "insuredAddressCorrection": {
+        "label": "Insured Address Correction",
+        "category": "Global Amendments",
+        "template": "The insured's address reflected on all forms in the application should read {value}.",
+        "fields": ["value"]
+      },
+
+      "signature": {
+  "label": "Signature",
+  "category": "Signatures",
+  "template": "The signature of {signer} on the {form} is {value}.",
+  "fields": ["signer", "form", "value"]
+},
+
+      "signedDate": {
+        "label": "Signed Date",
+        "category": "Signatures",
+        "template": "The {form} was signed by the {party} on {date}.",
+        "fields": ["form", "party", "date"]
+      },
+
+      "signedLocation": {
+        "label": "Signed Location",
+        "category": "Signatures",
+        "template": "The {form} was signed by the {party} in {location}.",
+        "fields": ["form", "party", "location"]
+      },
+
+      "ownerBeneficiaryMatchPolicy": {
+        "label": "Owner And Beneficiary Match Policy",
+        "category": "Owner/Beneficiary",
+        "template": "Beneficiary and Owner to be the same as specified on the policy specification pages of the policy.",
+        "fields": []
+      },
+
+      "ownerMatchPolicy": {
+        "label": "Owner Match Policy",
+        "category": "Owner/Beneficiary",
+        "template": "Owner to be the same as specified on the policy specification pages of the policy.",
+        "fields": []
+      },
+
+      "beneficiaryMatchPolicy": {
+        "label": "Beneficiary Match Policy",
+        "category": "Owner/Beneficiary",
+        "template": "Beneficiary to be the same as specified on the policy specification pages of the policy.",
+        "fields": []
+      },
+
+      "custodianDesignation": {
+  "label": "Custodian Designation",
+  "category": "Owner/Beneficiary",
+  "template": "Question {question} of the Part 1 is during the minority of the named {childType}, {custodian} shall be custodian for said {childType} under the {state} Uniform Transfers/Gifts to Minors Act.",
+  "fields": [
+    "question",
+    "childType",
+    "custodian",
+    "state"
+  ]
+},
+
+      "deleteAdditionalInsured": {
+        "label": "Delete Additional Insured",
+        "category": "Deletion",
+        "template": "The information listed for Insured {insuredNumber} in the Part 1 application is hereby deleted and not applicable. All references to Insured {oldInsured} in the Part 1 application now pertains to Insured {newInsured}. There is only 1 Insured, {insuredName}.",
+        "fields": ["insuredNumber", "oldInsured", "newInsured", "insuredName"]
+      },
+
+      "deleteSignature": {
+        "label": "Delete Signature",
+        "category": "Deletion",
+        "template": "The signature of {signer} on the {form} is incorrect and hereby deleted.",
+        "fields": ["signer", "form"]
+      },
+
+      "illustrationConforms": {
+        "label": "Illustration Conforms",
+        "category": "Illustration",
+        "template": "Question N1 of Part 1 is, The sales illustration used for the proposed insured conforms to the policy as applied for.",
+        "fields": []
+      },
+
+      "illustrationNoIllustration": {
+        "label": "No Illustration Used",
+        "category": "Illustration",
+        "template": "Question N1 of Part 1 is, No sales illustration was used in the sale of the policy.",
+        "fields": []
+      },
+
+      "illustrationDoesNotConform": {
+        "label": "Illustration Does Not Conform",
+        "category": "Illustration",
+        "template": "Question N1 of Part 1 is, The sales illustration used for the proposed insured does not conform to the policy as applied for.",
+        "fields": []
+      }
+    },
+
+    "approvedPlanNames": [
+      "Whole Life 100",
+      "Whole Life 8 Pay",
+      "Whole Life 65",
+      "Whole Life 10 Pay",
+      "Whole Life 20 Pay",
+      "Whole Life 12 Pay",
+      "Universal Life Guard",
+      "SUL Guard",
+      "Whole Life HECV",
+      "Whole Life 95",
+      "Whole Life Guard 10 Pay",
+      "Whole Life 15 Pay",
+      "Apex VUL",
+      "Survivorship 100",
+      "Survivorship Whole Life 100",
+      "Survivorship 12",
+      "Survivorship Whole Life 12",
+      "CareChoice",
+      "Vantage Term ART",
+      "Vantage Term 10",
+      "Vantage Term 15",
+      "Vantage Term 15 ECP",
+      "Vantage Term 20",
+      "Vantage Term 20 ECP",
+      "Vantage Term 25",
+      "Vantage Term 25 ECP",
+      "Vantage Term 30",
+      "Vantage Term 30 ECP"
+    ]
+  }

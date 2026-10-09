@@ -1,0 +1,368 @@
+{
+  "states": [
+    {
+      "state": "AL",
+      "displayName": "Alabama",
+      "file": "AL.json",
+      "formCount": 15,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "AK",
+      "displayName": "Alaska",
+      "file": "AK.json",
+      "formCount": 15,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "AZ",
+      "displayName": "Arizona",
+      "file": "AZ.json",
+      "formCount": 17,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "AR",
+      "displayName": "Arkansas",
+      "file": "AR.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "CA",
+      "displayName": "California",
+      "file": "CA.json",
+      "formCount": 17,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "CO",
+      "displayName": "Colorado",
+      "file": "CO.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "CT",
+      "displayName": "Connecticut",
+      "file": "CT.json",
+      "formCount": 17,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "DE",
+      "displayName": "Delaware",
+      "file": "DE.json",
+      "formCount": 15,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "DC",
+      "displayName": "District of Columbia",
+      "file": "DC.json",
+      "formCount": 15,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "FL",
+      "displayName": "Florida",
+      "file": "FL.json",
+      "formCount": 15,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "GA",
+      "displayName": "Georgia",
+      "file": "GA.json",
+      "formCount": 17,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "HI",
+      "displayName": "Hawaii",
+      "file": "HI.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "ID",
+      "displayName": "Idaho",
+      "file": "ID.json",
+      "formCount": 14,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "IL",
+      "displayName": "Illinois",
+      "file": "IL.json",
+      "formCount": 17,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "IN",
+      "displayName": "Indiana",
+      "file": "IN.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "IA",
+      "displayName": "Iowa",
+      "file": "IA.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "KS",
+      "displayName": "Kansas",
+      "file": "KS.json",
+      "formCount": 17,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "KY",
+      "displayName": "Kentucky",
+      "file": "KY.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "LA",
+      "displayName": "Louisiana",
+      "file": "LA.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "ME",
+      "displayName": "Maine",
+      "file": "ME.json",
+      "formCount": 17,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "MD",
+      "displayName": "Maryland",
+      "file": "MD.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "MA",
+      "displayName": "Massachusetts",
+      "file": "MA.json",
+      "formCount": 18,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "MI",
+      "displayName": "Michigan",
+      "file": "MI.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "MN",
+      "displayName": "Minnesota",
+      "file": "MN.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "MS",
+      "displayName": "Mississippi",
+      "file": "MS.json",
+      "formCount": 15,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "MO",
+      "displayName": "Missouri",
+      "file": "MO.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "MT",
+      "displayName": "Montana",
+      "file": "MT.json",
+      "formCount": 17,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "NE",
+      "displayName": "Nebraska",
+      "file": "NE.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "NV",
+      "displayName": "Nevada",
+      "file": "NV.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "NH",
+      "displayName": "New Hampshire",
+      "file": "NH.json",
+      "formCount": 17,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "NJ",
+      "displayName": "New Jersey",
+      "file": "NJ.json",
+      "formCount": 17,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "NM",
+      "displayName": "New Mexico",
+      "file": "NM.json",
+      "formCount": 15,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "NY",
+      "displayName": "New York",
+      "file": "NY.json",
+      "formCount": 22,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "NC",
+      "displayName": "North Carolina",
+      "file": "NC.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "ND",
+      "displayName": "North Dakota",
+      "file": "ND.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "OH",
+      "displayName": "Ohio",
+      "file": "OH.json",
+      "formCount": 18,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "OK",
+      "displayName": "Oklahoma",
+      "file": "OK.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "OR",
+      "displayName": "Oregon",
+      "file": "OR.json",
+      "formCount": 18,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "PA",
+      "displayName": "Pennsylvania",
+      "file": "PA.json",
+      "formCount": 17,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "PR",
+      "displayName": "Puerto Rico",
+      "file": "PR.json",
+      "formCount": 14,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "RI",
+      "displayName": "Rhode Island",
+      "file": "RI.json",
+      "formCount": 17,
+      "sourceStatus": "state-chart-baseline"
+    },
+    {
+      "state": "SC",
+      "displayName": "South Carolina",
+      "file": "SC.json",
+      "formCount": 14,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "SD",
+      "displayName": "South Dakota",
+      "file": "SD.json",
+      "formCount": 14,
+      "sourceStatus": "state-chart-baseline"
+    },
+    {
+      "state": "TN",
+      "displayName": "Tennessee",
+      "file": "TN.json",
+      "formCount": 14,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "TX",
+      "displayName": "Texas",
+      "file": "TX.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "UT",
+      "displayName": "Utah",
+      "file": "UT.json",
+      "formCount": 15,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "VT",
+      "displayName": "Vermont",
+      "file": "VT.json",
+      "formCount": 17,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "VA",
+      "displayName": "Virginia",
+      "file": "VA.json",
+      "formCount": 18,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "WA",
+      "displayName": "Washington",
+      "file": "WA.json",
+      "formCount": 16,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "WV",
+      "displayName": "West Virginia",
+      "file": "WV.json",
+      "formCount": 17,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "WI",
+      "displayName": "Wisconsin",
+      "file": "WI.json",
+      "formCount": 18,
+      "sourceStatus": "application-package-and-state-chart"
+    },
+    {
+      "state": "WY",
+      "displayName": "Wyoming",
+      "file": "WY.json",
+      "formCount": 14,
+      "sourceStatus": "application-package-and-state-chart"
+    }
+  ]
+}

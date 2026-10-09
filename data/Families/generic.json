@@ -1,0 +1,11 @@
+{
+  "family": "generic",
+  "forms": {
+    "additionalInsured": "A1001GEN",
+    "part2": "A50GEN",
+    "beneficiary": "F5159GEN",
+    "conversionSupplement": "FR2089GEN",
+    "hipaa": "F8186GEN",
+    "ownerDesignation": "F5248GEN"
+  }
+}

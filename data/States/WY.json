@@ -1,0 +1,206 @@
+{
+  "state": "WY",
+  "displayName": "Wyoming",
+  "reviewProcesses": {
+    "replacementReview": false
+  },
+  "specialNotes": [],
+  "forms": [
+    {
+      "form": "A2000GEN",
+      "description": "Application for Individual Life and Disability Insurance Part 1",
+      "required": true,
+      "reviewRequired": true,
+      "condition": "Required for all cases",
+      "conditions": []
+    },
+    {
+      "form": "F8186GEN",
+      "description": "HIPAA Authorization",
+      "required": true,
+      "reviewRequired": true,
+      "condition": "Required for all cases",
+      "conditions": []
+    },
+    {
+      "form": "FR3120",
+      "description": "Producer Statement",
+      "required": true,
+      "reviewRequired": true,
+      "condition": "Required for all cases",
+      "conditions": []
+    },
+    {
+      "form": "FR2193",
+      "description": "Source of Funds Questionnaire",
+      "required": false,
+      "reviewRequired": true,
+      "condition": "Required for applicable non-Term Life cases submitted under the Department of Labor fiduciary rule",
+      "conditions": [
+        {
+          "field": "sourceOfFundsRequired",
+          "operator": "equals",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "form": "FR2339",
+      "description": "Disclosure Statement for Accelerated Death Benefit for Chronic Illness Rider",
+      "required": false,
+      "reviewRequired": true,
+      "condition": "Required for applicable Apex and UL Guard cases with issue age between 18 and 65",
+      "conditions": [
+        {
+          "field": "chronicIllnessDisclosureRequired",
+          "operator": "equals",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "form": "F5159GEN",
+      "description": "Beneficiary Designation Form",
+      "required": false,
+      "reviewRequired": true,
+      "condition": "Use when Other is selected for beneficiary information",
+      "conditions": [
+        {
+          "field": "beneficiaryOther",
+          "operator": "equals",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "form": "F6445",
+      "description": "Pre-Authorized Check Premium Payment Service",
+      "required": false,
+      "reviewRequired": true,
+      "condition": "Use when billing type is PAC or EFT",
+      "conditions": [
+        {
+          "field": "billingType",
+          "operator": "includes",
+          "value": [
+            "pac",
+            "eft"
+          ]
+        }
+      ]
+    },
+    {
+      "form": "R20GE",
+      "description": "Temporary Life Insurance Receipt",
+      "required": false,
+      "reviewRequired": true,
+      "condition": "Use when premium is submitted with a Life application",
+      "conditions": [
+        {
+          "field": "tlirRequested",
+          "operator": "equals",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "form": "A50GEN",
+      "description": "Application Part 2",
+      "required": false,
+      "reviewRequired": true,
+      "condition": "Use when required for medical underwriting",
+      "conditions": [
+        {
+          "field": "paperPart2Required",
+          "operator": "equals",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "form": "FR1133GEN",
+      "description": "Temporary Individual Disability Insurance Agreement",
+      "required": false,
+      "reviewRequired": true,
+      "condition": "Use when premium is submitted with a Disability application",
+      "conditions": [
+        {
+          "field": "tidiaRequested",
+          "operator": "equals",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "form": "FR2168GEN",
+      "description": "Student Loan Rider Supplement",
+      "required": false,
+      "reviewRequired": true,
+      "condition": "Use when the Student Loan Rider is selected",
+      "conditions": [
+        {
+          "field": "studentLoanRider",
+          "operator": "equals",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "form": "FR2133",
+      "description": "Contract State Situs Form",
+      "required": false,
+      "reviewRequired": true,
+      "condition": "Use when contract state differs from owner resident state and situs criteria are met",
+      "conditions": [
+        {
+          "field": "contractStateSitusRequired",
+          "operator": "equals",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "form": "ICC17A1001",
+      "description": "Additional Insured Supplement",
+      "required": false,
+      "reviewRequired": true,
+      "condition": "Required when additional insured is requested",
+      "conditions": [
+        {
+          "field": "additionalInsured",
+          "operator": "equals",
+          "value": "yes"
+        }
+      ]
+    },
+    {
+      "form": "ICC15F5248",
+      "description": "Owner Designation Form",
+      "required": false,
+      "reviewRequired": true,
+      "condition": "Required when owner is not the insured",
+      "conditions": [
+        {
+          "field": "ownerType",
+          "operator": "notEquals",
+          "value": "insured"
+        }
+      ]
+    }
+  ],
+  "initialReviewChecks": [
+    "Review all required forms",
+    "Review applicable conditional forms",
+    "Review signatures, dates, and complete pages",
+    "Review applicable replacement and ownership documents"
+  ],
+  "campirTriggers": [],
+  "generalNoteFields": [
+    "Purpose Of Insurance",
+    "Risk Class",
+    "Policy Dating",
+    "Illustration",
+    "Polaris Check"
+  ],
+  "sourceStatus": "application-package-and-state-chart"
+}

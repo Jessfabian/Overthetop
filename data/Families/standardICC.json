@@ -1,0 +1,13 @@
+{
+  "family": "standardICC",
+  "forms": {
+    "additionalInsured": "ICC17A1001",
+    "part2": "ICC12A50",
+    "beneficiary": "ICC13F5159",
+    "conversionSupplement": "ICC13FR2089",
+    "hipaa": "ICC18F8186",
+    "ownerDesignation": "ICC15F5248",
+    "ltcWorksheet": "ICC19FR2118",
+    "replacementForm": "F6487"
+  }
+}

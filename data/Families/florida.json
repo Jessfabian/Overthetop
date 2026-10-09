@@ -1,0 +1,14 @@
+{
+  "family": "florida",
+  "forms": {
+    "additionalInsured": "A1001FL",
+    "part2": "A50FL",
+    "beneficiary": "F5159FL",
+    "conversionSupplement": "FR2089FL",
+    "foreignSupplement": "F6290FL",
+    "ltcWorksheet": "FR2118FL",
+    "ltcPackage": "LTCR-FL",
+    "ownerDesignation": "F5248FL",
+    "replacement": "F5436FL"
+  }
+}

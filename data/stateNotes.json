@@ -1,0 +1,23 @@
+{
+  "NY": [
+    "Reg 74 Illustration Review Required",
+    "Reg 187 Initial Review Required",
+    "Signed Matching Illustration Required",
+    "FR2361 Required",
+    "F5500NY Not Acceptable"
+  ],
+
+  "CA": ["Producer License Number Required On Illustration"],
+
+  "WA": ["All Cross-Outs Must Be Amended"],
+
+  "TX": ["If Owner Lives In Texas Contract State Must Be Texas"],
+
+  "AK": ["Risk Located State", "Agent Must Be Licensed In Alaska"],
+
+  "CO": ["Risk Located State", "Agent Must Be Licensed In Colorado"],
+
+  "MO": ["If Owner Lives In Missouri Contract State Must Be Missouri"],
+
+  "PA": ["Review F6262 Requirements"]
+}

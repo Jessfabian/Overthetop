@@ -819,7 +819,7 @@ body::after {
   inset: 0;
   z-index: 9998;
 
-  background: #0057b8;
+  background: rgba(0, 87, 184, 0.92);
 
   opacity: 0;
   visibility: hidden;

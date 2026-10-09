@@ -1,0 +1,11 @@
+{
+  "family": "districtOfColumbia",
+  "forms": {
+    "additionalInsured": "A1001DC",
+    "part2": "A50DC",
+    "beneficiary": "F5159DC",
+    "foreignSupplement": "F6290DC",
+    "ownerDesignation": "F5248DC"
+  },
+  "replacementForm": null
+}

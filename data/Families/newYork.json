@@ -1,0 +1,18 @@
+{
+  "family": "newYork",
+  "forms": {
+    "additionalInsured": "A1001NY",
+    "part2": "A50NY",
+    "beneficiary": "F5159NY",
+    "conversionSupplement": "FR2089NY",
+    "foreignSupplement": "F6290NY",
+    "ownerDesignation": "F5248NY",
+    "part1Authorization": "FR2361",
+    "replacement": "F6484",
+    "replacementNotice": "F6512",
+    "termReplacement": "FR1126NY",
+    "trustCertificate": "F6734NY",
+    "variableLifeSupplement": "F3669",
+    "minimumDeathBenefitDisclosure": "N201-NY-399"
+  }
+}
