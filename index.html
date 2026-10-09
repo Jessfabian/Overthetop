@@ -6,63 +6,48 @@
     <title>Full Initial Review</title>
     <link rel="stylesheet" href="Styling/app.css" />
   </head>
-<body>
-<header class="ir-header">
-    <nav class="ir-navigation">
+  <body>
+    <header class="ir-header">
+      <nav class="ir-navigation">
         <ul>
+          <li>
+            <a href="home.html" title="Home">
+              <img src="images/home.png" />
+              <span>Home</span>
+            </a>
+          </li>
 
-            <li>
-                <a href="home.html" title="Home">
-                    <img src= "images/home.png">
-                    <span>Home</span>
-                </a>
-            </li>
+          <li>
+            <a href="tools.html" title="Tools">
+              <img src="images/Picture8.png" />
+              <span>Tools</span>
+            </a>
+          </li>
 
-            <li>
-                <a href="tools.html" title="Tools">
-                    <img src="images/Picture8.png">
-                    <span>Tools</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="UW.html" title="Underwriting">
-                    <img src="images/UW.png">
-                    <span>Underwriting</span>
-                </a>
-            </li>
-
+          <li>
+            <a href="UW.html" title="Underwriting">
+              <img src="images/UW.png" />
+              <span>Underwriting</span>
+            </a>
+          </li>
         </ul>
-    </nav>
-</header>
+      </nav>
+    </header>
 
     <section id="welcomeHero">
       <div class="welcome-background"></div>
 
       <div class="welcome-content">
-        <span class="welcome-eyebrow">
-          MMSD INITIAL REVIEW
-        </span>
+        <span class="welcome-eyebrow">MMSD INITIAL REVIEW</span>
 
         <h1 class="welcome-title">Hello.</h1>
 
-        <p class="welcome-subtitle">
-          Let's review this application.
-        </p>
+        <p class="welcome-subtitle">Let's review this application.</p>
 
-        <button
-          id="beginReviewButton"
-          class="scroll-indicator"
-          type="button"
-        >
+        <button id="beginReviewButton" class="scroll-indicator" type="button">
           <span>Begin Review</span>
 
-          <span
-            class="scroll-arrow"
-            aria-hidden="true"
-          >
-            ↓
-          </span>
+          <span class="scroll-arrow" aria-hidden="true">↓</span>
         </button>
       </div>
     </section>
@@ -71,13 +56,9 @@
       <section id="qualificationFlow">
         <div id="wizardProgressWrapper">
           <div class="wizard-progress-top">
-            <span id="wizardProgressLabel">
-              Question 1 of 5
-            </span>
+            <span id="wizardProgressLabel">Question 1 of 5</span>
 
-            <span id="wizardProgressPercent">
-              20%
-            </span>
+            <span id="wizardProgressPercent">20%</span>
           </div>
 
           <div id="wizardProgress">
@@ -87,67 +68,40 @@
           <div
             id="wizardAnswerSummary"
             class="wizard-answer-summary"
-            aria-live="polite"
-          >
+            aria-live="polite">
             <span class="wizard-answer-empty">
               Your selections will appear here.
             </span>
           </div>
         </div>
 
-        <section
-          class="question-panel active"
-          id="questionProduct"
-        >
+        <section class="question-panel active" id="questionProduct">
           <div class="question-container">
-            <span class="question-counter">
-              Question 1 of 5
-            </span>
+            <span class="question-counter">Question 1 of 5</span>
 
-            <h2>
-              What type of product is being reviewed?
-            </h2>
+            <h2>What type of product is being reviewed?</h2>
 
             <div class="question-options">
-              <button
-                type="button"
-                class="question-option"
-                data-product="perm"
-              >
+              <button type="button" class="question-option" data-product="perm">
                 Permanent
               </button>
 
-              <button
-                type="button"
-                class="question-option"
-                data-product="term"
-              >
+              <button type="button" class="question-option" data-product="term">
                 Term
               </button>
             </div>
           </div>
         </section>
 
-        <section
-          class="question-panel"
-          id="questionState"
-          hidden
-        >
+        <section class="question-panel" id="questionState" hidden>
           <div class="question-container">
-            <span class="question-counter">
-              Question 2 of 5
-            </span>
+            <span class="question-counter">Question 2 of 5</span>
 
             <h2>What is the Contract State?</h2>
 
             <div class="case-field">
-              <select
-                id="contractState"
-                name="contractState"
-              >
-                <option value="">
-                  Select State
-                </option>
+              <select id="contractState" name="contractState">
+                <option value="">Select State</option>
 
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -206,108 +160,73 @@
           </div>
         </section>
 
-        <section
-          class="question-panel"
-          id="questionBot"
-          hidden
-        >
+        <section class="question-panel" id="questionBot" hidden>
           <div class="question-container">
-            <span class="question-counter">
-              Question 3 of 5
-            </span>
+            <span class="question-counter">Question 3 of 5</span>
 
             <h2>Is this a BOT case?</h2>
 
             <div class="question-options">
-              <button
-                type="button"
-                class="question-option"
-                data-bot="yes"
-              >
+              <button type="button" class="question-option" data-bot="yes">
                 Yes
               </button>
 
-              <button
-                type="button"
-                class="question-option"
-                data-bot="no"
-              >
+              <button type="button" class="question-option" data-bot="no">
                 No
               </button>
             </div>
           </div>
         </section>
 
-        <section
-          class="question-panel"
-          id="questionReplacement"
-          hidden
-        >
+        <section class="question-panel" id="questionReplacement" hidden>
           <div class="question-container">
-            <span class="question-counter">
-              Question 4 of 5
-            </span>
+            <span class="question-counter">Question 4 of 5</span>
 
-            <h2>
-              Does this case involve a replacement?
-            </h2>
+            <h2>Does this case involve a replacement?</h2>
 
             <div class="question-options">
               <button
                 type="button"
                 class="question-option"
-                data-replacement="none"
-              >
+                data-replacement="none">
                 No Replacement
               </button>
 
               <button
                 type="button"
                 class="question-option"
-                data-replacement="internal"
-              >
+                data-replacement="internal">
                 Internal Replacement
               </button>
 
               <button
                 type="button"
                 class="question-option"
-                data-replacement="external"
-              >
+                data-replacement="external">
                 External Replacement
               </button>
             </div>
           </div>
         </section>
 
-        <section
-          class="question-panel"
-          id="questionInsured"
-          hidden
-        >
+        <section class="question-panel" id="questionInsured" hidden>
           <div class="question-container">
-            <span class="question-counter">
-              Question 5 of 5
-            </span>
+            <span class="question-counter">Question 5 of 5</span>
 
-            <h2>
-              How many insureds are on the application?
-            </h2>
+            <h2>How many insureds are on the application?</h2>
 
             <div class="question-options">
               <button
                 type="button"
                 class="question-option"
-                data-insured="single"
-              >
+                data-insured="single">
                 Single
               </button>
 
               <button
                 type="button"
                 class="question-option"
-                data-insured="joint"
-              >
+                data-insured="joint">
                 Joint
               </button>
             </div>
@@ -316,78 +235,42 @@
       </section>
 
       <div id="caseProfileData" hidden>
-        <input
-          type="hidden"
-          id="selectedProduct"
-        />
+        <input type="hidden" id="selectedProduct" />
 
-        <input
-          type="hidden"
-          id="selectedState"
-        />
+        <input type="hidden" id="selectedState" />
 
-        <input
-          type="hidden"
-          id="selectedBOT"
-        />
+        <input type="hidden" id="selectedBOT" />
 
-        <input
-          type="hidden"
-          id="selectedReplacement"
-        />
+        <input type="hidden" id="selectedReplacement" />
 
-        <input
-          type="hidden"
-          id="selectedInsuredType"
-        />
+        <input type="hidden" id="selectedInsuredType" />
       </div>
 
-      <section
-        id="qualificationSummary"
-        class="summary-card"
-        hidden
-      >
+      <section id="qualificationSummary" class="summary-card" hidden>
         <h3>Case Profile</h3>
 
         <div
           id="qualificationSummaryContent"
-          class="profile-summary-grid"
-        ></div>
+          class="profile-summary-grid"></div>
       </section>
 
-      <section
-        id="qualificationComplete"
-        hidden
-      >
+      <section id="qualificationComplete" hidden>
         <h2>Perfect.</h2>
 
         <p>Your review workspace is ready.</p>
 
-        <button
-          id="launchWorkbench"
-          type="button"
-        >
-          Begin Review
-        </button>
+        <button id="launchWorkbench" type="button">Begin Review</button>
       </section>
 
-      <section
-        id="reviewWorkbench"
-        class="review-workspace"
-        hidden
-      >
+      <section id="reviewWorkbench" class="review-workspace" hidden>
         <div class="workbench-shell">
           <header class="workspace-header">
             <div class="workspace-title">
-              <span class="workspace-eyebrow">
-                CASE MANAGER WORKBENCH
-              </span>
+              <span class="workspace-eyebrow">CASE MANAGER WORKBENCH</span>
 
               <h1>Initial Review Workspace</h1>
 
-              <span id="progressText">
-                0 of 0 steps complete
-              </span>
+              <span id="progressText">0 of 0 steps complete</span>
             </div>
 
             <div class="workspace-progress">
@@ -402,94 +285,70 @@
               <button
                 type="button"
                 class="step-btn active"
-                data-target="dashboardSection"
-              >
+                data-target="dashboardSection">
                 Dashboard
               </button>
 
               <button
                 type="button"
                 class="step-btn"
-                data-target="caseSetupSection"
-              >
+                data-target="caseSetupSection">
                 Case Setup
               </button>
 
               <button
                 type="button"
                 class="step-btn"
-                data-target="stateRequirements"
-              >
+                data-target="stateRequirements">
                 State Forms
               </button>
 
-              <button
-                type="button"
-                class="step-btn"
-                data-target="trexReview"
-              >
+              <button type="button" class="step-btn" data-target="trexReview">
                 TREX Review
               </button>
 
               <button
                 type="button"
                 class="step-btn"
-                data-target="applicationReview"
-              >
+                data-target="applicationReview">
                 Application Review
               </button>
 
               <button
                 type="button"
                 class="step-btn"
-                data-target="requirementsSection"
-              >
+                data-target="requirementsSection">
                 Requirements
               </button>
 
               <button
                 type="button"
                 class="step-btn"
-                data-target="amendmentsSection"
-              >
+                data-target="amendmentsSection">
                 Amendments
               </button>
 
-              <button
-                type="button"
-                class="step-btn"
-                data-target="bingoSection"
-              >
+              <button type="button" class="step-btn" data-target="bingoSection">
                 BINGO
               </button>
 
               <button
                 type="button"
                 class="step-btn"
-                data-target="reviewOutputPackage"
-              >
+                data-target="reviewOutputPackage">
                 Output Package
               </button>
 
-              <button
-                type="button"
-                class="step-btn"
-                data-target="emailSection"
-              >
+              <button type="button" class="step-btn" data-target="emailSection">
                 Email
               </button>
             </aside>
 
             <div class="workspace-main">
-              <section
-                id="dashboardSection"
-                class="workspace-card"
-              >
+              <section id="dashboardSection" class="workspace-card">
                 <div class="workspace-section-heading">
                   <div>
-                    <span class="workspace-eyebrow">
-                      REVIEW STATUS
-                    </span>
+                    <span class="workspace-eyebrow">REVIEW STATUS</span>
 
                     <h2>Case Dashboard</h2>
                   </div>
@@ -497,117 +356,75 @@
 
                 <div class="dashboard-grid">
                   <div class="stat-card">
-                    <span class="stat-label">
-                      State
-                    </span>
+                    <span class="stat-label">State</span>
 
-                    <strong id="dashboardState">
-                      --
-                    </strong>
+                    <strong id="dashboardState">--</strong>
                   </div>
 
                   <div class="stat-card">
-                    <span class="stat-label">
-                      Reviewed
-                    </span>
+                    <span class="stat-label">Reviewed</span>
 
-                    <strong id="reviewedCountCard">
-                      0
-                    </strong>
+                    <strong id="reviewedCountCard">0</strong>
                   </div>
 
                   <div class="stat-card">
-                    <span class="stat-label">
-                      Remaining
-                    </span>
+                    <span class="stat-label">Remaining</span>
 
-                    <strong id="remainingCountCard">
-                      0
-                    </strong>
+                    <strong id="remainingCountCard">0</strong>
                   </div>
 
                   <div class="stat-card">
-                    <span class="stat-label">
-                      NIGOs
-                    </span>
+                    <span class="stat-label">NIGOs</span>
 
-                    <strong id="dashboardIssueCount">
-                      0
-                    </strong>
+                    <strong id="dashboardIssueCount">0</strong>
                   </div>
                 </div>
               </section>
 
               <section
                 id="caseSetupSection"
-                class="workspace-card case-setup-card"
-              >
+                class="workspace-card case-setup-card">
                 <div class="workspace-section-heading">
                   <div>
-                    <span class="workspace-eyebrow">
-                      CASE PROFILE
-                    </span>
+                    <span class="workspace-eyebrow">CASE PROFILE</span>
 
                     <h2>Case Setup</h2>
                   </div>
 
-                  <span
-                    id="caseProfileStatus"
-                    class="case-profile-status"
-                  >
+                  <span id="caseProfileStatus" class="case-profile-status">
                     Ready
                   </span>
                 </div>
 
                 <div class="case-profile-grid">
                   <div class="case-profile-field">
-                    <span class="case-profile-label">
-                      Product
-                    </span>
+                    <span class="case-profile-label">Product</span>
 
-                    <strong id="profileProduct">
-                      Not selected
-                    </strong>
+                    <strong id="profileProduct">Not selected</strong>
                   </div>
 
                   <div class="case-profile-field">
-                    <span class="case-profile-label">
-                      Contract State
-                    </span>
+                    <span class="case-profile-label">Contract State</span>
 
-                    <strong id="profileState">
-                      Not selected
-                    </strong>
+                    <strong id="profileState">Not selected</strong>
                   </div>
 
                   <div class="case-profile-field">
-                    <span class="case-profile-label">
-                      BOT Case
-                    </span>
+                    <span class="case-profile-label">BOT Case</span>
 
-                    <strong id="profileBOT">
-                      Not selected
-                    </strong>
+                    <strong id="profileBOT">Not selected</strong>
                   </div>
 
                   <div class="case-profile-field">
-                    <span class="case-profile-label">
-                      Replacement
-                    </span>
+                    <span class="case-profile-label">Replacement</span>
 
-                    <strong id="profileReplacement">
-                      Not selected
-                    </strong>
+                    <strong id="profileReplacement">Not selected</strong>
                   </div>
 
                   <div class="case-profile-field">
-                    <span class="case-profile-label">
-                      Insured Type
-                    </span>
+                    <span class="case-profile-label">Insured Type</span>
 
-                    <strong id="profileInsured">
-                      Not selected
-                    </strong>
+                    <strong id="profileInsured">Not selected</strong>
                   </div>
                 </div>
               </section>
@@ -616,12 +433,7 @@
                 <div class="workspace-section-heading">
                   <h2>Review Timer</h2>
 
-                  <span
-                    id="timerStatus"
-                    class="timer-status"
-                  >
-                    Ready
-                  </span>
+                  <span id="timerStatus" class="timer-status">Ready</span>
                 </div>
 
                 <div class="timer-display">
@@ -637,125 +449,75 @@
                 </p>
 
                 <div class="buttons">
-                  <button
-                    id="startReviewTimer"
-                    type="button"
-                  >
+                  <button id="startReviewTimer" type="button">
                     Start Review
                   </button>
 
-                  <button
-                    id="pauseReviewTimer"
-                    type="button"
-                    disabled
-                  >
+                  <button id="pauseReviewTimer" type="button" disabled>
                     Pause
                   </button>
 
-                  <button
-                    id="completeReviewTimer"
-                    type="button"
-                    disabled
-                  >
+                  <button id="completeReviewTimer" type="button" disabled>
                     Complete
                   </button>
                 </div>
 
-                <div
-                  id="timerSessionDetails"
-                  hidden
-                >
+                <div id="timerSessionDetails" hidden>
                   <p>
                     Started:
-                    <span id="timerStartedAt">
-                      --
-                    </span>
+                    <span id="timerStartedAt">--</span>
                   </p>
 
                   <p>
                     Paused:
-                    <span id="timerPausedDuration">
-                      00:00
-                    </span>
+                    <span id="timerPausedDuration">00:00</span>
                   </p>
                 </div>
               </section>
 
-              <section
-                id="openNigoPanel"
-                class="workspace-card"
-              >
+              <section id="openNigoPanel" class="workspace-card">
                 <div class="workspace-section-heading">
                   <h2>Open NIGOs</h2>
 
-                  <span id="openNigoCount">
-                    0
-                  </span>
+                  <span id="openNigoCount">0</span>
                 </div>
 
                 <div id="openNigoList">
-                  <div class="nigo-empty">
-                    No documented NIGOs
-                  </div>
+                  <div class="nigo-empty">No documented NIGOs</div>
                 </div>
               </section>
 
-              <details
-                id="stateRequirements"
-                class="workspace-card"
-              >
+              <details id="stateRequirements" class="workspace-card">
                 <summary>
-                  <span id="stateRequirementSummary">
-                    State Requirements
-                  </span>
+                  <span id="stateRequirementSummary">State Requirements</span>
                 </summary>
 
-                <div
-                  id="stateImportantNotices"
-                  hidden
-                ></div>
+                <div id="stateImportantNotices" hidden></div>
 
-                <div
-                  id="stateNotes"
-                  hidden
-                ></div>
+                <div id="stateNotes" hidden></div>
 
                 <div class="state-requirement-meta">
                   <span>Applicable Forms</span>
 
-                  <strong id="applicableFormCount">
-                    0
-                  </strong>
+                  <strong id="applicableFormCount">0</strong>
                 </div>
 
                 <div id="requiredForms"></div>
 
-                <div
-                  id="reviewCompletionBanner"
-                  hidden
-                >
+                <div id="reviewCompletionBanner" hidden>
                   State form review complete.
                 </div>
               </details>
 
-              <section
-                id="trexReview"
-                class="workspace-card"
-              >
+              <section id="trexReview" class="workspace-card">
                 <h2>TREX Review</h2>
 
                 <div id="reviewChecklist"></div>
               </section>
 
-              <section
-                id="applicationReview"
-                class="workspace-card"
-              ></section>
+              <section id="applicationReview" class="workspace-card"></section>
 
-              <section
-                id="requirementsSection"
-                class="workspace-card"
-              >
+              <section id="requirementsSection" class="workspace-card">
                 <h2>Requirements</h2>
 
                 <label for="globalRequirementTemplate">
@@ -763,9 +525,7 @@
                 </label>
 
                 <select id="globalRequirementTemplate">
-                  <option value="">
-                    Select Requirement
-                  </option>
+                  <option value="">Select Requirement</option>
                 </select>
 
                 <div id="globalRequirementFields"></div>
@@ -773,24 +533,16 @@
                 <textarea
                   id="globalGeneratedRequirement"
                   rows="8"
-                  readonly
-                ></textarea>
+                  readonly></textarea>
               </section>
 
-              <section
-                id="amendmentsSection"
-                class="workspace-card"
-              >
+              <section id="amendmentsSection" class="workspace-card">
                 <h2>Amendments</h2>
 
-                <label for="globalAmendmentForm">
-                  Form
-                </label>
+                <label for="globalAmendmentForm">Form</label>
 
                 <select id="globalAmendmentForm">
-                  <option value="">
-                    Select Form
-                  </option>
+                  <option value="">Select Form</option>
                 </select>
 
                 <div id="globalAmendmentFields"></div>
@@ -798,38 +550,25 @@
                 <textarea
                   id="globalGeneratedAmendment"
                   rows="8"
-                  readonly
-                ></textarea>
+                  readonly></textarea>
               </section>
 
-              <section
-                id="bingoSection"
-                class="workspace-card"
-              >
+              <section id="bingoSection" class="workspace-card">
                 <h2>BINGO Review</h2>
 
-                <p>
-                  BINGO review content will be added here.
-                </p>
+                <p>BINGO review content will be added here.</p>
               </section>
 
-              <section
-                id="reviewNotesSection"
-                class="workspace-card"
-              >
+              <section id="reviewNotesSection" class="workspace-card">
                 <h2>Initial Review Notes</h2>
 
                 <textarea
                   id="initialReviewNotes"
                   rows="8"
-                  placeholder="Initial review notes will appear here."
-                ></textarea>
+                  placeholder="Initial review notes will appear here."></textarea>
 
                 <div class="buttons">
-                  <button
-                    id="copyInitialReviewNotes"
-                    type="button"
-                  >
+                  <button id="copyInitialReviewNotes" type="button">
                     Copy Notes
                   </button>
                 </div>
@@ -837,80 +576,52 @@
                 <div
                   id="initialReviewNotesStatus"
                   class="copy-status"
-                  aria-live="polite"
-                ></div>
+                  aria-live="polite"></div>
               </section>
 
               <div id="saveAgeFields" hidden></div>
 
               <div id="specificDateFields" hidden></div>
 
-              <details
-                id="reviewOutputPackage"
-                class="workspace-card"
-              >
-                <summary>
-                  Review Output Package
-                </summary>
+              <details id="reviewOutputPackage" class="workspace-card">
+                <summary>Review Output Package</summary>
 
                 <div class="output-package-summary">
-                  <span id="reviewOutputStatus">
-                    No Outputs
-                  </span>
+                  <span id="reviewOutputStatus">No Outputs</span>
 
-                  <strong id="compiledTotalCount">
-                    0
-                  </strong>
+                  <strong id="compiledTotalCount">0</strong>
                 </div>
 
                 <section class="compiled-output-section">
                   <div class="compiled-output-heading">
-                    <span id="compiledAmendmentBadge">
-                      0 amendments
-                    </span>
+                    <span id="compiledAmendmentBadge">0 amendments</span>
 
-                    <span id="compiledAmendmentCount">
-                      0
-                    </span>
+                    <span id="compiledAmendmentCount">0</span>
                   </div>
 
                   <textarea
                     id="compiledAmendments"
                     rows="10"
-                    readonly
-                  ></textarea>
+                    readonly></textarea>
 
-                  <button
-                    id="copyAllAmendments"
-                    type="button"
-                    disabled
-                  >
+                  <button id="copyAllAmendments" type="button" disabled>
                     Copy All Amendments
                   </button>
                 </section>
 
                 <section class="compiled-output-section">
                   <div class="compiled-output-heading">
-                    <span id="compiledRequirementBadge">
-                      0 requirements
-                    </span>
+                    <span id="compiledRequirementBadge">0 requirements</span>
 
-                    <span id="compiledRequirementCount">
-                      0
-                    </span>
+                    <span id="compiledRequirementCount">0</span>
                   </div>
 
                   <textarea
                     id="compiledRequirements"
                     rows="10"
-                    readonly
-                  ></textarea>
+                    readonly></textarea>
 
-                  <button
-                    id="copyAllRequirements"
-                    type="button"
-                    disabled
-                  >
+                  <button id="copyAllRequirements" type="button" disabled>
                     Copy All Requirements
                   </button>
                 </section>
@@ -918,35 +629,20 @@
                 <div
                   id="reviewOutputCopyStatus"
                   class="copy-status"
-                  aria-live="polite"
-                ></div>
+                  aria-live="polite"></div>
               </details>
 
-              <section
-                id="emailSection"
-                class="workspace-card"
-              >
+              <section id="emailSection" class="workspace-card">
                 <h2>Initial Review Email</h2>
 
-                <button
-                  id="generateEmail"
-                  type="button"
-                >
-                  Generate Email
-                </button>
+                <button id="generateEmail" type="button">Generate Email</button>
 
                 <div
                   id="emailOutput"
                   class="email-preview"
-                  contenteditable="true"
-                ></div>
+                  contenteditable="true"></div>
 
-                <button
-                  id="copyEmail"
-                  type="button"
-                >
-                  Copy Email
-                </button>
+                <button id="copyEmail" type="button">Copy Email</button>
               </section>
             </div>
           </div>
@@ -954,11 +650,23 @@
       </section>
     </main>
 
-    <footer>
-      Jessie Fabian ©2026
-    </footer>
+    <footer>Jessie Fabian ©2026</footer>
 
-<script src="scripts/scroll.js"></script>
+    <
+    <!-- Onboarding -->
+    <script src="scripts/scroll.js"></script>
     <script src="scripts/onboarding.js"></script>
+    <!-- Data and template foundation -->
+    <script src="scripts/library.js"></script>
+    <!-- Workbench engines -->
+    <script src="scripts/amendment-engine.js"></script>
+    <script src="scripts/stateLoader.js"></script>
+    <script src="scripts/illustration-validation.js"></script>
+    <!-- Core review workflow -->
+    <script src="scripts/initial-review.js"></script>
+    <!-- Output and supporting tools -->
+    <script src="scripts/review-output-package.js"></script>
+    <script src="review-timer.js"></script>
+    <script src="review-assistant.js"></script>
   </body>
 </html>
