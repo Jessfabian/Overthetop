@@ -29,42 +29,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const stateDropdown = document.getElementById("contractState");
 
-  /*
-   * INITIAL PAGE STATE
-   * Ensures only Question 1 is visible on load.
-   */
+  const qualificationFlow = document.getElementById("qualificationFlow");
 
-  if (questionState) {
-    questionState.hidden = true;
+  hideElement(questionState);
+  hideElement(questionBot);
+  hideElement(questionReplacement);
+  hideElement(questionInsured);
+  hideElement(qualificationComplete);
+  hideElement(qualificationSummary);
+  hideElement(reviewWorkbench);
+
+  function hideElement(element) {
+    if (element) {
+      element.hidden = true;
+    }
   }
-
-  if (questionBot) {
-    questionBot.hidden = true;
-  }
-
-  if (questionReplacement) {
-    questionReplacement.hidden = true;
-  }
-
-  if (questionInsured) {
-    questionInsured.hidden = true;
-  }
-
-  if (qualificationComplete) {
-    qualificationComplete.hidden = true;
-  }
-
-  if (qualificationSummary) {
-    qualificationSummary.hidden = true;
-  }
-
-  if (reviewWorkbench) {
-    reviewWorkbench.hidden = true;
-  }
-
-  /*
-   * HELPER: safely store a hidden-field value
-   */
 
   function setHiddenValue(elementId, value) {
     const field = document.getElementById(elementId);
@@ -74,13 +53,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  /*
-   * HELPER: visually mark an option as selected
-   */
+  function setText(elementId, value) {
+    const element = document.getElementById(elementId);
+
+    if (element) {
+      element.textContent = value;
+    }
+  }
 
   function selectOption(button, selector) {
-    document.querySelectorAll(selector).forEach((option) => {
+    document.querySelectorAll(selector).forEach(function (option) {
       option.classList.remove("selected");
+
       option.setAttribute("aria-pressed", "false");
     });
 
@@ -88,10 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     button.setAttribute("aria-pressed", "true");
   }
-
-  /*
-   * UPDATE STICKY PROGRESS PILL
-   */
 
   function updateProgress(step) {
     const fill = document.getElementById("wizardProgressFill");
@@ -102,29 +82,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const normalizedStep = Math.min(5, Math.max(1, step));
 
-    const percent = (normalizedStep / 5) * 100;
+    const percentages = {
+      1: 20,
+      2: 40,
+      3: 60,
+      4: 80,
+      5: 100,
+    };
+
+    const percent = percentages[normalizedStep];
 
     if (fill) {
-      fill.style.width = `${percent}%`;
+      fill.style.width = percent + "%";
     }
 
     if (label) {
-      label.textContent = `Question ${normalizedStep} of 5`;
+      label.textContent = "Question " + normalizedStep + " of 5";
     }
 
     if (percentLabel) {
-      percentLabel.textContent = `${Math.round(percent)}%`;
+      percentLabel.textContent = percent + "%";
     }
   }
-
-  /*
-   * UPDATE ANSWER CHIPS
-   */
 
   function renderProgressAnswers() {
     const summary = document.getElementById("wizardAnswerSummary");
 
-    if (!summary) return;
+    if (!summary) {
+      return;
+    }
 
     const answers = [];
 
@@ -137,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (caseProfile.bot) {
-      answers.push(`BOT: ${caseProfile.bot === "yes" ? "Yes" : "No"}`);
+      answers.push("BOT: " + (caseProfile.bot === "yes" ? "Yes" : "No"));
     }
 
     if (caseProfile.replacement) {
@@ -154,28 +140,28 @@ document.addEventListener("DOMContentLoaded", function () {
       answers.push(caseProfile.insured === "single" ? "Single" : "Joint");
     }
 
-    summary.innerHTML = "";
+    summary.textContent = "";
 
     if (answers.length === 0) {
-      summary.innerHTML = `
-            <span class="wizard-answer-empty">
-                Your selections will appear here.
-            </span>
-            `;
+      const emptyMessage = document.createElement("span");
+
+      emptyMessage.className = "wizard-answer-empty";
+
+      emptyMessage.textContent = "Your selections will appear here.";
+
+      summary.appendChild(emptyMessage);
 
       return;
     }
 
-    summary.innerHTML = `
-        <span class="wizard-answer-inline">
-            ${answers.join(" • ")}
-        </span>
-        `;
-  }
+    const answerText = document.createElement("span");
 
-  /*
-   * GENTLY REVEAL AND SCROLL TO NEXT SECTION
-   */
+    answerText.className = "wizard-answer-inline";
+
+    answerText.textContent = answers.join(" • ");
+
+    summary.appendChild(answerText);
+  }
 
   function revealSection(section) {
     if (!section) {
@@ -184,62 +170,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     section.hidden = false;
 
-    requestAnimationFrame(() => {
+    requestAnimationFrame(function () {
       section.classList.add("in-view");
     });
 
-    window.setTimeout(() => {
-      gentleScrollTo(section, 1100);
+    window.setTimeout(function () {
+      scrollToElement(section, 95);
     }, 150);
   }
 
-  /*
-   * CUSTOM GENTLE SCROLL
-   */
-
-  function gentleScrollTo(element, duration) {
-    const startPosition = window.scrollY;
-
-    const targetPosition = element.getBoundingClientRect().top + window.scrollY;
-
-    const stickyOffset = 95;
-
-    const distance = targetPosition - stickyOffset - startPosition;
-
-    let startTime = null;
-
-    function easeInOutCubic(progress) {
-      if (progress < 0.5) {
-        return 4 * progress * progress * progress;
-      }
-
-      return 1 - Math.pow(-2 * progress + 2, 3) / 2;
+  function scrollToElement(element, offset) {
+    if (!element) {
+      return;
     }
 
-    function animateScroll(timestamp) {
-      if (startTime === null) {
-        startTime = timestamp;
-      }
+    const destination =
+      element.getBoundingClientRect().top + window.scrollY - offset;
 
-      const elapsed = timestamp - startTime;
-
-      const progress = Math.min(elapsed / duration, 1);
-
-      const easedProgress = easeInOutCubic(progress);
-
-      window.scrollTo(0, startPosition + distance * easedProgress);
-
-      if (progress < 1) {
-        window.requestAnimationFrame(animateScroll);
-      }
-    }
-
-    window.requestAnimationFrame(animateScroll);
+    window.scrollTo({
+      top: destination,
+      behavior: "smooth",
+    });
   }
 
-  /*
-   * BUILD FINAL PROFILE SUMMARY
-   */
+  function getSelectedStateName() {
+    if (!stateDropdown || stateDropdown.selectedIndex < 0) {
+      return caseProfile.state || "";
+    }
+
+    return stateDropdown.options[
+      stateDropdown.selectedIndex
+    ].textContent.trim();
+  }
 
   function buildSummary() {
     const summaryContainer = document.getElementById(
@@ -250,14 +212,15 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const selectedStateName =
-      stateDropdown?.options[stateDropdown.selectedIndex]?.textContent.trim() ||
-      caseProfile.state ||
-      "Not selected";
+    const productLabels = {
+      perm: "Permanent",
+      term: "Term",
+    };
 
-    const productLabel = caseProfile.product === "perm" ? "Permanent" : "Term";
-
-    const botLabel = caseProfile.bot === "yes" ? "Yes" : "No";
+    const botLabels = {
+      yes: "Yes",
+      no: "No",
+    };
 
     const replacementLabels = {
       none: "No Replacement",
@@ -265,50 +228,121 @@ document.addEventListener("DOMContentLoaded", function () {
       external: "External Replacement",
     };
 
-    const insuredLabel = caseProfile.insured === "single" ? "Single" : "Joint";
+    const insuredLabels = {
+      single: "Single",
+      joint: "Joint",
+    };
 
-    summaryContainer.innerHTML = `
-      <div class="profile-summary-item">
-        <strong>Product</strong>
-        <span>${productLabel}</span>
-      </div>
+    const items = [
+      {
+        label: "Product",
+        value: productLabels[caseProfile.product] || "Not selected",
+      },
+      {
+        label: "State",
+        value: getSelectedStateName() || "Not selected",
+      },
+      {
+        label: "BOT",
+        value: botLabels[caseProfile.bot] || "Not selected",
+      },
+      {
+        label: "Replacement",
+        value: replacementLabels[caseProfile.replacement] || "Not selected",
+      },
+      {
+        label: "Insured",
+        value: insuredLabels[caseProfile.insured] || "Not selected",
+      },
+    ];
 
-      <div class="profile-summary-item">
-        <strong>State</strong>
-        <span>${selectedStateName}</span>
-      </div>
+    summaryContainer.textContent = "";
 
-      <div class="profile-summary-item">
-        <strong>BOT</strong>
-        <span>${botLabel}</span>
-      </div>
+    items.forEach(function (item) {
+      const container = document.createElement("div");
 
-      <div class="profile-summary-item">
-        <strong>Replacement</strong>
-        <span>
-          ${replacementLabels[caseProfile.replacement] || "Not selected"}
-        </span>
-      </div>
+      const label = document.createElement("strong");
 
-      <div class="profile-summary-item">
-        <strong>Insured</strong>
-        <span>${insuredLabel}</span>
-      </div>
-    `;
+      const value = document.createElement("span");
 
-    if (qualificationSummary) {
-      qualificationSummary.hidden = false;
-    }
+      container.className = "profile-summary-item";
+
+      label.textContent = item.label;
+      value.textContent = item.value;
+
+      container.appendChild(label);
+      container.appendChild(value);
+
+      summaryContainer.appendChild(container);
+    });
+
+    qualificationSummary.hidden = false;
   }
 
-  /*
-   * QUESTION 1: PRODUCT
-   */
+  function populateWorkbenchProfile() {
+    const productLabels = {
+      perm: "Permanent",
+      term: "Term",
+    };
 
-  document.querySelectorAll("[data-product]").forEach((button) => {
+    const botLabels = {
+      yes: "Yes",
+      no: "No",
+    };
+
+    const replacementLabels = {
+      none: "No Replacement",
+      internal: "Internal Replacement",
+      external: "External Replacement",
+    };
+
+    const insuredLabels = {
+      single: "Single",
+      joint: "Joint",
+    };
+
+    setText(
+      "profileProduct",
+      productLabels[caseProfile.product] || "Not selected",
+    );
+
+    setText("profileState", getSelectedStateName() || "Not selected");
+
+    setText("profileBOT", botLabels[caseProfile.bot] || "Not selected");
+
+    setText(
+      "profileReplacement",
+      replacementLabels[caseProfile.replacement] || "Not selected",
+    );
+
+    setText(
+      "profileInsured",
+      insuredLabels[caseProfile.insured] || "Not selected",
+    );
+
+    setText("dashboardState", caseProfile.state || "--");
+
+    setText("caseProfileStatus", "Ready");
+
+    window.initialReviewCaseProfile = {
+      product: caseProfile.product,
+      state: caseProfile.state,
+      bot: caseProfile.bot,
+      replacement: caseProfile.replacement,
+      insured: caseProfile.insured,
+    };
+
+    document.dispatchEvent(
+      new CustomEvent("initialReviewProfileReady", {
+        detail: window.initialReviewCaseProfile,
+      }),
+    );
+  }
+
+  document.querySelectorAll("[data-product]").forEach(function (button) {
     button.setAttribute("aria-pressed", "false");
 
-    button.addEventListener("click", () => {
+    button.addEventListener("click", function () {
       caseProfile.product = button.dataset.product;
 
       setHiddenValue("selectedProduct", caseProfile.product);
@@ -321,12 +355,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /*
-   * QUESTION 2: STATE
-   */
-
   if (stateDropdown) {
-    stateDropdown.addEventListener("change", () => {
+    stateDropdown.addEventListener("change", function () {
       if (!stateDropdown.value) {
         return;
       }
@@ -341,14 +371,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /*
-   * QUESTION 3: BOT
-   */
-
-  document.querySelectorAll("[data-bot]").forEach((button) => {
+  document.querySelectorAll("[data-bot]").forEach(function (button) {
     button.setAttribute("aria-pressed", "false");
 
-    button.addEventListener("click", () => {
+    button.addEventListener("click", function () {
       caseProfile.bot = button.dataset.bot;
 
       setHiddenValue("selectedBOT", caseProfile.bot);
@@ -362,14 +388,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /*
-   * QUESTION 4: REPLACEMENT
-   */
-
-  document.querySelectorAll("[data-replacement]").forEach((button) => {
+  document.querySelectorAll("[data-replacement]").forEach(function (button) {
     button.setAttribute("aria-pressed", "false");
 
-    button.addEventListener("click", () => {
+    button.addEventListener("click", function () {
       caseProfile.replacement = button.dataset.replacement;
 
       setHiddenValue("selectedReplacement", caseProfile.replacement);
@@ -378,18 +400,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
       renderProgressAnswers();
       updateProgress(5);
+
       revealSection(questionInsured);
     });
   });
 
-  /*
-   * QUESTION 5: INSURED
-   */
-
-  document.querySelectorAll("[data-insured]").forEach((button) => {
+  document.querySelectorAll("[data-insured]").forEach(function (button) {
     button.setAttribute("aria-pressed", "false");
 
-    button.addEventListener("click", () => {
+    button.addEventListener("click", function () {
       caseProfile.insured = button.dataset.insured;
 
       setHiddenValue("selectedInsuredType", caseProfile.insured);
@@ -403,110 +422,78 @@ document.addEventListener("DOMContentLoaded", function () {
       if (progressWrapper) {
         progressWrapper.classList.add("fade-out");
 
-        setTimeout(() => {
+        window.setTimeout(function () {
           progressWrapper.style.display = "none";
         }, 400);
       }
 
-     buildSummary();
+      buildSummary();
 
-     if (qualificationComplete) {
-       qualificationComplete.hidden = false;
+      if (qualificationComplete) {
+        qualificationComplete.hidden = false;
 
-       requestAnimationFrame(function () {
-         qualificationComplete.classList.add("in-view");
-       });
-     }
+        requestAnimationFrame(function () {
+          qualificationComplete.classList.add("in-view");
+        });
+      }
 
-     window.setTimeout(function () {
-       if (qualificationSummary) {
-         gentleScrollTo(qualificationSummary, 900);
-       }
-     }, 450);
+      window.setTimeout(function () {
+        if (qualificationSummary) {
+          scrollToElement(qualificationSummary, 95);
+        }
+      }, 450);
     });
   });
 
-  /*
- * BEGIN REVIEW BUTTON
- */
+  if (launchWorkbench && qualificationComplete && reviewWorkbench) {
+    launchWorkbench.addEventListener("click", function () {
+      const button = this;
 
-if (launchWorkbench && qualificationComplete && reviewWorkbench) {
-  launchWorkbench.addEventListener("click", function () {
-    const button = this;
+      button.textContent = "Launching Workspace...";
 
-    button.textContent = "Launching Workspace...";
-    button.disabled = true;
+      button.disabled = true;
 
-    document.body.classList.add("workspace-launching");
+      document.body.classList.add("workspace-launching");
 
-    qualificationComplete.classList.add("is-launching");
-
-    if (qualificationSummary) {
-      qualificationSummary.classList.add("is-launching");
-    }
-
-    window.setTimeout(function () {
-      const qualificationFlow =
-        document.getElementById("qualificationFlow");
-
-      qualificationComplete.hidden = true;
+      qualificationComplete.classList.add("is-launching");
 
       if (qualificationSummary) {
-        qualificationSummary.hidden = true;
+        qualificationSummary.classList.add("is-launching");
       }
 
-      if (qualificationFlow) {
-        qualificationFlow.hidden = true;
-      }
-window.initialReviewCaseProfile = {
-  product: caseProfile.product,
-  state: caseProfile.state,
-  bot: caseProfile.bot,
-  replacement: caseProfile.replacement,
-  insured: caseProfile.insured,
-};
+      window.setTimeout(function () {
+        qualificationComplete.hidden = true;
 
-document.dispatchEvent(
-  new CustomEvent("initialReviewProfileReady", {
-    detail: window.initialReviewCaseProfile,
-  }),
-);
-      reviewWorkbench.hidden = false;
-      reviewWorkbench.classList.add("workbench-opening");
+        if (qualificationSummary) {
+          qualificationSummary.hidden = true;
+        }
 
-      reviewWorkbench.scrollIntoView({
-        behavior: "auto",
-        block: "start"
-      });
+        if (qualificationFlow) {
+          qualificationFlow.hidden = true;
+        }
 
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () {
-          reviewWorkbench.classList.add("workbench-visible");
-          document.body.classList.remove("workspace-launching");
+        populateWorkbenchProfile();
+
+        reviewWorkbench.hidden = false;
+
+        reviewWorkbench.classList.add("workbench-opening");
+
+        reviewWorkbench.scrollIntoView({
+          behavior: "auto",
+          block: "start",
         });
-      });
-    }, 900);
-  });
-}
-  /*
-   * INITIALIZE
-   */
+
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            reviewWorkbench.classList.add("workbench-visible");
+
+            document.body.classList.remove("workspace-launching");
+          });
+        });
+      }, 900);
+    });
+  }
 
   updateProgress(1);
   renderProgressAnswers();
-});
-document.addEventListener("initialReviewProfileReady", function (event) {
-  const profile = event.detail;
-
-  const contractState = document.getElementById("contractState");
-
-  if (contractState && profile.state) {
-    contractState.value = profile.state;
-
-    contractState.dispatchEvent(
-      new Event("change", {
-        bubbles: true,
-      }),
-    );
-  }
 });

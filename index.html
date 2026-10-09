@@ -35,101 +35,120 @@
         </ul>
     </nav>
 </header>
-<!------------Welcome --------------->
+
     <section id="welcomeHero">
       <div class="welcome-background"></div>
 
       <div class="welcome-content">
-        <span class="welcome-eyebrow">MMSD INITIAL REVIEW</span>
+        <span class="welcome-eyebrow">
+          MMSD INITIAL REVIEW
+        </span>
 
         <h1 class="welcome-title">Hello.</h1>
 
-        <p class="welcome-subtitle">Let's review this application.</p>
+        <p class="welcome-subtitle">
+          Let's review this application.
+        </p>
 
-   <button
-  id="beginReviewButton"
-  class="scroll-indicator"
-  type="button"
->
-  <span>Begin Review</span>
+        <button
+          id="beginReviewButton"
+          class="scroll-indicator"
+          type="button"
+        >
+          <span>Begin Review</span>
 
-  <div class="scroll-arrow" aria-hidden="true">
-    ↓
-  </div>
+          <span
+            class="scroll-arrow"
+            aria-hidden="true"
+          >
+            ↓
+          </span>
+        </button>
+      </div>
+    </section>
 
-</button>
-
-</div>
-
-</section>
-
-
-    <!-- =======================================================
-         QUESTION FLOW
-    ======================================================== -->
-    <main class="review-workspace">
+    <main class="page-workspace">
       <section id="qualificationFlow">
+        <div id="wizardProgressWrapper">
+          <div class="wizard-progress-top">
+            <span id="wizardProgressLabel">
+              Question 1 of 5
+            </span>
 
-<!----Progrss Bar-->
-       <div id="wizardProgressWrapper">
+            <span id="wizardProgressPercent">
+              20%
+            </span>
+          </div>
 
-  <div class="wizard-progress-top">
+          <div id="wizardProgress">
+            <div id="wizardProgressFill"></div>
+          </div>
 
-    <span id="wizardProgressLabel">
-      Question 1 of 5
-    </span>
+          <div
+            id="wizardAnswerSummary"
+            class="wizard-answer-summary"
+            aria-live="polite"
+          >
+            <span class="wizard-answer-empty">
+              Your selections will appear here.
+            </span>
+          </div>
+        </div>
 
-    <span id="wizardProgressPercent">
-      20%
-    </span>
-
-  </div>
-
-  <div id="wizardProgress">
-
-    <div id="wizardProgressFill"></div>
-
-  </div>
-
-  <div
-    id="wizardAnswerSummary"
-    class="wizard-answer-summary"
-    aria-live="polite">
-
-    <span class="wizard-answer-empty">
-      Your selections will appear here.
-    </span>
-  </div>
-</div>
-        <!-- QUESTION 1 -->
-
-        <section class="question-panel active" id="questionProduct">
+        <section
+          class="question-panel active"
+          id="questionProduct"
+        >
           <div class="question-container">
-            <span class="question-counter">Question 1 of 5</span>
+            <span class="question-counter">
+              Question 1 of 5
+            </span>
 
-            <h2>What type of product is being reviewed?</h2>
+            <h2>
+              What type of product is being reviewed?
+            </h2>
 
             <div class="question-options">
-              <button type="button" class="question-option" data-product="perm">
+              <button
+                type="button"
+                class="question-option"
+                data-product="perm"
+              >
                 Permanent
               </button>
 
-              <button type="button" class="question-option" data-product="term">
+              <button
+                type="button"
+                class="question-option"
+                data-product="term"
+              >
                 Term
               </button>
             </div>
           </div>
         </section>
 
-        <!-- QUESTION 2 -->
-
-        <section class="question-panel" id="questionState" hidden>
+        <section
+          class="question-panel"
+          id="questionState"
+          hidden
+        >
           <div class="question-container">
-            <span class="question-counter">Question 2 of 5</span>
+            <span class="question-counter">
+              Question 2 of 5
+            </span>
+
             <h2>What is the Contract State?</h2>
+
             <div class="case-field">
-              <select id="contractState" name="contractState">
-                <option value="">Select State</option>
+              <select
+                id="contractState"
+                name="contractState"
+              >
+                <option value="">
+                  Select State
+                </option>
+
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>
@@ -187,79 +206,108 @@
           </div>
         </section>
 
-        <!-- QUESTION 3 -->
-
-        <section class="question-panel" id="questionBot" hidden>
+        <section
+          class="question-panel"
+          id="questionBot"
+          hidden
+        >
           <div class="question-container">
-            <span class="question-counter">Question 3 of 5</span>
+            <span class="question-counter">
+              Question 3 of 5
+            </span>
 
             <h2>Is this a BOT case?</h2>
 
             <div class="question-options">
-              <button type="button" class="question-option" data-bot="yes">
+              <button
+                type="button"
+                class="question-option"
+                data-bot="yes"
+              >
                 Yes
               </button>
 
-              <button type="button" class="question-option" data-bot="no">
+              <button
+                type="button"
+                class="question-option"
+                data-bot="no"
+              >
                 No
               </button>
             </div>
           </div>
         </section>
 
-        <!-- QUESTION 4 -->
-
-        <section class="question-panel" id="questionReplacement" hidden>
+        <section
+          class="question-panel"
+          id="questionReplacement"
+          hidden
+        >
           <div class="question-container">
-            <span class="question-counter">Question 4 of 5</span>
+            <span class="question-counter">
+              Question 4 of 5
+            </span>
 
-            <h2>Does this case involve a replacement?</h2>
+            <h2>
+              Does this case involve a replacement?
+            </h2>
 
             <div class="question-options">
               <button
                 type="button"
                 class="question-option"
-                data-replacement="none">
+                data-replacement="none"
+              >
                 No Replacement
               </button>
 
               <button
                 type="button"
                 class="question-option"
-                data-replacement="internal">
+                data-replacement="internal"
+              >
                 Internal Replacement
               </button>
 
               <button
                 type="button"
                 class="question-option"
-                data-replacement="external">
+                data-replacement="external"
+              >
                 External Replacement
               </button>
             </div>
           </div>
         </section>
 
-        <!-- QUESTION 5 -->
-
-        <section class="question-panel" id="questionInsured" hidden>
+        <section
+          class="question-panel"
+          id="questionInsured"
+          hidden
+        >
           <div class="question-container">
-            <span class="question-counter">Question 5 of 5</span>
+            <span class="question-counter">
+              Question 5 of 5
+            </span>
 
-            <h2>How many insureds are on the application?</h2>
+            <h2>
+              How many insureds are on the application?
+            </h2>
 
             <div class="question-options">
               <button
                 type="button"
                 class="question-option"
-                data-insured="single">
+                data-insured="single"
+              >
                 Single
               </button>
 
               <button
                 type="button"
                 class="question-option"
-                data-insured="joint">
+                data-insured="joint"
+              >
                 Joint
               </button>
             </div>
@@ -268,288 +316,649 @@
       </section>
 
       <div id="caseProfileData" hidden>
-        <input type="hidden" id="selectedProduct" />
-        <input type="hidden" id="selectedState" />
+        <input
+          type="hidden"
+          id="selectedProduct"
+        />
 
-        <input type="hidden" id="selectedBOT" />
+        <input
+          type="hidden"
+          id="selectedState"
+        />
 
-        <input type="hidden" id="selectedReplacement" />
+        <input
+          type="hidden"
+          id="selectedBOT"
+        />
 
-        <input type="hidden" id="selectedInsuredType" />
+        <input
+          type="hidden"
+          id="selectedReplacement"
+        />
+
+        <input
+          type="hidden"
+          id="selectedInsuredType"
+        />
       </div>
-      <!------Qualifiication Summary-->
-      <section id="qualificationSummary" class="summary-card" hidden>
+
+      <section
+        id="qualificationSummary"
+        class="summary-card"
+        hidden
+      >
         <h3>Case Profile</h3>
 
         <div
           id="qualificationSummaryContent"
-          class="profile-summary-grid"></div>
+          class="profile-summary-grid"
+        ></div>
       </section>
 
-      <!--------Qualification Complete-->
-      <section id="qualificationComplete" hidden>
+      <section
+        id="qualificationComplete"
+        hidden
+      >
         <h2>Perfect.</h2>
 
         <p>Your review workspace is ready.</p>
 
-      <button id="launchWorkbench" type="button">
-  Begin Review
-      </button>
-      </section>
-
-        <!-- ===================================================
-             EXISTING WORKBENCH
-             EVERYTHING BELOW STARTS HIDDEN
-        ==================================================== -->
-
-      <section id="reviewWorkbench" hidden>
-
-  <!-- Dashboard -->
-  <section id="dashboardStrip" class="dashboard-strip"></section>
-
-  <!-- Workflow -->
-  <aside class="review-sidebar"></aside>
-
-  <section id="reviewWorkbench" hidden>
-
-  <div class="workbench-layout">
-
-    <aside class="review-sidebar">
-      <button
-        type="button"
-        class="step-btn active"
-        data-target="caseSetupSection"
-      >
-        Case Setup
-      </button>
-
-      <button
-        type="button"
-        class="step-btn"
-        data-target="stateRequirements"
-      >
-        State Requirements
-      </button>
-
-      <button
-        type="button"
-        class="step-btn"
-        data-target="trexReview"
-      >
-        TREX Review
-      </button>
-
-      <button
-        type="button"
-        class="step-btn"
-        data-target="applicationReview"
-      >
-        Application Review
-      </button>
-
-      <button
-        type="button"
-        class="step-btn"
-        data-target="requirementsSection"
-      >
-        Requirements
-      </button>
-
-      <button
-        type="button"
-        class="step-btn"
-        data-target="amendmentsSection"
-      >
-        Amendments
-      </button>
-
-      <button
-        type="button"
-        class="step-btn"
-        data-target="bingoSection"
-      >
-        BINGO
-      </button>
-
-      <button
-        type="button"
-        class="step-btn"
-        data-target="emailSection"
-      >
-        Email
-      </button>
-    </aside>
-
-    <div class="workbench-main">
-
-      <section class="workbench-progress">
-        <div class="progress-track">
-          <div id="progressFill"></div>
-        </div>
-
-        <span id="progressText">
-          0 of 0 steps complete
-        </span>
+        <button
+          id="launchWorkbench"
+          type="button"
+        >
+          Begin Review
+        </button>
       </section>
 
       <section
-        id="caseSetupSection"
-        class="card case-setup-card"
+        id="reviewWorkbench"
+        class="review-workspace"
+        hidden
       >
-        <h2>Case Setup</h2>
-      </section>
+        <div class="workbench-shell">
+          <header class="workspace-header">
+            <div class="workspace-title">
+              <span class="workspace-eyebrow">
+                CASE MANAGER WORKBENCH
+              </span>
 
-      <details id="stateRequirements" class="card">
-        <summary>State Requirements</summary>
+              <h1>Initial Review Workspace</h1>
 
-        <div id="stateImportantNotices" hidden></div>
-        <div id="stateNotes" hidden></div>
+              <span id="progressText">
+                0 of 0 steps complete
+              </span>
+            </div>
 
-        <h3 id="stateRequirementSummary">
-          Select a state
-        </h3>
+            <div class="workspace-progress">
+              <div class="progress-track">
+                <div id="progressFill"></div>
+              </div>
+            </div>
+          </header>
 
-        <div id="requiredForms"></div>
+          <div class="workspace-layout">
+            <aside class="review-sidebar">
+              <button
+                type="button"
+                class="step-btn active"
+                data-target="dashboardSection"
+              >
+                Dashboard
+              </button>
 
-        <div id="reviewCompletionBanner" hidden>
-          State form review complete.
+              <button
+                type="button"
+                class="step-btn"
+                data-target="caseSetupSection"
+              >
+                Case Setup
+              </button>
+
+              <button
+                type="button"
+                class="step-btn"
+                data-target="stateRequirements"
+              >
+                State Forms
+              </button>
+
+              <button
+                type="button"
+                class="step-btn"
+                data-target="trexReview"
+              >
+                TREX Review
+              </button>
+
+              <button
+                type="button"
+                class="step-btn"
+                data-target="applicationReview"
+              >
+                Application Review
+              </button>
+
+              <button
+                type="button"
+                class="step-btn"
+                data-target="requirementsSection"
+              >
+                Requirements
+              </button>
+
+              <button
+                type="button"
+                class="step-btn"
+                data-target="amendmentsSection"
+              >
+                Amendments
+              </button>
+
+              <button
+                type="button"
+                class="step-btn"
+                data-target="bingoSection"
+              >
+                BINGO
+              </button>
+
+              <button
+                type="button"
+                class="step-btn"
+                data-target="reviewOutputPackage"
+              >
+                Output Package
+              </button>
+
+              <button
+                type="button"
+                class="step-btn"
+                data-target="emailSection"
+              >
+                Email
+              </button>
+            </aside>
+
+            <div class="workspace-main">
+              <section
+                id="dashboardSection"
+                class="workspace-card"
+              >
+                <div class="workspace-section-heading">
+                  <div>
+                    <span class="workspace-eyebrow">
+                      REVIEW STATUS
+                    </span>
+
+                    <h2>Case Dashboard</h2>
+                  </div>
+                </div>
+
+                <div class="dashboard-grid">
+                  <div class="stat-card">
+                    <span class="stat-label">
+                      State
+                    </span>
+
+                    <strong id="dashboardState">
+                      --
+                    </strong>
+                  </div>
+
+                  <div class="stat-card">
+                    <span class="stat-label">
+                      Reviewed
+                    </span>
+
+                    <strong id="reviewedCountCard">
+                      0
+                    </strong>
+                  </div>
+
+                  <div class="stat-card">
+                    <span class="stat-label">
+                      Remaining
+                    </span>
+
+                    <strong id="remainingCountCard">
+                      0
+                    </strong>
+                  </div>
+
+                  <div class="stat-card">
+                    <span class="stat-label">
+                      NIGOs
+                    </span>
+
+                    <strong id="dashboardIssueCount">
+                      0
+                    </strong>
+                  </div>
+                </div>
+              </section>
+
+              <section
+                id="caseSetupSection"
+                class="workspace-card case-setup-card"
+              >
+                <div class="workspace-section-heading">
+                  <div>
+                    <span class="workspace-eyebrow">
+                      CASE PROFILE
+                    </span>
+
+                    <h2>Case Setup</h2>
+                  </div>
+
+                  <span
+                    id="caseProfileStatus"
+                    class="case-profile-status"
+                  >
+                    Ready
+                  </span>
+                </div>
+
+                <div class="case-profile-grid">
+                  <div class="case-profile-field">
+                    <span class="case-profile-label">
+                      Product
+                    </span>
+
+                    <strong id="profileProduct">
+                      Not selected
+                    </strong>
+                  </div>
+
+                  <div class="case-profile-field">
+                    <span class="case-profile-label">
+                      Contract State
+                    </span>
+
+                    <strong id="profileState">
+                      Not selected
+                    </strong>
+                  </div>
+
+                  <div class="case-profile-field">
+                    <span class="case-profile-label">
+                      BOT Case
+                    </span>
+
+                    <strong id="profileBOT">
+                      Not selected
+                    </strong>
+                  </div>
+
+                  <div class="case-profile-field">
+                    <span class="case-profile-label">
+                      Replacement
+                    </span>
+
+                    <strong id="profileReplacement">
+                      Not selected
+                    </strong>
+                  </div>
+
+                  <div class="case-profile-field">
+                    <span class="case-profile-label">
+                      Insured Type
+                    </span>
+
+                    <strong id="profileInsured">
+                      Not selected
+                    </strong>
+                  </div>
+                </div>
+              </section>
+
+              <section class="workspace-card review-timer">
+                <div class="workspace-section-heading">
+                  <h2>Review Timer</h2>
+
+                  <span
+                    id="timerStatus"
+                    class="timer-status"
+                  >
+                    Ready
+                  </span>
+                </div>
+
+                <div class="timer-display">
+                  <span id="timerHours">00</span>
+                  <span>:</span>
+                  <span id="timerMinutes">00</span>
+                  <span>:</span>
+                  <span id="timerSeconds">00</span>
+                </div>
+
+                <p id="timerMessage">
+                  Start the timer when the initial review begins.
+                </p>
+
+                <div class="buttons">
+                  <button
+                    id="startReviewTimer"
+                    type="button"
+                  >
+                    Start Review
+                  </button>
+
+                  <button
+                    id="pauseReviewTimer"
+                    type="button"
+                    disabled
+                  >
+                    Pause
+                  </button>
+
+                  <button
+                    id="completeReviewTimer"
+                    type="button"
+                    disabled
+                  >
+                    Complete
+                  </button>
+                </div>
+
+                <div
+                  id="timerSessionDetails"
+                  hidden
+                >
+                  <p>
+                    Started:
+                    <span id="timerStartedAt">
+                      --
+                    </span>
+                  </p>
+
+                  <p>
+                    Paused:
+                    <span id="timerPausedDuration">
+                      00:00
+                    </span>
+                  </p>
+                </div>
+              </section>
+
+              <section
+                id="openNigoPanel"
+                class="workspace-card"
+              >
+                <div class="workspace-section-heading">
+                  <h2>Open NIGOs</h2>
+
+                  <span id="openNigoCount">
+                    0
+                  </span>
+                </div>
+
+                <div id="openNigoList">
+                  <div class="nigo-empty">
+                    No documented NIGOs
+                  </div>
+                </div>
+              </section>
+
+              <details
+                id="stateRequirements"
+                class="workspace-card"
+              >
+                <summary>
+                  <span id="stateRequirementSummary">
+                    State Requirements
+                  </span>
+                </summary>
+
+                <div
+                  id="stateImportantNotices"
+                  hidden
+                ></div>
+
+                <div
+                  id="stateNotes"
+                  hidden
+                ></div>
+
+                <div class="state-requirement-meta">
+                  <span>Applicable Forms</span>
+
+                  <strong id="applicableFormCount">
+                    0
+                  </strong>
+                </div>
+
+                <div id="requiredForms"></div>
+
+                <div
+                  id="reviewCompletionBanner"
+                  hidden
+                >
+                  State form review complete.
+                </div>
+              </details>
+
+              <section
+                id="trexReview"
+                class="workspace-card"
+              >
+                <h2>TREX Review</h2>
+
+                <div id="reviewChecklist"></div>
+              </section>
+
+              <section
+                id="applicationReview"
+                class="workspace-card"
+              ></section>
+
+              <section
+                id="requirementsSection"
+                class="workspace-card"
+              >
+                <h2>Requirements</h2>
+
+                <label for="globalRequirementTemplate">
+                  Requirement Template
+                </label>
+
+                <select id="globalRequirementTemplate">
+                  <option value="">
+                    Select Requirement
+                  </option>
+                </select>
+
+                <div id="globalRequirementFields"></div>
+
+                <textarea
+                  id="globalGeneratedRequirement"
+                  rows="8"
+                  readonly
+                ></textarea>
+              </section>
+
+              <section
+                id="amendmentsSection"
+                class="workspace-card"
+              >
+                <h2>Amendments</h2>
+
+                <label for="globalAmendmentForm">
+                  Form
+                </label>
+
+                <select id="globalAmendmentForm">
+                  <option value="">
+                    Select Form
+                  </option>
+                </select>
+
+                <div id="globalAmendmentFields"></div>
+
+                <textarea
+                  id="globalGeneratedAmendment"
+                  rows="8"
+                  readonly
+                ></textarea>
+              </section>
+
+              <section
+                id="bingoSection"
+                class="workspace-card"
+              >
+                <h2>BINGO Review</h2>
+
+                <p>
+                  BINGO review content will be added here.
+                </p>
+              </section>
+
+              <section
+                id="reviewNotesSection"
+                class="workspace-card"
+              >
+                <h2>Initial Review Notes</h2>
+
+                <textarea
+                  id="initialReviewNotes"
+                  rows="8"
+                  placeholder="Initial review notes will appear here."
+                ></textarea>
+
+                <div class="buttons">
+                  <button
+                    id="copyInitialReviewNotes"
+                    type="button"
+                  >
+                    Copy Notes
+                  </button>
+                </div>
+
+                <div
+                  id="initialReviewNotesStatus"
+                  class="copy-status"
+                  aria-live="polite"
+                ></div>
+              </section>
+
+              <div id="saveAgeFields" hidden></div>
+
+              <div id="specificDateFields" hidden></div>
+
+              <details
+                id="reviewOutputPackage"
+                class="workspace-card"
+              >
+                <summary>
+                  Review Output Package
+                </summary>
+
+                <div class="output-package-summary">
+                  <span id="reviewOutputStatus">
+                    No Outputs
+                  </span>
+
+                  <strong id="compiledTotalCount">
+                    0
+                  </strong>
+                </div>
+
+                <section class="compiled-output-section">
+                  <div class="compiled-output-heading">
+                    <span id="compiledAmendmentBadge">
+                      0 amendments
+                    </span>
+
+                    <span id="compiledAmendmentCount">
+                      0
+                    </span>
+                  </div>
+
+                  <textarea
+                    id="compiledAmendments"
+                    rows="10"
+                    readonly
+                  ></textarea>
+
+                  <button
+                    id="copyAllAmendments"
+                    type="button"
+                    disabled
+                  >
+                    Copy All Amendments
+                  </button>
+                </section>
+
+                <section class="compiled-output-section">
+                  <div class="compiled-output-heading">
+                    <span id="compiledRequirementBadge">
+                      0 requirements
+                    </span>
+
+                    <span id="compiledRequirementCount">
+                      0
+                    </span>
+                  </div>
+
+                  <textarea
+                    id="compiledRequirements"
+                    rows="10"
+                    readonly
+                  ></textarea>
+
+                  <button
+                    id="copyAllRequirements"
+                    type="button"
+                    disabled
+                  >
+                    Copy All Requirements
+                  </button>
+                </section>
+
+                <div
+                  id="reviewOutputCopyStatus"
+                  class="copy-status"
+                  aria-live="polite"
+                ></div>
+              </details>
+
+              <section
+                id="emailSection"
+                class="workspace-card"
+              >
+                <h2>Initial Review Email</h2>
+
+                <button
+                  id="generateEmail"
+                  type="button"
+                >
+                  Generate Email
+                </button>
+
+                <div
+                  id="emailOutput"
+                  class="email-preview"
+                  contenteditable="true"
+                ></div>
+
+                <button
+                  id="copyEmail"
+                  type="button"
+                >
+                  Copy Email
+                </button>
+              </section>
+            </div>
+          </div>
         </div>
-      </details>
-
-      <section id="trexReview" class="card">
-        <h2>TREX Review</h2>
-        <div id="reviewChecklist"></div>
       </section>
-
-      <section id="applicationReview" class="card"></section>
-
-      <section id="requirementsSection" class="card">
-        <h2>Requirements</h2>
-
-        <select id="globalRequirementTemplate">
-          <option value="">Select Requirement</option>
-        </select>
-
-        <div id="globalRequirementFields"></div>
-
-        <textarea
-          id="globalGeneratedRequirement"
-          readonly
-        ></textarea>
-      </section>
-
-      <section id="amendmentsSection" class="card">
-        <h2>Amendments</h2>
-
-        <select id="globalAmendmentForm">
-          <option value="">Select Form</option>
-        </select>
-      </section>
-
-      <section id="bingoSection" class="card">
-        <h2>BINGO Review</h2>
-      </section>
-
-      <details id="reviewOutputPackage" class="card">
-        <summary>Review Output Package</summary>
-
-        <div>
-          <span id="reviewOutputStatus">No Outputs</span>
-          <span id="compiledTotalCount">0</span>
-        </div>
-
-        <section>
-          <span id="compiledAmendmentBadge">
-            0 amendments
-          </span>
-
-          <span id="compiledAmendmentCount">0</span>
-
-          <textarea
-            id="compiledAmendments"
-            readonly
-          ></textarea>
-
-          <button
-            id="copyAllAmendments"
-            type="button"
-            disabled
-          >
-            Copy All Amendments
-          </button>
-        </section>
-
-        <section>
-          <span id="compiledRequirementBadge">
-            0 requirements
-          </span>
-
-          <span id="compiledRequirementCount">0</span>
-
-          <textarea
-            id="compiledRequirements"
-            readonly
-          ></textarea>
-
-          <button
-            id="copyAllRequirements"
-            type="button"
-            disabled
-          >
-            Copy All Requirements
-          </button>
-        </section>
-
-        <div
-          id="reviewOutputCopyStatus"
-          aria-live="polite"
-        ></div>
-      </details>
-
-      <section id="emailSection" class="card">
-        <h2>Initial Review Email</h2>
-
-        <button id="generateEmail" type="button">
-          Generate Email
-        </button>
-
-        <div
-          id="emailOutput"
-          class="email-preview"
-          contenteditable="true"
-        ></div>
-
-        <button id="copyEmail" type="button">
-          Copy Email
-        </button>
-      </section>
-
-    </div>
-  </div>
-
-</section>
-
     </main>
 
-      <footer>Jessie Fabian ©2026</footer>
-      <!-- Onboarding -->
-    <script src="scripts/scroll.js"></script>
+    <footer>
+      Jessie Fabian ©2026
+    </footer>
+
+<script src="scripts/scroll.js"></script>
     <script src="scripts/onboarding.js"></script>
-    <!-- Data and template foundation -->
-       <script src="scripts/library.js"></script>
-       <!-- Workbench engines -->
-  <script src="scripts/amendment-engine.js"></script>
-  <script src="scripts/stateLoader.js"></script>
-  <script src="scripts/illustration-validation.js"></script>
-
-  <!-- Core review workflow -->
-  <script src="scripts/initial-review.js"></script>
-   <!-- Output and supporting tools -->
-  <script src="scripts/review-output-package.js"></script>
-  <script src="review-timer.js"></script>
-  <script src="review-assistant.js"></script>
-
-
   </body>
-
 </html>

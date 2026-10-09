@@ -8,3 +8,5 @@ document.getElementById("profileReplacement").textContent =
   caseProfile.replacement;
 
 document.getElementById("profileInsured").textContent = caseProfile.insured;
+
+
