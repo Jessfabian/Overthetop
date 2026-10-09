@@ -9,6 +9,8 @@ document.getElementById("profileReplacement").textContent =
 
 document.getElementById("profileInsured").textContent = caseProfile.insured;
 
-
 timerStatusBadge.innerHTML =
   '<span class="timer-status-dot paused"></span>Paused';
+
+reviewWorkbench.hidden = false;
+
