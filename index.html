@@ -323,6 +323,15 @@
               <button type="button" class="step-btn" data-target="trexReview">
                 TREX Review
               </button>
+<button
+  type="button"
+  class="step-btn"
+  data-target="polarisReplacementCheckSection">
+
+  Polaris Check
+
+</button>
+
 
               <button
                 type="button"
@@ -527,18 +536,175 @@
                 </div>
               </section>
 
+<!-- ===================================== -->
+<!-- NEW YORK REVIEW DASHBOARD -->
+<!-- ===================================== -->
 
-              <section id="openNigoPanel" class="workspace-card">
-                <div class="workspace-section-heading">
-                  <h2>Open NIGOs</h2>
+<section id="nyReviewDashboard" class="workbench-section"hidden>
+  <div class="section-header">
+    <h2>New York Review</h2>
+    <p>State-specific Initial Review workflow.</p>
+  </div>
+<div
+    class="review-card"
+    id="nyReplacementStatusCard">
 
-                  <span id="openNigoCount">0</span>
-                </div>
+    <h3>
+        NY Replacement Status
+    </h3>
 
-                <div id="openNigoList">
-                  <div class="nigo-empty">No documented NIGOs</div>
-                </div>
-              </section>
+    <p>
+
+        Replacement processing is completed
+        within the Polaris Check and
+        Replacement Review workspace.
+
+    </p>
+
+    <div class="summary-grid">
+
+        <div>
+
+            <label>
+                Replacement Status
+            </label>
+
+            <span id="nyReplacementStatus">
+
+    No Replacement Identified
+
+</span>
+
+        </div>
+
+        <div>
+
+            <label>
+                Replacement Type
+            </label>
+
+            <span id="nyReplacementType">
+
+                N/A
+
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+  <!-- ===================================== -->
+  <!-- BOT REVIEW -->
+  <!-- ===================================== -->
+
+  <div class="review-card" id="botReviewSection">
+    <h3>BOT Review</h3>
+
+    <label>
+      <input type="checkbox" />
+      BOT Notes Reviewed
+    </label>
+
+    <label>
+      <input type="checkbox" />
+      Exceptions Reviewed
+    </label>
+
+    <label>
+      <input type="checkbox" />
+      Follow Up Required
+    </label>
+
+    <label>
+      <input type="checkbox" />
+      BOT Review Complete
+    </label>
+
+    <textarea
+      id="botReviewNotes"
+      placeholder="BOT review notes here"></textarea>
+  </div>
+
+  <!-- ===================================== -->
+  <!-- SUITABILITY -->
+  <!-- ===================================== -->
+
+  <div class="review-card" id="suitabilitySection">
+    <h3>Suitability</h3>
+
+  <label>
+
+  <input
+      type="radio"
+      name="suitabilityStatus"
+      value="igo">
+
+  IGO
+
+</label>
+
+<label>
+
+  <input
+      type="radio"
+      name="suitabilityStatus"
+      value="nigo">
+
+  NIGO
+
+</label>
+
+<label>
+
+  <input
+      type="radio"
+      name="suitabilityStatus"
+      value="pending">
+
+  Pending
+
+</label>
+
+    <textarea id="suitabilityNotes" placeholder="Suitability notes"></textarea>
+  </div>
+
+  <!-- ===================================== -->
+  <!-- SALES ILLUSTRATION REVIEW -->
+  <!-- ===================================== -->
+  <div id="nyReviewStatus" class="review-status">Ready For Review</div>
+  <div class="ny-illustration-review">
+    <h4>NY Illustration Review</h4>
+
+    <label>
+      <input type="checkbox" id="nyIllustrationSigned" />
+      Signed Illustration Submitted
+    </label>
+
+    <label>
+      <input type="checkbox" id="nyIllustrationOwner" />
+      Signed by Correct Party
+    </label>
+
+    <label>
+      <input type="checkbox" id="nyIllustrationDate" />
+      Dated
+    </label>
+
+    <label>
+      <input type="checkbox" id="nyBeforePart1" />
+      Signed On/Before Part 1
+    </label>
+  </div>
+
+
+</section>
+<!-- ===================================== -->
+<!-- NY REPLACEMENT STATUS -->
+<!-- ===================================== -->
+
+
+
 
               <details id="stateRequirements" class="workspace-card">
                 <summary>
@@ -561,14 +727,286 @@
                   State form review complete.
                 </div>
               </details>
+<section id="openNigoPanel" class="workspace-card">
+                <div class="workspace-section-heading">
+                  <h2>Open NIGOs</h2>
 
-              <section id="trexReview" class="workspace-card">
-                <h2>TREX Review</h2>
+                  <span id="openNigoCount">0</span>
+                </div>
 
-                <div id="reviewChecklist"></div>
+                <div id="openNigoList">
+                  <div class="nigo-empty">No documented NIGOs</div>
+                </div>
               </section>
 
-              <section id="applicationReview" class="workspace-card"></section>
+</section>
+
+<!-- ===================================== -->
+<!-- POLARIS REPLACEMENT CHECK -->
+<!-- ===================================== -->
+
+<section
+    id="polarisReplacementCheckSection"
+    class="workspace-card">
+
+    <div class="workspace-section-heading">
+        <div>
+            <span class="workspace-eyebrow">
+                REPLACEMENT REVIEW
+            </span>
+
+            <h2>
+                Polaris & Replacement Review
+            </h2>
+        </div>
+    </div>
+
+    <p>
+        Review Polaris and determine whether any
+        replacement activity exists that was not
+        disclosed on the application.
+    </p>
+
+    <label>
+        <input
+            type="checkbox"
+            id="polarisReviewCompleted">
+
+        Polaris Review Completed
+    </label>
+
+   <div class="replacement-review-grid">
+
+    <div class="review-card">
+
+        <h3>Replacement Status</h3>
+
+        <label>
+            <input
+                type="radio"
+                name="reviewReplacementStatus"
+                value="none">
+
+            No Replacement
+        </label>
+
+        <label>
+            <input
+                type="radio"
+                name="reviewReplacementStatus"
+                value="internal">
+
+            Internal Replacement
+        </label>
+
+        <label>
+            <input
+                type="radio"
+                name="reviewReplacementStatus"
+                value="external">
+
+            External Replacement
+        </label>
+
+        <label>
+            <input
+                type="checkbox"
+                id="undisclosedReplacement">
+
+            Undisclosed Replacement Identified
+        </label>
+
+    </div>
+
+    <div class="review-card">
+
+        <h3>Replacement Information</h3>
+
+        <label>
+            Replaced Carrier
+        </label>
+
+        <input
+            type="text"
+            id="replacedCarrier">
+
+        <label>
+            Policy Number
+        </label>
+
+        <input
+            type="text"
+            id="replacedPolicyNumber">
+
+        <label>
+            Face Amount
+        </label>
+
+        <input
+            type="text"
+            id="replacedFaceAmount">
+
+        <label>
+            Notes
+        </label>
+
+        <textarea
+            id="replacementNotes"
+            rows="5">
+        </textarea>
+
+    </div>
+
+</div>
+
+<!-- INTERNAL REPLACEMENT -->
+
+<div
+    id="internalReplacementSection"
+    class="review-card"
+    hidden>
+
+    <h3>Internal Replacement Review</h3>
+
+    <label>
+        <input type="checkbox">
+        Existing Policy Reviewed
+    </label>
+
+    <label>
+        <input type="checkbox">
+        Client History Reviewed
+    </label>
+
+    <label>
+        <input type="checkbox">
+        Inforce Illustration Reviewed
+    </label>
+
+    <label>
+        <input type="checkbox">
+        Replacement Tab Updated
+    </label>
+
+    <label>
+        <input type="checkbox">
+        Commission Review Completed
+    </label>
+
+    <label>
+        <input type="checkbox">
+        GA Memo Needed
+    </label>
+
+    <label>
+        <input type="checkbox">
+        Surrender Endorsement Reviewed
+    </label>
+
+</div>
+
+<!-- EXTERNAL REPLACEMENT -->
+
+<div
+    id="externalReplacementSection"
+    class="review-card"
+    hidden>
+
+    <h3>External Replacement Review</h3>
+
+    <label>
+        <input type="checkbox">
+        Existing Carrier Identified
+    </label>
+
+    <label>
+        <input type="checkbox">
+        Replacement Notification Sent
+    </label>
+
+    <label>
+        <input type="checkbox">
+        Carrier Fax Sent
+    </label>
+
+    <label>
+        <input type="checkbox">
+        Fax Confirmation Received
+    </label>
+
+    <label>
+        <input type="checkbox">
+        Follow-Up Required
+    </label>
+
+    <label>
+        <input type="checkbox">
+        Replacement Letter Sent
+    </label>
+
+</div>
+
+<!-- 1035 EXCHANGE -->
+
+<div
+    id="exchangeSection"
+    class="review-card">
+
+    <h3>1035 Exchange</h3>
+
+    <label>
+        <input
+            type="checkbox"
+            id="is1035Exchange">
+
+        1035 Exchange
+    </label>
+
+    <label>
+        <input type="checkbox">
+        P4051 Received
+    </label>
+
+    <label>
+        <input type="checkbox">
+        P4051 IGO
+    </label>
+
+    <label>
+        <input type="checkbox">
+        Loan Carryover Reviewed
+    </label>
+
+</div>
+
+<!-- GENERATED REQUIREMENTS -->
+
+<div class="review-card">
+
+    <h3>Replacement Requirements</h3>
+
+    <textarea
+        id="replacementRequirementOutput"
+        rows="8"
+        readonly>
+    </textarea>
+
+    <button
+        type="button"
+        id="copyReplacementRequirement">
+
+        Copy Requirement
+
+    </button>
+
+</div>
+
+</section>
+
+
+<section id="applicationReview" class="workspace-card"></section>
+
+
 
               <section id="requirementsSection" class="workspace-card">
                 <h2>Requirements</h2>

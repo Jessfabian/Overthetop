@@ -1,0 +1,105 @@
+@import url(./Foundation/tokens.css);
+@import url(./Foundation/reset.css);
+@import url(./Foundation/typography.css);
+@import url( ./layout/shell.css );
+@import url( ./layout/dashboard.css );
+@import url( ./layout/sidebar.css );
+
+@import url( ./components/cards.css );
+@import url( ./components/forms.css );
+@import url( ./components/buttons.css );
+@import url( ./components/details.css );
+@import url( ./components/status.css );
+
+@import url( ./features/state-review.css );
+@import url( ./features/illustration-validation.css );
+@import url( ./features/output-package.css );
+@import url( ./features/email-preview.css );
+
+@import url( ./utilities/responsive.css );
+
+
+@import url(./visual-system.css);
+
+/* ============================================
+   CASE SETUP RESPONSIVE LAYOUT
+============================================ */
+
+@media (max-width: 1180px) {
+  .case-details-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .case-design-panel-header {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 820px) {
+  .case-design-panel,
+  .validation-tools-panel {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .case-design-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .field-span-full {
+    grid-column: auto;
+  }
+
+  .validation-tools-header {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .validation-tools-badge {
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin-left: 68px;
+  }
+}
+
+@media (max-width: 560px) {
+  .case-details-layout {
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .case-design-panel,
+  .validation-tools-panel {
+    padding: 18px;
+  }
+
+  .case-design-panel-header,
+  .validation-tools-header {
+    grid-template-columns: 1fr;
+  }
+
+  .case-design-panel-header {
+    display: grid;
+  }
+
+  .case-design-icon,
+  .validation-tools-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .case-design-icon img,
+  .validation-tools-icon img {
+    width: 27px;
+    height: 27px;
+  }
+
+  .case-design-heading h3,
+  .validation-tools-header h3 {
+    font-size: 19px;
+  }
+
+  .validation-tools-badge {
+    grid-column: auto;
+    margin-left: 0;
+  }
+}

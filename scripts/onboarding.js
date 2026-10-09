@@ -508,8 +508,57 @@ document.addEventListener("DOMContentLoaded", function () {
       window.setTimeout(function () {
         openWorkbench({ hideQuestions: true, smoothScroll: false });
       }, 900);
+      configureReplacementReview();
     });
   }
   /* * Initial values */ updateProgress(1);
   renderProgressAnswers();
 });
+function configureReplacementReview() {
+  const replacementReview = document.getElementById("replacementReviewSection");
+
+  const internalSection = document.getElementById("internalReplacementSection");
+
+  const externalSection = document.getElementById("externalReplacementSection");
+
+  if (!replacementReview) {
+    return;
+  }
+
+  replacementReview.hidden = caseProfile.replacement === "none";
+
+  if (internalSection) {
+    internalSection.hidden = caseProfile.replacement !== "internal";
+  }
+
+  if (externalSection) {
+    externalSection.hidden = caseProfile.replacement !== "external";
+  }
+}
+if (caseProfile.state === "NY") {
+  document.getElementById("nyReviewDashboard").hidden = false;
+}
+``;
+function updateNYReplacementStatus() {
+  const status = document.getElementById("nyReplacementStatus");
+
+  const type = document.getElementById("nyReplacementType");
+
+  if (caseProfile.replacement === "none") {
+    status.textContent = "No Replacement Identified";
+
+    type.textContent = "N/A";
+  }
+
+  if (caseProfile.replacement === "internal") {
+    status.textContent = "Replacement Identified";
+
+    type.textContent = "Internal";
+  }
+
+  if (caseProfile.replacement === "external") {
+    status.textContent = "Replacement Identified";
+
+    type.textContent = "External";
+  }
+}
