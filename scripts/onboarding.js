@@ -8,7 +8,13 @@ document.addEventListener("DOMContentLoaded", function () {
     replacement: null,
     insured: null,
   };
+  const quickStartButton = document.getElementById("quickStartButton");
 
+  const quickStartModal = document.getElementById("quickStartModal");
+
+  const launchQuickStart = document.getElementById("launchQuickStart");
+
+  const closeQuickStart = document.getElementById("closeQuickStart");
   const questionState = document.getElementById("questionState");
 
   const questionBot = document.getElementById("questionBot");
@@ -30,6 +36,43 @@ document.addEventListener("DOMContentLoaded", function () {
   const stateDropdown = document.getElementById("contractState");
 
   const qualificationFlow = document.getElementById("qualificationFlow");
+  const skipToWorkbench = document.getElementById("skipToWorkbench");
+
+  if (skipToWorkbench && reviewWorkbench) {
+    skipToWorkbench.addEventListener("click", function () {
+      openWorkbench({
+        hideQuestions: false,
+      });
+    });
+  }
+  const returnToSetup = document.getElementById("returnToSetup");
+
+  if (returnToSetup) {
+    returnToSetup.addEventListener("click", function () {
+      if (qualificationFlow) {
+        qualificationFlow.hidden = false;
+      }
+
+      const firstMissingSection = !caseProfile.product
+        ? document.getElementById("questionProduct")
+        : !caseProfile.state
+          ? questionState
+          : !caseProfile.bot
+            ? questionBot
+            : !caseProfile.replacement
+              ? questionReplacement
+              : questionInsured;
+
+      if (firstMissingSection) {
+        firstMissingSection.hidden = false;
+
+        firstMissingSection.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }
+    });
+  }
 
   hideElement(questionState);
   hideElement(questionBot);
@@ -278,67 +321,72 @@ document.addEventListener("DOMContentLoaded", function () {
 
     qualificationSummary.hidden = false;
   }
-
-  function populateWorkbenchProfile() {
-    const productLabels = {
-      perm: "Permanent",
-      term: "Term",
-    };
-
-    const botLabels = {
-      yes: "Yes",
-      no: "No",
-    };
-
-    const replacementLabels = {
-      none: "No Replacement",
-      internal: "Internal Replacement",
-      external: "External Replacement",
-    };
-
-    const insuredLabels = {
-      single: "Single",
-      joint: "Joint",
-    };
-
-    setText(
-      "profileProduct",
-      productLabels[caseProfile.product] || "Not selected",
-    );
-
-    setText("profileState", getSelectedStateName() || "Not selected");
-
-    setText("profileBOT", botLabels[caseProfile.bot] || "Not selected");
-
-    setText(
-      "profileReplacement",
-      replacementLabels[caseProfile.replacement] || "Not selected",
-    );
-
-    setText(
-      "profileInsured",
-      insuredLabels[caseProfile.insured] || "Not selected",
-    );
-
-    setText("dashboardState", caseProfile.state || "--");
-
-    setText("caseProfileStatus", "Ready");
-
-    window.initialReviewCaseProfile = {
-      product: caseProfile.product,
-      state: caseProfile.state,
-      bot: caseProfile.bot,
-      replacement: caseProfile.replacement,
-      insured: caseProfile.insured,
-    };
-
-    document.dispatchEvent(
-      new CustomEvent("initialReviewProfileReady", {
-        detail: window.initialReviewCaseProfile,
-      }),
-    );
+  if (quickStartButton) {
+    quickStartButton.addEventListener("click", function () {
+      quickStartModal.hidden = false;
+    });
   }
 
+  if (launchQuickStart) {
+    launchQuickStart.addEventListener("click", function () {
+      const quickProduct = document.getElementById("qsProduct");
+
+      const quickState = document.getElementById("qsState");
+
+      const quickBOT = document.getElementById("qsBOT");
+
+      const quickReplacement = document.getElementById("qsReplacement");
+
+      const quickInsured = document.getElementById("qsInsured");
+
+      if (
+        !quickProduct ||
+        !quickState ||
+        !quickBOT ||
+        !quickReplacement ||
+        !quickInsured
+      ) {
+        console.error("One or more Quick Start fields are missing.");
+        return;
+      }
+
+      if (!quickState.value) {
+        quickState.focus();
+        alert("Please select a Contract State.");
+        return;
+      }
+
+      caseProfile.product = quickProduct.value;
+      caseProfile.state = quickState.value;
+      caseProfile.bot = quickBOT.value;
+      caseProfile.replacement = quickReplacement.value;
+      caseProfile.insured = quickInsured.value;
+
+      setHiddenValue("selectedProduct", caseProfile.product);
+
+      setHiddenValue("selectedState", caseProfile.state);
+
+      setHiddenValue("selectedBOT", caseProfile.bot);
+
+      setHiddenValue("selectedReplacement", caseProfile.replacement);
+
+      setHiddenValue("selectedInsuredType", caseProfile.insured);
+
+      /*
+       * Synchronize the onboarding state dropdown so state-dependent
+       * scripts and friendly state-name display use the same value.
+       */
+      if (stateDropdown) {
+        stateDropdown.value = caseProfile.state;
+      }
+
+      quickStartModal.hidden = true;
+
+      openWorkbench({
+        hideQuestions: true,
+      });
+    });
+  }
   document.querySelectorAll("[data-product]").forEach(function (button) {
     button.setAttribute("aria-pressed", "false");
 
@@ -350,11 +398,12 @@ document.addEventListener("DOMContentLoaded", function () {
       selectOption(button, "[data-product]");
 
       renderProgressAnswers();
+
       updateProgress(2);
+
       revealSection(questionState);
     });
   });
-
   if (stateDropdown) {
     stateDropdown.addEventListener("change", function () {
       if (!stateDropdown.value) {
@@ -366,11 +415,12 @@ document.addEventListener("DOMContentLoaded", function () {
       setHiddenValue("selectedState", caseProfile.state);
 
       renderProgressAnswers();
+
       updateProgress(3);
+
       revealSection(questionBot);
     });
   }
-
   document.querySelectorAll("[data-bot]").forEach(function (button) {
     button.setAttribute("aria-pressed", "false");
 
