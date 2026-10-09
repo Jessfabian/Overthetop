@@ -83,8 +83,6 @@ body {
   font-family: "Lato", Arial, sans-serif;
 }
 
-
-
 #welcomeHero {
   min-height: 100vh;
 
@@ -603,7 +601,7 @@ body {
   margin-bottom: 32px;
 }
 .completion-container h2 {
-   font-size: clamp(40px, 6vw, 72px);
+  font-size: clamp(40px, 6vw, 72px);
 
   color: #001735;
 
@@ -747,17 +745,11 @@ body {
 
 /* Completion screen */
 
-
-
 /* Perfect. slides upward */
-
-
 
 /* Subtitle fades */
 
-
 /* Button grows slightly and fades */
-
 
 /* Blue page wash */
 
@@ -1268,8 +1260,6 @@ textarea {
   box-shadow: 0 10px 24px rgba(2, 101, 255, 0.2);
 }
 
-
-
 /* =========================================================
    RESPONSIVE
 ========================================================= */
@@ -1443,7 +1433,7 @@ textarea {
 }
 
 .quick-start-panel {
- width: min(700px, 92vw);
+  width: min(700px, 92vw);
 
   background: white;
 
@@ -1623,11 +1613,10 @@ textarea {
 
   border-radius: 999px;
 
-   background: #e9fff2;
+  background: #e9fff2;
 
   color: #00a85a;
-  box-shadow:
-    0 0 12px rgba(0, 255, 128, .25);
+  box-shadow: 0 0 12px rgba(0, 255, 128, 0.25);
   font-size: 11px;
 
   font-weight: 700;
@@ -1635,25 +1624,21 @@ textarea {
   text-transform: uppercase;
 }
 .timer-stat.running {
-  animation:
-    timerCardPulse 2s ease-in-out infinite;
+  animation: timerCardPulse 2s ease-in-out infinite;
 }
 @keyframes timerCardPulse {
-
   0% {
-    box-shadow:
-      0 0 0 rgba(32,255,130,0);
+    box-shadow: 0 0 0 rgba(32, 255, 130, 0);
   }
 
   50% {
     box-shadow:
-      0 0 20px rgba(32,255,130,.25),
-      0 0 40px rgba(32,255,130,.12);
+      0 0 20px rgba(32, 255, 130, 0.25),
+      0 0 40px rgba(32, 255, 130, 0.12);
   }
 
   100% {
-    box-shadow:
-      0 0 0 rgba(32,255,130,0);
+    box-shadow: 0 0 0 rgba(32, 255, 130, 0);
   }
 }
 .timer-status-dot {
@@ -1676,28 +1661,23 @@ textarea {
   animation: timerGlow 2s ease-in-out infinite;
 }
 @keyframes timerGlow {
-
   0% {
-    box-shadow:
-      0 0 0 rgba(32,255,130,0);
+    box-shadow: 0 0 0 rgba(32, 255, 130, 0);
   }
 
   50% {
-    box-shadow:
-      0 0 14px rgba(32,255,130,.18);
+    box-shadow: 0 0 14px rgba(32, 255, 130, 0.18);
   }
 
   100% {
-    box-shadow:
-      0 0 0 rgba(32,255,130,0);
+    box-shadow: 0 0 0 rgba(32, 255, 130, 0);
   }
-
 }
 
 @keyframes pulseDot {
   0% {
     transform: scale(1);
-    opacity: .8;
+    opacity: 0.8;
 
     box-shadow:
       0 0 8px #20ff82,
@@ -1716,7 +1696,7 @@ textarea {
 
   100% {
     transform: scale(1);
-    opacity: .8;
+    opacity: 0.8;
 
     box-shadow:
       0 0 8px #20ff82,
@@ -1726,14 +1706,13 @@ textarea {
 
 .timer-mini-actions {
   display: flex;
-position: relative;
+  position: relative;
   gap: 8px;
 
   margin-top: 8px;
 }
 #dashboardTimer {
-
- font-size: 32px;
+  font-size: 32px;
   line-height: 1;
 }
 .timer-mini-actions button {
@@ -1751,7 +1730,7 @@ position: relative;
 .timer-status-pill.paused .timer-status-dot {
   background: #f5a524;
   animation: none;
-}/* =========================================================
+} /* =========================================================
    FINAL PROFILE AND COMPLETION LAYOUT
 ========================================================= */
 
@@ -1761,10 +1740,8 @@ position: relative;
 
   margin: 60px auto 24px;
 
-   text-align: center;
+  text-align: center;
 }
-
-
 
 .profile-summary-grid {
   display: flex;
@@ -1777,7 +1754,7 @@ position: relative;
 
   width: 100%;
   min-height: 56px;
- text-align: left;
+  text-align: left;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1828,17 +1805,12 @@ position: relative;
 }
 
 #qualificationSummary h3 {
-
   margin: 0 0 16px;
 
   color: #001735;
 
   font-family:
-    "MM Sharp",
-    "MM Sharp Sans",
-    "Century Gothic",
-    "Futura",
-    sans-serif;
+    "MM Sharp", "MM Sharp Sans", "Century Gothic", "Futura", sans-serif;
   text-align: center;
   font-size: 22px;
   font-weight: 700;
@@ -1874,7 +1846,7 @@ position: relative;
   min-height: 0 !important;
   height: auto !important;
 
-   margin: 16px auto 80px !important;
+  margin: 16px auto 80px !important;
   padding: 0 !important;
 
   position: static !important;
@@ -1902,11 +1874,7 @@ position: relative;
   color: #001735;
 
   font-family:
-    "MM Sharp",
-    "MM Sharp Sans",
-    "Century Gothic",
-    "Futura",
-    sans-serif;
+    "MM Sharp", "MM Sharp Sans", "Century Gothic", "Futura", sans-serif;
 
   font-size: clamp(48px, 6vw, 76px);
   font-weight: 700;
@@ -1951,7 +1919,6 @@ position: relative;
     margin-top: 32px !important;
   }
 
-
   #qualificationComplete h2 {
     font-size: 48px;
   }
@@ -1967,10 +1934,10 @@ position: relative;
 ========================================== */
 
 #nyReviewDashboard {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 /* ==========================================
@@ -1978,20 +1945,20 @@ position: relative;
 ========================================== */
 
 .section-header {
-    padding: 20px;
-    border-radius: 12px;
-    background: #0b3a68;
-    color: white;
+  padding: 20px;
+  border-radius: 12px;
+  background: #0b3a68;
+  color: white;
 }
 
 .section-header h2 {
-    margin: 0;
-    font-size: 1.5rem;
+  margin: 0;
+  font-size: 1.5rem;
 }
 
 .section-header p {
-    margin-top: 6px;
-    opacity: 0.9;
+  margin-top: 6px;
+  opacity: 0.9;
 }
 
 /* ==========================================
@@ -1999,25 +1966,25 @@ position: relative;
 ========================================== */
 
 .review-card {
-    background: white;
-    border: 1px solid #d9e2ec;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 6px rgba(0,0,0,.05);
+  background: white;
+  border: 1px solid #d9e2ec;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .review-card h3 {
-    margin-top: 0;
-    margin-bottom: 16px;
-    color: #0b3a68;
-    border-bottom: 1px solid #e5e7eb;
-    padding-bottom: 8px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #0b3a68;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 8px;
 }
 
 .review-card h4 {
-    margin-top: 20px;
-    margin-bottom: 12px;
-    color: #1d4f91;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  color: #1d4f91;
 }
 
 /* ==========================================
@@ -2025,28 +1992,28 @@ position: relative;
 ========================================== */
 
 .summary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
 }
 
 .summary-grid div {
-    padding: 12px;
-    background: #f7fafc;
-    border-radius: 8px;
+  padding: 12px;
+  background: #f7fafc;
+  border-radius: 8px;
 }
 
 .summary-grid label {
-    display: block;
-    font-size: 12px;
-    color: #5b6770;
-    text-transform: uppercase;
-    margin-bottom: 6px;
+  display: block;
+  font-size: 12px;
+  color: #5b6770;
+  text-transform: uppercase;
+  margin-bottom: 6px;
 }
 
 .summary-grid span {
-    font-weight: 600;
-    color: #0b3a68;
+  font-weight: 600;
+  color: #0b3a68;
 }
 
 /* ==========================================
@@ -2054,16 +2021,16 @@ position: relative;
 ========================================== */
 
 .review-card label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .review-card input[type="checkbox"],
 .review-card input[type="radio"] {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* ==========================================
@@ -2071,19 +2038,19 @@ position: relative;
 ========================================== */
 
 .review-card textarea {
-    width: 100%;
-    min-height: 100px;
-    margin-top: 12px;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #cbd5e0;
-    resize: vertical;
-    font-family: inherit;
+  width: 100%;
+  min-height: 100px;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+  resize: vertical;
+  font-family: inherit;
 }
 
 .review-card textarea:focus {
-    outline: none;
-    border-color: #0b3a68;
+  outline: none;
+  border-color: #0b3a68;
 }
 
 /* ==========================================
@@ -2092,28 +2059,27 @@ position: relative;
 
 .review-card input[type="date"],
 .review-card select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #cbd5e0;
-    margin-bottom: 12px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+  margin-bottom: 12px;
 }
-
 
 /* ==========================================
    ILLUSTRATION SECTION
 ========================================== */
 
 #illustrationReviewSection {
-    border-left: 4px solid #1976d2;
+  border-left: 4px solid #1976d2;
 }
 
 #illustrationValidatorContainer {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 #Illustration-Validation {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 /* ==========================================
@@ -2121,18 +2087,18 @@ position: relative;
 ========================================== */
 
 #nyIllustrationStatus {
-    margin: 12px 0;
+  margin: 12px 0;
 }
 
 .status-badge {
-    display: inline-flex;
-    align-items: center;
-    padding: 8px 14px;
-    border-radius: 999px;
-    font-weight: 600;
-    background: #fff3cd;
-    color: #856404;
-    border: 1px solid #ffeeba;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
 }
 
 /* ==========================================
@@ -2140,7 +2106,7 @@ position: relative;
 ========================================== */
 
 #replacementReviewSection {
-    border-left: 4px solid #6f42c1;
+  border-left: 4px solid #6f42c1;
 }
 
 #replacementExemptionSection,
@@ -2149,9 +2115,9 @@ position: relative;
 #internalReplacementSection,
 #externalReplacementSection,
 #reg60TrackingSection {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid #eceff3;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eceff3;
 }
 
 /* ==========================================
@@ -2159,7 +2125,7 @@ position: relative;
 ========================================== */
 
 #suitabilitySection {
-    border-left: 4px solid #2e7d32;
+  border-left: 4px solid #2e7d32;
 }
 
 /* ==========================================
@@ -2167,7 +2133,7 @@ position: relative;
 ========================================== */
 
 #botReviewSection {
-    border-left: 4px solid #ef6c00;
+  border-left: 4px solid #ef6c00;
 }
 
 /* ==========================================
@@ -2175,7 +2141,7 @@ position: relative;
 ========================================== */
 
 #formsReviewSection {
-    border-left: 4px solid #455a64;
+  border-left: 4px solid #455a64;
 }
 
 /* ==========================================
@@ -2183,13 +2149,13 @@ position: relative;
 ========================================== */
 
 #nyReviewStatus {
-    padding: 14px 18px;
-    border-radius: 10px;
-    font-weight: 600;
-    background: #e3f2fd;
-    border: 1px solid #90caf9;
-    color: #0b3a68;
-    margin-bottom: 15px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  background: #e3f2fd;
+  border: 1px solid #90caf9;
+  color: #0b3a68;
+  margin-bottom: 15px;
 }
 
 /* ==========================================
@@ -2197,13 +2163,394 @@ position: relative;
 ========================================== */
 
 @media (max-width: 768px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .summary-grid {
-        grid-template-columns: 1fr;
-    }
+  .review-card {
+    padding: 15px;
+  }
+}
 
-    .review-card {
-        padding: 15px;
-    }
+/* ==========================================
+   NY REVIEW DASHBOARD
+========================================== */
 
+#nyReviewDashboard {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#nyReviewDashboard .review-card {
+  background: var(--card-background, #ffffff);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+#nyReviewDashboard h3,
+#nyReviewDashboard h4 {
+  margin-top: 0;
+  color: #0d3b66;
+}
+
+/* ==========================================
+   NY STATUS BANNER
+========================================== */
+
+.review-status {
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: #eef6ff;
+  border: 1px solid #bad8ff;
+  font-weight: 600;
+  color: #004a99;
+}
+
+/* ==========================================
+   SUMMARY GRID
+========================================== */
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.summary-grid > div {
+  background: #f8fafc;
+  padding: 0.9rem;
+  border-radius: 10px;
+}
+
+.summary-grid label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.summary-grid span {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* ==========================================
+   POLARIS REPLACEMENT SECTION
+========================================== */
+
+#polarisReplacementCheckSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#polarisReplacementCheckSection label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+#polarisReplacementCheckSection textarea {
+  width: 100%;
+  min-height: 100px;
+}
+
+/* ==========================================
+   REPLACEMENT REVIEW GRID
+========================================== */
+
+.replacement-review-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 900px;
+}
+
+.replacement-review-grid .review-card,
+#internalReplacementSection,
+#externalReplacementSection,
+#exchangeSection {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
+}
+
+/* ==========================================
+   INTERNAL / EXTERNAL REPLACEMENT
+========================================== */
+
+#internalReplacementSection {
+  border-left: 4px solid #4caf50;
+  margin-top: 1rem;
+}
+
+#externalReplacementSection {
+  border-left: 4px solid #ff9800;
+  margin-top: 1rem;
+}
+
+#exchangeSection {
+  border-left: 4px solid #3f51b5;
+  margin-top: 1rem;
+}
+
+/* ==========================================
+   SECTION HEADINGS
+========================================== */
+
+.review-card h3,
+#internalReplacementSection h3,
+#externalReplacementSection h3,
+#exchangeSection h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #0f172a;
+  font-size: 1rem;
+}
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+.review-card input[type="text"],
+.review-card select,
+.review-card textarea,
+#polarisReplacementCheckSection input[type="text"],
+#polarisReplacementCheckSection textarea {
+  max-width: 500px;
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  margin-top: 0.35rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.9rem;
+}
+
+.review-card input[type="text"]:focus,
+.review-card textarea:focus,
+.review-card select:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+}
+
+/* ==========================================
+   CHECKBOXES / RADIOS
+========================================== */
+
+.review-card input[type="checkbox"],
+.review-card input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #005eb8;
+}
+
+/* ==========================================
+   ALERTS
+========================================== */
+
+#polarisReplacementAlert {
+  background: #fff4e5;
+  border: 1px solid #ffcc80;
+  border-radius: 10px;
+  padding: 0.9rem;
+  font-weight: 600;
+  color: #b45309;
+}
+
+/* ==========================================
+   REQUIREMENT OUTPUT
+========================================== */
+
+#replacementRequirementOutput {
+  width: 100%;
+  min-height: 140px;
+  font-family: inherit;
+}
+
+#copyReplacementRequirement {
+  margin-top: 0.75rem;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+  .replacement-review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+   STATE REQUIREMENTS
+========================================== */
+
+#requiredForms {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.required-form-row {
+  background: #fff;
+  border: 1px solid #dbe5f0;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+/* top row */
+
+.state-form-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.state-form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.state-form-id {
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.form-description {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* buttons */
+
+.form-status-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.form-status-button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.igo-button {
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+.nigo-button {
+  background: #fff4ed;
+  color: #c2410c;
+}
+
+.form-status-button:hover {
+  transform: translateY(-1px);
+}
+
+/* selected */
+
+.igo-button.selected {
+  background: #12b76a;
+  color: white;
+}
+
+.nigo-button.selected {
+  background: #f97316;
+  color: white;
+}
+
+/* status text */
+
+.form-review-result {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.result-igo {
+  color: #12b76a;
+}
+
+.result-nigo {
+  color: #f97316;
+}
+
+.result-nigo-pending {
+  color: #eab308;
+}
+
+/* NIGO section */
+
+.nigo-template-picker {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #dbe5f0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.nigo-template-picker label {
+  font-weight: 600;
+}
+
+.nigo-template-select {
+  max-width: 400px;
+}
+
+.generated-requirement-output {
+  width: 100%;
+  min-height: 120px;
+  border-radius: 10px;
+}
+
+.nigo-requirement-save-status {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* dashboard summary */
+
+.state-requirement-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#applicableFormCount {
+  background: #0f62fe;
+  color: white;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+}
+
+[hidden] {
+  display: none !important;
 }
