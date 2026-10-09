@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Cases</title>
+   <link rel="stylesheet" href="mycases/cases.css" />
+</head>
+<body>
+
+<div class="page-header">
+    <h1>My Cases</h1>
+    <button id="newCaseBtn">New Case</button>
+</div>
+
+<div class="search-bar">
+    <input
+        type="text"
+        id="searchCases"
+        placeholder="Search by case number or insured"
+    >
+</div>
+
+<table id="casesTable">
+    <thead>
+        <tr>
+            <th>Case #</th>
+            <th>Insured</th>
+            <th>Product</th>
+            <th>State</th>
+            <th>Status</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+
+    <tbody id="casesBody"></tbody>
+</table>
+
+<script src="mycases/cases.js"></script>
+
+</body>
+</html>

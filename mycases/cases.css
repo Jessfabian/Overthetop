@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    background: #f4f6f8;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+button {
+    background: #003b75;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#casesTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+#casesTable th,
+#casesTable td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+#casesTable tr:hover {
+    background: #eef5ff;
+    cursor: pointer;
+}

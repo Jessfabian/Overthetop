@@ -414,16 +414,22 @@ document.addEventListener("DOMContentLoaded", function () {
         revealSection(questionState);
       });
     });
-  /* * State question */ if (stateDropdown) {
+  /* State question */
+
+  if (stateDropdown) {
     stateDropdown.addEventListener("change", function () {
       if (!stateDropdown.value) {
         return;
       }
-      caseProfile.state =
-      Dropdown.value;
+
+      caseProfile.state = stateDropdown.value;
+
       setHiddenValue("selectedState", caseProfile.state);
+
       renderProgressAnswers();
+
       updateProgress(3);
+
       revealSection(questionBot);
     });
   }

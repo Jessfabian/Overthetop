@@ -1,0 +1,342 @@
+<!-- ===================================== -->
+<!-- NEW YORK REVIEW DASHBOARD -->
+<!-- ===================================== -->
+
+<link rel="stylesheet" href="Styling/app.css" />
+
+<section id="nyReviewDashboard" class="workbench-section">
+  <div class="section-header">
+    <h2>New York Review</h2>
+    <p>State-specific Initial Review workflow.</p>
+  </div>
+
+  <!-- ===================================== -->
+  <!-- CASE SUMMARY -->
+  <!-- ===================================== -->
+
+  <div class="review-card" id="caseSummarySection">
+    <h3>Case Summary</h3>
+
+    <div class="summary-grid">
+      <div>
+        <label>Product</label>
+        <span id="nyProduct"></span>
+      </div>
+
+      <div>
+        <label>State</label>
+        <span id="nyState"></span>
+      </div>
+
+      <div>
+        <label>BOT</label>
+        <span id="nyBOT"></span>
+      </div>
+
+      <div>
+        <label>Replacement</label>
+        <span id="nyReplacement"></span>
+      </div>
+
+      <div>
+        <label>Insured Type</label>
+        <span id="nyInsuredType"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================== -->
+  <!-- BOT REVIEW -->
+  <!-- ===================================== -->
+
+  <div class="review-card" id="botReviewSection">
+    <h3>BOT Review</h3>
+
+    <label>
+      <input type="checkbox" />
+      BOT Notes Reviewed
+    </label>
+
+    <label>
+      <input type="checkbox" />
+      Exceptions Reviewed
+    </label>
+
+    <label>
+      <input type="checkbox" />
+      Follow Up Required
+    </label>
+
+    <label>
+      <input type="checkbox" />
+      BOT Review Complete
+    </label>
+
+    <textarea
+      id="botReviewNotes"
+      placeholder="BOT review notes here"></textarea>
+  </div>
+
+  <!-- ===================================== -->
+  <!-- SUITABILITY -->
+  <!-- ===================================== -->
+
+  <div class="review-card" id="suitabilitySection">
+    <h3>Suitability</h3>
+
+    <label>
+      <input type="radio" name="suitabilityStatus" />
+      IGO
+    </label>
+
+    <label>
+      <input type="radio" name="suitabilityStatus" />
+      NIGO
+    </label>
+
+    <label>
+      <input type="radio" name="suitabilityStatus" />
+      Pending
+    </label>
+
+    <textarea id="suitabilityNotes" placeholder="Suitability notes"></textarea>
+  </div>
+
+  <!-- ===================================== -->
+  <!-- SALES ILLUSTRATION REVIEW -->
+  <!-- ===================================== -->
+  <div id="nyReviewStatus" class="review-status">Ready For Review</div>
+  <div class="ny-illustration-review">
+    <h4>NY Illustration Review</h4>
+
+    <label>
+      <input type="checkbox" id="nyIllustrationSigned" />
+      Signed Illustration Submitted
+    </label>
+
+    <label>
+      <input type="checkbox" id="nyIllustrationOwner" />
+      Signed by Correct Party
+    </label>
+
+    <label>
+      <input type="checkbox" id="nyIllustrationDate" />
+      Dated
+    </label>
+
+    <label>
+      <input type="checkbox" id="nyBeforePart1" />
+      Signed On/Before Part 1
+    </label>
+  </div>
+
+  <!-- ===================================== -->
+  <!-- FORMS REVIEW -->
+  <!-- ===================================== -->
+
+  <div class="review-card" id="formsReviewSection">
+    <h3>Forms Review</h3>
+
+    <label>
+      <input type="checkbox" />
+      Part 1 Complete
+    </label>
+
+    <label>
+      <input type="checkbox" />
+      Producer Statement Complete
+    </label>
+
+    <label>
+      <input type="checkbox" />
+      State Forms Present
+    </label>
+
+    <label>
+      <input type="checkbox" />
+      Signatures Valid
+    </label>
+
+    <label>
+      <input type="checkbox" />
+      Dates Valid
+    </label>
+
+    <label>
+      <input type="checkbox" />
+      Images Legible
+    </label>
+  </div>
+
+  <!-- ===================================== -->
+  <!-- REPLACEMENT REVIEW -->
+  <!-- ===================================== -->
+
+  <div class="review-card" id="replacementReviewSection">
+    <h3>Replacement Review</h3>
+
+    <!-- EXEMPTION REVIEW -->
+
+    <div id="replacementExemptionSection">
+      <h4>Exemption Review</h4>
+
+      <label>
+        <input type="checkbox" />
+        Employer Paid
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        Group Life
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        Conversion
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        Option Exercise
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        Non-Convertible Term
+      </label>
+    </div>
+
+    <!-- F6484 -->
+
+    <div id="f6484Section">
+      <h4>F6484 Definition of Replacement</h4>
+
+      <label>
+        <input type="checkbox" />
+        Present
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        Complete
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        Signed
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        Signed On/Before Part 1
+      </label>
+    </div>
+
+    <!-- F5436NY -->
+
+    <div id="f5436NySection">
+      <h4>F5436NY Important Notice</h4>
+
+      <label>
+        <input type="checkbox" />
+        Present
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        Signed
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        Signed On/Before Part 1
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        Owner Signed
+      </label>
+    </div>
+
+    <!-- INTERNAL -->
+
+    <div id="internalReplacementSection">
+      <h4>Internal Replacement</h4>
+
+      <label>
+        <input type="checkbox" />
+        Client History Reviewed
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        Inforce Illustration Reviewed
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        DC01 Updated
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        Replacement Letter Produced
+      </label>
+    </div>
+
+    <!-- EXTERNAL -->
+
+    <div id="externalReplacementSection">
+      <h4>External Replacement</h4>
+
+      <label>
+        <input type="checkbox" />
+        F6512 Received
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        F6512 IGO
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        Carrier Identified
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        Carrier Fax Sent
+      </label>
+
+      <label>
+        <input type="checkbox" />
+        SharePoint Tracking Created
+      </label>
+    </div>
+
+    <!-- REG 60 -->
+
+    <div id="reg60TrackingSection">
+      <h4>Reg 60 Tracking</h4>
+
+      <label>Fax Date</label>
+
+      <input type="date" />
+
+      <label>20 Day Deadline</label>
+
+      <input type="date" />
+
+      <label>Response Received</label>
+
+      <select>
+        <option value="">Select</option>
+
+        <option>Yes</option>
+
+        <option>No</option>
+      </select>
+    </div>
+  </div>
+</section>
