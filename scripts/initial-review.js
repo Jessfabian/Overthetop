@@ -1350,7 +1350,18 @@ document.addEventListener("DOMContentLoaded", () => {
         font-size: 11pt;
         line-height: 1.4;
       ">
-
+<div style="
+    text-align:center;
+    background:#eef6ff;
+    border:1px solid #c6dcff;
+    color:#002e6b;
+    padding:10px;
+    margin:0 0 25px;
+    border-radius:6px;
+    font-weight:700;
+">
+    This email is being sent by the MMSD Case Management Team
+</div>
         <p style="margin: 0 0 10px;">
           Insured: ${insuredName}
         </p>
@@ -1376,7 +1387,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <p style="margin: 0 0 18px;">
           The Case Manager initial review has been
-          completed and found that contractual
+          completed, and found that contractual
           requirements are needed.
         </p>
 
@@ -1419,7 +1430,10 @@ document.addEventListener("DOMContentLoaded", () => {
           Product applied for:
         </p>
 
-        <p style="margin: 0 0 18px;">
+        <p style="
+    margin: 0 0 10px;
+    text-align: center;
+">
           Please forward all documents, forms, exams,
           authorizations, etc. to
           <a
@@ -1433,7 +1447,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p style="margin: 0 0 18px;">
           A hold for issue will be placed on the
           policy at the time of underwriting approval
-          awaiting the firm confirmation of the final
+          awaiting the firm's confirmation of the final
           case design. When you are ready to proceed
           with the issuance of this policy, please let
           your assigned Case Manager know to release
@@ -1444,10 +1458,72 @@ document.addEventListener("DOMContentLoaded", () => {
           requirement.
         </p>
 
-        <p style="margin: 0;">
-          Thank you in advance for your support and
-          business.
-        </p>
+<p style="
+    margin: 0 0 14px;
+    font-size: 12pt;
+">
+    <strong>Questions or Next Steps?</strong>
+</p>
+
+<p style="
+    margin: 0 0 15px;
+">
+    To provide the fastest service and ensure your request reaches the appropriate team:
+</p>
+
+<ul style="
+    margin: 0 0 20px;
+    padding-left: 25px;
+">
+    <li style="margin-bottom: 10px;">
+        Case support, questions, and escalations, contact your
+        <strong>Account Manager</strong>, cc'd on this email.
+    </li>
+
+    <li style="margin-bottom: 10px;">
+        For real-time access to case status and outstanding requirements, visit the
+        <strong>
+            <a
+                href="https://mmsd.massmutual.com/workbench/"
+                target="_blank"
+                style="color: #060479;"
+            >
+                MMSD Portal
+            </a>
+        </strong>
+    </li>
+
+    <li style="margin-bottom: 10px;">
+        Submit requirements to
+        <strong>
+            <a
+                href="mailto:MMSD_Requirements@massmutual.com"
+                style="color: #060479;"
+            >
+                MMSD_Requirements@massmutual.com
+            </a>
+        </strong>
+        and copy your Account Manager.
+    </li>
+
+    <li>
+        MMSD New Business Team:
+        <strong>(800) 601-9983 - Option 4</strong>
+    </li>
+</ul>
+
+<p style="
+    margin: 18px 0 0;
+    font-size: 10pt;
+    color: #555555;
+">
+    <strong>Note:</strong>
+    <em>
+        This message was sent from a shared mailbox. Replies may
+        experience delays in review and response. Using the
+        resources above will help ensure the quickest service.
+    </em>
+</p>
       </div>
     `;
 
@@ -1471,6 +1547,21 @@ document.addEventListener("DOMContentLoaded", () => {
       font-size: 11pt;
       line-height: 1.4;
     ">
+<div style="
+    text-align:center;
+    background:#eef6ff;
+    border:1px solid #c6dcff;
+    color:#002e6b;
+    padding:10px;
+    margin:0 0 25px;
+    border-radius:6px;
+    font-weight:700;
+">
+    This email is being sent by the MMSD Case Management Team
+</div>
+
+
+
  <p style="margin: 0 0 10px;">
           Insured: ${insuredName}
         </p>
@@ -1496,7 +1587,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
  <p style="margin: 0 0 22px;">
-        <strong>The Case Manager initial review has been completed and there are no contractual requirements outstanding at this time.</strong>
+        <strong>The Case Manager initial review has been completed, and there are no contractual requirements outstanding at this time.</strong>
       </p>
 
 
@@ -1528,7 +1619,10 @@ document.addEventListener("DOMContentLoaded", () => {
       <p style="margin: 0 0 22px;">
         Product applied for:
       </p>
- <p style="margin: 0 0 18px;">
+<p style="
+    margin: 0 0 10px;
+    text-align: center;
+">
           Please forward all documents, forms, exams,
           authorizations, etc. to
           <strong> <a
@@ -1541,7 +1635,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <p style="margin: 0 0 18px;">
         A hold for issue will be placed on the policy
         at the time of underwriting approval awaiting
-        the firm confirmation of the final case
+        the firm's confirmation of the final case
         design. When you are ready to proceed with
         the issuance of this policy, please let your
         assigned Case Manager know to release the
@@ -1551,10 +1645,72 @@ document.addEventListener("DOMContentLoaded", () => {
         release the hold issue requirement.
       </p>
 
-      <p style="margin: 0;">
-        Thank you in advance for your support and
-        business.
-      </p>
+<p style="
+    margin: 0 0 14px;
+    font-size: 12pt;
+">
+    <strong>Questions or Next Steps?</strong>
+</p>
+
+<p style="
+    margin: 0 0 15px;
+">
+    To provide the fastest service and ensure your request reaches the appropriate team:
+</p>
+
+<ul style="
+    margin: 0 0 20px;
+    padding-left: 25px;
+">
+    <li style="margin-bottom: 10px;">
+        Case support, questions, and escalations, contact your
+        <strong>Account Manager</strong>, cc'd on this email.
+    </li>
+
+    <li style="margin-bottom: 10px;">
+        For real-time access to case status and outstanding requirements, visit the
+        <strong>
+            <a
+                href="https://mmsd.massmutual.com/workbench/"
+                target="_blank"
+                style="color: #060479;"
+            >
+                MMSD Portal
+            </a>
+        </strong>
+    </li>
+
+    <li style="margin-bottom: 10px;">
+        Submit requirements to
+        <strong>
+            <a
+                href="mailto:MMSD_Requirements@massmutual.com"
+                style="color: #060479;"
+            >
+                MMSD_Requirements@massmutual.com
+            </a>
+        </strong>
+        and copy your Account Manager.
+    </li>
+
+    <li>
+        MMSD New Business Team:
+        <strong>(800) 601-9983 - Option 4</strong>
+    </li>
+</ul>
+
+<p style="
+    margin: 18px 0 0;
+    font-size: 10pt;
+    color: #555555;
+">
+    <strong>Note:</strong>
+    <em>
+        This message was sent from a shared mailbox. Replies may
+        experience delays in review and response. Using the
+        resources above will help ensure the quickest service.
+    </em>
+</p>
     </div>
   `;
   }

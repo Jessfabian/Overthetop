@@ -632,11 +632,27 @@ return true;
         return;
       }
 
-      const saved = window.saveRequirementToReviewPackage(
-        requirementText,
-        "manual",
-        "",
-      );
+    const activeRow = window.activeNigoRow;
+
+    const activeFormId = activeRow?.dataset?.formId || "";
+
+    const saved = window.saveRequirementToReviewPackage(
+      requirementText,
+      activeFormId ? "nigo" : "manual",
+      activeFormId,
+    );
+
+    if (saved && activeFormId && window.formReviewStatus?.[activeFormId]) {
+      window.formReviewStatus[activeFormId].status = "NIGO";
+
+      window.formReviewStatus[activeFormId].requirementGenerated = true;
+
+      window.formReviewStatus[activeFormId].requirementText = requirementText;
+
+      activeRow.dataset.formStatus = "nigo";
+
+      document.dispatchEvent(new CustomEvent("stateFormsUpdated"));
+    }
 
       if (requirementSaveStatus) {
         requirementSaveStatus.textContent = saved

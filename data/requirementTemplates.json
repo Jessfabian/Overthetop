@@ -160,16 +160,19 @@
       "category": "Owner/Bene",
       "template": "Please confirm the owner of the policy."
     },
- "confirmInformation": {
+     "confirmInformation": {
       "label": "Confirm Information",
       "category": "Clarification",
       "template": "Please confirm the {personType}'s {informationType}.",
       "fields": ["personType", "informationType"]
     },
+
+    "nySignedIllustration": {
+    "label": "NY Signed Illustration Required",
+    "category": "NY",
     "template": "Please submit a signed sales illustration matching the Part 1. The illustration submitted is {illustrationIssue}. This is required for New York policies under Regulation 74.",
-     "category": "NY",
-      "fields": ["illustrationIssue"]
-    },
+    "fields": ["illustrationIssue"]
+      },
 
     "nyIllustrationAtApproval": {
       "label": "New York Illustration Required at Approval",
@@ -191,7 +194,7 @@
       "fields": []
     },
 
- "licensingRequirement": {
+    "licensingRequirement": {
       "label": "Licensing NIGO",
       "category": "General",
       "template": "Please note, this case currently has an open licensing requirement. Most requirements are resolved prior to approval; however, if the outstanding requirement is due to an inactive license resulting in incorrect signatures date, new paperwork will need to be signed by both the client and the advisor. A follow-up email will be sent from one of our Field Service Specialists in advisor Operations on the next steps to clear the licensing requirement.",
@@ -203,13 +206,13 @@
       "template": "An age change occurred after the application was submitted. Please advise whether the policy should be issued at current age or with saved age.",
       "fields": []
     },
- "absoluteAssignment1035": {
+    "absoluteAssignment1035": {
       "label": "1035 Exchange Absolute Assignment",
       "category": "General",
       "template": "We are missing a fully completed Absolute Assignment form (P4051) for the 1035x. This form will need to be wet signed, and we can obtain this form on delivery.",
       "fields": []
     },
-  "IDRequired": {
+    "IDRequired": {
       "label": "Copy Required",
       "category": "General",
       "template": "Please provide a copy of the insured's visa.",
@@ -221,5 +224,5 @@
       "template": "Please provide {requirementDetail}.",
       "fields": ["requirementDetail"]
     }
-  }
+  }}
 
