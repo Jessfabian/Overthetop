@@ -27,9 +27,9 @@
       }
 
       body {
-        margin: 0;
+
         color: var(--vc-ink);
-        background: var(--vc-surface);
+        background: #eef2f8;
         font-family: "MM Sharp", "Century Gothic", "Futura", sans-serif;
       }
 
@@ -61,46 +61,9 @@
         min-height: calc(100vh - 80px);
       }
 
-      .vc-hero {
-        position: relative;
-        overflow: hidden;
-        color: var(--vc-white);
-        background:
-          radial-gradient(
-            circle at 88% 15%,
-            rgba(77, 199, 235, 0.38),
-            transparent 28%
-          ),
-          linear-gradient(
-            120deg,
-            var(--vc-dark-blue),
-            var(--vc-blue) 62%,
-            var(--vc-peacock-blue)
-          );
-      }
 
-      .vc-hero::after {
-        position: absolute;
-        right: -90px;
-        bottom: -145px;
-        width: 360px;
-        height: 360px;
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        border-radius: 50%;
-        content: "";
-      }
 
-.vc-hero__inner,
-.vc-shell{
-    width:min(1400px, calc(100% - 40px));
-    margin: 0 auto;
-}
 
-      .vc-hero__inner {
-        position: relative;
-        z-index: 1;
-        padding: 54px 0 88px;
-      }
 
       .vc-eyebrow {
         display: inline-flex;
@@ -122,27 +85,14 @@
         content: "";
       }
 
-      .vc-hero h1 {
-        margin: 0;
-        font-size: clamp(2.25rem, 5vw, 4rem);
-        line-height: 1.02;
-        letter-spacing: -0.035em;
-      }
 
-      .vc-hero p {
-        max-width: 670px;
-        margin: 18px 0 0;
-        color: rgba(255, 255, 255, 0.86);
-        font-size: 1.05rem;
-        line-height: 1.6;
-      }
 
-      .vc-shell {
-        position: relative;
-        z-index: 2;
-        margin-top: -42px;
-        padding-bottom: 52px;
-      }
+     .vc-shell {
+    position: relative;
+    z-index: 2;
+   
+    padding-bottom: 52px;
+}
 
       .vc-context-bar,
       .vc-card {
@@ -510,42 +460,57 @@
         margin: 0;
       }
 
-      @media (max-width: 850px) {
-        .vc-context-bar,
-        .vc-summary-grid,
-        .vc-email-layout {
-          grid-template-columns: 1fr;
-        }
+/* ==========================================
+   HERO
+========================================== */
 
-        .vc-state-chip {
-          justify-self: start;
-        }
-      }
+.vc-hero {
 
-      @media (max-width: 640px) {
-        .vc-hero__inner,
-        .vc-shell {
-          width: min(100% - 24px, 1080px);
-        }
+    background: #eef2f8;
 
-        .vc-hero__inner {
-          padding: 42px 0 72px;
-        }
+    border-bottom: 1px solid #d9e6f5;
 
-        .vc-context-bar,
-        .vc-card {
-          padding: 18px;
-          border-radius: 16px;
-        }
+    min-height: auto;
+}
 
-        .vc-jump-nav {
-          border-radius: 14px;
-        }
+.vc-hero::after {
+    display: none;
+}
 
-        .vc-actions .vc-button {
-          width: 100%;
-        }
-      }
+.vc-hero__inner {
+
+    width: min(1200px, calc(100% - 40px));
+
+    margin: 0 auto;
+
+    padding: 90px 0 25px;
+}
+
+.vc-hero h1 {
+
+    margin: 0;
+
+    color: #102a43;
+
+    font-size: clamp(44px, 5vw, 72px);
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -0.05em;
+}
+
+.vc-hero p {
+
+    margin-top: 12px;
+
+    font-size: 18px;
+
+    color: #74869a;
+
+    max-width: 700px;
+}
 #activeNigoFormDisplay {
     padding: 12px 14px;
     border: 1px solid var(--vc-border);
@@ -707,4 +672,90 @@
 
 #amendmentSaveStatus.is-error {
     color: var(--vc-danger);
+}
+
+
+
+
+.ir-header {
+    background: transparent;
+    border-bottom: none;
+    box-shadow: none;
+
+    position: absolute;
+    top: 20px;
+    left: 20px;
+color: #eef2f8;
+    z-index: 100;
+}
+
+.ir-navigation ul {
+
+    display: flex;
+    gap: 12px;
+color: #eef2f8;
+    list-style: none;
+
+    padding: 0;
+    margin: 15px;
+}
+
+.ir-navigation li {
+    text-align: center;
+}
+.ir-navigation {
+  margin-bottom: 20px;
+}
+
+.ir-navigation a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-decoration: none;
+
+    color: #003057;
+
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.ir-navigation img {
+
+    width: clamp(20px, 3vw, 32px);
+    height: auto;
+
+    vertical-align: middle;
+
+    transition: transform 0.2s ease;
+
+    margin-bottom: 2px;
+
+    background: transparent;
+
+    opacity: 0.5;
+}
+
+.ir-navigation img:hover {
+    opacity: 1;
+}
+
+.ir-navigation span {
+
+    font-size: 10px;
+
+    letter-spacing: 0.5px;
+
+    opacity: 0.5;
+}
+
+.ir-navigation span:hover {
+    opacity: 1;
+}
+
+.ir-navigation a:hover {
+
+    opacity: 1;
+
+    transform: scale(1.08);
 }

@@ -23,21 +23,33 @@ h3 {
 }
 
 .ir-header {
-  background: transparent;
-  border-bottom: none;
-  box-shadow: none;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 100;
+
+    position: absolute;
+
+    top: 24px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(1400px, calc(100% - 40px));
+
+    z-index: 1000;
 }
 
 .ir-navigation ul {
-  display: flex;
-  gap: 12px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+
+    display: flex;
+
+    gap: 24px;
+
+    align-items: center;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
 }
 .ir-navigation img:hover {
   opacity: 1;
