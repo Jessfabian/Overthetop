@@ -279,11 +279,26 @@
         <textarea id="globalGeneratedAmendment" rows="8" readonly></textarea>
 
         <div class="vc-actions">
-            <button id="addGlobalAmendment">Add Amendment</button>
-            <button id="copyGlobalAmendment">Copy Amendment</button>
-        </div>
 
-        <div id="amendmentSaveStatus"></div>
+    <button
+        id="addGlobalAmendment"
+        type="button">
+        Add Amendment
+    </button>
+
+    <button
+        id="copyGlobalAmendment"
+        type="button">
+        Copy Amendment
+    </button>
+
+</div>
+
+<div
+    id="amendmentSaveStatus"
+    class="vc-status"
+    aria-live="polite">
+</div>
 
     </section>
 <section id="reviewOutputPackage" class="vc-card">
@@ -296,41 +311,97 @@
 
     <div class="vc-summary-grid">
 
-            <section class="vc-summary-panel">
-                <div class="vc-summary-panel__heading">
-                    <h3>Requirements</h3>
-                    <span id="compiledRequirementBadge">0</span>
-                </div>
+        <section class="vc-summary-panel">
 
-                <span id="compiledRequirementCount" hidden>0</span>
+            <div class="vc-summary-panel__heading">
+                <h3>Requirements</h3>
+                <span id="compiledRequirementBadge">
+                    0 requirements
+                </span>
+            </div>
 
-                <textarea id="compiledRequirements" readonly></textarea>
+            <span id="compiledRequirementCount" hidden>
+                0
+            </span>
 
-                <button id="copyAllRequirements">Copy Requirements</button>
-                <button id="clearAllRequirements">Clear Requirements</button>
-            </section>
+            <textarea
+                id="compiledRequirements"
+                readonly>
+            </textarea>
 
-            <section class="vc-summary-panel">
-                <div class="vc-summary-panel__heading">
-                    <h3>Amendments</h3>
-                    <span id="compiledAmendmentBadge">0</span>
-                </div>
+            <div class="vc-actions">
+                <button
+                    id="copyAllRequirements"
+                    type="button">
+                    Copy Requirements
+                </button>
 
-                <span id="compiledAmendmentCount" hidden>0</span>
+                <button
+                    id="clearAllRequirements"
+                    type="button">
+                    Clear Requirements
+                </button>
+            </div>
 
-                <textarea id="compiledAmendments" readonly></textarea>
+        </section>
 
-                <button id="copyAllAmendments">Copy Amendments</button>
-                <button id="clearAllAmendments">Clear Amendments</button>
-            </section>
+        <section class="vc-summary-panel">
 
-       </div>
+            <div class="vc-summary-panel__heading">
+                <h3>Amendments</h3>
+                <span id="compiledAmendmentBadge">
+                    0 amendments
+                </span>
+            </div>
 
-        <span id="compiledTotalCount">0 items</span>
-        <span id="reviewOutputStatus"></span>
-        <div id="reviewOutputCopyStatus"></div>
+            <span id="compiledAmendmentCount" hidden>
+                0
+            </span>
 
-    </section>
+            <textarea
+                id="compiledAmendments"
+                readonly>
+            </textarea>
+
+            <div class="vc-actions">
+                <button
+                    id="copyAllAmendments"
+                    type="button">
+                    Copy Amendments
+                </button>
+
+                <button
+                    id="clearAllAmendments"
+                    type="button">
+                    Clear Amendments
+                </button>
+            </div>
+
+        </section>
+
+    </div>
+
+    <div class="vc-output-footer">
+
+        <span id="compiledTotalCount">
+            0 items
+        </span>
+
+        <span
+            id="reviewOutputStatus"
+            class="vc-output-status">
+            No outputs
+        </span>
+
+        <div
+            id="reviewOutputCopyStatus"
+            class="vc-status"
+            aria-live="polite">
+        </div>
+
+    </div>
+
+</section>
 
     <section id="emailBuilder" class="vc-card">
 <span class="vc-section-eyebrow">
@@ -362,20 +433,15 @@
   <!-- Load template data before the engines that consume it. -->
 
     <script src="scripts/library.js"></script>
-    <script src="scripts/amendment-engine.js"></script>
-    <script src="scripts/review-output-package.js"></script>
-     <script src="scripts/scroll.js"></script>
-    <script src="scripts/onboarding.js"></script>
-    <!-- Data and template foundation -->
-    <script src="scripts/library.js"></script>
-    <!-- Workbench engines -->
-    <script src="scripts/amendment-engine.js"></script>
-    <script src="scripts/stateLoader.js"></script>
-    <script src="scripts/illustration-validation.js"></script>
-    <!-- Core review workflow -->
-    <script src="scripts/initial-review.js"></script>
-    <!-- Output and supporting tools -->
-    <script src="scripts/review-output-package.js"></script>
+  <script src="scripts/amendment-engine.js"></script>
+  <script src="scripts/stateLoader.js"></script>
+ <script src="scripts/review-output-package.js"></script>
+  <script src="scripts/scroll.js"></script>
+<script src= "scripts/verbiage-output-fix.js"></script>
+   <script src="scripts/initial-review.js"></script>
+   
+
+
 
 
 </body>

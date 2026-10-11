@@ -663,3 +663,48 @@
     font-size:36px;
     color:#002e6b;
 }
+
+
+.vc-output-footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+#compiledTotalCount {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    color: #0057b8;
+    background: #eef6ff;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.vc-output-status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    color: #18794e;
+    background: #eaf8f1;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+#amendmentSaveStatus {
+    min-height: 20px;
+    margin-top: 12px;
+    color: var(--vc-success);
+    font-size: 0.86rem;
+    font-weight: 700;
+}
+
+#amendmentSaveStatus.is-error {
+    color: var(--vc-danger);
+}
