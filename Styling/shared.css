@@ -1,3 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
 .workspace-card {
   background: white;
 
@@ -45,8 +52,10 @@
 
   box-shadow: 0 10px 24px rgba(2, 101, 255, 0.2);
 }
-.workspace-card {
-  padding: 20px;
+@media (max-width: 700px) {
+  .workspace-card {
+    padding: 20px;
+  }
 }
 
 .review-card {
@@ -162,78 +171,30 @@
   border-color: #0b3a68;
 }
 
-.review-card input[type="text"]:focus,
-.review-card textarea:focus,
-.review-card select:focus {
-  outline: none;
-  border-color: #0066cc;
-  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
-}
-
-.review-card input[type="text"],
-.review-card select,
-.review-card textarea,
-#polarisReplacementCheckSection input[type="text"],
-#polarisReplacementCheckSection textarea {
-  max-width: 500px;
-  width: 100%;
-  padding: 0.7rem 0.8rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  margin-top: 0.35rem;
-  margin-bottom: 0.85rem;
-  font-size: 0.9rem;
-}
-
-.review-card input[type="checkbox"],
-.review-card input[type="radio"] {
-  width: 16px;
-  height: 16px;
-  accent-color: #005eb8;
-}
-
-.review-card textarea {
-  width: 100%;
-  min-height: 100px;
-  margin-top: 12px;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #cbd5e0;
-  resize: vertical;
-  font-family: inherit;
-}
-
-.review-card textarea:focus {
-  outline: none;
-  border-color: #0b3a68;
-}
-.review-card input[type="date"],
-.review-card select {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #cbd5e0;
-  margin-bottom: 12px;
-}
-
-.review-card input[type="checkbox"],
-.review-card input[type="radio"] {
-  transform: scale(1.1);
-}
-
 .case-field {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.case-field label {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #62748d;
-  min-width: 0;
+.case-field label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:#002e6b;
+
+    text-transform:none;
+
+    letter-spacing:0;
+
+    line-height:1.3;
+
 }
 
 .case-field input,
@@ -265,56 +226,26 @@
 }
 
 .case-field input,
-.case-field select {
-  width: 100%;
-}
+.case-field select{
 
-.case-field {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+    width:100%;
 
-.case-field label {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #62748d;
-  min-width: 0;
-}
+    height:52px;
 
-.case-field input,
-.case-field select,
-.case-field textarea {
-  width: 100%;
-  height: 46px;
-  padding: 0 14px;
+    padding:0 16px;
 
-  border: 1px solid #cfd9e8;
-  border-radius: 14px;
+    border:1px solid #d9e6f5;
 
-  background: white;
+    border-radius:12px;
 
-  font-size: 0.95rem;
-  color: #0f172a;
+    background:white;
 
-  transition: 0.2s ease;
-}
+    color:#001735;
 
-.case-field input:focus,
-.case-field select:focus,
-.case-field textarea:focus {
-  outline: none;
+    font-size:16px;
 
-  border-color: #0046ad;
+    font-weight:500;
 
-  box-shadow: 0 0 0 4px rgba(0, 70, 173, 0.12);
-}
-
-.case-field input,
-.case-field select {
-  width: 100%;
 }
 
 #polarisReplacementCheckSection textarea {
@@ -352,53 +283,6 @@ textarea {
   font-size: 14px;
 
   resize: vertical;
-}
-
-#polarisReplacementCheckSection textarea {
-  width: 100%;
-  min-height: 100px;
-}
-
-.inline-requirement-builder textarea {
-  width: 100%;
-
-  min-height: 120px;
-
-  margin-top: 12px;
-
-  border-radius: 10px;
-
-  border: 1px solid #cbd9ea;
-
-  padding: 12px;
-}
-
-textarea {
-  width: 100%;
-
-  min-height: 180px;
-
-  padding: 18px;
-
-  border: 1px solid #d9e6f5;
-
-  border-radius: 16px;
-
-  font-family: inherit;
-
-  font-size: 14px;
-
-  resize: vertical;
-}
-
-.igo-button.selected {
-  background: #12b76a;
-  color: white;
-}
-
-.nigo-button.selected {
-  background: #f97316;
-  color: white;
 }
 
 .igo-button.selected {

@@ -574,3 +574,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+function updateAdditionalInsuredVisibility() {
+
+    const insuredType =
+        document.getElementById(
+            "selectedInsuredType"
+        )?.value;
+
+    const section =
+        document.getElementById(
+            "additionalInsuredSection"
+        );
+
+    if (!section) return;
+
+    section.hidden =
+        insuredType !== "joint";
+}

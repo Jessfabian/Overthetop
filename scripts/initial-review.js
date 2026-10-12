@@ -1945,3 +1945,168 @@ function updatePolicyLookup() {
 if (policyLookupField) {
   policyLookupField.addEventListener("input", updatePolicyLookup);
 }
+
+
+/* ====================================================
+   ADDITIONAL INSURED VISIBILITY
+==================================================== */
+
+function getCurrentInsuredType() {
+  const selectedInsuredType =
+    document.getElementById("selectedInsuredType");
+
+  const quickStartInsured =
+    document.getElementById("qsInsured");
+
+  const profileInsured =
+    document.getElementById("profileInsured");
+
+  const hiddenValue =
+    selectedInsuredType?.value
+      ?.trim()
+      .toLowerCase();
+
+  if (hiddenValue === "joint" || hiddenValue === "single") {
+    return hiddenValue;
+  }
+
+  const quickStartValue =
+    quickStartInsured?.value
+      ?.trim()
+      .toLowerCase();
+
+  if (
+    quickStartValue === "joint" ||
+    quickStartValue === "single"
+  ) {
+    return quickStartValue;
+  }
+
+  const profileText =
+    profileInsured?.textContent
+      ?.trim()
+      .toLowerCase();
+
+  if (profileText === "joint") {
+    return "joint";
+  }
+
+  if (profileText === "single") {
+    return "single";
+  }
+
+  return "";
+}
+
+function updateAdditionalInsuredSection() {
+  const additionalInsuredSection =
+    document.getElementById(
+      "additionalInsuredSection"
+    );
+
+  if (!additionalInsuredSection) {
+    return;
+  }
+
+  const insuredType =
+    getCurrentInsuredType();
+
+  const isJoint =
+    insuredType === "joint";
+
+  additionalInsuredSection.hidden =
+    !isJoint;
+
+  if (!isJoint) {
+    const additionalInsuredName =
+      document.getElementById(
+        "additionalInsuredName"
+      );
+
+    const additionalInsuredRiskClass =
+      document.getElementById(
+        "additionalInsuredRiskClass"
+      );
+
+    if (additionalInsuredName) {
+      additionalInsuredName.value = "";
+    }
+
+    if (additionalInsuredRiskClass) {
+      additionalInsuredRiskClass.value = "";
+    }
+  }
+}
+
+/* Handle the onboarding Single and Joint buttons */
+
+document.addEventListener("click", function (event) {
+  const insuredButton =
+    event.target.closest("[data-insured]");
+
+  if (insuredButton) {
+    const insuredType =
+      insuredButton.dataset.insured;
+
+    const selectedInsuredType =
+      document.getElementById(
+        "selectedInsuredType"
+      );
+
+    if (selectedInsuredType) {
+      selectedInsuredType.value =
+        insuredType;
+    }
+
+    window.setTimeout(
+      updateAdditionalInsuredSection,
+      0
+    );
+
+    return;
+  }
+
+  const launchWorkbenchButton =
+    event.target.closest("#launchWorkbench");
+
+  const launchQuickStartButton =
+    event.target.closest("#launchQuickStart");
+
+  if (
+    launchWorkbenchButton ||
+    launchQuickStartButton
+  ) {
+    window.setTimeout(
+      updateAdditionalInsuredSection,
+      0
+    );
+  }
+});
+
+/* Handle the Quick Start Insured Type dropdown */
+
+const quickStartInsuredSelect =
+  document.getElementById("qsInsured");
+
+if (quickStartInsuredSelect) {
+  quickStartInsuredSelect.addEventListener(
+    "change",
+    function () {
+      const selectedInsuredType =
+        document.getElementById(
+          "selectedInsuredType"
+        );
+
+      if (selectedInsuredType) {
+        selectedInsuredType.value =
+          quickStartInsuredSelect.value;
+      }
+
+      updateAdditionalInsuredSection();
+    }
+  );
+}
+
+/* Run once when the page loads */
+
+updateAdditionalInsuredSection();

@@ -1,1173 +1,914 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Full Initial Review</title>
-    <link rel="stylesheet" href="Styling/app.css" />
-  </head>
-  <body>
-    <header class="ir-header">
-      <nav class="ir-navigation">
-        <ul>
-          <li>
-            <a href="home.html" title="Home">
-              <img src="images/home.png" />
-              <span>Home</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="verbiage-only.html" title="Tools">
-              <img src="images/Picture8.png" />
-              <span>Tools</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="UW.html" title="Underwriting">
-              <img src="images/UW.png" />
-              <span>Underwriting</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <button id="quickStartButton" class="quick-start-button" type="button">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Full Initial Review</title>
+<link href="Styling/app.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="ir-header">
+<nav class="ir-navigation">
+<ul>
+<li>
+<a href="home.html" title="Home">
+<img alt="Home" src="images/home.png"/>
+<span>Home</span>
+</a>
+</li>
+<li>
+<a href="verbiage-only.html" title="Tools">
+<img alt="Tools" src="images/Picture8.png"/>
+<span>Tools</span>
+</a>
+</li>
+<li>
+<a href="UW.html" title="Underwriting">
+<img alt="Underwriting" src="images/UW.png"/>
+<span>Underwriting</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<button class="quick-start-button" id="quickStartButton" type="button">
       Quick Start
     </button>
-    <section id="welcomeHero">
-      <div class="welcome-background"></div>
-
-      <div class="welcome-content">
-        <span class="welcome-eyebrow">MMSD INITIAL REVIEW</span>
-
-        <h1 class="welcome-title">Hello.</h1>
-
-        <p class="welcome-subtitle">Let's review this application.</p>
-
-        <button id="beginReviewButton" class="scroll-indicator" type="button">
-          <span>Begin Review</span>
-
-          <span class="scroll-arrow" aria-hidden="true">↓</span>
-        </button>
-      </div>
-    </section>
-
-    <main class="page-workspace">
-      <section id="qualificationFlow">
-        <div id="wizardProgressWrapper">
-          <div class="wizard-progress-top">
-            <span id="wizardProgressLabel">Question 1 of 5</span>
-
-            <span id="wizardProgressPercent">20%</span>
-          </div>
-
-          <div id="wizardProgress">
-            <div id="wizardProgressFill"></div>
-          </div>
-
-          <div
-            id="wizardAnswerSummary"
-            class="wizard-answer-summary"
-            aria-live="polite">
-            <span class="wizard-answer-empty">
+<section id="welcomeHero">
+<div class="welcome-background"></div>
+<div class="welcome-content">
+<span class="welcome-eyebrow">MMSD INITIAL REVIEW</span>
+<h1 class="welcome-title">Hello.</h1>
+<p class="welcome-subtitle">Let's review this application.</p>
+<button class="scroll-indicator" id="beginReviewButton" type="button">
+<span>Begin Review</span>
+<span aria-hidden="true" class="scroll-arrow">↓</span>
+</button>
+</div>
+</section>
+<main class="page-workspace">
+<section id="qualificationFlow">
+<div id="wizardProgressWrapper">
+<div class="wizard-progress-top">
+<span id="wizardProgressLabel">Question 1 of 5</span>
+<span id="wizardProgressPercent">20%</span>
+</div>
+<div id="wizardProgress">
+<div id="wizardProgressFill"></div>
+</div>
+<div aria-live="polite" class="wizard-answer-summary" id="wizardAnswerSummary">
+<span class="wizard-answer-empty">
               Your selections will appear here.
             </span>
-          </div>
-        </div>
-
-        <section class="question-panel active" id="questionProduct">
-          <div class="question-container">
-            <span class="question-counter">Question 1 of 5</span>
-
-            <h2>What type of product is being reviewed?</h2>
-
-            <div class="question-options">
-              <button type="button" class="question-option" data-product="perm">
+</div>
+</div>
+<section class="question-panel active" id="questionProduct">
+<div class="question-container">
+<span class="question-counter">Question 1 of 5</span>
+<h2>What type of product is being reviewed?</h2>
+<div class="question-options">
+<button class="question-option" data-product="perm" type="button">
                 Permanent
               </button>
-
-              <button type="button" class="question-option" data-product="term">
+<button class="question-option" data-product="term" type="button">
                 Term
               </button>
-            </div>
-          </div>
-        </section>
-
-        <section class="question-panel" id="questionState" hidden>
-          <div class="question-container">
-            <span class="question-counter">Question 2 of 5</span>
-
-            <h2>What is the Contract State?</h2>
-
-            <div class="case-field">
-              <select id="contractState" name="contractState">
-                <option value="">Select State</option>
-
-                <option value="AL">Alabama</option>
-                <option value="AK">Alaska</option>
-                <option value="AZ">Arizona</option>
-                <option value="AR">Arkansas</option>
-                <option value="CA">California</option>
-                <option value="CO">Colorado</option>
-                <option value="CT">Connecticut</option>
-                <option value="DE">Delaware</option>
-                <option value="DC">District of Columbia</option>
-                <option value="FL">Florida</option>
-                <option value="GA">Georgia</option>
-                <option value="HI">Hawaii</option>
-                <option value="ID">Idaho</option>
-                <option value="IL">Illinois</option>
-                <option value="IN">Indiana</option>
-                <option value="IA">Iowa</option>
-                <option value="KS">Kansas</option>
-                <option value="KY">Kentucky</option>
-                <option value="LA">Louisiana</option>
-                <option value="ME">Maine</option>
-                <option value="MD">Maryland</option>
-                <option value="MA">Massachusetts</option>
-                <option value="MI">Michigan</option>
-                <option value="MN">Minnesota</option>
-                <option value="MS">Mississippi</option>
-                <option value="MO">Missouri</option>
-                <option value="MT">Montana</option>
-                <option value="NE">Nebraska</option>
-                <option value="NV">Nevada</option>
-                <option value="NH">New Hampshire</option>
-                <option value="NJ">New Jersey</option>
-                <option value="NM">New Mexico</option>
-                <option value="NY">New York</option>
-                <option value="NC">North Carolina</option>
-                <option value="ND">North Dakota</option>
-                <option value="OH">Ohio</option>
-                <option value="OK">Oklahoma</option>
-                <option value="OR">Oregon</option>
-                <option value="PA">Pennsylvania</option>
-                <option value="PR">Puerto Rico</option>
-                <option value="RI">Rhode Island</option>
-                <option value="SC">South Carolina</option>
-                <option value="SD">South Dakota</option>
-                <option value="TN">Tennessee</option>
-                <option value="TX">Texas</option>
-                <option value="UT">Utah</option>
-                <option value="VT">Vermont</option>
-                <option value="VA">Virginia</option>
-                <option value="WA">Washington</option>
-                <option value="WV">West Virginia</option>
-                <option value="WI">Wisconsin</option>
-                <option value="WY">Wyoming</option>
-              </select>
-            </div>
-          </div>
-        </section>
-
-        <section class="question-panel" id="questionBot" hidden>
-          <div class="question-container">
-            <span class="question-counter">Question 3 of 5</span>
-
-            <h2>Is this a BOT case?</h2>
-
-            <div class="question-options">
-              <button type="button" class="question-option" data-bot="yes">
+</div>
+</div>
+</section>
+<section class="question-panel" hidden="" id="questionState">
+<div class="question-container">
+<span class="question-counter">Question 2 of 5</span>
+<h2>What is the Contract State?</h2>
+<div class="question-select-wrapper">
+<select id="contractState" name="contractState">
+<option value="">Select State</option>
+<option value="AL">Alabama</option>
+<option value="AK">Alaska</option>
+<option value="AZ">Arizona</option>
+<option value="AR">Arkansas</option>
+<option value="CA">California</option>
+<option value="CO">Colorado</option>
+<option value="CT">Connecticut</option>
+<option value="DE">Delaware</option>
+<option value="DC">District of Columbia</option>
+<option value="FL">Florida</option>
+<option value="GA">Georgia</option>
+<option value="HI">Hawaii</option>
+<option value="ID">Idaho</option>
+<option value="IL">Illinois</option>
+<option value="IN">Indiana</option>
+<option value="IA">Iowa</option>
+<option value="KS">Kansas</option>
+<option value="KY">Kentucky</option>
+<option value="LA">Louisiana</option>
+<option value="ME">Maine</option>
+<option value="MD">Maryland</option>
+<option value="MA">Massachusetts</option>
+<option value="MI">Michigan</option>
+<option value="MN">Minnesota</option>
+<option value="MS">Mississippi</option>
+<option value="MO">Missouri</option>
+<option value="MT">Montana</option>
+<option value="NE">Nebraska</option>
+<option value="NV">Nevada</option>
+<option value="NH">New Hampshire</option>
+<option value="NJ">New Jersey</option>
+<option value="NM">New Mexico</option>
+<option value="NY">New York</option>
+<option value="NC">North Carolina</option>
+<option value="ND">North Dakota</option>
+<option value="OH">Ohio</option>
+<option value="OK">Oklahoma</option>
+<option value="OR">Oregon</option>
+<option value="PA">Pennsylvania</option>
+<option value="PR">Puerto Rico</option>
+<option value="RI">Rhode Island</option>
+<option value="SC">South Carolina</option>
+<option value="SD">South Dakota</option>
+<option value="TN">Tennessee</option>
+<option value="TX">Texas</option>
+<option value="UT">Utah</option>
+<option value="VT">Vermont</option>
+<option value="VA">Virginia</option>
+<option value="WA">Washington</option>
+<option value="WV">West Virginia</option>
+<option value="WI">Wisconsin</option>
+<option value="WY">Wyoming</option>
+</select>
+</div>
+</div>
+</section>
+<section class="question-panel" hidden="" id="questionBot">
+<div class="question-container">
+<span class="question-counter">Question 3 of 5</span>
+<h2>Is this a BOT case?</h2>
+<div class="question-options">
+<button class="question-option" data-bot="yes" type="button">
                 Yes
               </button>
-
-              <button type="button" class="question-option" data-bot="no">
+<button class="question-option" data-bot="no" type="button">
                 No
               </button>
-            </div>
-          </div>
-        </section>
-
-        <section class="question-panel" id="questionReplacement" hidden>
-          <div class="question-container">
-            <span class="question-counter">Question 4 of 5</span>
-
-            <h2>Does this case involve a replacement?</h2>
-
-            <div class="question-options">
-              <button
-                type="button"
-                class="question-option"
-                data-replacement="none">
+</div>
+</div>
+</section>
+<section class="question-panel" hidden="" id="questionReplacement">
+<div class="question-container">
+<span class="question-counter">Question 4 of 5</span>
+<h2>Does this case involve a replacement?</h2>
+<div class="question-options">
+<button class="question-option" data-replacement="none" type="button">
                 No Replacement
               </button>
-
-              <button
-                type="button"
-                class="question-option"
-                data-replacement="internal">
+<button class="question-option" data-replacement="internal" type="button">
                 Internal Replacement
               </button>
-
-              <button
-                type="button"
-                class="question-option"
-                data-replacement="external">
+<button class="question-option" data-replacement="external" type="button">
                 External Replacement
               </button>
-            </div>
-          </div>
-        </section>
-
-        <section class="question-panel" id="questionInsured" hidden>
-          <div class="question-container">
-            <span class="question-counter">Question 5 of 5</span>
-
-            <h2>How many insureds are on the application?</h2>
-
-            <div class="question-options">
-              <button
-                type="button"
-                class="question-option"
-                data-insured="single">
+</div>
+</div>
+</section>
+<section class="question-panel" hidden="" id="questionInsured">
+<div class="question-container">
+<span class="question-counter">Question 5 of 5</span>
+<h2>How many insureds are on the application?</h2>
+<div class="question-options">
+<button class="question-option" data-insured="single" type="button">
                 Single
               </button>
-
-              <button
-                type="button"
-                class="question-option"
-                data-insured="joint">
+<button class="question-option" data-insured="joint" type="button">
                 Joint
               </button>
-            </div>
-          </div>
-        </section>
-      </section>
-
-      <div id="caseProfileData" hidden>
-        <input type="hidden" id="selectedProduct" />
-
-        <input type="hidden" id="selectedState" />
-
-        <input type="hidden" id="selectedBOT" />
-
-        <input type="hidden" id="selectedReplacement" />
-
-        <input type="hidden" id="selectedInsuredType" />
-      </div>
-
-      <section id="qualificationSummary" class="summary-card" hidden>
-        <h3>Case Profile</h3>
-
-        <div
-          id="qualificationSummaryContent"
-          class="profile-summary-grid"></div>
-      </section>
-
-      <section id="qualificationComplete">
-        <div class="completion-container">
-          <h2>Perfect.</h2>
-
-          <p>Your review workspace is ready.</p>
-
-          <button id="launchWorkbench">Begin Review</button>
-        </div>
-      </section>
-      <section id="reviewWorkbench" class="review-workspace" hidden>
-        <div class="workbench-shell">
-          <header class="workspace-header">
-            <div class="workspace-title">
-              <span class="workspace-eyebrow">CASE MANAGER WORKBENCH</span>
-
-              <h1>Initial Review Workspace</h1>
-
-              <span id="progressText">0 of 0 steps complete</span>
-            </div>
-
-            <div class="workspace-progress">
-              <div class="progress-track">
-                <div id="progressFill"></div>
-              </div>
-            </div>
-          </header>
-
-          <div class="workspace-layout">
-            <aside class="review-sidebar">
-              <button
-                type="button"
-                class="step-btn active"
-                data-target="dashboardSection">
+</div>
+</div>
+</section>
+</section>
+<div hidden="" id="caseProfileData">
+<input id="selectedProduct" type="hidden"/>
+<input id="selectedState" type="hidden"/>
+<input id="selectedBOT" type="hidden"/>
+<input id="selectedReplacement" type="hidden"/>
+<input id="selectedInsuredType" type="hidden"/>
+</div>
+<section class="summary-card" hidden="" id="qualificationSummary">
+<h3>Case Profile</h3>
+<div class="profile-summary-grid" id="qualificationSummaryContent"></div>
+</section>
+<section id="qualificationComplete">
+<div class="completion-container">
+<h2>Perfect.</h2>
+<p>Your review workspace is ready.</p>
+<button id="launchWorkbench">Begin Review</button>
+</div>
+</section>
+<section class="review-workspace" hidden="" id="reviewWorkbench">
+<div class="workbench-shell">
+<header class="workspace-header">
+<div class="workspace-title">
+<span class="workspace-eyebrow">CASE MANAGER WORKBENCH</span>
+<h1>Initial Review Workspace</h1>
+<span id="progressText">0 of 0 steps complete</span>
+</div>
+<div class="workspace-progress">
+<div class="progress-track">
+<div id="progressFill"></div>
+</div>
+</div>
+</header>
+<div class="workspace-layout">
+<aside class="review-sidebar">
+<button class="step-btn active" data-target="dashboardSection" type="button">
                 Dashboard
               </button>
-
-              <button
-                type="button"
-                class="step-btn"
-                data-target="caseSetupSection">
+<button class="step-btn" data-target="caseSetupSection" type="button">
                 Case Setup
               </button>
-
-              <button
-                type="button"
-                class="step-btn"
-                data-target="stateRequirements">
+<button class="step-btn" data-target="stateRequirements" type="button">
                 State Forms
               </button>
-
-              <button type="button" class="step-btn" data-target="trexReview">
+<button class="step-btn" data-target="trexReview" type="button">
                 TREX Review
               </button>
-              <button
-                type="button"
-                class="step-btn"
-                data-target="polarisReplacementCheckSection">
+<button class="step-btn" data-target="polarisReplacementCheckSection" type="button">
                 Polaris Check
               </button>
-
-              <button
-                type="button"
-                class="step-btn"
-                data-target="requirementsSection">
+<button class="step-btn" data-target="requirementsSection" type="button">
                 Requirements
               </button>
-
-              <button
-                type="button"
-                class="step-btn"
-                data-target="amendmentsSection">
+<button class="step-btn" data-target="amendmentsSection" type="button">
                 Amendments
               </button>
-
-              <button type="button" class="step-btn" data-target="bingoSection">
+<button class="step-btn" data-target="bingoSection" type="button">
                 BINGO
               </button>
-
-              <button
-                type="button"
-                class="step-btn"
-                data-target="reviewOutputPackage">
+<button class="step-btn" data-target="reviewOutputPackage" type="button">
                 Output Package
               </button>
-
-              <button type="button" class="step-btn" data-target="emailSection">
+<button class="step-btn" data-target="emailSection" type="button">
                 Email
               </button>
-            </aside>
-
-            <div class="workspace-main">
-              <section id="incompleteSetupNotice" class="setup-notice" hidden>
-                <div>
-                  <strong>Case setup is incomplete</strong>
-
-                  <p>
+</aside>
+<div class="workspace-main"><section class="setup-notice" hidden="" id="incompleteSetupNotice">
+<div>
+<strong>Case setup is incomplete</strong>
+<p>
                     Complete the onboarding questions before using
                     state-specific or case-specific review tools.
                   </p>
-                </div>
-
-                <button id="returnToSetup" type="button">
+</div>
+<button id="returnToSetup" type="button">
                   Complete Case Setup
                 </button>
-              </section>
-              <section id="dashboardSection" class="workspace-card">
-                <div class="workspace-section-heading">
-                  <div>
-                    <span class="workspace-eyebrow">REVIEW STATUS</span>
-
-                    <h2>Case Dashboard</h2>
-                  </div>
-                </div>
-
-                <div class="dashboard-grid">
-                  <div class="stat-card timer-stat running">
-                    <div class="timer-card-header">
-                      <span class="stat-label">Review Time</span>
-
-                      <span id="timerStatusBadge" class="timer-status-pill">
-                        <span class="timer-status-dot"></span>
+</section><section class="workspace-card" id="dashboardSection">
+<div class="workspace-section-heading">
+<div>
+<span class="workspace-eyebrow">REVIEW STATUS</span>
+<h2>Case Dashboard</h2>
+</div>
+</div>
+<div class="dashboard-grid">
+<div class="stat-card timer-stat running">
+<div class="timer-card-header">
+<span class="stat-label">Review Time</span>
+<span class="timer-status-pill" id="timerStatusBadge">
+<span class="timer-status-dot"></span>
                         Running
                       </span>
-                    </div>
-
-                    <strong id="dashboardTimer">00:00</strong>
-
-                    <div class="timer-mini-actions">
-                      <button id="startReviewTimer" type="button">Start</button>
-
-                      <button id="pauseReviewTimer" type="button">Pause</button>
-                    </div>
-                  </div>
-
-                  <div class="stat-card">
-                    <span class="stat-label">Reviewed</span>
-
-                    <strong id="reviewedCountCard">0</strong>
-                  </div>
-
-                  <div class="stat-card">
-                    <span class="stat-label">Remaining</span>
-
-                    <strong id="remainingCountCard">0</strong>
-                  </div>
-
-                  <div class="stat-card">
-                    <span class="stat-label">NIGOs</span>
-
-                    <strong id="dashboardIssueCount">0</strong>
-                  </div>
-                </div>
-              </section>
-
-              <section
-                id="caseSetupSection"
-                class="workspace-card case-setup-card">
-                <div class="workspace-section-heading">
-                  <div>
-                    <span class="workspace-eyebrow">CASE PROFILE</span>
-
-                    <h2>Case Setup</h2>
-                  </div>
-
-                  <span id="caseProfileStatus" class="case-profile-status">
-                    Ready
-                  </span>
-                </div>
-
-                <div class="case-profile-grid">
-                  <div class="case-profile-field">
-                    <span class="case-profile-label">Product</span>
-
-                    <strong id="profileProduct">Not selected</strong>
-                  </div>
-
-                  <div class="case-profile-field">
-                    <span class="case-profile-label">Contract State</span>
-
-                    <strong id="profileState">Not selected</strong>
-                  </div>
-
-                  <div class="case-profile-field">
-                    <span class="case-profile-label">BOT Case</span>
-
-                    <strong id="profileBOT">Not selected</strong>
-                  </div>
-
-                  <div class="case-profile-field">
-                    <span class="case-profile-label">Replacement</span>
-
-                    <strong id="profileReplacement">Not selected</strong>
-                  </div>
-
-                  <div class="case-profile-field">
-                    <span class="case-profile-label">Insured Type</span>
-
-                    <strong id="profileInsured">Not selected</strong>
-                  </div>
-                </div>
-              </section>
-
-              <!-- ===================================== -->
-              <!-- NEW YORK REVIEW DASHBOARD -->
-              <!-- ===================================== -->
-
-              <section id="nyReviewDashboard" class="workbench-section" hidden>
-                <div class="section-header">
-                  <h2>New York Review</h2>
-                  <p>State-specific Initial Review workflow.</p>
-                </div>
-                <div class="review-card" id="nyReplacementStatusCard">
-                  <h3>NY Replacement Status</h3>
-
-                  <p>
+</div>
+<strong id="dashboardTimer">00:00</strong>
+<div class="timer-mini-actions">
+<button id="startReviewTimer" type="button">Start</button>
+<button id="pauseReviewTimer" type="button">Pause</button>
+</div>
+</div>
+<div class="stat-card">
+<span class="stat-label">Reviewed</span>
+<strong id="reviewedCountCard">0</strong>
+</div>
+<div class="stat-card">
+<span class="stat-label">Remaining</span>
+<strong id="remainingCountCard">0</strong>
+</div>
+<div class="stat-card">
+<span class="stat-label">NIGOs</span>
+<strong id="dashboardIssueCount">0</strong>
+</div>
+</div>
+</section><section class="workspace-card case-setup-card" id="caseSetupSection">
+<div class="workspace-section-heading">
+<div>
+<span class="workspace-eyebrow">CASE PROFILE</span>
+<h2>Case Setup</h2>
+</div>
+<span class="case-profile-status" id="caseProfileStatus">Ready</span>
+</div>
+<div class="case-profile-grid">
+<div class="case-profile-field"><span class="case-profile-label">Product</span><strong id="profileProduct">Not selected</strong></div>
+<div class="case-profile-field"><span class="case-profile-label">Contract State</span><strong id="profileState">Not selected</strong></div>
+<div class="case-profile-field"><span class="case-profile-label">BOT Case</span><strong id="profileBOT">Not selected</strong></div>
+<div class="case-profile-field"><span class="case-profile-label">Replacement</span><strong id="profileReplacement">Not selected</strong></div>
+<div class="case-profile-field"><span class="case-profile-label">Insured Type</span><strong id="profileInsured">Not selected</strong></div>
+</div>
+<hr class="section-divider"/>
+<div class="case-setup-grid-equal">
+<div class="case-field"><label for="policyNumber">Policy Number</label><input autocomplete="off" id="policyNumber" type="text"/></div>
+<div class="case-field"><label for="insuredName">Insured</label><input autocomplete="off" id="insuredName" type="text"/></div>
+</div>
+<div class="case-setup-grid-equal">
+<div class="case-field">
+<label for="ownerType">Owner</label>
+<select id="ownerType">
+<option value="insured">Insured</option><option value="otherIndividual">Other Individual</option>
+<option value="trust">Trust</option><option value="business">Business / Entity</option>
+</select>
+</div>
+<div class="case-field">
+<label for="beneficiaryOther">Beneficiary</label>
+<select id="beneficiaryOther"><option value="no">Part 1 Beneficiary Information</option><option value="yes">E-2 Other Selected</option></select>
+</div>
+<div class="case-field"><label for="purposeOfInsurance">Purpose of Insurance</label><input autocomplete="off" id="purposeOfInsurance" type="text"/></div>
+</div>
+<div class="setup-subcard" hidden="" id="additionalInsuredSection">
+<h3>Additional Insured</h3>
+<div class="case-setup-grid-two">
+<div class="case-field"><label for="additionalInsuredName">Additional Insured Name</label><input id="additionalInsuredName" type="text"/></div>
+<div class="case-field"><label for="additionalInsuredRiskClass">Additional Insured Risk Class</label><select id="additionalInsuredRiskClass">
+<option value="">Select Risk Class</option>
+<option value="Ultra Preferred Non-Tobacco">Ultra Preferred Non-Tobacco</option>
+<option value="Select Preferred Non-Tobacco/Preferred Non-Smoker">Select Preferred Non-Tobacco/Preferred Non-Smoker</option>
+<option value="Standard Non-Tobacco/Juvenile">Standard Non-Tobacco/Juvenile</option>
+<option value="Select Preferred Tobacco">Select Preferred Tobacco</option>
+<option value="Tobacco">Tobacco</option>
+</select></div>
+</div>
+</div>
+<div class="case-setup-grid-equal">
+<div class="case-field"><label for="riskClass">Risk Class</label><select id="riskClass">
+<option value="">Select Risk Class</option>
+<option value="Ultra Preferred Non-Tobacco">Ultra Preferred Non-Tobacco</option>
+<option value="Select Preferred Non-Tobacco/Preferred Non-Smoker">Select Preferred Non-Tobacco/Preferred Non-Smoker</option>
+<option value="Standard Non-Tobacco/Juvenile">Standard Non-Tobacco/Juvenile</option>
+<option value="Select Preferred Tobacco">Select Preferred Tobacco</option>
+<option value="Tobacco">Tobacco</option>
+</select></div>
+<div class="case-field">
+<label for="policyDating">Policy Dating</label>
+<select id="policyDating"><option value="">Select Policy Dating</option><option value="saveAge">Save Age</option><option value="currentDate">Current Date</option><option value="specificDate">Specific Date</option></select>
+</div>
+<div class="case-field">
+<label for="illustrationStatus">Signed Illustration as Applied For?</label>
+<select id="illustrationStatus"><option value="">Select</option><option value="yes">Yes</option><option value="no">No</option><option value="notReceived">Not Received</option></select>
+<small class="field-guidance" id="illustrationGuidance"></small>
+</div>
+</div>
+<div class="save-age-panel" hidden="" id="saveAgeFields">
+<div class="save-age-heading"><h3>Save Age Calculator</h3><p>Enter the insured's birth month and day and the Part 1 signature date.</p></div>
+<div class="save-age-alert" hidden="" id="saveAgeEligibilityWarning"></div>
+<div class="save-age-grid">
+<div class="case-field"><label for="birthMonth">Birth Month</label><select id="birthMonth"><option value="">Select Month</option><option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></div>
+<div class="case-field"><label for="birthDay">Birth Day</label><select id="birthDay"><option value="">Select Day</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select></div>
+<div class="case-field"><label for="part1SignDate">Part 1 Sign Date</label><input id="part1SignDate" type="date"/></div>
+<div class="case-field"><label for="saveAge1035">1035 Exchange</label><select id="saveAge1035"><option value="no">No</option><option value="yes">Yes</option></select></div>
+<div class="case-field"><label for="saveAgeDate">Calculated Save Age Date</label><input id="saveAgeDate" placeholder="Calculated automatically" readonly="" type="text"/></div>
+<div class="case-field"><label for="saveAgeEligibility">Eligibility</label><input id="saveAgeEligibility" placeholder="Calculated automatically" readonly="" type="text"/></div>
+</div>
+<div class="save-age-results">
+<div><span class="save-age-result-label">Age Changes After</span><strong id="ageChangeDate">--</strong></div>
+<div><span class="save-age-result-label">Backdating Duration</span><strong id="saveAgeDuration">--</strong></div>
+<div><span class="save-age-result-label">Processing Guidance</span><strong id="saveAgeGuidance">Enter the Save Age information.</strong></div>
+</div>
+<p class="save-age-message" id="saveAgeMessage">Enter the insured's birth month and day and the Part 1 signature date.</p>
+</div>
+<div class="save-age-panel" hidden="" id="specificDateFields">
+<div class="case-field"><label for="specificPolicyDate">Requested Policy Date</label><input id="specificPolicyDate" type="date"/></div>
+</div>
+<details class="card collapsible-card" hidden="" id="Illustration-Validation">
+<summary class="collapsible-summary"><span class="summary-heading"><span class="summary-title">Illustration Validation</span></span><span aria-hidden="true" class="collapse-indicator">▼</span></summary>
+<div class="collapsible-content">
+<details class="workspace-help"><summary><strong>How to use</strong></summary><ol><li>Enter the value shown on the Part 1.</li><li>Enter the corresponding value shown on the illustration.</li><li>Select Not Applicable for items that do not apply.</li><li>Review the validation result and identified mismatches.</li></ol></details>
+<div class="validation-column-headings"><span>Policy Design Item</span><span>Part 1</span><span>Illustration</span><span>Result</span></div>
+<div id="illustrationComparisonRows"></div>
+<div class="validation-actions"><button class="primary-button" id="validateIllustration" type="button">Validate Illustration</button><button class="secondary-button" id="clearIllustrationValidation" type="button">Clear</button></div>
+<section aria-live="polite" class="illustration-validation-result validation-neutral" id="illustrationValidationResult">
+<div class="validation-result-header"><div><span class="validation-result-label">Validation Result</span><strong id="illustrationValidationTitle">Enter the Part 1 and illustration values.</strong></div><span id="illustrationMatchCount">0 of 0 reviewed</span></div>
+<div id="illustrationValidationDetails"></div>
+</section>
+<section class="illustration-mismatch-output" hidden="" id="illustrationMismatchRequirementSection">
+<label for="illustrationMismatchRequirement">Generated Requirement</label><textarea id="illustrationMismatchRequirement" readonly="" rows="7"></textarea>
+<button class="secondary-button" id="copyIllustrationMismatchRequirement" type="button">Copy Requirement</button><span aria-live="polite" class="copy-status" id="illustrationMismatchCopyStatus"></span>
+</section>
+</div>
+</details>
+</section><section class="workbench-section" hidden="" id="nyReviewDashboard">
+<div class="section-header">
+<h2>New York Review</h2>
+<p>State-specific Initial Review workflow.</p>
+</div>
+<div class="review-card" id="nyReplacementStatusCard">
+<h3>NY Replacement Status</h3>
+<p>
                     Replacement processing is completed within the Polaris Check
                     and Replacement Review workspace.
                   </p>
-
-                  <div class="summary-grid">
-                    <div>
-                      <label>Replacement Status</label>
-
-                      <span id="nyReplacementStatus">
+<div class="summary-grid">
+<div>
+<label>Replacement Status</label>
+<span id="nyReplacementStatus">
                         No Replacement Identified
                       </span>
-                    </div>
-
-                    <div>
-                      <label>Replacement Type</label>
-
-                      <span id="nyReplacementType">N/A</span>
-                    </div>
-                  </div>
-                </div>
-                <!-- ===================================== -->
-                <!-- BOT REVIEW -->
-                <!-- ===================================== -->
-
-                <div class="review-card" id="botReviewSection">
-                  <h3>BOT Review</h3>
-
-                  <label>
-                    <input type="checkbox" />
+</div>
+<div>
+<label>Replacement Type</label>
+<span id="nyReplacementType">N/A</span>
+</div>
+</div>
+</div>
+<!-- ===================================== -->
+<!-- BOT REVIEW -->
+<!-- ===================================== -->
+<div class="review-card" id="botReviewSection">
+<h3>BOT Review</h3>
+<label>
+<input type="checkbox">
                     BOT Notes Reviewed
-                  </label>
-
-                  <label>
-                    <input type="checkbox" />
+                  </input></label>
+<label>
+<input type="checkbox">
                     Exceptions Reviewed
-                  </label>
-
-                  <label>
-                    <input type="checkbox" />
+                  </input></label>
+<label>
+<input type="checkbox">
                     Follow Up Required
-                  </label>
-
-                  <label>
-                    <input type="checkbox" />
+                  </input></label>
+<label>
+<input type="checkbox">
                     BOT Review Complete
-                  </label>
-
-                  <textarea
-                    id="botReviewNotes"
-                    placeholder="BOT review notes here"></textarea>
-                </div>
-
-                <!-- ===================================== -->
-                <!-- SUITABILITY -->
-                <!-- ===================================== -->
-
-                <div class="review-card" id="suitabilitySection">
-                  <h3>Suitability</h3>
-
-                  <label>
-                    <input type="radio" name="suitabilityStatus" value="igo" />
+                  </input></label>
+<textarea id="botReviewNotes" placeholder="BOT review notes here"></textarea>
+</div>
+<!-- ===================================== -->
+<!-- SUITABILITY -->
+<!-- ===================================== -->
+<div class="review-card" id="suitabilitySection">
+<h3>Suitability</h3>
+<label>
+<input name="suitabilityStatus" type="radio" value="igo"/>
 
                     IGO
                   </label>
-
-                  <label>
-                    <input type="radio" name="suitabilityStatus" value="nigo" />
+<label>
+<input name="suitabilityStatus" type="radio" value="nigo"/>
 
                     NIGO
                   </label>
-
-                  <label>
-                    <input
-                      type="radio"
-                      name="suitabilityStatus"
-                      value="pending" />
+<label>
+<input name="suitabilityStatus" type="radio" value="pending"/>
 
                     Pending
                   </label>
-
-                  <textarea
-                    id="suitabilityNotes"
-                    placeholder="Suitability notes"></textarea>
-                </div>
-
-                <!-- ===================================== -->
-                <!-- SALES ILLUSTRATION REVIEW -->
-                <!-- ===================================== -->
-                <div id="nyReviewStatus" class="review-status">
+<textarea id="suitabilityNotes" placeholder="Suitability notes"></textarea>
+</div>
+<!-- ===================================== -->
+<!-- SALES ILLUSTRATION REVIEW -->
+<!-- ===================================== -->
+<div class="review-status" id="nyReviewStatus">
                   Ready For Review
                 </div>
-                <div class="ny-illustration-review">
-                  <h4>NY Illustration Review</h4>
-
-                  <label>
-                    <input type="checkbox" id="nyIllustrationSigned" />
+<div class="ny-illustration-review">
+<h4>NY Illustration Review</h4>
+<label>
+<input id="nyIllustrationSigned" type="checkbox"/>
                     Signed Illustration Submitted
                   </label>
-
-                  <label>
-                    <input type="checkbox" id="nyIllustrationOwner" />
+<label>
+<input id="nyIllustrationOwner" type="checkbox"/>
                     Signed by Correct Party
                   </label>
-
-                  <label>
-                    <input type="checkbox" id="nyIllustrationDate" />
+<label>
+<input id="nyIllustrationDate" type="checkbox"/>
                     Dated
                   </label>
-
-                  <label>
-                    <input type="checkbox" id="nyBeforePart1" />
+<label>
+<input id="nyBeforePart1" type="checkbox"/>
                     Signed On/Before Part 1
                   </label>
-                </div>
-              </section>
-              <!-- ===================================== -->
-              <!-- NY REPLACEMENT STATUS -->
-              <!-- ===================================== -->
+</div>
+</section><section class="workspace-card" id="tlirSection">
+<div class="workspace-section-heading">
+<h2>
+            Temporary Life Insurance Receipt
+        </h2>
+</div>
+<div class="case-field">
+<label for="tlirReceived">
 
-              <details id="stateRequirements" class="workspace-card">
-                <summary>
-                  <span id="stateRequirementSummary">State Requirements</span>
-                </summary>
+            TLIR Received?
 
-                <div id="stateImportantNotices" hidden></div>
-
-                <div id="stateNotes" hidden></div>
-
-                <div class="state-requirement-meta">
-                  <span>Applicable Forms</span>
-
-                  <strong id="applicableFormCount">0</strong>
-                </div>
-
-                <div id="requiredForms"></div>
-
-                <div id="reviewCompletionBanner" hidden>
+        </label>
+<select id="tlirReceived">
+<option value="">
+                Select
+            </option>
+<option value="yes">
+                Yes
+            </option>
+<option value="no">
+                No
+            </option>
+</select>
+</div>
+</section><details class="workspace-card" id="stateRequirements">
+<summary>
+<span id="stateRequirementSummary">State Requirements</span>
+</summary>
+<div hidden="" id="stateImportantNotices"></div>
+<div hidden="" id="stateNotes"></div>
+<div class="state-requirement-meta">
+<span>Applicable Forms</span>
+<strong id="applicableFormCount">0</strong>
+</div>
+<div id="requiredForms"></div>
+<div hidden="" id="reviewCompletionBanner">
                   State form review complete.
                 </div>
-              </details>
-              <section id="openNigoPanel" class="workspace-card">
-                <div class="workspace-section-heading">
-                  <h2>Open NIGOs</h2>
-
-                  <span id="openNigoCount">0</span>
-                </div>
-
-                <div id="openNigoList">
-                  <div class="nigo-empty">No documented NIGOs</div>
-                </div>
-              </section>
-
-              <!-- ===================================== -->
-              <!-- POLARIS REPLACEMENT CHECK -->
-              <!-- ===================================== -->
-
-              <section
-                id="polarisReplacementCheckSection"
-                class="workspace-card"
-                hidden>
-                <div class="workspace-section-heading">
-                  <div>
-                    <span class="workspace-eyebrow">REPLACEMENT REVIEW</span>
-
-                    <h2>Polaris & Replacement Review</h2>
-                  </div>
-                </div>
-
-                <p>
+</details><section class="workspace-card" id="openNigoPanel">
+<div class="workspace-section-heading">
+<h2>Open NIGOs</h2>
+<span id="openNigoCount">0</span>
+</div>
+<div id="openNigoList">
+<div class="nigo-empty">No documented NIGOs</div>
+</div>
+</section><section class="workspace-card" hidden="" id="polarisReplacementCheckSection">
+<div class="workspace-section-heading">
+<div>
+<span class="workspace-eyebrow">REPLACEMENT REVIEW</span>
+<h2>Polaris &amp; Replacement Review</h2>
+</div>
+</div>
+<p>
                   Review Polaris and determine whether any replacement activity
                   exists that was not disclosed on the application.
                 </p>
-
-                <label>
-                  <input type="checkbox" id="polarisReviewCompleted" />
+<label>
+<input id="polarisReviewCompleted" type="checkbox"/>
 
                   Polaris Review Completed
                 </label>
-
-                <div class="replacement-review-grid">
-                  <div class="review-card">
-                    <h3>Replacement Status</h3>
-
-                    <label>
-                      <input
-                        type="radio"
-                        name="reviewReplacementStatus"
-                        value="none" />
+<div class="replacement-review-grid">
+<div class="review-card">
+<h3>Replacement Status</h3>
+<label>
+<input name="reviewReplacementStatus" type="radio" value="none"/>
 
                       No Replacement
                     </label>
-
-                    <label>
-                      <input
-                        type="radio"
-                        name="reviewReplacementStatus"
-                        value="internal" />
+<label>
+<input name="reviewReplacementStatus" type="radio" value="internal"/>
 
                       Internal Replacement
                     </label>
-
-                    <label>
-                      <input
-                        type="radio"
-                        name="reviewReplacementStatus"
-                        value="external" />
+<label>
+<input name="reviewReplacementStatus" type="radio" value="external"/>
 
                       External Replacement
                     </label>
-
-                    <label>
-                      <input type="checkbox" id="undisclosedReplacement" />
+<label>
+<input id="undisclosedReplacement" type="checkbox"/>
 
                       Undisclosed Replacement Identified
                     </label>
-                  </div>
-
-                  <div class="review-card">
-                    <h3>Replacement Information</h3>
-
-                    <label>Replaced Carrier</label>
-
-                    <input type="text" id="replacedCarrier" />
-
-                    <label>Policy Number</label>
-
-                    <input type="text" id="replacedPolicyNumber" />
-
-                    <label>Face Amount</label>
-
-                    <input type="text" id="replacedFaceAmount" />
-
-                    <label>Notes</label>
-
-                    <textarea id="replacementNotes" rows="5"></textarea>
-                  </div>
-                </div>
-
-                <!-- INTERNAL REPLACEMENT -->
-
-                <div id="internalReplacementSection" class="review-card" hidden>
-                  <h3>Internal Replacement Review</h3>
-
-                  <label>
-                    <input type="checkbox" />
+</div>
+<div class="review-card">
+<h3>Replacement Information</h3>
+<label>Replaced Carrier</label>
+<input id="replacedCarrier" type="text"/>
+<label>Policy Number</label>
+<input id="replacedPolicyNumber" type="text"/>
+<label>Face Amount</label>
+<input id="replacedFaceAmount" type="text"/>
+<label>Notes</label>
+<textarea id="replacementNotes" rows="5"></textarea>
+</div>
+</div>
+<!-- INTERNAL REPLACEMENT -->
+<div class="review-card" hidden="" id="internalReplacementSection">
+<h3>Internal Replacement Review</h3>
+<label>
+<input type="checkbox"/>
                     Existing Policy Reviewed
                   </label>
-
-                  <label>
-                    <input type="checkbox" />
+<label>
+<input type="checkbox"/>
                     Client History Reviewed
                   </label>
-
-                  <label>
-                    <input type="checkbox" />
+<label>
+<input type="checkbox"/>
                     Inforce Illustration Reviewed
                   </label>
-
-                  <label>
-                    <input type="checkbox" />
+<label>
+<input type="checkbox"/>
                     Replacement Tab Updated
                   </label>
-
-                  <label>
-                    <input type="checkbox" />
+<label>
+<input type="checkbox"/>
                     Commission Review Completed
                   </label>
-
-                  <label>
-                    <input type="checkbox" />
+<label>
+<input type="checkbox"/>
                     GA Memo Needed
                   </label>
-
-                  <label>
-                    <input type="checkbox" />
+<label>
+<input type="checkbox"/>
                     Surrender Endorsement Reviewed
                   </label>
-                </div>
-
-                <!-- EXTERNAL REPLACEMENT -->
-
-                <div id="externalReplacementSection" class="review-card" hidden>
-                  <h3>External Replacement Review</h3>
-
-                  <label>
-                    <input type="checkbox" />
+</div>
+<!-- EXTERNAL REPLACEMENT -->
+<div class="review-card" hidden="" id="externalReplacementSection">
+<h3>External Replacement Review</h3>
+<label>
+<input type="checkbox"/>
                     Existing Carrier Identified
                   </label>
-
-                  <label>
-                    <input type="checkbox" />
+<label>
+<input type="checkbox"/>
                     Replacement Notification Sent
                   </label>
-
-                  <label>
-                    <input type="checkbox" />
+<label>
+<input type="checkbox"/>
                     Carrier Fax Sent
                   </label>
-
-                  <label>
-                    <input type="checkbox" />
+<label>
+<input type="checkbox"/>
                     Fax Confirmation Received
                   </label>
-
-                  <label>
-                    <input type="checkbox" />
+<label>
+<input type="checkbox"/>
                     Follow-Up Required
                   </label>
-
-                  <label>
-                    <input type="checkbox" />
+<label>
+<input type="checkbox"/>
                     Replacement Letter Sent
                   </label>
-                </div>
-
-                <!-- 1035 EXCHANGE -->
-
-                <div id="exchangeSection" class="review-card">
-                  <h3>1035 Exchange</h3>
-
-                  <label>
-                    <input type="checkbox" id="is1035Exchange" />
+</div>
+<!-- 1035 EXCHANGE -->
+<div class="review-card" id="exchangeSection">
+<h3>1035 Exchange</h3>
+<label>
+<input id="is1035Exchange" type="checkbox"/>
 
                     1035 Exchange
                   </label>
-
-                  <label>
-                    <input type="checkbox" />
+<label>
+<input type="checkbox"/>
                     P4051 Received
                   </label>
-
-                  <label>
-                    <input type="checkbox" />
+<label>
+<input type="checkbox"/>
                     P4051 IGO
                   </label>
-
-                  <label>
-                    <input type="checkbox" />
+<label>
+<input type="checkbox"/>
                     Loan Carryover Reviewed
                   </label>
-                </div>
-
-                <!-- GENERATED REQUIREMENTS -->
-
-                <div class="review-card">
-                  <h3>Replacement Requirements</h3>
-
-                  <textarea
-                    id="replacementRequirementOutput"
-                    rows="8"
-                    readonly></textarea>
-
-                  <button type="button" id="copyReplacementRequirement">
+</div>
+<!-- GENERATED REQUIREMENTS -->
+<div class="review-card">
+<h3>Replacement Requirements</h3>
+<textarea id="replacementRequirementOutput" readonly="" rows="8"></textarea>
+<button id="copyReplacementRequirement" type="button">
                     Copy Requirement
                   </button>
-                </div>
-              </section>
-
-
-<div id="requirementBuilderParking" hidden>
-
-<div id="requirementBuilderParking" hidden>
-
-    <div id="nigoRequirementBuilder" class="vc-card">
-
-        <h3>Requirement Builder</h3>
-
-        <div class="vc-field">
-
-            <label>
+</div>
+</section><div hidden="" id="requirementBuilderParking">
+<div class="vc-card" id="nigoRequirementBuilder">
+<h3>Requirement Builder</h3>
+<div class="vc-field">
+<label>
                 Active Form
             </label>
-
-            <div id="activeNigoFormDisplay">
+<div id="activeNigoFormDisplay">
                 Select a form marked NIGO.
             </div>
-
-        </div>
-
-        <div class="vc-field">
-
-            <label for="globalRequirementTemplate">
+</div>
+<div class="vc-field">
+<label for="globalRequirementTemplate">
                 Requirement Template
             </label>
-
-            <select id="globalRequirementTemplate">
-
-                <option value="">
+<select id="globalRequirementTemplate">
+<option value="">
                     Select Requirement
                 </option>
-
-            </select>
-
-        </div>
-
-        <button
-            type="button"
-            id="favoriteRequirementButton">
+</select>
+</div>
+<button id="favoriteRequirementButton" type="button">
 
             ♡
 
         </button>
-
-        <div id="globalRequirementFields"></div>
-
-        <textarea
-            id="globalGeneratedRequirement"
-            rows="6"
-            readonly>
+<div id="globalRequirementFields"></div>
+<textarea id="globalGeneratedRequirement" readonly="" rows="6">
         </textarea>
-
-        <div class="vc-actions">
-
-            <button
-                id="addGlobalRequirement"
-                type="button">
+<div class="vc-actions">
+<button id="addGlobalRequirement" type="button">
 
                 Add Requirement
 
             </button>
-
-            <button
-                id="copyGlobalRequirement"
-                type="button">
+<button id="copyGlobalRequirement" type="button">
 
                 Copy Requirement
 
             </button>
-
-        </div>
-
-        <div id="requirementSaveStatus"></div>
-
-    </div>
-
 </div>
-
+<div id="requirementSaveStatus"></div>
 </div>
-
-
-             <div id="nigoAmendmentBuilder">
-
-    <section class="workspace-card">
-
-        <h3>
+</div><div id="nigoAmendmentBuilder">
+<section class="workspace-card">
+<h3>
             Amendment Builder
         </h3>
-
-        <label for="globalAmendmentTemplate">
+<label for="globalAmendmentTemplate">
             Form
         </label>
-
-        <select id="globalAmendmentTemplate">
-
-            <option value="">
+<select id="globalAmendmentTemplate">
+<option value="">
                 Select Form
             </option>
-
-        </select>
-
-        <div id="globalAmendmentFields"></div>
-
-        <textarea
-            id="globalGeneratedAmendment"
-            rows="8"
-            readonly>
+</select>
+<div id="globalAmendmentFields"></div>
+<textarea id="globalGeneratedAmendment" readonly="" rows="8">
         </textarea>
-
-    </section>
-
-</div>
-
-              <section id="bingoSection" class="workspace-card">
-                <h2>BINGO Review</h2>
-
-                <p>BINGO review content will be added here.</p>
-              </section>
-
-              <section id="reviewNotesSection" class="workspace-card">
-                <h2>Initial Review Notes</h2>
-
-                <textarea
-                  id="initialReviewNotes"
-                  rows="8"
-                  placeholder="Initial review notes will appear here."></textarea>
-
-                <div class="buttons">
-                  <button id="copyInitialReviewNotes" type="button">
+</section>
+</div><section class="workspace-card" id="bingoSection">
+<h2>BINGO Review</h2>
+<p>BINGO review content will be added here.</p>
+</section><section class="workspace-card" id="reviewNotesSection">
+<h2>Initial Review Notes</h2>
+<textarea id="initialReviewNotes" placeholder="Initial review notes will appear here." rows="8"></textarea>
+<div class="buttons">
+<button id="copyInitialReviewNotes" type="button">
                     Copy Notes
                   </button>
-                </div>
-
-                <div
-                  id="initialReviewNotesStatus"
-                  class="copy-status"
-                  aria-live="polite"></div>
-              </section>
-
-              <div id="saveAgeFields" hidden></div>
-
-              <div id="specificDateFields" hidden></div>
-
-              <details id="reviewOutputPackage" class="workspace-card">
-                <summary>Review Output Package</summary>
-
-                <div class="output-package-summary">
-                  <span id="reviewOutputStatus">No Outputs</span>
-
-                  <strong id="compiledTotalCount">0</strong>
-                </div>
-
-                <section class="compiled-output-section">
-                  <div class="compiled-output-heading">
-                    <span id="compiledAmendmentBadge">0 amendments</span>
-
-                    <span id="compiledAmendmentCount">0</span>
-                  </div>
-
-                  <textarea
-                    id="compiledAmendments"
-                    rows="10"
-                    readonly></textarea>
-
-                  <button id="copyAllAmendments" type="button" disabled>
+</div>
+<div aria-live="polite" class="copy-status" id="initialReviewNotesStatus"></div>
+</section><details class="workspace-card" id="reviewOutputPackage">
+<summary>Review Output Package</summary>
+<div class="output-package-summary">
+<span id="reviewOutputStatus">No Outputs</span>
+<strong id="compiledTotalCount">0</strong>
+</div>
+<section class="compiled-output-section">
+<div class="compiled-output-heading">
+<span id="compiledAmendmentBadge">0 amendments</span>
+<span id="compiledAmendmentCount">0</span>
+</div>
+<textarea id="compiledAmendments" readonly="" rows="10"></textarea>
+<button disabled="" id="copyAllAmendments" type="button">
                     Copy All Amendments
                   </button>
-                </section>
-
-                <section class="compiled-output-section">
-                  <div class="compiled-output-heading">
-                    <span id="compiledRequirementBadge">0 requirements</span>
-
-                    <span id="compiledRequirementCount">0</span>
-                  </div>
-
-                  <textarea
-                    id="compiledRequirements"
-                    rows="10"
-                    readonly></textarea>
-
-                  <button id="copyAllRequirements" type="button" disabled>
+</section>
+<section class="compiled-output-section">
+<div class="compiled-output-heading">
+<span id="compiledRequirementBadge">0 requirements</span>
+<span id="compiledRequirementCount">0</span>
+</div>
+<textarea id="compiledRequirements" readonly="" rows="10"></textarea>
+<button disabled="" id="copyAllRequirements" type="button">
                     Copy All Requirements
                   </button>
-                </section>
-
-                <div
-                  id="reviewOutputCopyStatus"
-                  class="copy-status"
-                  aria-live="polite"></div>
-              </details>
-
-              <section id="emailSection" class="workspace-card">
-                <h2>Initial Review Email</h2>
-
-                <button id="generateEmail" type="button">Generate Email</button>
-
-                <div
-                  id="emailOutput"
-                  class="email-preview"
-                  contenteditable="true"></div>
-
-                <button id="copyEmail" type="button">Copy Email</button>
-              </section>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <div id="quickStartModal" class="quick-start-modal" hidden>
-      <div class="quick-start-panel">
-        <div class="quick-start-header">
-          <img src="images/qs.png" />
-          <div>
-            <h2>Quick Start</h2>
-
-            <p>Launch directly into the review workspace.</p>
-          </div>
-        </div>
-
-        <div class="quick-start-grid">
-          <label>
+</section>
+<div aria-live="polite" class="copy-status" id="reviewOutputCopyStatus"></div>
+</details><section class="workspace-card" id="emailSection">
+<h2>Initial Review Email</h2>
+<button id="generateEmail" type="button">Generate Email</button>
+<div class="email-preview" contenteditable="true" id="emailOutput"></div>
+<button id="copyEmail" type="button">Copy Email</button>
+</section></div>
+</div>
+</div></section>
+</main>
+<div class="quick-start-modal" hidden="" id="quickStartModal">
+<div class="quick-start-panel">
+<div class="quick-start-header">
+<img alt="Quick Start" src="images/qs.png"/>
+<div>
+<h2>Quick Start</h2>
+<p>Launch directly into the review workspace.</p>
+</div>
+</div>
+<div class="quick-start-grid">
+<label>
             Product
             <select id="qsProduct">
-              <option value="perm">Permanent</option>
-              <option value="term">Term</option>
-            </select>
-          </label>
-
-          <label>
+<option value="perm">Permanent</option>
+<option value="term">Term</option>
+</select>
+</label>
+<label>
             State
             <select id="qsState">
-              <option value="">Select State</option>
-
-              <option value="AL">Alabama</option>
-              <option value="AK">Alaska</option>
-              <option value="AZ">Arizona</option>
-              <option value="AR">Arkansas</option>
-              <option value="CA">California</option>
-              <option value="CO">Colorado</option>
-              <option value="CT">Connecticut</option>
-              <option value="DE">Delaware</option>
-              <option value="DC">District of Columbia</option>
-              <option value="FL">Florida</option>
-              <option value="GA">Georgia</option>
-              <option value="HI">Hawaii</option>
-              <option value="ID">Idaho</option>
-              <option value="IL">Illinois</option>
-              <option value="IN">Indiana</option>
-              <option value="IA">Iowa</option>
-              <option value="KS">Kansas</option>
-              <option value="KY">Kentucky</option>
-              <option value="LA">Louisiana</option>
-              <option value="ME">Maine</option>
-              <option value="MD">Maryland</option>
-              <option value="MA">Massachusetts</option>
-              <option value="MI">Michigan</option>
-              <option value="MN">Minnesota</option>
-              <option value="MS">Mississippi</option>
-              <option value="MO">Missouri</option>
-              <option value="MT">Montana</option>
-              <option value="NE">Nebraska</option>
-              <option value="NV">Nevada</option>
-              <option value="NH">New Hampshire</option>
-              <option value="NJ">New Jersey</option>
-              <option value="NM">New Mexico</option>
-              <option value="NY">New York</option>
-              <option value="NC">North Carolina</option>
-              <option value="ND">North Dakota</option>
-              <option value="OH">Ohio</option>
-              <option value="OK">Oklahoma</option>
-              <option value="OR">Oregon</option>
-              <option value="PA">Pennsylvania</option>
-              <option value="PR">Puerto Rico</option>
-              <option value="RI">Rhode Island</option>
-              <option value="SC">South Carolina</option>
-              <option value="SD">South Dakota</option>
-              <option value="TN">Tennessee</option>
-              <option value="TX">Texas</option>
-              <option value="UT">Utah</option>
-              <option value="VT">Vermont</option>
-              <option value="VA">Virginia</option>
-              <option value="WA">Washington</option>
-              <option value="WV">West Virginia</option>
-              <option value="WI">Wisconsin</option>
-              <option value="WY">Wyoming</option>
-            </select>
-          </label>
-
-          <label>
+<option value="">Select State</option>
+<option value="AL">Alabama</option>
+<option value="AK">Alaska</option>
+<option value="AZ">Arizona</option>
+<option value="AR">Arkansas</option>
+<option value="CA">California</option>
+<option value="CO">Colorado</option>
+<option value="CT">Connecticut</option>
+<option value="DE">Delaware</option>
+<option value="DC">District of Columbia</option>
+<option value="FL">Florida</option>
+<option value="GA">Georgia</option>
+<option value="HI">Hawaii</option>
+<option value="ID">Idaho</option>
+<option value="IL">Illinois</option>
+<option value="IN">Indiana</option>
+<option value="IA">Iowa</option>
+<option value="KS">Kansas</option>
+<option value="KY">Kentucky</option>
+<option value="LA">Louisiana</option>
+<option value="ME">Maine</option>
+<option value="MD">Maryland</option>
+<option value="MA">Massachusetts</option>
+<option value="MI">Michigan</option>
+<option value="MN">Minnesota</option>
+<option value="MS">Mississippi</option>
+<option value="MO">Missouri</option>
+<option value="MT">Montana</option>
+<option value="NE">Nebraska</option>
+<option value="NV">Nevada</option>
+<option value="NH">New Hampshire</option>
+<option value="NJ">New Jersey</option>
+<option value="NM">New Mexico</option>
+<option value="NY">New York</option>
+<option value="NC">North Carolina</option>
+<option value="ND">North Dakota</option>
+<option value="OH">Ohio</option>
+<option value="OK">Oklahoma</option>
+<option value="OR">Oregon</option>
+<option value="PA">Pennsylvania</option>
+<option value="PR">Puerto Rico</option>
+<option value="RI">Rhode Island</option>
+<option value="SC">South Carolina</option>
+<option value="SD">South Dakota</option>
+<option value="TN">Tennessee</option>
+<option value="TX">Texas</option>
+<option value="UT">Utah</option>
+<option value="VT">Vermont</option>
+<option value="VA">Virginia</option>
+<option value="WA">Washington</option>
+<option value="WV">West Virginia</option>
+<option value="WI">Wisconsin</option>
+<option value="WY">Wyoming</option>
+</select>
+</label>
+<label>
             BOT Case
             <select id="qsBOT">
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-          </label>
-
-          <label>
+<option value="yes">Yes</option>
+<option value="no">No</option>
+</select>
+</label>
+<label>
             Replacement
             <select id="qsReplacement">
-              <option value="none">No Replacement</option>
-              <option value="internal">Internal Replacement</option>
-              <option value="external">External Replacement</option>
-            </select>
-          </label>
-
-          <label>
+<option value="none">No Replacement</option>
+<option value="internal">Internal Replacement</option>
+<option value="external">External Replacement</option>
+</select>
+</label>
+<label>
             Insured Type
             <select id="qsInsured">
-              <option value="single">Single</option>
-              <option value="joint">Joint</option>
-            </select>
-          </label>
-
-          <div class="quick-start-actions">
-            <button id="launchQuickStart" type="button">
+<option value="single">Single</option>
+<option value="joint">Joint</option>
+</select>
+</label>
+<div class="quick-start-actions">
+<button id="launchQuickStart" type="button">
               Launch Workspace
             </button>
-
-            <button id="closeQuickStart" type="button">Cancel</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <footer>Jessie Fabian ©2026</footer>
-
-    <!-- Onboarding -->
-    <script src="scripts/scroll.js"></script>
-    <script src="scripts/onboarding.js"></script>
-    <!-- Data and template foundation -->
-    <script src="scripts/library.js"></script>
-    <!-- Workbench engines -->
-    <script src="scripts/amendment-engine.js"></script>
-    <script src="scripts/stateLoader.js"></script>
-    <script src="scripts/illustration-validation.js"></script>
-    <!-- Core review workflow -->
-    <script src="scripts/initial-review.js"></script>
-    <!-- Output and supporting tools -->
-    <script src="scripts/review-output-package.js"></script>
-  </body>
+<button id="closeQuickStart" type="button">Cancel</button>
+</div>
+</div>
+</div>
+</div>
+<footer>Jessie Fabian ©2026</footer>
+<!-- Onboarding -->
+<script src="scripts/scroll.js"></script>
+<script src="scripts/onboarding.js"></script>
+<!-- Data and template foundation -->
+<script src="scripts/library.js"></script>
+<!-- Workbench engines -->
+<script src="scripts/amendment-engine.js"></script>
+<script src="scripts/stateLoader.js"></script>
+<script src="scripts/illustration-validation.js"></script>
+<!-- Core review workflow -->
+<script src="scripts/initial-review.js"></script>
+<!-- Output and supporting tools -->
+<script src="scripts/review-output-package.js"></script>
+</body>
 </html>

@@ -1,12 +1,9 @@
-body {
-  font-family: "MM Sharp", "Century Gothic", "Futura", sans-serif;
-}
 .launcher-page {
   padding-top: 0px;
   width: min(1200px, calc(100% - 40px));
 
   margin: 0 auto;
-  margin-top: -200x;
+  margin-top: 0;
   background: linear-gradient(180deg, #eef2f8, #eef2f8);
   padding: 0px 0 60px;
 }
@@ -40,9 +37,6 @@ body {
   font-size: clamp(40px, 5vw, 60px);
 
   font-weight: 700;
-}
-body {
-  background: linear-gradient(180deg, #eef2f8, #eef2f8);
 }
 .launcher-grid {
   display: grid;
