@@ -207,6 +207,7 @@
 
       .vc-card {
     scroll-margin-top: 18px;
+    margin-bottom: 30px;
     padding: 32px;
     border: 1px solid #d9e6f5;
     border-radius: 24px;
@@ -215,7 +216,7 @@
 }
 
       .vc-card + .vc-card {
-        margin-top: 20px;
+        margin-top: 40px;
       }
 
       .vc-card__header {
@@ -238,7 +239,33 @@ font-size: 1.45rem;
       }
 
 
+/* ==========================================
+   AMENDMENT BUILDER SPACING
+========================================== */
 
+#amendmentsSection .vc-field {
+    margin-bottom: 18px;
+}
+
+#globalAmendmentFields {
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+#globalGeneratedAmendment {
+    margin-top: 12px;
+    margin-bottom: 20px;
+
+    min-height: 220px;
+}
+
+#amendmentsSection .vc-actions {
+    margin-top: 16px;
+}
+
+#amendmentSaveStatus {
+    margin-top: 16px;
+}
       .vc-card h3 {
         font-size: 1rem;
       }
@@ -268,7 +295,7 @@ font-size: 1.45rem;
         font-size: 0.84rem;
       }
 
-   
+
 
       #requiredForms {
         display: grid;
