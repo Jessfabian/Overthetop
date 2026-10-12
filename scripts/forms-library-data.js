@@ -6097,7 +6097,7 @@ window.STATE_FORMS = {
         url: "https://compass.massmutual.com/api/assets/file/bltb49dc6b2e8504bc8",
         note: "",
       },
-],
+    ],
   },
   NY: {
     name: "New York",
@@ -6282,7 +6282,7 @@ window.STATE_FORMS = {
       },
     ],
   },
-    OH: {
+  OH: {
     name: "Ohio",
 
     notices: [
@@ -6920,3 +6920,1910 @@ window.STATE_FORMS = {
       },
     ],
   },
+  PR: {
+    name: "Puerto Rico",
+
+    notices: [
+      "Risk-located jurisdiction. The agent must be licensed in Puerto Rico if the insured is a Puerto Rico resident, regardless of where the Part 1 was signed.",
+      "The replacement form is retained only in the agency.",
+      "Puerto Rico addresses require location-specific formatting.",
+      "Puerto Rico MVRs are provided manually by the firm and require different handling.",
+    ],
+
+    forms: [
+      {
+        number: "ICC17A1001",
+        title: "Additional Insured Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/download/file/blt79e64d2c4ef6f59f",
+        note: "",
+      },
+
+      {
+        number: "A2000P-PR",
+        title: "Application for Life Insurance (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt3174bf6ec7372c36",
+        note: "",
+      },
+
+      {
+        number: "ICC12A50",
+        title: "Application Part 2",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltaa5e3212d7f08c42&PAGEURL=Search%20Result%20Page&LINKTEXT=Application+Part+2++ICC&DOCGUID=6f6b43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A1002P-PR",
+        title: "Application for Simplified Conversion",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/api/assets/file/blt737f75c448da8ca5",
+        note: "",
+      },
+
+      {
+        number: "ICC13F5159",
+        title: "Beneficiary Designation Form",
+        category: "designation",
+        categoryLabel: "Beneficiary",
+        url: "https://compass.massmutual.com/download/file/blt4558fec07372c14a",
+        note: "",
+      },
+
+      {
+        number: "A1500P-PR",
+        title: "CareChoice One Application (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt1529fb8fc9d53a54",
+        note: "",
+      },
+
+      {
+        number: "ICC13FR2089",
+        title: "Conversion and Insurability Option Life Insurance Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/api/assets/file/bltb49dc6b2e8504bc8",
+        note: "",
+      },
+
+      {
+        number: "ICC17F6290-US 0317",
+        title: "Foreign Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blt33e30ad64f933f0f&PAGEURL=Search%20Result%20Page&LINKTEXT=Foreign+Supplement++ICC&DOCGUID=cffb43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "ICC18F8186",
+        title: "HIPAA Authorization",
+        category: "medical",
+        categoryLabel: "HIPAA",
+        url: "https://compass.massmutual.com/download/file/blt3a353349498b94a6",
+        note: "",
+      },
+
+      {
+        number: "ICC19FR2118",
+        title: "Long-Term Care Personal Worksheet",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blt0706464d1d58d79a",
+        note: "",
+      },
+
+      {
+        number: "LTCR-GE",
+        title: "LTC Access Rider Application Package",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blte93e8ae76dc076c4",
+        note: "",
+      },
+
+      {
+        number: "ICC15F5248",
+        title: "Owner Designation Form",
+        category: "designation",
+        categoryLabel: "Ownership",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltb0942d9ad836c893&PAGEURL=Search%20Result%20Page&LINKTEXT=Owner+Designation+Form+New+Business++ICC&DOCGUID=208be14b18674410VgnVCM100000d47106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A11PR",
+        title: "Policy Change Application",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt391ee9a76053e4c7",
+        note: "",
+      },
+
+      {
+        number: "F5436PR",
+        title: "Replacement Form",
+        category: "replacement",
+        categoryLabel: "Replacement",
+        url: "https://compass.massmutual.com/download/file/bltc9d783dad500dd65",
+        note: "Retained only in the agency.",
+      },
+    ],
+  },
+
+  RI: {
+    name: "Rhode Island",
+
+    notices: [
+      "Mail replacement information within five business days.",
+      "Use the HIV form based on the contract state.",
+      "The source did not provide a link for the A2000P-RI.",
+    ],
+
+    forms: [
+      {
+        number: "ICC17A1001",
+        title: "Additional Insured Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/download/file/blt79e64d2c4ef6f59f",
+        note: "",
+      },
+
+      {
+        number: "A2000P-RI",
+        title: "Application for Life Insurance (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "",
+        note: "No URL was included in the supplied source.",
+      },
+
+      {
+        number: "ICC12A50",
+        title: "Application Part 2",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltaa5e3212d7f08c42&PAGEURL=Search%20Result%20Page&LINKTEXT=Application+Part+2++ICC&DOCGUID=6f6b43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A1002P-RI",
+        title: "Application for Simplified Conversion",
+        category: "application",
+        categoryLabel: "Application",
+        url: "http://compass.massmutual.com/api/assets/file/bltcaf8782a07ced2fc",
+        note: "",
+      },
+
+      {
+        number: "ICC13F5159",
+        title: "Beneficiary Designation Form",
+        category: "designation",
+        categoryLabel: "Beneficiary",
+        url: "https://compass.massmutual.com/download/file/blt4558fec07372c14a",
+        note: "",
+      },
+
+      {
+        number: "A1500P-RI",
+        title: "CareChoice One Application (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt905b000ffbfe932c",
+        note: "",
+      },
+
+      {
+        number: "ICC13FR2089",
+        title: "Conversion and Insurability Option Life Insurance Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/api/assets/file/bltb49dc6b2e8504bc8",
+        note: "",
+      },
+
+      {
+        number: "ICC17F6290-US 0317",
+        title: "Foreign Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blt33e30ad64f933f0f&PAGEURL=Search%20Result%20Page&LINKTEXT=Foreign+Supplement++ICC&DOCGUID=cffb43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "ICC18F8186",
+        title: "HIPAA Authorization",
+        category: "medical",
+        categoryLabel: "HIPAA",
+        url: "https://compass.massmutual.com/download/file/blt3a353349498b94a6",
+        note: "",
+      },
+
+      {
+        number: "N201RI",
+        title: "HIV Form",
+        category: "medical",
+        categoryLabel: "Medical",
+        url: "https://compass.massmutual.com/download/file/blt2aeb72ce91fcce69",
+        note: "Based on the contract state.",
+      },
+
+      {
+        number: "ICC19FR2118",
+        title: "Long-Term Care Personal Worksheet",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blt0706464d1d58d79a",
+        note: "",
+      },
+
+      {
+        number: "LTCR-GE",
+        title: "LTC Access Rider Application Package",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blte93e8ae76dc076c4",
+        note: "",
+      },
+
+      {
+        number: "ICC15F5248",
+        title: "Owner Designation Form",
+        category: "designation",
+        categoryLabel: "Ownership",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltb0942d9ad836c893&PAGEURL=Search%20Result%20Page&LINKTEXT=Owner+Designation+Form+New+Business++ICC&DOCGUID=208be14b18674410VgnVCM100000d47106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A11RI",
+        title: "Policy Change Application",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt5338e1c3583cc5a3",
+        note: "",
+      },
+
+      {
+        number: "F6487RI",
+        title: "Replacement Form",
+        category: "replacement",
+        categoryLabel: "Replacement",
+        url: "https://compass.massmutual.com/download/file/blta20831745fcd0523",
+        note: "Mail replacement information within five business days.",
+      },
+    ],
+  },
+
+  SC: {
+    name: "South Carolina",
+
+    notices: ["Mail replacement information within three days."],
+
+    forms: [
+      {
+        number: "ICC17A1001",
+        title: "Additional Insured Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/download/file/blt79e64d2c4ef6f59f",
+        note: "",
+      },
+
+      {
+        number: "A2000P-SC",
+        title: "Application for Life Insurance (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt1220a47c5512d481",
+        note: "",
+      },
+
+      {
+        number: "ICC12A50",
+        title: "Application Part 2",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltaa5e3212d7f08c42&PAGEURL=Search%20Result%20Page&LINKTEXT=Application+Part+2++ICC&DOCGUID=6f6b43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A1002P-SC",
+        title: "Application for Simplified Conversion",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blteb440ea6f94ec3f6",
+        note: "",
+      },
+
+      {
+        number: "ICC13F5159",
+        title: "Beneficiary Designation Form",
+        category: "designation",
+        categoryLabel: "Beneficiary",
+        url: "https://compass.massmutual.com/download/file/blt4558fec07372c14a",
+        note: "",
+      },
+
+      {
+        number: "A1500P-SC",
+        title: "CareChoice One Application (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt170721c9c9f41bd0",
+        note: "",
+      },
+
+      {
+        number: "ICC13FR2089",
+        title: "Conversion and Insurability Option Life Insurance Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/api/assets/file/bltb49dc6b2e8504bc8",
+        note: "",
+      },
+
+      {
+        number: "ICC17F6290-US 0317",
+        title: "Foreign Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blt33e30ad64f933f0f&PAGEURL=Search%20Result%20Page&LINKTEXT=Foreign+Supplement++ICC&DOCGUID=cffb43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "ICC18F8186",
+        title: "HIPAA Authorization",
+        category: "medical",
+        categoryLabel: "HIPAA",
+        url: "https://compass.massmutual.com/download/file/blt3a353349498b94a6",
+        note: "",
+      },
+
+      {
+        number: "ICC19FR2118",
+        title: "Long-Term Care Personal Worksheet",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blt0706464d1d58d79a",
+        note: "",
+      },
+
+      {
+        number: "LTCR-GE",
+        title: "LTC Access Rider Application Package",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blte93e8ae76dc076c4",
+        note: "",
+      },
+
+      {
+        number: "ICC15F5248",
+        title: "Owner Designation Form",
+        category: "designation",
+        categoryLabel: "Ownership",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltb0942d9ad836c893&PAGEURL=Search%20Result%20Page&LINKTEXT=Owner+Designation+Form+New+Business++ICC&DOCGUID=208be14b18674410VgnVCM100000d47106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A11SC",
+        title: "Policy Change Application",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt8e8f94e30cab9f87",
+        note: "",
+      },
+
+      {
+        number: "F6487",
+        title: "Replacement Form",
+        category: "replacement",
+        categoryLabel: "Replacement",
+        url: "https://compass.massmutual.com/download/file/bltc8b0fa2aa512d92f",
+        note: "Mail replacement information within three days.",
+      },
+    ],
+  },
+
+  SD: {
+    name: "South Dakota",
+
+    notices: [
+      "Mail replacement information within five business days.",
+      "Use the listed state-specific and generic forms where indicated.",
+    ],
+
+    forms: [
+      {
+        number: "A1001SD",
+        title: "Additional Insured Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/download/file/blt989be8863e1c2a56",
+        note: "",
+      },
+
+      {
+        number: "A2000P-SD",
+        title: "Application for Life Insurance (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/bltadf5b671a751ac9e",
+        note: "",
+      },
+
+      {
+        number: "A50SD",
+        title: "Application Part 2",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blt97ace709e0037566&PAGEURL=Search%20Result%20Page&LINKTEXT=Application+Part+2++South+Dakota&DOCGUID=7b57578b49d1e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A1002P-SD",
+        title: "Application for Simplified Conversion",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt9259ee6a697a21c3",
+        note: "",
+      },
+
+      {
+        number: "F5159SD",
+        title: "Beneficiary Designation Form",
+        category: "designation",
+        categoryLabel: "Beneficiary",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blta97582b6ff5ede52&PAGEURL=Search%20Result%20Page&LINKTEXT=Beneficiary+Designation+Form+New+Business++South+Dakota&DOCGUID=f6eae14b18674410VgnVCM100000d47106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A1500P-SD",
+        title: "CareChoice One Application (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt04f5f23dd4d6b96e",
+        note: "",
+      },
+
+      {
+        number: "FR2089SD",
+        title: "Conversion and Insurability Option Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/download/file/bltd4880fbb1c4e38f8",
+        note: "",
+      },
+
+      {
+        number: "F6290GEN-US 0317",
+        title: "Foreign Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blt13589d08742d79dc&PAGEURL=Search%20Result%20Page&LINKTEXT=Foreign+Supplement++Generic&DOCGUID=332a43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "F8186GEN",
+        title: "HIPAA Authorization",
+        category: "medical",
+        categoryLabel: "HIPAA",
+        url: "https://compass.massmutual.com/download/file/bltb2bab6b3d7d80976",
+        note: "",
+      },
+
+      {
+        number: "N201GEN",
+        title: "HIV Form",
+        category: "medical",
+        categoryLabel: "Medical",
+        url: "https://compass.massmutual.com/download/file/bltad060ef1916c499c",
+        note: "Based on the insured residence state.",
+      },
+
+      {
+        number: "FR2118SD",
+        title: "Long-Term Care Personal Worksheet",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/bltad77782df9b0e960",
+        note: "",
+      },
+
+      {
+        number: "LTCR-SD",
+        title: "LTC Access Rider Application Package",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blt820af3d8ea5e55e6",
+        note: "",
+      },
+
+      {
+        number: "F5248SD",
+        title: "Owner Designation Form",
+        category: "designation",
+        categoryLabel: "Ownership",
+        url: "https://compass.massmutual.com/download/file/bltc85b05482d339aac",
+        note: "",
+      },
+
+      {
+        number: "A11SD",
+        title: "Policy Change Application",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/bltaba35e351522fb21",
+        note: "",
+      },
+
+      {
+        number: "F6487",
+        title: "Replacement Form",
+        category: "replacement",
+        categoryLabel: "Replacement",
+        url: "https://compass.massmutual.com/download/file/bltc8b0fa2aa512d92f",
+        note: "Mail replacement information within five business days.",
+      },
+    ],
+  },
+
+  TN: {
+    name: "Tennessee",
+
+    notices: [
+      "Mail replacement information within five days.",
+      "The replacement letter must be sent by certified mail.",
+    ],
+
+    forms: [
+      {
+        number: "ICC17A1001",
+        title: "Additional Insured Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/download/file/blt79e64d2c4ef6f59f",
+        note: "",
+      },
+
+      {
+        number: "A2000P-TN",
+        title: "Application for Life Insurance (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt55047ddcf46764df",
+        note: "",
+      },
+
+      {
+        number: "ICC12A50",
+        title: "Application Part 2",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltaa5e3212d7f08c42&PAGEURL=Search%20Result%20Page&LINKTEXT=Application+Part+2++ICC&DOCGUID=6f6b43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A1002P-TN",
+        title: "Application for Simplified Conversion",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/bltef82bc4a14eaf0df",
+        note: "",
+      },
+
+      {
+        number: "ICC13F5159",
+        title: "Beneficiary Designation Form",
+        category: "designation",
+        categoryLabel: "Beneficiary",
+        url: "https://compass.massmutual.com/download/file/blt4558fec07372c14a",
+        note: "",
+      },
+
+      {
+        number: "A1500P-TN",
+        title: "CareChoice One Application (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/bltef82bc4a14eaf0df",
+        note: "",
+      },
+
+      {
+        number: "ICC13FR2089",
+        title: "Conversion and Insurability Option Life Insurance Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/api/assets/file/bltb49dc6b2e8504bc8",
+        note: "",
+      },
+
+      {
+        number: "ICC17F6290-US 0317",
+        title: "Foreign Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blt33e30ad64f933f0f&PAGEURL=Search%20Result%20Page&LINKTEXT=Foreign+Supplement++ICC&DOCGUID=cffb43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "ICC18F8186",
+        title: "HIPAA Authorization",
+        category: "medical",
+        categoryLabel: "HIPAA",
+        url: "https://compass.massmutual.com/download/file/blt3a353349498b94a6",
+        note: "",
+      },
+
+      {
+        number: "ICC19FR2118",
+        title: "Long-Term Care Personal Worksheet",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blt0706464d1d58d79a",
+        note: "",
+      },
+
+      {
+        number: "LTCR-TN",
+        title: "LTC Access Rider Application Package",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blt53cfb0bf22d443b5",
+        note: "",
+      },
+
+      {
+        number: "ICC15F5248",
+        title: "Owner Designation Form",
+        category: "designation",
+        categoryLabel: "Ownership",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltb0942d9ad836c893&PAGEURL=Search%20Result%20Page&LINKTEXT=Owner+Designation+Form+New+Business++ICC&DOCGUID=208be14b18674410VgnVCM100000d47106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A11TN",
+        title: "Policy Change Application",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt4ca7be1f42b953e8",
+        note: "",
+      },
+
+      {
+        number: "F5436TN",
+        title: "Replacement Form",
+        category: "replacement",
+        categoryLabel: "Replacement",
+        url: "https://compass.massmutual.com/download/file/blt76acfe8581297967",
+        note: "Mail replacement information within five days. The replacement letter must be sent by certified mail.",
+      },
+    ],
+  },
+  TX: {
+    name: "Texas",
+
+    notices: [
+      "Mail replacement information within five business days.",
+      "If the owner lives in Texas, the contract state is always Texas.",
+      "Use the HIV form based on the contract state.",
+    ],
+
+    forms: [
+      {
+        number: "ICC17A1001",
+        title: "Additional Insured Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/download/file/blt79e64d2c4ef6f59f",
+        note: "",
+      },
+
+      {
+        number: "A2000P-TX",
+        title: "Application for Life Insurance (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt18c800dd620d576a",
+        note: "",
+      },
+
+      {
+        number: "ICC12A50",
+        title: "Application Part 2",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltaa5e3212d7f08c42&PAGEURL=Search%20Result%20Page&LINKTEXT=Application+Part+2++ICC&DOCGUID=6f6b43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A1002P-TX",
+        title: "Application for Simplified Conversion",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt541f4bee517c6ab0",
+        note: "",
+      },
+
+      {
+        number: "ICC13F5159",
+        title: "Beneficiary Designation Form",
+        category: "designation",
+        categoryLabel: "Beneficiary",
+        url: "https://compass.massmutual.com/download/file/blt4558fec07372c14a",
+        note: "",
+      },
+
+      {
+        number: "A1500P-TX",
+        title: "CareChoice One Application (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt8e3e042974bcec80",
+        note: "",
+      },
+
+      {
+        number: "ICC13FR2089",
+        title: "Conversion and Insurability Option Life Insurance Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/api/assets/file/bltb49dc6b2e8504bc8",
+        note: "",
+      },
+
+      {
+        number: "ICC17F6290-US 0317",
+        title: "Foreign Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blt33e30ad64f933f0f&PAGEURL=Search%20Result%20Page&LINKTEXT=Foreign+Supplement++ICC&DOCGUID=cffb43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "ICC18F8186",
+        title: "HIPAA Authorization",
+        category: "medical",
+        categoryLabel: "HIPAA",
+        url: "https://compass.massmutual.com/download/file/blt3a353349498b94a6",
+        note: "",
+      },
+
+      {
+        number: "N201TX",
+        title: "HIV Form",
+        category: "medical",
+        categoryLabel: "Medical",
+        url: "https://compass.massmutual.com/download/file/blt3a9bf8e2424f6d8c",
+        note: "Based on the contract state.",
+      },
+
+      {
+        number: "ICC19FR2118",
+        title: "Long-Term Care Personal Worksheet",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blt0706464d1d58d79a",
+        note: "",
+      },
+
+      {
+        number: "LTCR-TX",
+        title: "LTC Access Rider Application Package",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blt1a6cf76ad721d7f1",
+        note: "",
+      },
+
+      {
+        number: "ICC15F5248",
+        title: "Owner Designation Form",
+        category: "designation",
+        categoryLabel: "Ownership",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltb0942d9ad836c893&PAGEURL=Search%20Result%20Page&LINKTEXT=Owner+Designation+Form+New+Business++ICC&DOCGUID=208be14b18674410VgnVCM100000d47106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A11TX",
+        title: "Policy Change Application",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt835e83054aba01be",
+        note: "",
+      },
+
+      {
+        number: "F6487",
+        title: "Replacement Form",
+        category: "replacement",
+        categoryLabel: "Replacement",
+        url: "https://compass.massmutual.com/download/file/bltc8b0fa2aa512d92f",
+        note: "Mail replacement information within five business days. If the owner lives in Texas, the contract state is always Texas.",
+      },
+    ],
+  },
+
+  UT: {
+    name: "Utah",
+
+    notices: [
+      "Mail replacement information within five business days.",
+      "Use the HIV form based on the contract state.",
+    ],
+
+    forms: [
+      {
+        number: "ICC17A1001",
+        title: "Additional Insured Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/download/file/blt79e64d2c4ef6f59f",
+        note: "",
+      },
+
+      {
+        number: "A2000P-UT",
+        title: "Application for Life Insurance (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt2c173fe076f8893f",
+        note: "",
+      },
+
+      {
+        number: "ICC12A50",
+        title: "Application Part 2",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltaa5e3212d7f08c42&PAGEURL=Search%20Result%20Page&LINKTEXT=Application+Part+2++ICC&DOCGUID=6f6b43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A1002P-UT",
+        title: "Application for Simplified Conversion",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/bltec8a697d14f65283",
+        note: "",
+      },
+
+      {
+        number: "ICC13F5159",
+        title: "Beneficiary Designation Form",
+        category: "designation",
+        categoryLabel: "Beneficiary",
+        url: "https://compass.massmutual.com/download/file/blt4558fec07372c14a",
+        note: "",
+      },
+
+      {
+        number: "A1500P-UT",
+        title: "CareChoice One Application (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt2f6f60ed87d39eb6",
+        note: "",
+      },
+
+      {
+        number: "ICC13FR2089",
+        title: "Conversion and Insurability Option Life Insurance Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/api/assets/file/bltb49dc6b2e8504bc8",
+        note: "",
+      },
+
+      {
+        number: "ICC17F6290-US 0317",
+        title: "Foreign Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blt33e30ad64f933f0f&PAGEURL=Search%20Result%20Page&LINKTEXT=Foreign+Supplement++ICC&DOCGUID=cffb43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "ICC18F8186",
+        title: "HIPAA Authorization",
+        category: "medical",
+        categoryLabel: "HIPAA",
+        url: "https://compass.massmutual.com/download/file/blt3a353349498b94a6",
+        note: "",
+      },
+
+      {
+        number: "N201UT",
+        title: "HIV Form",
+        category: "medical",
+        categoryLabel: "Medical",
+        url: "https://compass.massmutual.com/download/file/blt18fccacad6454b19",
+        note: "Based on the contract state.",
+      },
+
+      {
+        number: "ICC19FR2118",
+        title: "Long-Term Care Personal Worksheet",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blt0706464d1d58d79a",
+        note: "",
+      },
+
+      {
+        number: "LTCR-UT",
+        title: "LTC Access Rider Application Package",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blt63997758e20bb4d0&PAGEURL=Search%20Result%20Page&LINKTEXT=LTCAccess+Rider+LTCR+Application+Package++Utah&DOCGUID=18bdfd1d1f9de410VgnVCM100000d47106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "ICC15F5248",
+        title: "Owner Designation Form",
+        category: "designation",
+        categoryLabel: "Ownership",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltb0942d9ad836c893&PAGEURL=Search%20Result%20Page&LINKTEXT=Owner+Designation+Form+New+Business++ICC&DOCGUID=208be14b18674410VgnVCM100000d47106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A11UT",
+        title: "Policy Change Application",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt6755aa362143ef33",
+        note: "",
+      },
+
+      {
+        number: "F6487UT",
+        title: "Replacement Form",
+        category: "replacement",
+        categoryLabel: "Replacement",
+        url: "https://compass.massmutual.com/download/file/blt668a8b608410d008",
+        note: "Mail replacement information within five business days.",
+      },
+    ],
+  },
+
+  VT: {
+    name: "Vermont",
+
+    notices: [
+      "Mail replacement information within five business days.",
+      "The disclosure authorization is required when a conversion is being underwritten.",
+    ],
+
+    forms: [
+      {
+        number: "ICC17A1001",
+        title: "Additional Insured Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/download/file/blt79e64d2c4ef6f59f",
+        note: "",
+      },
+
+      {
+        number: "A2000P-VT",
+        title: "Application for Life Insurance (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt8949054b1101f8e0",
+        note: "",
+      },
+
+      {
+        number: "ICC12A50",
+        title: "Application Part 2",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltaa5e3212d7f08c42&PAGEURL=Search%20Result%20Page&LINKTEXT=Application+Part+2++ICC&DOCGUID=6f6b43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A1002P-VT",
+        title: "Application for Simplified Conversion",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/bltffafb686db3a7d00",
+        note: "",
+      },
+
+      {
+        number: "ICC13F5159",
+        title: "Beneficiary Designation Form",
+        category: "designation",
+        categoryLabel: "Beneficiary",
+        url: "https://compass.massmutual.com/download/file/blt4558fec07372c14a",
+        note: "",
+      },
+
+      {
+        number: "A1500P-VT",
+        title: "CareChoice One Application (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt5d010e6c6361098e",
+        note: "",
+      },
+
+      {
+        number: "ICC13FR2089",
+        title: "Conversion and Insurability Option Life Insurance Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/api/assets/file/bltb49dc6b2e8504bc8",
+        note: "",
+      },
+
+      {
+        number: "A1894-VT-2000",
+        title: "Disclosure Authorization",
+        category: "disclosure",
+        categoryLabel: "Disclosure",
+        url: "https://compass.massmutual.com/download/file/bltcf0f3c015e7da1ee",
+        note: "Required when a conversion is being underwritten.",
+      },
+
+      {
+        number: "ICC17F6290-US 0317",
+        title: "Foreign Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blt33e30ad64f933f0f&PAGEURL=Search%20Result%20Page&LINKTEXT=Foreign+Supplement++ICC&DOCGUID=cffb43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "ICC18F8186",
+        title: "HIPAA Authorization",
+        category: "medical",
+        categoryLabel: "HIPAA",
+        url: "https://compass.massmutual.com/download/file/blt3a353349498b94a6",
+        note: "",
+      },
+
+      {
+        number: "N201VT",
+        title: "HIV Form",
+        category: "medical",
+        categoryLabel: "Medical",
+        url: "https://compass.massmutual.com/download/file/bltded5d7c4a5efac65",
+        note: "Based on the contract state.",
+      },
+
+      {
+        number: "ICC19FR2118",
+        title: "Long-Term Care Personal Worksheet",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blt0706464d1d58d79a",
+        note: "",
+      },
+
+      {
+        number: "LTCR-GE",
+        title: "LTC Access Rider Application Package",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blte93e8ae76dc076c4",
+        note: "",
+      },
+
+      {
+        number: "ICC15F5248",
+        title: "Owner Designation Form",
+        category: "designation",
+        categoryLabel: "Ownership",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltb0942d9ad836c893&PAGEURL=Search%20Result%20Page&LINKTEXT=Owner+Designation+Form+New+Business++ICC&DOCGUID=208be14b18674410VgnVCM100000d47106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A11VT",
+        title: "Policy Change Application",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/bltb38567a0680bdc07",
+        note: "",
+      },
+
+      {
+        number: "F6487",
+        title: "Replacement Form",
+        category: "replacement",
+        categoryLabel: "Replacement",
+        url: "https://compass.massmutual.com/download/file/bltc8b0fa2aa512d92f",
+        note: "Mail replacement information within five business days.",
+      },
+    ],
+  },
+
+  VA: {
+    name: "Virginia",
+
+    notices: [
+      "Mail replacement information within five business days.",
+      "Virginia is an adverse-letter state for cases deemed incomplete when the insured is a Virginia resident.",
+      "The F7011 is not required with the Survivorship Whole Life OPM product.",
+    ],
+
+    forms: [
+      {
+        number: "ICC17A1001",
+        title: "Additional Insured Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/download/file/blt79e64d2c4ef6f59f",
+        note: "",
+      },
+
+      {
+        number: "A2000P-VA",
+        title: "Application for Life Insurance (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt95dec1c58e4c6e4c",
+        note: "",
+      },
+
+      {
+        number: "ICC12A50",
+        title: "Application Part 2",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltaa5e3212d7f08c42&PAGEURL=Search%20Result%20Page&LINKTEXT=Application+Part+2++ICC&DOCGUID=6f6b43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A1002P-VA",
+        title: "Application for Simplified Conversion",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/api/assets/file/blt6f50ba78a5de6a1d",
+        note: "",
+      },
+
+      {
+        number: "ICC13F5159",
+        title: "Beneficiary Designation Form",
+        category: "designation",
+        categoryLabel: "Beneficiary",
+        url: "https://compass.massmutual.com/download/file/blt4558fec07372c14a",
+        note: "",
+      },
+
+      {
+        number: "A1500P-VA",
+        title: "CareChoice One Application (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt32ca9dd18dbf82ab",
+        note: "",
+      },
+
+      {
+        number: "ICC13FR2089",
+        title: "Conversion and Insurability Option Life Insurance Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/api/assets/file/bltb49dc6b2e8504bc8",
+        note: "",
+      },
+
+      {
+        number: "A1894-VA-2012",
+        title: "Disclosure Authorization",
+        category: "disclosure",
+        categoryLabel: "Disclosure",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blt21bd349bc9d46e79&PAGEURL=Search%20Result%20Page&LINKTEXT=Disclosure+Authorization++Virginia&DOCGUID=45720867f4377210VgnVCM100000bf6a06aaRCRD",
+        note: "Required when a conversion is being underwritten.",
+      },
+
+      {
+        number: "ICC17F6290-US 0317",
+        title: "Foreign Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blt33e30ad64f933f0f&PAGEURL=Search%20Result%20Page&LINKTEXT=Foreign+Supplement++ICC&DOCGUID=cffb43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "ICC18F8186",
+        title: "HIPAA Authorization",
+        category: "medical",
+        categoryLabel: "HIPAA",
+        url: "https://compass.massmutual.com/download/file/blt3a353349498b94a6",
+        note: "",
+      },
+
+      {
+        number: "N201VA",
+        title: "HIV Form",
+        category: "medical",
+        categoryLabel: "Medical",
+        url: "https://compass.massmutual.com/download/file/blt1862905e4495c640",
+        note: "Based on the contract state.",
+      },
+
+      {
+        number: "ICC19FR2118",
+        title: "Long-Term Care Personal Worksheet",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blt0706464d1d58d79a",
+        note: "",
+      },
+
+      {
+        number: "LTCR-GE",
+        title: "LTC Access Rider Application Package",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blte93e8ae76dc076c4",
+        note: "",
+      },
+
+      {
+        number: "ICC15F5248",
+        title: "Owner Designation Form",
+        category: "designation",
+        categoryLabel: "Ownership",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltb0942d9ad836c893&PAGEURL=Search%20Result%20Page&LINKTEXT=Owner+Designation+Form+New+Business++ICC&DOCGUID=208be14b18674410VgnVCM100000d47106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A11VA",
+        title: "Policy Change Application",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/bltbab716e0a2041e36",
+        note: "",
+      },
+
+      {
+        number: "F6487",
+        title: "Replacement Form",
+        category: "replacement",
+        categoryLabel: "Replacement",
+        url: "https://compass.massmutual.com/download/file/bltc8b0fa2aa512d92f",
+        note: "Mail replacement information within five business days.",
+      },
+
+      {
+        number: "F7011GEN",
+        title: "ABR Disclosure",
+        category: "disclosure",
+        categoryLabel: "Disclosure",
+        url: "https://compass.massmutual.com/download/file/blt9815139e869f553a",
+        note: "Not required with the Survivorship Whole Life OPM product.",
+      },
+    ],
+  },
+
+  WA: {
+    name: "Washington",
+
+    notices: [
+      "All cross-outs must be amended on the Part 1 application, including cross-outs on non-amendable questions.",
+      "Mail replacement information within three days.",
+      "Underwriting cannot begin if the F5436WA is not received with the application.",
+      "The F7011WA is not required with the Survivorship Whole Life product.",
+    ],
+
+    forms: [
+      {
+        number: "ICC17A1001",
+        title: "Additional Insured Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/download/file/blt79e64d2c4ef6f59f",
+        note: "",
+      },
+
+      {
+        number: "A2000P-WA",
+        title: "Application for Life Insurance (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt237e1a3471031f70",
+        note: "All cross-outs must be amended, including cross-outs on non-amendable questions.",
+      },
+
+      {
+        number: "ICC12A50",
+        title: "Application Part 2",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltaa5e3212d7f08c42&PAGEURL=Search%20Result%20Page&LINKTEXT=Application+Part+2++ICC&DOCGUID=6f6b43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A1002P-WA",
+        title: "Application for Simplified Conversion",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/api/assets/file/blt3ce1b09e45794165",
+        note: "",
+      },
+
+      {
+        number: "ICC13F5159",
+        title: "Beneficiary Designation Form",
+        category: "designation",
+        categoryLabel: "Beneficiary",
+        url: "https://compass.massmutual.com/download/file/blt4558fec07372c14a",
+        note: "",
+      },
+
+      {
+        number: "A1500P-WA",
+        title: "CareChoice One Application (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/bltd864d99f33b0788d",
+        note: "",
+      },
+
+      {
+        number: "ICC13FR2089",
+        title: "Conversion and Insurability Option Life Insurance Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/api/assets/file/bltb49dc6b2e8504bc8",
+        note: "",
+      },
+
+      {
+        number: "ICC17F6290-US 0317",
+        title: "Foreign Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blt33e30ad64f933f0f&PAGEURL=Search%20Result%20Page&LINKTEXT=Foreign+Supplement++ICC&DOCGUID=cffb43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "ICC18F8186",
+        title: "HIPAA Authorization",
+        category: "medical",
+        categoryLabel: "HIPAA",
+        url: "https://compass.massmutual.com/download/file/blt3a353349498b94a6",
+        note: "",
+      },
+
+      {
+        number: "N201WA",
+        title: "HIV Form",
+        category: "medical",
+        categoryLabel: "Medical",
+        url: "https://compass.massmutual.com/download/file/bltee8e7fa1634c69e0",
+        note: "Based on the insured residence state.",
+      },
+
+      {
+        number: "ICC19FR2118",
+        title: "Long-Term Care Personal Worksheet",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blt0706464d1d58d79a",
+        note: "",
+      },
+
+      {
+        number: "LTCR-GE",
+        title: "LTC Access Rider Application Package",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blte93e8ae76dc076c4",
+        note: "",
+      },
+
+      {
+        number: "ICC15F5248",
+        title: "Owner Designation Form",
+        category: "designation",
+        categoryLabel: "Ownership",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltb0942d9ad836c893&PAGEURL=Search%20Result%20Page&LINKTEXT=Owner+Designation+Form+New+Business++ICC&DOCGUID=208be14b18674410VgnVCM100000d47106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A11WA",
+        title: "Policy Change Application",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt90c80b7b5f74ddac",
+        note: "",
+      },
+
+      {
+        number: "F5436WA",
+        title: "Replacement Form",
+        category: "replacement",
+        categoryLabel: "Replacement",
+        url: "https://compass.massmutual.com/download/file/blt05d319d1858d7d05",
+        note: "Mail replacement information within three days. Underwriting cannot begin if this form is not received with the application.",
+      },
+
+      {
+        number: "F7011WA",
+        title: "ABR Disclosure",
+        category: "disclosure",
+        categoryLabel: "Disclosure",
+        url: "https://compass.massmutual.com/download/file/blt1263d505d5f4faa6",
+        note: "Not required with the Survivorship Whole Life product.",
+      },
+    ],
+  },
+
+  WV: {
+    name: "West Virginia",
+
+    notices: [
+      "Risk-located state. The agent must be licensed in West Virginia if the insured is a West Virginia resident, regardless of where the Part 1 was signed.",
+      "Mail replacement information within five business days.",
+    ],
+
+    forms: [
+      {
+        number: "ICC17A1001",
+        title: "Additional Insured Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/download/file/blt79e64d2c4ef6f59f",
+        note: "",
+      },
+
+      {
+        number: "A2000P-WV",
+        title: "Application for Life Insurance (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blta1d669fcffb9a9fe",
+        note: "",
+      },
+
+      {
+        number: "ICC12A50",
+        title: "Application Part 2",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltaa5e3212d7f08c42&PAGEURL=Search%20Result%20Page&LINKTEXT=Application+Part+2++ICC&DOCGUID=6f6b43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A1002P-WV",
+        title: "Application for Simplified Conversion",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/bltcee1306315afb26d",
+        note: "",
+      },
+
+      {
+        number: "ICC13F5159",
+        title: "Beneficiary Designation Form",
+        category: "designation",
+        categoryLabel: "Beneficiary",
+        url: "https://compass.massmutual.com/download/file/blt4558fec07372c14a",
+        note: "",
+      },
+
+      {
+        number: "A1500P-WV",
+        title: "CareChoice One Application (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt79fed67d7bea9611",
+        note: "",
+      },
+
+      {
+        number: "ICC13FR2089",
+        title: "Conversion and Insurability Option Life Insurance Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/api/assets/file/bltb49dc6b2e8504bc8",
+        note: "",
+      },
+
+      {
+        number: "ICC17F6290-US 0317",
+        title: "Foreign Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blt33e30ad64f933f0f&PAGEURL=Search%20Result%20Page&LINKTEXT=Foreign+Supplement++ICC&DOCGUID=cffb43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "ICC18F8186",
+        title: "HIPAA Authorization",
+        category: "medical",
+        categoryLabel: "HIPAA",
+        url: "https://compass.massmutual.com/download/file/blt3a353349498b94a6",
+        note: "",
+      },
+
+      {
+        number: "N201WV",
+        title: "HIV Form",
+        category: "medical",
+        categoryLabel: "Medical",
+        url: "https://compass.massmutual.com/download/file/blt6387d96ad70ba934",
+        note: "Based on the insured residence state.",
+      },
+
+      {
+        number: "ICC19FR2118",
+        title: "Long-Term Care Personal Worksheet",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blt0706464d1d58d79a",
+        note: "",
+      },
+
+      {
+        number: "LTCR-GE",
+        title: "LTC Access Rider Application Package",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blte93e8ae76dc076c4",
+        note: "",
+      },
+
+      {
+        number: "ICC15F5248",
+        title: "Owner Designation Form",
+        category: "designation",
+        categoryLabel: "Ownership",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltb0942d9ad836c893&PAGEURL=Search%20Result%20Page&LINKTEXT=Owner+Designation+Form+New+Business++ICC&DOCGUID=208be14b18674410VgnVCM100000d47106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A11WV",
+        title: "Policy Change Application",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt27161d473dc44c1e",
+        note: "",
+      },
+
+      {
+        number: "F6487",
+        title: "Replacement Form",
+        category: "replacement",
+        categoryLabel: "Replacement",
+        url: "https://compass.massmutual.com/download/file/bltc8b0fa2aa512d92f",
+        note: "Mail replacement information within five business days.",
+      },
+    ],
+  },
+
+  WI: {
+    name: "Wisconsin",
+
+    notices: [
+      "Mail replacement information within five days.",
+      "The disclosure authorization is required when a conversion is being underwritten.",
+    ],
+
+    forms: [
+      {
+        number: "ICC17A1001",
+        title: "Additional Insured Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/download/file/blt79e64d2c4ef6f59f",
+        note: "",
+      },
+
+      {
+        number: "A2000P-WI",
+        title: "Application for Life Insurance (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/bltc4ccb322f5cae47d",
+        note: "",
+      },
+
+      {
+        number: "ICC12A50",
+        title: "Application Part 2",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltaa5e3212d7f08c42&PAGEURL=Search%20Result%20Page&LINKTEXT=Application+Part+2++ICC&DOCGUID=6f6b43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A1002P-WI",
+        title: "Application for Simplified Conversion",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt1f40ce5a662eb5fa",
+        note: "",
+      },
+
+      {
+        number: "ICC13F5159",
+        title: "Beneficiary Designation Form",
+        category: "designation",
+        categoryLabel: "Beneficiary",
+        url: "https://compass.massmutual.com/download/file/blt4558fec07372c14a",
+        note: "",
+      },
+
+      {
+        number: "A1500P-WI",
+        title: "CareChoice One Application (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blta80a5e12d0a61212",
+        note: "",
+      },
+
+      {
+        number: "ICC13FR2089",
+        title: "Conversion and Insurability Option Life Insurance Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/api/assets/file/bltb49dc6b2e8504bc8",
+        note: "",
+      },
+
+      {
+        number: "A1785-8900",
+        title: "Disclosure Authorization",
+        category: "disclosure",
+        categoryLabel: "Disclosure",
+        url: "https://compass.massmutual.com/download/file/bltffd06c633188ab2f",
+        note: "Required when a conversion is being underwritten.",
+      },
+
+      {
+        number: "ICC17F6290-US 0317",
+        title: "Foreign Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blt33e30ad64f933f0f&PAGEURL=Search%20Result%20Page&LINKTEXT=Foreign+Supplement++ICC&DOCGUID=cffb43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "ICC18F8186",
+        title: "HIPAA Authorization",
+        category: "medical",
+        categoryLabel: "HIPAA",
+        url: "https://compass.massmutual.com/download/file/blt3a353349498b94a6",
+        note: "",
+      },
+
+      {
+        number: "N201WI",
+        title: "HIV Form",
+        category: "medical",
+        categoryLabel: "Medical",
+        url: "https://compass.massmutual.com/download/file/bltdb68e8b7bf9fb6e2",
+        note: "Based on the insured residence state.",
+      },
+
+      {
+        number: "ICC19FR2118",
+        title: "Long-Term Care Personal Worksheet",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blt0706464d1d58d79a",
+        note: "",
+      },
+
+      {
+        number: "LTCR-GE",
+        title: "LTC Access Rider Application Package",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blte93e8ae76dc076c4",
+        note: "",
+      },
+
+      {
+        number: "ICC15F5248",
+        title: "Owner Designation Form",
+        category: "designation",
+        categoryLabel: "Ownership",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltb0942d9ad836c893&PAGEURL=Search%20Result%20Page&LINKTEXT=Owner+Designation+Form+New+Business++ICC&DOCGUID=208be14b18674410VgnVCM100000d47106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A11WI",
+        title: "Policy Change Application",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt9434e57f0267f91e",
+        note: "",
+      },
+
+      {
+        number: "F6487",
+        title: "Replacement Form",
+        category: "replacement",
+        categoryLabel: "Replacement",
+        url: "https://compass.massmutual.com/download/file/bltc8b0fa2aa512d92f",
+        note: "Mail replacement information within five days.",
+      },
+    ],
+  },
+
+  WY: {
+    name: "Wyoming",
+
+    notices: ["Mail replacement information within three days."],
+
+    forms: [
+      {
+        number: "ICC17A1001",
+        title: "Additional Insured Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/download/file/blt79e64d2c4ef6f59f",
+        note: "",
+      },
+
+      {
+        number: "A2000P-WY",
+        title: "Application for Life Insurance (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blt79bc052b6c287a23",
+        note: "",
+      },
+
+      {
+        number: "ICC12A50",
+        title: "Application Part 2",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltaa5e3212d7f08c42&PAGEURL=Search%20Result%20Page&LINKTEXT=Application+Part+2++ICC&DOCGUID=6f6b43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A1002P-WY",
+        title: "Application for Simplified Conversion",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/bltd0c5949e9765117d",
+        note: "",
+      },
+
+      {
+        number: "ICC13F5159",
+        title: "Beneficiary Designation Form",
+        category: "designation",
+        categoryLabel: "Beneficiary",
+        url: "https://compass.massmutual.com/download/file/blt4558fec07372c14a",
+        note: "",
+      },
+
+      {
+        number: "A1500P-WY",
+        title: "CareChoice One Application (Part 1)",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/blte8dc776e1bd1526d",
+        note: "",
+      },
+
+      {
+        number: "ICC13FR2089",
+        title: "Conversion and Insurability Option Life Insurance Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://compass.massmutual.com/api/assets/file/bltb49dc6b2e8504bc8",
+        note: "",
+      },
+
+      {
+        number: "ICC17F6290-US 0317",
+        title: "Foreign Supplement",
+        category: "supplement",
+        categoryLabel: "Supplement",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/blt33e30ad64f933f0f&PAGEURL=Search%20Result%20Page&LINKTEXT=Foreign+Supplement++ICC&DOCGUID=cffb43693f22e310VgnVCM200000d37106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "ICC18F8186",
+        title: "HIPAA Authorization",
+        category: "medical",
+        categoryLabel: "HIPAA",
+        url: "https://compass.massmutual.com/download/file/blt3a353349498b94a6",
+        note: "",
+      },
+
+      {
+        number: "ICC19FR2118",
+        title: "Long-Term Care Personal Worksheet",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/blt0706464d1d58d79a",
+        note: "",
+      },
+
+      {
+        number: "LTCR-WY",
+        title: "LTC Access Rider Application Package",
+        category: "ltc",
+        categoryLabel: "Long-Term Care",
+        url: "https://compass.massmutual.com/download/file/bltc3a8024ad9d768a4",
+        note: "",
+      },
+
+      {
+        number: "ICC15F5248",
+        title: "Owner Designation Form",
+        category: "designation",
+        categoryLabel: "Ownership",
+        url: "https://fieldnet.massmutual.com/fldnet/document/display.html?DOCURL=https://compass.massmutual.com/download/file/bltb0942d9ad836c893&PAGEURL=Search%20Result%20Page&LINKTEXT=Owner+Designation+Form+New+Business++ICC&DOCGUID=208be14b18674410VgnVCM100000d47106aaRCRD",
+        note: "",
+      },
+
+      {
+        number: "A11WY",
+        title: "Policy Change Application",
+        category: "application",
+        categoryLabel: "Application",
+        url: "https://compass.massmutual.com/download/file/bltc6601c437f1e95a2",
+        note: "",
+      },
+
+      {
+        number: "F5436WY",
+        title: "Replacement Form",
+        category: "replacement",
+        categoryLabel: "Replacement",
+        url: "https://compass.massmutual.com/download/file/bltdf520350dd271425",
+        note: "Mail replacement information within three days.",
+      },
+    ],
+  },
+};
