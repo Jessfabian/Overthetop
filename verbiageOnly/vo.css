@@ -87,10 +87,16 @@
 
 
 
-     .vc-shell {
+  .vc-shell {
+
+    width: min(1150px, calc(100% - 40px));
+
+    margin: 20px auto 0;
+
     position: relative;
+
     z-index: 2;
-   
+
     padding-bottom: 52px;
 }
 
@@ -477,14 +483,6 @@
     display: none;
 }
 
-.vc-hero__inner {
-
-    width: min(1200px, calc(100% - 40px));
-
-    margin: 0 auto;
-
-    padding: 90px 0 25px;
-}
 
 .vc-hero h1 {
 
@@ -531,7 +529,14 @@
 #nigoRequirementBuilder h3 {
     margin-bottom: 14px;
 }
+#nigoRequirementBuilder {
 
+    margin-left: 40px;
+
+    width: 420px;
+
+    flex-shrink: 0;
+}
 #compiledRequirementBadge,
 #compiledAmendmentBadge {
     min-width: 100px;
@@ -674,9 +679,60 @@
     color: var(--vc-danger);
 }
 
+.result-nigo {
+
+    color: #f97316;
+
+    background: #fff4ed;
+
+    border-radius: 999px;
+
+    padding: 4px 10px;
+}
+
+.form-status-button.nigo-button.selected {
+ color: #f97316;
+
+    background: #fff4ed;
+
+    border-radius: 999px;
+
+    padding: 4px 10px;
+
+}
 
 
+.form-review-result {
 
+    font-size: 12px;
+color: var(--vc-success);
+    font-weight: 700;
+
+    min-width: 70px;
+
+    text-align: right;
+}
+
+.form-status-button.igo-button.selected {
+
+ color: #12b76a;
+
+    background: #ecfdf3;
+
+    border-radius: 999px;
+
+    padding: 4px 10px;
+}
+.result-igo {
+
+    color: #12b76a;
+
+    background: #ecfdf3;
+
+    border-radius: 999px;
+
+    padding: 4px 10px;
+}
 .ir-header {
     background: transparent;
     border-bottom: none;
@@ -758,4 +814,40 @@ color: #eef2f8;
     opacity: 1;
 
     transform: scale(1.08);
+}
+.required-form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 22px;
+}
+
+.state-form-main {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 24px;
+}
+
+.state-form-content {
+    flex: 1;
+}
+
+.form-status-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    flex-shrink: 0;
 }
