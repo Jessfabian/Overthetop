@@ -232,13 +232,12 @@
 
       .vc-card h2,
       .vc-card h3 {
-        margin: 0;
+        margin-bottom: 10px;
         color: var(--vc-dark-blue);
+font-size: 1.45rem;
       }
 
-      .vc-card h2 {
-        font-size: 1.45rem;
-      }
+
 
       .vc-card h3 {
         font-size: 1rem;
@@ -269,15 +268,7 @@
         font-size: 0.84rem;
       }
 
-      /* StateLoader output */
-      #stateImportantNotices,
-      #stateNotes {
-        margin-bottom: 14px;
-        padding: 12px 14px;
-        border-radius: var(--vc-radius-sm);
-        background: #f5fbfe;
-        color: var(--vc-muted);
-      }
+   
 
       #requiredForms {
         display: grid;
