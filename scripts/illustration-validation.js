@@ -10,7 +10,7 @@
     {
       key: "faceAmount",
       label: "Face Amount",
-      question: "C3 / C17",
+      question: "C1 / C3 / C17",
     },
     {
       key: "automaticPremiumLoan",
@@ -43,9 +43,24 @@
       question: "C10",
     },
     {
+      key: "alir",
+      label: "Additional Life Insurance Rider",
+      question: "C11",
+    },
+    {
+      key: "palir",
+      label: "Renewable Term Rider",
+      question: "C11",
+    },
+    {
+      key: "lisr",
+      label: "Renewable Term Rider",
+      question: "C11",
+    },
+    {
       key: "paymentFrequency",
       label: "Payment Frequency",
-      question: "Policy Design",
+      question: "G4 / G5",
     },
   ];
 
