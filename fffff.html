@@ -461,97 +461,11 @@
 <div class="case-setup-grid-equal">
 
     <div class="case-field">
-        <label for="policyNumber">Policy Number</label>
-        <input
-            id="policyNumber"
-            type="text"
-            autocomplete="off" />
-    </div>
-
-    <div class="case-field">
-        <label for="insuredName">Insured</label>
-        <input
-            id="insuredName"
-            type="text"
-            autocomplete="off" />
-    </div>
-
-</div>
-<div class="case-setup-grid-equal">
-
-    <div class="case-field">
-        <label for="ownerType">
-            Owner
-        </label>
-
-        <select id="ownerType">
-
-            <option value="insured">
-                Insured
-            </option>
-
-            <option value="otherIndividual">
-                Other Individual
-            </option>
-
-            <option value="trust">
-                Trust
-            </option>
-
-            <option value="business">
-                Business or Entity
-            </option>
-
-        </select>
-
-    </div>
-
-    <div class="case-field">
-        <label for="beneficiaryOther">
-            Beneficiary
-        </label>
-
-        <select id="beneficiaryOther">
-
-            <option value="no">
-                Part 1 Beneficiary Information
-            </option>
-
-            <option value="yes">
-                E-2 Other Selected
-            </option>
-
-        </select>
-
-    </div>
-
-    <div class="case-field">
-
-        <label for="purposeOfInsurance">
-
-            Purpose of Insurance
-
-        </label>
-
-        <input
-            id="purposeOfInsurance"
-            type="text"
-            placeholder="Enter the purpose of insurance"
-            autocomplete="off" />
-
-    </div>
-
-</div>
-<div class="case-setup-grid-equal">
-
-    <div class="case-field">
-
         <label for="riskClass">
             Risk Class
         </label>
 
         <select id="riskClass">
-
             <option value="">
                 Select Risk Class
             </option>
@@ -575,19 +489,15 @@
             <option value="Tobacco">
                 Tobacco
             </option>
-
         </select>
-
     </div>
 
     <div class="case-field">
-
         <label for="policyDating">
             Policy Dating
         </label>
 
         <select id="policyDating">
-
             <option value="">
                 Select Policy Dating
             </option>
@@ -603,20 +513,15 @@
             <option value="specificDate">
                 Specific Date
             </option>
-
         </select>
-
     </div>
 
-
-  <div class="case-field">
-
+    <div class="case-field">
         <label for="illustrationStatus">
             Signed Illustration as Applied For?
         </label>
 
         <select id="illustrationStatus">
-
             <option value="">
                 Select
             </option>
@@ -632,252 +537,182 @@
             <option value="notReceived">
                 Not Received
             </option>
-
         </select>
-<small
-    id="illustrationGuidance"
-    class="field-guidance">
-</small>
-</div>
-          <div id="saveAgeFields" class="save-age-panel" hidden>
-            <div class="save-age-heading">
-              <div>
-                <h3>Save Age Calculator</h3>
-                <p>
-                  Enter the insured's birth month and day and the Part 1
-                  signature date.
-                </p>
-              </div>
-            </div>
-            <div
-              id="saveAgeEligibilityWarning"
-              class="save-age-alert"
-              hidden></div>
-            <div class="save-age-grid">
-              <div class="case-field">
-                <label for="birthMonth">Birth Month</label>
-                <select id="birthMonth">
-                  <option value="">Select Month</option>
-                  <option value="1">January</option>
-                  <option value="2">February</option>
-                  <option value="3">March</option>
-                  <option value="4">April</option>
-                  <option value="5">May</option>
-                  <option value="6">June</option>
-                  <option value="7">July</option>
-                  <option value="8">August</option>
-                  <option value="9">September</option>
-                  <option value="10">October</option>
-                  <option value="11">November</option>
-                  <option value="12">December</option>
-                </select>
-              </div>
-              <div class="case-field">
-                <label for="birthDay">Birth Day</label>
-                <select id="birthDay">
-                  <option value="">Select Day</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                  <option value="21">21</option>
-                  <option value="22">22</option>
-                  <option value="23">23</option>
-                  <option value="24">24</option>
-                  <option value="25">25</option>
-                  <option value="26">26</option>
-                  <option value="27">27</option>
-                  <option value="28">28</option>
-                  <option value="29">29</option>
-                  <option value="30">30</option>
-                  <option value="31">31</option>
-                </select>
-              </div>
-              <div class="case-field">
-                <label for="part1SignDate">Part 1 Sign Date</label>
-                <input id="part1SignDate" type="date" />
-              </div>
-              <div class="case-field">
-                <label for="saveAge1035">1035 Exchange</label>
-                <select id="saveAge1035">
-                  <option value="no">No</option>
-                  <option value="yes">Yes</option>
-                </select>
-              </div>
-              <div class="case-field">
-                <label for="saveAgeDate">Calculated Save Age Date</label>
-                <input
-                  id="saveAgeDate"
-                  type="text"
-                  readonly
-                  placeholder="Calculated automatically" />
-              </div>
-              <div class="case-field">
-                <label for="saveAgeEligibility">Eligibility</label>
-                <input
-                  id="saveAgeEligibility"
-                  type="text"
-                  readonly
-                  placeholder="Calculated automatically" />
-              </div>
-            </div>
-            <div class="save-age-results">
-              <div>
-                <span class="save-age-result-label">Age Changes After</span>
-                <strong id="ageChangeDate">--</strong>
-              </div>
-              <div>
-                <span class="save-age-result-label">Backdating Duration</span>
-                <strong id="saveAgeDuration">--</strong>
-              </div>
-              <div>
-                <span class="save-age-result-label">Processing Guidance</span>
-                <strong id="saveAgeGuidance">
-                  Enter the Save Age information.
-                </strong>
-              </div>
-            </div>
-            <p id="saveAgeMessage" class="save-age-message">
-              Enter the insured's birth month and day and the Part 1 signature
-              date.
-            </p>
-          </div>
-          <div id="specificDateFields" class="save-age-panel" hidden>
-            <div class="case-field">
-              <label for="specificPolicyDate">Requested Policy Date</label>
-              <input id="specificPolicyDate" type="date" />
-            </div>
-          </div>
-  </div>
+
+        <small
+            id="illustrationGuidance"
+            class="field-guidance">
+        </small>
+
+    </div>
+
 </div>
 
-       <details id="Illustration-Validation" class="card collapsible-card" hidden>
-            <summary class="collapsible-summary">
-              <span class="summary-heading">
-                <span>
-                  <span class="summary-title">Illustration Validation</span>
-                </span>
-              </span>
-              <span class="collapse-indicator" aria-hidden="true">▼</span>
-            </summary>
-            <div class="collapsible-content">
 
-            <details class="workspace-help">
-            <summary><strong> How to use</strong></summary>
+<!-- SAVE AGE CALCULATOR -->
 
-            <ol>
-              <li>
-                Enter the value shown on the Part 1.
-              </li>
+<div id="saveAgeFields"
+     class="save-age-panel"
+     hidden>
 
-              <li>
-                Enter the corresponding value shown on the illustration.
-              </li>
+    <div class="save-age-heading">
+        <h3>Save Age Calculator</h3>
 
-              <li>
-                Select Not Applicable for policy-design items that do not apply.
-              </li>
+        <p>
+            Enter the insured's birth month and day and
+            the Part 1 signature date.
+        </p>
+    </div>
 
-              <li>
-                Review the validation result and any identified mismatches.
-              </li>
-                </ol>
-              </details>
+    <div
+        id="saveAgeEligibilityWarning"
+        class="save-age-alert"
+        hidden>
+    </div>
 
-        <div class="validation-column-headings">
-          <span>Policy Design Item</span>
-          <span>Part 1</span>
-          <span>Illustration</span>
-          <span>Result</span>
+    <div class="save-age-grid">
+
+        <!-- Birth Month -->
+        <div class="case-field">
+            <label for="birthMonth">Birth Month</label>
+            <select id="birthMonth">
+                <option value="">Select Month</option>
+
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
         </div>
 
-          <div id="illustrationComparisonRows"></div>
+        <!-- Birth Day -->
+        <div class="case-field">
+            <label for="birthDay">Birth Day</label>
+            <select id="birthDay">
+                <option value="">
+                    Select Day
+                </option>
+            </select>
+        </div>
 
-          <div class="validation-actions">
-            <button
-              type="button"
-              id="validateIllustration"
-              class="primary-button">
-              Validate Illustration
-            </button>
+        <!-- Part 1 -->
+        <div class="case-field">
+            <label for="part1SignDate">
+                Part 1 Sign Date
+            </label>
 
-            <button
-              type="button"
-              id="clearIllustrationValidation"
-              class="secondary-button">
-              Clear
-            </button>
-          </div>
+            <input id="part1SignDate"
+                   type="date">
+        </div>
 
-          <section
-            id="illustrationValidationResult"
-            class="illustration-validation-result validation-neutral"
-            aria-live="polite">
+        <!-- 1035 -->
+        <div class="case-field">
+            <label for="saveAge1035">
+                1035 Exchange
+            </label>
 
-            <div class="validation-result-header">
-              <div>
-                <span class="validation-result-label">
-                  Validation Result
-                </span>
+            <select id="saveAge1035">
+                <option value="no">
+                    No
+                </option>
 
-                <strong id="illustrationValidationTitle">
-                  Enter the Part 1 and illustration values.
-                </strong>
-              </div>
+                <option value="yes">
+                    Yes
+                </option>
+            </select>
+        </div>
 
-              <span id="illustrationMatchCount">
-                0 of 0 reviewed
-              </span>
-            </div>
+        <!-- Save Age Date -->
+        <div class="case-field">
+            <label for="saveAgeDate">
+                Calculated Save Age Date
+            </label>
 
-                <div id="illustrationValidationDetails"></div>
-              </section>
-              <section
-                id="illustrationMismatchRequirementSection"
-                class="illustration-mismatch-output"
-                hidden>
+            <input
+                id="saveAgeDate"
+                readonly
+                type="text">
+        </div>
 
-                <label for="illustrationMismatchRequirement">
-                  Generated Requirement
-                </label>
+        <!-- Eligibility -->
+        <div class="case-field">
+            <label for="saveAgeEligibility">
+                Eligibility
+            </label>
 
-                <textarea
-                  id="illustrationMismatchRequirement"
-                  rows="7"
-                  readonly></textarea>
+            <input
+                id="saveAgeEligibility"
+                readonly
+                type="text">
+        </div>
 
-                <button
-                  type="button"
-                  id="copyIllustrationMismatchRequirement"
-                  class="secondary-button">
-                  Copy Requirement
-                </button>
+    </div>
+
+</div>
 
 
-                    <span
-                      id="illustrationMismatchCopyStatus"
-                      class="copy-status"
-                      aria-live="polite">
-                    </span>
-                  </section>
-                </div>
-       </details>
+<!-- SPECIFIC DATE -->
+
+<div id="specificDateFields"
+     class="save-age-panel"
+     hidden>
+
+    <div class="case-field">
+
+        <label for="specificPolicyDate">
+            Requested Policy Date
+        </label>
+
+        <input id="specificPolicyDate"
+               type="date">
+
+    </div>
+
+</div>
+
+
+<!-- ILLUSTRATION VALIDATION -->
+
+<details id="Illustration-Validation"
+         class="card collapsible-card"
+         hidden open>
+
+    <summary class="collapsible-summary">
+
+        <span class="summary-heading">
+            <span class="summary-title">
+                Illustration Validation
+            </span>
+        </span>
+
+        <span class="collapse-indicator">
+            ▼
+        </span>
+
+    </summary>
+
+    <div class="collapsible-content">
+
+        <div class="validation-column-headings">
+            <span>Policy Design Item</span>
+            <span>Part 1</span>
+            <span>Illustration</span>
+            <span>Result</span>
+        </div>
+
+        <div id="illustrationComparisonRows"></div>
+
+    </div>
+
+</details>
 
 </div>
  </section>
@@ -1254,7 +1089,7 @@
               </section>
 
 
-<div id="requirementBuilderParking" hidden>
+            <div id="requirementBuilderParking" hidden>
 
     <div id="nigoRequirementBuilder" class="vc-card">
 
@@ -1328,9 +1163,8 @@
 
     </div>
 
-</div>
+        </div>
 
-</div>
 
 
              <div id="nigoAmendmentBuilder">

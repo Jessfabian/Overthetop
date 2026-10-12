@@ -1,0 +1,521 @@
+.workspace-card {
+  background: white;
+
+  border: 1px solid #d9e6f5;
+
+  border-radius: 24px;
+
+  padding: 32px;
+
+  box-shadow: 0 8px 30px rgba(0, 43, 92, 0.05);
+}
+
+.workspace-card h2 {
+  margin-top: 0;
+
+  color: #001735;
+
+  font-size: 28px;
+}
+.workspace-card button,
+.review-workspace button {
+  border: none;
+
+  border-radius: 14px;
+
+  background: linear-gradient(135deg, #002e6b, #0265ff);
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  padding: 12px 18px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.workspace-card button:hover,
+.review-workspace button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 24px rgba(2, 101, 255, 0.2);
+}
+.workspace-card {
+  padding: 20px;
+}
+
+.review-card {
+  background: white;
+  border: 1px solid #d9e2ec;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.review-card h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #0b3a68;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 8px;
+}
+
+.review-card h4 {
+  margin-top: 20px;
+  margin-bottom: 12px;
+  color: #1d4f91;
+}
+.review-card label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+#nyReviewDashboard .review-card {
+  background: var(--card-background, #ffffff);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+.replacement-review-grid .review-card,
+#internalReplacementSection,
+#externalReplacementSection,
+#exchangeSection {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
+}
+.review-card h3,
+#internalReplacementSection h3,
+#externalReplacementSection h3,
+#exchangeSection h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #0f172a;
+  font-size: 1rem;
+}
+
+.review-card input[type="text"]:focus,
+.review-card textarea:focus,
+.review-card select:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+}
+
+.review-card input[type="text"],
+.review-card select,
+.review-card textarea,
+#polarisReplacementCheckSection input[type="text"],
+#polarisReplacementCheckSection textarea {
+  max-width: 500px;
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  margin-top: 0.35rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.9rem;
+}
+
+.review-card input[type="checkbox"],
+.review-card input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #005eb8;
+}
+.review-card input[type="date"],
+.review-card select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+  margin-bottom: 12px;
+}
+
+.review-card input[type="checkbox"],
+.review-card input[type="radio"] {
+  transform: scale(1.1);
+}
+.review-card textarea {
+  width: 100%;
+  min-height: 100px;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.review-card textarea:focus {
+  outline: none;
+  border-color: #0b3a68;
+}
+
+.review-card input[type="text"]:focus,
+.review-card textarea:focus,
+.review-card select:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
+}
+
+.review-card input[type="text"],
+.review-card select,
+.review-card textarea,
+#polarisReplacementCheckSection input[type="text"],
+#polarisReplacementCheckSection textarea {
+  max-width: 500px;
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  margin-top: 0.35rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.9rem;
+}
+
+.review-card input[type="checkbox"],
+.review-card input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #005eb8;
+}
+
+.review-card textarea {
+  width: 100%;
+  min-height: 100px;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.review-card textarea:focus {
+  outline: none;
+  border-color: #0b3a68;
+}
+.review-card input[type="date"],
+.review-card select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+  margin-bottom: 12px;
+}
+
+.review-card input[type="checkbox"],
+.review-card input[type="radio"] {
+  transform: scale(1.1);
+}
+
+.case-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.case-field label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #62748d;
+  min-width: 0;
+}
+
+.case-field input,
+.case-field select,
+.case-field textarea {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+
+  border: 1px solid #cfd9e8;
+  border-radius: 14px;
+
+  background: white;
+
+  font-size: 0.95rem;
+  color: #0f172a;
+
+  transition: 0.2s ease;
+}
+
+.case-field input:focus,
+.case-field select:focus,
+.case-field textarea:focus {
+  outline: none;
+
+  border-color: #0046ad;
+
+  box-shadow: 0 0 0 4px rgba(0, 70, 173, 0.12);
+}
+
+.case-field input,
+.case-field select {
+  width: 100%;
+}
+
+.case-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.case-field label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #62748d;
+  min-width: 0;
+}
+
+.case-field input,
+.case-field select,
+.case-field textarea {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+
+  border: 1px solid #cfd9e8;
+  border-radius: 14px;
+
+  background: white;
+
+  font-size: 0.95rem;
+  color: #0f172a;
+
+  transition: 0.2s ease;
+}
+
+.case-field input:focus,
+.case-field select:focus,
+.case-field textarea:focus {
+  outline: none;
+
+  border-color: #0046ad;
+
+  box-shadow: 0 0 0 4px rgba(0, 70, 173, 0.12);
+}
+
+.case-field input,
+.case-field select {
+  width: 100%;
+}
+
+#polarisReplacementCheckSection textarea {
+  width: 100%;
+  min-height: 100px;
+}
+
+.inline-requirement-builder textarea {
+  width: 100%;
+
+  min-height: 120px;
+
+  margin-top: 12px;
+
+  border-radius: 10px;
+
+  border: 1px solid #cbd9ea;
+
+  padding: 12px;
+}
+
+textarea {
+  width: 100%;
+
+  min-height: 180px;
+
+  padding: 18px;
+
+  border: 1px solid #d9e6f5;
+
+  border-radius: 16px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  resize: vertical;
+}
+
+#polarisReplacementCheckSection textarea {
+  width: 100%;
+  min-height: 100px;
+}
+
+.inline-requirement-builder textarea {
+  width: 100%;
+
+  min-height: 120px;
+
+  margin-top: 12px;
+
+  border-radius: 10px;
+
+  border: 1px solid #cbd9ea;
+
+  padding: 12px;
+}
+
+textarea {
+  width: 100%;
+
+  min-height: 180px;
+
+  padding: 18px;
+
+  border: 1px solid #d9e6f5;
+
+  border-radius: 16px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  resize: vertical;
+}
+
+.igo-button.selected {
+  background: #12b76a;
+  color: white;
+}
+
+.nigo-button.selected {
+  background: #f97316;
+  color: white;
+}
+
+.igo-button.selected {
+  background: #12b76a;
+  color: white;
+}
+
+.nigo-button.selected {
+  background: #f97316;
+  color: white;
+}
+
+.skip-workbench-button {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  z-index: 200;
+
+  padding: 10px 16px;
+
+  border: 1px solid rgba(0, 46, 107, 0.2);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.75);
+  color: #002e6b;
+
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    background 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
+}
+
+.skip-workbench-button:hover {
+  background: #ffffff;
+  border-color: #0265ff;
+  transform: translateY(-2px);
+}
+
+.form-status-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.form-status-button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.igo-button {
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+.nigo-button {
+  background: #fff4ed;
+  color: #c2410c;
+}
+
+.form-status-button:hover {
+  transform: translateY(-1px);
+}
+
+.timer-mini-actions button {
+  height: 28px;
+
+  font-size: 11px;
+
+  border-radius: 999px;
+}
+
+.section-header {
+  padding: 20px;
+  border-radius: 12px;
+  background: #0b3a68;
+  color: white;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.section-header p {
+  margin-top: 6px;
+  opacity: 0.9;
+}
+
+.field-guidance {
+  color: #475569;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+#qualificationComplete:not([hidden]) {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 14px;
+}

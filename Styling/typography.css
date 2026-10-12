@@ -1,0 +1,37 @@
+body {
+   margin: 0;
+  font-family: "MM Sharp", "Century Gothic", "Futura", sans-serif;
+   overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "MM Sharp", "Century Gothic", "Futura", sans-serif;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+
+  background: rgba(0, 87, 184, 0.92);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 500ms ease,
+    visibility 0s linear 500ms;
+}
+
+body.workspace-launching::after {
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity 500ms ease 300ms,
+    visibility 0s linear 0s;
+}
