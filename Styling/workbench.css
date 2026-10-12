@@ -1224,20 +1224,47 @@
   flex-direction: column;
   gap: 10px;
 }
-.validation-row {
-  display: grid;
+.validation-row{
 
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+    display:grid;
 
-  gap: 16px;
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
 
-  padding: 14px;
+    align-items:center;
 
-  border: 1px solid #e2e8f0;
+    gap:16px;
 
-  border-radius: 14px;
+    padding:16px;
 
-  background: white;
+    border-bottom:1px solid #e2e8f0;
+}
+
+.validation-item-name{
+
+    font-weight:600;
+
+    color:#001735;
+}
+
+.validation-row input{
+
+    width:100%;
+
+    height:48px;
+
+    border:1px solid #d9e6f5;
+
+    border-radius:12px;
+
+    padding:0 14px;
+}
+
+.validation-result-cell{
+
+    font-weight:700;
+
+    color:#64748b;
 }
 
 /* Consolidated responsive safeguards */

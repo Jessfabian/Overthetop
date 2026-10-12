@@ -97,33 +97,31 @@
       row.className = "illustration-comparison-row";
       row.dataset.comparisonKey = item.key;
 
+      row.className = "validation-row";
+
       row.innerHTML = `
-        <div class="comparison-item-name">
-          ${item.label}
 
-          <span class="comparison-question">
-            Part 1 ${item.question}
-          </span>
-        </div>
+    <div class="validation-item-name">
+             ${item.label}
+    </div>
 
+    <div>
         <input
-          type="text"
-          class="comparison-input part-one-comparison-value"
-          data-comparison-key="${item.key}"
-          placeholder="Enter Part 1 value"
-          autocomplete="off">
+            type="text"
+            placeholder="Enter Part 1 value">
+    </div>
 
+    <div>
         <input
-          type="text"
-          class="comparison-input illustration-comparison-value"
-          data-comparison-key="${item.key}"
-          placeholder="Enter illustration value"
-          autocomplete="off">
+            type="text"
+            placeholder="Enter Illustration value">
+    </div>
 
-        <span class="comparison-result pending">
-          Not Reviewed
-        </span>
-      `;
+    <div class="validation-result-cell">
+        Not Reviewed
+    </div>
+
+`;
 
       container.appendChild(row);
     });
