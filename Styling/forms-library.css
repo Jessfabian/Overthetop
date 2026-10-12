@@ -57,8 +57,8 @@ strong {
     list-style: none;
 }
 
-.ir-na igation li {
-    text-align: cente ;
+.ir-navigation li {
+    text-align: center ;
 }
 
 .ir-navigation a {
@@ -97,23 +97,16 @@ strong {
     opacity: 1;
 }
 
-
 .forms-hero {
-    position: rel tive;
-    overflow: hidden;
-    padding: 118px 20px 72px;
-    color:  ar(--forms-white);
-    background:         radial-gradient(
-            circle at 88% 15%,
-            r ba(77, 199, 235, 0.42),
-            transparent 30%
-        ),
-        linear-gradient(
-            135d g,
-            #001735,
-            #002e6b 58%,
-            #0057b8,
-        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 20px 24px 10px;
+
+    transform: translateY(-35px);
 }
 
 .forms-hero::after {
@@ -127,16 +120,29 @@ strong {
     content: "";
 }
 
-.forms-hero__cont nt {
-    position: relative;
-    z-index: 1;
-    width: min(1180px, 1 0%);
+.forms-hero__content {
+
+    max-width: 900px;
+
     margin: 0 auto;
+
+    text-align: left;
+}
+.forms-hero__content h1 {
+
+    margin-bottom: 12px;
 }
 
+.forms-hero__content p {
+
+    margin: 0 auto;
+
+    max-width: 850px;
+}
 .forms-eyebrow,
 .section-eyebrow {
     display: block;
+    position: center;
     margin-bottom: 10px;
     color: var(--forms-cyan);
     font-size: 12px;
@@ -149,6 +155,7 @@ strong {
     margin: 0;
     font-size: clamp(44px, 6vw, 76px);
     line-height: 1;
+    position: center;
     letter-spacing: -0.055em;
 }
 
