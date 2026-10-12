@@ -2,16 +2,16 @@ body {
     font-family: "MM Sharp", "Century Gothic", "Futura", sans-serif;
 }
 .launcher-page {
-
+ padding-top: 120px;
     width: min(1200px, calc(100% - 40px));
 
     margin: 0 auto;
-
+    background: linear-gradient(180deg, #eef2f8, #eef2f8);
     padding: 120px 0 60px;
 }
 
 .launcher-header {
-
+    background: linear-gradient(180deg, #eef2f8, #eef2f8);
     margin-bottom: 40px;
 }
 
@@ -42,11 +42,13 @@ body {
 
     font-weight: 700;
 }
-
+body{
+      background: linear-gradient(180deg, #eef2f8, #eef2f8);
+}
 .launcher-grid {
 
     display: grid;
-
+    background: linear-gradient(180deg, #eef2f8, #eef2f8);
     grid-template-columns:
         repeat(auto-fit,minmax(260px,1fr));
 
@@ -167,7 +169,7 @@ body {
     width: 600px;
     height: 600px;
 
-    
+
 
     top: -150px;
     left: 50%;
@@ -190,7 +192,9 @@ body {
 
     letter-spacing:.18em;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 .home-title {
 
     margin:0;
