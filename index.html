@@ -830,42 +830,66 @@
               </section>
 
 
+<div id="requirementBuilderParking" hidden>
 
-              <section id="requirementsSection" class="workspace-card">
-                <h2>Requirements</h2>
+<div id="nigoRequirementBuilder" class="inline-requirement-builder">
 
-                <label for="globalRequirementTemplate">
-                  Requirement Template
-                </label>
+    <label for="globalRequirementTemplate">
+        Requirement Template
+    </label>
 
-                <select id="globalRequirementTemplate">
-                  <option value="">Select Requirement</option>
-                </select>
+    <select id="globalRequirementTemplate">
 
-                <div id="globalRequirementFields"></div>
+        <option value="">
+            Select Requirement
+        </option>
 
-                <textarea
-                  id="globalGeneratedRequirement"
-                  rows="8"
-                  readonly></textarea>
-              </section>
+    </select>
 
-              <section id="amendmentsSection" class="workspace-card">
-                <h2>Amendments</h2>
+    <div id="globalRequirementFields"></div>
 
-                <label for="globalAmendmentForm">Form</label>
+    <textarea
+        id="globalGeneratedRequirement"
+        rows="4"
+        readonly>
+    </textarea>
 
-                <select id="globalAmendmentForm">
-                  <option value="">Select Form</option>
-                </select>
+</div>
 
-                <div id="globalAmendmentFields"></div>
+</div>
 
-                <textarea
-                  id="globalGeneratedAmendment"
-                  rows="8"
-                  readonly></textarea>
-              </section>
+
+             <div id="nigoAmendmentBuilder">
+
+    <section class="workspace-card">
+
+        <h3>
+            Amendment Builder
+        </h3>
+
+        <label for="globalAmendmentTemplate">
+            Form
+        </label>
+
+        <select id="globalAmendmentTemplate">
+
+            <option value="">
+                Select Form
+            </option>
+
+        </select>
+
+        <div id="globalAmendmentFields"></div>
+
+        <textarea
+            id="globalGeneratedAmendment"
+            rows="8"
+            readonly>
+        </textarea>
+
+    </section>
+
+</div>
 
               <section id="bingoSection" class="workspace-card">
                 <h2>BINGO Review</h2>
