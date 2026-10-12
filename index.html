@@ -832,27 +832,79 @@
 
 <div id="requirementBuilderParking" hidden>
 
-<div id="nigoRequirementBuilder" class="inline-requirement-builder">
+<div id="requirementBuilderParking" hidden>
 
-    <label for="globalRequirementTemplate">
-        Requirement Template
-    </label>
+    <div id="nigoRequirementBuilder" class="vc-card">
 
-    <select id="globalRequirementTemplate">
+        <h3>Requirement Builder</h3>
 
-        <option value="">
-            Select Requirement
-        </option>
+        <div class="vc-field">
 
-    </select>
+            <label>
+                Active Form
+            </label>
 
-    <div id="globalRequirementFields"></div>
+            <div id="activeNigoFormDisplay">
+                Select a form marked NIGO.
+            </div>
 
-    <textarea
-        id="globalGeneratedRequirement"
-        rows="4"
-        readonly>
-    </textarea>
+        </div>
+
+        <div class="vc-field">
+
+            <label for="globalRequirementTemplate">
+                Requirement Template
+            </label>
+
+            <select id="globalRequirementTemplate">
+
+                <option value="">
+                    Select Requirement
+                </option>
+
+            </select>
+
+        </div>
+
+        <button
+            type="button"
+            id="favoriteRequirementButton">
+
+            ♡
+
+        </button>
+
+        <div id="globalRequirementFields"></div>
+
+        <textarea
+            id="globalGeneratedRequirement"
+            rows="6"
+            readonly>
+        </textarea>
+
+        <div class="vc-actions">
+
+            <button
+                id="addGlobalRequirement"
+                type="button">
+
+                Add Requirement
+
+            </button>
+
+            <button
+                id="copyGlobalRequirement"
+                type="button">
+
+                Copy Requirement
+
+            </button>
+
+        </div>
+
+        <div id="requirementSaveStatus"></div>
+
+    </div>
 
 </div>
 
