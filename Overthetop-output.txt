@@ -5,7 +5,7 @@ PROJECT EXPORT FOR LLMs
 PROJECT INFORMATION:
 --------------------------------------------------
 Project Name: Overthetop
-Generated On: 2026-10-13 15:23:49 (America/Chicago / GMT-05:00)
+Generated On: 2026-10-13 15:29:43 (America/Chicago / GMT-05:00)
 Total Files Processed: 138
 Export Tool: Easy Whole Project to Single Text File for LLMs v1.1.0
 Tool Author: Jota / José Guilherme Pandolfi
@@ -156,7 +156,7 @@ PROJECT STRUCTURE
 ├── 📁 Styling/
 │   ├── 📄 app.css (157 B)
 │   ├── 📄 forms-library.css (10.54 KB)
-│   ├── 📄 home.css (3.84 KB)
+│   ├── 📄 home.css (3.83 KB)
 │   ├── 📄 navigation.css (2.76 KB)
 │   ├── 📄 onboarding.css (17.87 KB)
 │   ├── 📄 shared.css (6.25 KB)
@@ -33959,22 +33959,23 @@ FILE: Styling/home.css
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 3.84 KB
+Size: 3.83 KB
 Extension: .css
 Language: css
 Location: Styling/home.css
 Relative Path: Styling
 Created: 2026-10-12 23:21:34 (America/Chicago / GMT-05:00)
-Modified: 2026-10-13 15:23:48 (America/Chicago / GMT-05:00)
-MD5: 05071141ef59913fcfa8108702a72b9e
-SHA256: 22dff8eb871ced77197f186b37de956e76faa1592c7a4b64e68d76c4c54f7dc6
+Modified: 2026-10-13 15:29:43 (America/Chicago / GMT-05:00)
+MD5: 6707af529afe1930ea20426fb7cf1ea3
+SHA256: fa24688c51ad3ab86a74667a601d66b09330e153fac9fe96fbcbed1cdb6c8d30
 Encoding: ASCII
 
 FILE CONTENT:
 ----------------------------------------
 .launcher-page {
   padding-top: 0px;
-  width: min(1200px, calc(100% - 40px));
+
+  max-width: 3000px;
 
   margin: 0 auto;
   margin-top: 0;
@@ -34160,7 +34161,7 @@ html {
   border: 1px solid #d9e6f5;
 
   border-radius: 24px;
-margin-bottom:30px;
+  margin-bottom: 30px;
   padding: 32px;
 
   text-decoration: none;
