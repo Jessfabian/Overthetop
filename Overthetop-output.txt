@@ -5,7 +5,7 @@ PROJECT EXPORT FOR LLMs
 PROJECT INFORMATION:
 --------------------------------------------------
 Project Name: Overthetop
-Generated On: 2026-10-13 18:01:13 (America/Chicago / GMT-05:00)
+Generated On: 2026-10-13 18:16:01 (America/Chicago / GMT-05:00)
 Total Files Processed: 138
 Export Tool: Easy Whole Project to Single Text File for LLMs v1.1.0
 Tool Author: Jota / José Guilherme Pandolfi
@@ -24,7 +24,7 @@ PROJECT STRUCTURE
 ================================================================================
 ├── 📁 __pycache__/
 │   ├── 📄 app.cpython-315.pyc (12.57 KB)
-│   └── 📄 pdf_validator.cpython-315.pyc (58.5 KB)
+│   └── 📄 pdf_validator.cpython-315.pyc (59.07 KB)
 ├── 📁 data/
 │   ├── 📁 Families/
 │   │   ├── 📄 california.json (407 B)
@@ -168,7 +168,7 @@ PROJECT STRUCTURE
 ├── 📄 home.html (2.36 KB)
 ├── 📄 index.html (42.78 KB)
 ├── 📄 NY.html (7.02 KB)
-├── 📄 pdf_validator.py (35.18 KB)
+├── 📄 pdf_validator.py (35.65 KB)
 ├── 📄 requirements.txt (78 B)
 ├── 📄 UW.html (10.55 KB)
 └── 📄 verbiage-only.html (12.2 KB)
@@ -41689,15 +41689,15 @@ FILE: pdf_validator.py
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 35.18 KB
+Size: 35.65 KB
 Extension: .py
 Language: python
 Location: pdf_validator.py
 Relative Path: root
 Created: 2026-10-13 14:51:10 (America/Chicago / GMT-05:00)
-Modified: 2026-10-13 17:46:14 (America/Chicago / GMT-05:00)
-MD5: 2bb5acaa1a42d4d3b347fd3d3ce34dc2
-SHA256: 566d56a8313c067b4348c7f15b991727ded6b023ccf44b15c272311f7f90b8e9
+Modified: 2026-10-13 18:16:00 (America/Chicago / GMT-05:00)
+MD5: 233410e8ba080ab2d1b51cd11f40a6d8
+SHA256: 1e7d7a714c58a961c2f8e32cde8245251aaf17fb02444c11c1bee670007bd426
 Encoding: ASCII
 
 FILE CONTENT:
@@ -41821,8 +41821,19 @@ def normalized(value: Any) -> str:
     text = re.sub(r"paid[ -]?up additions?|\bpua\b", "paid-up additions", text)
     text = re.sub(r"supplemental insurance dividend(?:/flex)?", "lisr/flex", text)
     text = re.sub(r"semi annual", "semi-annual", text)
-    return clean(text)
+    text = re.sub(r"semi annual", "semi-annual", text)
 
+    if text in {
+        "",
+        "not found",
+        "none",
+        "n/a",
+        "not applicable",
+        "missing",
+    }:
+        return "n/a"
+
+    return clean(text)
 
 def make_field(
     value: Any = "",
@@ -42510,7 +42521,22 @@ def parse_document(
 
     return result
 
+def values_are_missing(
+    left: str,
+    right: str,
+) -> bool:
 
+    missing_values = {
+        "",
+        "n/a",
+        "not found",
+        "none",
+    }
+
+    return (
+        normalized(left) in missing_values
+        and normalized(right) in missing_values
+    )
 def compare_documents(app: DocumentResult, ill: DocumentResult, state: str = "") -> list[ComparisonRow]:
     if app.errors or ill.errors or not app.fields or not ill.fields:
         return [ComparisonRow("SYSTEM", "System", "; ".join(app.errors) or "Extraction failed", "; ".join(ill.errors) or "Extraction failed", "Failed", "One or both documents could not be validated.")]
@@ -42527,12 +42553,14 @@ def compare_documents(app: DocumentResult, ill: DocumentResult, state: str = "")
             continue
         if not app_field.value or not ill_field.value:
             status, note = "Review", "Could not extract a value from one or both documents."
+
         elif key == "insuredName" and person_names_match(app_field.value, ill_field.value):
             status, note = "Match", "First and last names match; middle name or initial is optional."
         elif key in {"faceAmount", "lisrTfa", "lisrModal", "lisrLumpSum"} and money_values_match(
             app_field.value, ill_field.value
         ):
             status, note = "Match", "Monetary values are numerically equal; formatting differences are ignored."
+
         elif key in {"waiver", "gir", "rtr", "lisr"} and {
             normalized(app_field.value), normalized(ill_field.value)
         } <= {"no", "none", "n/a"}:

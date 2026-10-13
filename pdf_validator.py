@@ -117,8 +117,19 @@ def normalized(value: Any) -> str:
     text = re.sub(r"paid[ -]?up additions?|\bpua\b", "paid-up additions", text)
     text = re.sub(r"supplemental insurance dividend(?:/flex)?", "lisr/flex", text)
     text = re.sub(r"semi annual", "semi-annual", text)
-    return clean(text)
+    text = re.sub(r"semi annual", "semi-annual", text)
 
+    if text in {
+        "",
+        "not found",
+        "none",
+        "n/a",
+        "not applicable",
+        "missing",
+    }:
+        return "n/a"
+
+    return clean(text)
 
 def make_field(
     value: Any = "",
@@ -806,7 +817,22 @@ def parse_document(
 
     return result
 
+def values_are_missing(
+    left: str,
+    right: str,
+) -> bool:
 
+    missing_values = {
+        "",
+        "n/a",
+        "not found",
+        "none",
+    }
+
+    return (
+        normalized(left) in missing_values
+        and normalized(right) in missing_values
+    )
 def compare_documents(app: DocumentResult, ill: DocumentResult, state: str = "") -> list[ComparisonRow]:
     if app.errors or ill.errors or not app.fields or not ill.fields:
         return [ComparisonRow("SYSTEM", "System", "; ".join(app.errors) or "Extraction failed", "; ".join(ill.errors) or "Extraction failed", "Failed", "One or both documents could not be validated.")]
@@ -823,12 +849,14 @@ def compare_documents(app: DocumentResult, ill: DocumentResult, state: str = "")
             continue
         if not app_field.value or not ill_field.value:
             status, note = "Review", "Could not extract a value from one or both documents."
+
         elif key == "insuredName" and person_names_match(app_field.value, ill_field.value):
             status, note = "Match", "First and last names match; middle name or initial is optional."
         elif key in {"faceAmount", "lisrTfa", "lisrModal", "lisrLumpSum"} and money_values_match(
             app_field.value, ill_field.value
         ):
             status, note = "Match", "Monetary values are numerically equal; formatting differences are ignored."
+
         elif key in {"waiver", "gir", "rtr", "lisr"} and {
             normalized(app_field.value), normalized(ill_field.value)
         } <= {"no", "none", "n/a"}:
