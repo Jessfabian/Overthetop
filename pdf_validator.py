@@ -294,10 +294,10 @@ def extract_application_city_state(pages: list[PageText]) -> FieldValue:
 
 
 def apply_blank_whole_life_rules(result: dict[str, FieldValue]) -> None:
-    """Treat blank optional rider sections as No/None/N/A."""
+    """Treat blank optional rider sections as None."""
     if not result["waiver"].value:
         result["waiver"] = make_field(
-            "No", 92, 4, "Blank optional rider section", "C7"
+            "None", 92, 4, "Blank optional rider section", "C7"
         )
     for key, label in (("gir", "C10"), ("rtr", "C11")):
         if not result[key].value:
@@ -309,13 +309,13 @@ def apply_blank_whole_life_rules(result: dict[str, FieldValue]) -> None:
         result["lisr"] = make_field("No", 94, 4, "Blank C13 LISR section")
         for key in ("lisrTfa", "lisrModal", "lisrLumpSum"):
             result[key] = make_field(
-                "N/A", 100, 4, "No LISR selected", excluded=True
+                "None", 100, 4, "No LISR selected", excluded=True
             )
 
     for key in ("alirModal", "alirDuration", "alirUnscheduled"):
         if not result[key].value:
             result[key] = make_field(
-                "N/A", 100, 4, "Blank C12 ALIR section", excluded=True
+                "None", 100, 4, "Blank C12 ALIR section", excluded=True
             )
 
 
@@ -591,7 +591,7 @@ def parse_application(pages: list[PageText]) -> dict[str, FieldValue]:
         if not result["waiver"].value:
             result["waiver"] = make_field("None", 88, 4, "Blank C18 rider section")
         for key in TERM_EXCLUDED:
-            result[key] = make_field("N/A", 100, source="Vantage Term rule", excluded=True)
+            result[key] = make_field("None", 100, source="Vantage Term rule", excluded=True)
     else:
         result["faceAmount"] = first_match(
             pages,
@@ -842,10 +842,10 @@ def compare_documents(app: DocumentResult, ill: DocumentResult, state: str = "")
         app_field = app.fields.get(key, make_field())
         ill_field = ill.fields.get(key, make_field())
         if is_term and key in TERM_EXCLUDED:
-            rows.append(ComparisonRow(key, FIELD_LABELS[key], "N/A", "N/A", "Excluded", "Not applicable for Vantage Term."))
+            rows.append(ComparisonRow(key, FIELD_LABELS[key], "None", "N/A", "Excluded", "Not applicable for Vantage Term."))
             continue
         if key.startswith("lisr") and key != "lisr" and normalized(app.fields.get("lisr", make_field()).value) != "yes":
-            rows.append(ComparisonRow(key, FIELD_LABELS[key], "N/A", "N/A", "Excluded", "No LISR on the application."))
+            rows.append(ComparisonRow(key, FIELD_LABELS[key], "None", "N/A", "Excluded", "No LISR on the application."))
             continue
         if not app_field.value or not ill_field.value:
             status, note = "Review", "Could not extract a value from one or both documents."
@@ -865,13 +865,13 @@ def compare_documents(app: DocumentResult, ill: DocumentResult, state: str = "")
             status, note = "Match", "Values match."
         else:
             status, note = "Mismatch", "Values differ."
-        rows.append(ComparisonRow(key, FIELD_LABELS[key], app_field.value or "Not Found", ill_field.value or "Not Found", status, note))
+        rows.append(ComparisonRow(key, FIELD_LABELS[key], app_field.value or "None", ill_field.value or "None", status, note))
     if state.upper() == "NY":
         app_date_value = app.fields.get("signedDate", make_field()).value
         ill_date_value = ill.fields.get("signedDate", make_field()).value
         app_date, ill_date = parse_date(app_date_value), parse_date(ill_date_value)
         if not app_date or not ill_date:
-            rows.append(ComparisonRow("nySignatureTiming", "NY signature timing", app_date_value or "Not Found", ill_date_value or "Not Found", "Review", "Could not parse one or both dates for Reg 74 validation."))
+            rows.append(ComparisonRow("nySignatureTiming", "NY signature timing", app_date_value or "None", ill_date_value or "None", "Review", "Could not parse one or both dates for Reg 74 validation."))
         elif ill_date > app_date:
             rows.append(ComparisonRow("nySignatureTiming", "NY signature timing", app_date_value, ill_date_value, "Mismatch", "Illustration signature date is after the Part 1 date."))
         else:

@@ -5,8 +5,8 @@ PROJECT EXPORT FOR LLMs
 PROJECT INFORMATION:
 --------------------------------------------------
 Project Name: Overthetop
-Generated On: 2026-10-13 18:16:01 (America/Chicago / GMT-05:00)
-Total Files Processed: 138
+Generated On: 2026-10-13 19:02:42 (America/Chicago / GMT-05:00)
+Total Files Processed: 139
 Export Tool: Easy Whole Project to Single Text File for LLMs v1.1.0
 Tool Author: Jota / José Guilherme Pandolfi
 
@@ -24,7 +24,7 @@ PROJECT STRUCTURE
 ================================================================================
 ├── 📁 __pycache__/
 │   ├── 📄 app.cpython-315.pyc (12.57 KB)
-│   └── 📄 pdf_validator.cpython-315.pyc (59.07 KB)
+│   └── 📄 pdf_validator.cpython-315.pyc (59.19 KB)
 ├── 📁 data/
 │   ├── 📁 Families/
 │   │   ├── 📄 california.json (407 B)
@@ -130,6 +130,7 @@ PROJECT STRUCTURE
 │   ├── 📄 Picture8.png (5.19 KB)
 │   ├── 📄 Picture9.png (8.27 KB)
 │   ├── 📄 qs.png (3.25 KB)
+│   ├── 📄 upload.png (4.78 KB)
 │   └── 📄 UW.png (7.64 KB)
 ├── 📁 mycases/
 │   ├── 📄 case-detail.html (303 B)
@@ -158,7 +159,7 @@ PROJECT STRUCTURE
 │   ├── 📄 forms-library.css (10.54 KB)
 │   ├── 📄 home.css (3.83 KB)
 │   ├── 📄 navigation.css (2.76 KB)
-│   ├── 📄 onboarding.css (19 KB)
+│   ├── 📄 onboarding.css (19.22 KB)
 │   ├── 📄 shared.css (6.25 KB)
 │   ├── 📄 typography.css (595 B)
 │   ├── 📄 verbiage-only.css (17.27 KB)
@@ -166,9 +167,9 @@ PROJECT STRUCTURE
 ├── 📄 app.py (10.99 KB)
 ├── 📄 forms-library.html (15.79 KB)
 ├── 📄 home.html (2.36 KB)
-├── 📄 index.html (42.78 KB)
+├── 📄 index.html (42.27 KB)
 ├── 📄 NY.html (7.02 KB)
-├── 📄 pdf_validator.py (35.65 KB)
+├── 📄 pdf_validator.py (35.63 KB)
 ├── 📄 requirements.txt (78 B)
 ├── 📄 UW.html (10.55 KB)
 └── 📄 verbiage-only.html (12.2 KB)
@@ -176,16 +177,16 @@ PROJECT STRUCTURE
 ================================================================================
 PROJECT STATISTICS
 ================================================================================
-Total Files: 138
+Total Files: 139
 Total Directories: 12
 Text Files: 114
-Binary Files: 24
-Total Size: 1.35 MB
+Binary Files: 25
+Total Size: 1.36 MB
 
 FILE TYPES DISTRIBUTION:
 ------------------------------
 .json           : 72
-.png            : 20
+.png            : 21
 .js             : 19
 .css            : 10
 .html           : 9
@@ -15636,6 +15637,7 @@ BINARY/EXCLUDED FILES (not included in text content)
 - images/Picture8.png
 - images/Picture9.png
 - images/qs.png
+- images/upload.png
 - images/UW.png
 
 
@@ -34719,15 +34721,15 @@ FILE: Styling/onboarding.css
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 19 KB
+Size: 19.22 KB
 Extension: .css
 Language: css
 Location: Styling/onboarding.css
 Relative Path: Styling
 Created: 2026-10-12 23:21:34 (America/Chicago / GMT-05:00)
-Modified: 2026-10-13 15:35:14 (America/Chicago / GMT-05:00)
-MD5: 4385fb6bdc7573b6bffdef01c26a23b0
-SHA256: a8bc09eae2baa6278b73b02e3e2fa2b3e6387936a32089d1cb044d6e9055f519
+Modified: 2026-10-13 19:00:44 (America/Chicago / GMT-05:00)
+MD5: fce429a58a468cf75b0076979d781409
+SHA256: 03548fe0997cc4fa6d8f8eecd19d7756820059c2b426745f5f65294282da87d2
 Encoding: ASCII
 
 FILE CONTENT:
@@ -36021,6 +36023,25 @@ FILE CONTENT:
   font-weight: 700;
 }
 
+
+.validation-drop-icon img {
+
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+
+}
+
+.validation-drop-icon {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 64px;
+    height: 64px;
+
+}
 ================================================================================
 
 
@@ -40011,15 +40032,15 @@ FILE: index.html
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 42.78 KB
+Size: 42.27 KB
 Extension: .html
 Language: html
 Location: index.html
 Relative Path: root
 Created: 2026-10-08 13:42:25 (America/Chicago / GMT-05:00)
-Modified: 2026-10-13 17:16:10 (America/Chicago / GMT-05:00)
-MD5: a5ebb57dd96ac7ec08b0953cfdd1de2d
-SHA256: 172da8b08bf501ffdbc49a6e82788d18b8cc0a2ab1d2605381526d003a3dd66b
+Modified: 2026-10-13 19:02:35 (America/Chicago / GMT-05:00)
+MD5: 0d118d7aa1bf231e8bdf85b0acba73a5
+SHA256: 9439107ac2b1194ba554e33201be1182e6ee559566b694dfd9af64aa4593259d
 Encoding: ASCII
 
 FILE CONTENT:
@@ -40422,16 +40443,30 @@ FILE CONTENT:
 ====================================================== -->
 <section
     id="illustrationValidationSection"
-    class="review-section illustration-validation-section"
-><div class="iv-workflow-card">
+    class="review-section illustration-validation-section">
+    <div class="iv-workflow-card">
 
     <div class="iv-workflow-top">
 
         <div>
+
             <span class="iv-label">
                 Illustration Review
             </span>
 
+            <h3>
+                Validation Status
+            </h3>
+
+        </div>
+
+        <div
+            id="irValidatorServiceStatus"
+            class="validation-status validation-status-neutral">
+
+            Checking service...
+
+        </div>
 
     </div>
 
@@ -40439,10 +40474,11 @@ FILE CONTENT:
 
         <div class="iv-file-status">
 
-            <span>Application</span>
+            <span>
+                Application
+            </span>
 
-            <strong
-                id="applicationUploadStatus">
+            <strong id="applicationUploadStatus">
                 Not Uploaded
             </strong>
 
@@ -40450,52 +40486,17 @@ FILE CONTENT:
 
         <div class="iv-file-status">
 
+            <span>
+                Illustration
+            </span>
 
-    <span>Contract State</span>
-
-    <select
-    id="irValidationState"
-    class="validation-state-select"
->
-    <option value="">
-        Select State
-    </option>
-
-    <option value="NY">
-        New York
-    </option>
-
-    <option value="OTHER">
-        Other
-    </option>
-</select>
-
-</div>
-<span
-    id="irValidatorServiceStatus"
-    class="validation-status validation-status-neutral"
->
-    Checking service...
-</span>
-            <span>Illustration</span>
-
-            <strong
-                id="illustrationUploadStatus">
+            <strong id="illustrationUploadStatus">
                 Not Uploaded
             </strong>
 
         </div>
 
-        <div class="iv-file-status">
 
-            <span>Contract State</span>
-
-            <strong
-                id="validationStateDisplay">
-                Not Selected
-            </strong>
-
-        </div>
 
     </div>
 
@@ -40503,7 +40504,7 @@ FILE CONTENT:
 
         <div class="iv-progress-header">
 
-          <div class="iv-progress-header">
+
   <div>
     <span>Extraction Progress</span>
 
@@ -40580,88 +40581,113 @@ FILE CONTENT:
 
 </div>
 
-    <!-- Upload cards -->
-    <div class="validation-upload-grid">
-        <article class="validation-upload-card">
-            <div class="validation-upload-heading">
-                <span class="validation-step">1</span>
+   <!-- Upload cards -->
+<div class="validation-upload-grid">
 
-                <div>
-                    <h3>Part 1 application</h3>
-                    <p>Upload the completed Part 1 PDF.</p>
-                </div>
+    <!-- Part 1 -->
+    <article class="validation-upload-card">
+
+        <div class="validation-upload-heading">
+
+            <span class="validation-step">
+                A2000
+            </span>
+
+            <div>
+
+                <h3>
+                    Part 1 Application
+                </h3>
+
+                <p>
+                    Upload the completed Part 1 PDF.
+                </p>
+
             </div>
 
-            <label
-                id="irApplicationDropZone"
-                class="validation-drop-zone"
-                for="irApplicationFile"
-            >
-                <span class="validation-drop-icon">1</span>
+        </div>
 
-                <strong>
-                    Drop Part 1 PDF here
-                </strong>
+        <label
+            id="irApplicationDropZone"
+            class="validation-drop-zone"
+            for="irApplicationFile">
 
-                <span>
-                    or select a PDF
-                </span>
+           <span class="validation-drop-icon"><img src="images/upload.png"></span>
 
-                <input
-                    id="irApplicationFile"
-                    type="file"
-                    accept="application/pdf,.pdf"
-                >
-            </label>
+            <strong>
+                Drop or select Part 1 PDF here
+            </strong>
 
-            <div
-                id="irApplicationFileMeta"
-                class="validation-file-meta"
-            >
-                No application selected
+            <input
+                id="irApplicationFile"
+                type="file"
+                accept="application/pdf,.pdf">
+
+        </label>
+
+        <div
+            id="irApplicationFileMeta"
+            class="validation-file-meta">
+
+            No application selected
+
+        </div>
+
+    </article>
+
+    <!-- Illustration -->
+    <article class="validation-upload-card">
+
+        <div class="validation-upload-heading">
+
+            <span class="validation-step">
+                Illustration
+            </span>
+
+            <div>
+
+                <h3>
+                    Sales Illustration
+                </h3>
+
+                <p>
+                    Upload the matching sales illustration.
+                </p>
+
             </div>
-        </article>
 
-        <article class="validation-upload-card">
-            <div class="validation-upload-heading">
-                <span class="validation-step">2</span>
+        </div>
 
-                <div>
-                    <h3>Sales illustration</h3>
-                    <p>Upload the matching sales illustration.</p>
-                </div>
-            </div>
+        <label
+            id="irIllustrationDropZone"
+            class="validation-drop-zone"
+            for="irIllustrationFile">
 
-            <label
-                id="irIllustrationDropZone"
-                class="validation-drop-zone"
-                for="irIllustrationFile"
-            >
-                <span class="validation-drop-icon">ILL</span>
+          <span class="validation-drop-icon"><img src="images/upload.png"></span>
 
-                <strong>
-                    Drop illustration PDF here
-                </strong>
+            <strong>
+                Drop or select Illustration PDF here
+            </strong>
 
-                <span>
-                    or select a PDF
-                </span>
+            <input
+                id="irIllustrationFile"
+                type="file"
+                accept="application/pdf,.pdf">
 
-                <input
-                    id="irIllustrationFile"
-                    type="file"
-                    accept="application/pdf,.pdf"
-                >
-            </label>
+        </label>
 
-            <div
-                id="irIllustrationFileMeta"
-                class="validation-file-meta"
-            >
-                No illustration selected
-            </div>
-        </article>
-    </div>
+        <div
+            id="irIllustrationFileMeta"
+            class="validation-file-meta">
+
+            No illustration selected
+
+        </div>
+
+    </article>
+
+</div>
+
 
     <div
         id="irValidationError"
@@ -40766,8 +40792,7 @@ FILE CONTENT:
                     readonly
                 ></textarea>
             </details>
-        </article>
-    </div>
+
 
     <!-- Comparison table -->
     <article
@@ -41689,15 +41714,15 @@ FILE: pdf_validator.py
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 35.65 KB
+Size: 35.63 KB
 Extension: .py
 Language: python
 Location: pdf_validator.py
 Relative Path: root
 Created: 2026-10-13 14:51:10 (America/Chicago / GMT-05:00)
-Modified: 2026-10-13 18:16:00 (America/Chicago / GMT-05:00)
-MD5: 233410e8ba080ab2d1b51cd11f40a6d8
-SHA256: 1e7d7a714c58a961c2f8e32cde8245251aaf17fb02444c11c1bee670007bd426
+Modified: 2026-10-13 18:41:04 (America/Chicago / GMT-05:00)
+MD5: e0443fb1f5488c73659870cedb13a10e
+SHA256: a4d5d2abe00ca8c7b18aa5e478e407e4964c9dcdf9bb860feae7463da0a83bd6
 Encoding: ASCII
 
 FILE CONTENT:
@@ -41998,10 +42023,10 @@ def extract_application_city_state(pages: list[PageText]) -> FieldValue:
 
 
 def apply_blank_whole_life_rules(result: dict[str, FieldValue]) -> None:
-    """Treat blank optional rider sections as No/None/N/A."""
+    """Treat blank optional rider sections as None."""
     if not result["waiver"].value:
         result["waiver"] = make_field(
-            "No", 92, 4, "Blank optional rider section", "C7"
+            "None", 92, 4, "Blank optional rider section", "C7"
         )
     for key, label in (("gir", "C10"), ("rtr", "C11")):
         if not result[key].value:
@@ -42013,13 +42038,13 @@ def apply_blank_whole_life_rules(result: dict[str, FieldValue]) -> None:
         result["lisr"] = make_field("No", 94, 4, "Blank C13 LISR section")
         for key in ("lisrTfa", "lisrModal", "lisrLumpSum"):
             result[key] = make_field(
-                "N/A", 100, 4, "No LISR selected", excluded=True
+                "None", 100, 4, "No LISR selected", excluded=True
             )
 
     for key in ("alirModal", "alirDuration", "alirUnscheduled"):
         if not result[key].value:
             result[key] = make_field(
-                "N/A", 100, 4, "Blank C12 ALIR section", excluded=True
+                "None", 100, 4, "Blank C12 ALIR section", excluded=True
             )
 
 
@@ -42295,7 +42320,7 @@ def parse_application(pages: list[PageText]) -> dict[str, FieldValue]:
         if not result["waiver"].value:
             result["waiver"] = make_field("None", 88, 4, "Blank C18 rider section")
         for key in TERM_EXCLUDED:
-            result[key] = make_field("N/A", 100, source="Vantage Term rule", excluded=True)
+            result[key] = make_field("None", 100, source="Vantage Term rule", excluded=True)
     else:
         result["faceAmount"] = first_match(
             pages,
@@ -42546,10 +42571,10 @@ def compare_documents(app: DocumentResult, ill: DocumentResult, state: str = "")
         app_field = app.fields.get(key, make_field())
         ill_field = ill.fields.get(key, make_field())
         if is_term and key in TERM_EXCLUDED:
-            rows.append(ComparisonRow(key, FIELD_LABELS[key], "N/A", "N/A", "Excluded", "Not applicable for Vantage Term."))
+            rows.append(ComparisonRow(key, FIELD_LABELS[key], "None", "N/A", "Excluded", "Not applicable for Vantage Term."))
             continue
         if key.startswith("lisr") and key != "lisr" and normalized(app.fields.get("lisr", make_field()).value) != "yes":
-            rows.append(ComparisonRow(key, FIELD_LABELS[key], "N/A", "N/A", "Excluded", "No LISR on the application."))
+            rows.append(ComparisonRow(key, FIELD_LABELS[key], "None", "N/A", "Excluded", "No LISR on the application."))
             continue
         if not app_field.value or not ill_field.value:
             status, note = "Review", "Could not extract a value from one or both documents."
@@ -42569,13 +42594,13 @@ def compare_documents(app: DocumentResult, ill: DocumentResult, state: str = "")
             status, note = "Match", "Values match."
         else:
             status, note = "Mismatch", "Values differ."
-        rows.append(ComparisonRow(key, FIELD_LABELS[key], app_field.value or "Not Found", ill_field.value or "Not Found", status, note))
+        rows.append(ComparisonRow(key, FIELD_LABELS[key], app_field.value or "None", ill_field.value or "None", status, note))
     if state.upper() == "NY":
         app_date_value = app.fields.get("signedDate", make_field()).value
         ill_date_value = ill.fields.get("signedDate", make_field()).value
         app_date, ill_date = parse_date(app_date_value), parse_date(ill_date_value)
         if not app_date or not ill_date:
-            rows.append(ComparisonRow("nySignatureTiming", "NY signature timing", app_date_value or "Not Found", ill_date_value or "Not Found", "Review", "Could not parse one or both dates for Reg 74 validation."))
+            rows.append(ComparisonRow("nySignatureTiming", "NY signature timing", app_date_value or "None", ill_date_value or "None", "Review", "Could not parse one or both dates for Reg 74 validation."))
         elif ill_date > app_date:
             rows.append(ComparisonRow("nySignatureTiming", "NY signature timing", app_date_value, ill_date_value, "Mismatch", "Illustration signature date is after the Part 1 date."))
         else:

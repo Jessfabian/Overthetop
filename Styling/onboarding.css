@@ -1286,3 +1286,23 @@
 .iv-step .step-icon {
   font-weight: 700;
 }
+
+
+.validation-drop-icon img {
+
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+
+}
+
+.validation-drop-icon {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 64px;
+    height: 64px;
+
+}

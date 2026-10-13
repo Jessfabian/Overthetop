@@ -396,16 +396,30 @@
 ====================================================== -->
 <section
     id="illustrationValidationSection"
-    class="review-section illustration-validation-section"
-><div class="iv-workflow-card">
+    class="review-section illustration-validation-section">
+    <div class="iv-workflow-card">
 
     <div class="iv-workflow-top">
 
         <div>
+
             <span class="iv-label">
                 Illustration Review
             </span>
 
+            <h3>
+                Validation Status
+            </h3>
+
+        </div>
+
+        <div
+            id="irValidatorServiceStatus"
+            class="validation-status validation-status-neutral">
+
+            Checking service...
+
+        </div>
 
     </div>
 
@@ -413,10 +427,11 @@
 
         <div class="iv-file-status">
 
-            <span>Application</span>
+            <span>
+                Application
+            </span>
 
-            <strong
-                id="applicationUploadStatus">
+            <strong id="applicationUploadStatus">
                 Not Uploaded
             </strong>
 
@@ -424,52 +439,17 @@
 
         <div class="iv-file-status">
 
+            <span>
+                Illustration
+            </span>
 
-    <span>Contract State</span>
-
-    <select
-    id="irValidationState"
-    class="validation-state-select"
->
-    <option value="">
-        Select State
-    </option>
-
-    <option value="NY">
-        New York
-    </option>
-
-    <option value="OTHER">
-        Other
-    </option>
-</select>
-
-</div>
-<span
-    id="irValidatorServiceStatus"
-    class="validation-status validation-status-neutral"
->
-    Checking service...
-</span>
-            <span>Illustration</span>
-
-            <strong
-                id="illustrationUploadStatus">
+            <strong id="illustrationUploadStatus">
                 Not Uploaded
             </strong>
 
         </div>
 
-        <div class="iv-file-status">
 
-            <span>Contract State</span>
-
-            <strong
-                id="validationStateDisplay">
-                Not Selected
-            </strong>
-
-        </div>
 
     </div>
 
@@ -477,7 +457,7 @@
 
         <div class="iv-progress-header">
 
-          <div class="iv-progress-header">
+
   <div>
     <span>Extraction Progress</span>
 
@@ -554,88 +534,113 @@
 
 </div>
 
-    <!-- Upload cards -->
-    <div class="validation-upload-grid">
-        <article class="validation-upload-card">
-            <div class="validation-upload-heading">
-                <span class="validation-step">1</span>
+   <!-- Upload cards -->
+<div class="validation-upload-grid">
 
-                <div>
-                    <h3>Part 1 application</h3>
-                    <p>Upload the completed Part 1 PDF.</p>
-                </div>
+    <!-- Part 1 -->
+    <article class="validation-upload-card">
+
+        <div class="validation-upload-heading">
+
+            <span class="validation-step">
+                A2000
+            </span>
+
+            <div>
+
+                <h3>
+                    Part 1 Application
+                </h3>
+
+                <p>
+                    Upload the completed Part 1 PDF.
+                </p>
+
             </div>
 
-            <label
-                id="irApplicationDropZone"
-                class="validation-drop-zone"
-                for="irApplicationFile"
-            >
-                <span class="validation-drop-icon">1</span>
+        </div>
 
-                <strong>
-                    Drop Part 1 PDF here
-                </strong>
+        <label
+            id="irApplicationDropZone"
+            class="validation-drop-zone"
+            for="irApplicationFile">
 
-                <span>
-                    or select a PDF
-                </span>
+           <span class="validation-drop-icon"><img src="images/upload.png"></span>
 
-                <input
-                    id="irApplicationFile"
-                    type="file"
-                    accept="application/pdf,.pdf"
-                >
-            </label>
+            <strong>
+                Drop or select Part 1 PDF here
+            </strong>
 
-            <div
-                id="irApplicationFileMeta"
-                class="validation-file-meta"
-            >
-                No application selected
+            <input
+                id="irApplicationFile"
+                type="file"
+                accept="application/pdf,.pdf">
+
+        </label>
+
+        <div
+            id="irApplicationFileMeta"
+            class="validation-file-meta">
+
+            No application selected
+
+        </div>
+
+    </article>
+
+    <!-- Illustration -->
+    <article class="validation-upload-card">
+
+        <div class="validation-upload-heading">
+
+            <span class="validation-step">
+                Illustration
+            </span>
+
+            <div>
+
+                <h3>
+                    Sales Illustration
+                </h3>
+
+                <p>
+                    Upload the matching sales illustration.
+                </p>
+
             </div>
-        </article>
 
-        <article class="validation-upload-card">
-            <div class="validation-upload-heading">
-                <span class="validation-step">2</span>
+        </div>
 
-                <div>
-                    <h3>Sales illustration</h3>
-                    <p>Upload the matching sales illustration.</p>
-                </div>
-            </div>
+        <label
+            id="irIllustrationDropZone"
+            class="validation-drop-zone"
+            for="irIllustrationFile">
 
-            <label
-                id="irIllustrationDropZone"
-                class="validation-drop-zone"
-                for="irIllustrationFile"
-            >
-                <span class="validation-drop-icon">ILL</span>
+          <span class="validation-drop-icon"><img src="images/upload.png"></span>
 
-                <strong>
-                    Drop illustration PDF here
-                </strong>
+            <strong>
+                Drop or select Illustration PDF here
+            </strong>
 
-                <span>
-                    or select a PDF
-                </span>
+            <input
+                id="irIllustrationFile"
+                type="file"
+                accept="application/pdf,.pdf">
 
-                <input
-                    id="irIllustrationFile"
-                    type="file"
-                    accept="application/pdf,.pdf"
-                >
-            </label>
+        </label>
 
-            <div
-                id="irIllustrationFileMeta"
-                class="validation-file-meta"
-            >
-                No illustration selected
-            </div>
-        </article>
-    </div>
+        <div
+            id="irIllustrationFileMeta"
+            class="validation-file-meta">
+
+            No illustration selected
+
+        </div>
+
+    </article>
+
+</div>
+
 
     <div
         id="irValidationError"
@@ -740,8 +745,7 @@
                     readonly
                 ></textarea>
             </details>
-        </article>
-    </div>
+
 
     <!-- Comparison table -->
     <article
