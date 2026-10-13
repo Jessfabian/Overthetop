@@ -4,7 +4,13 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Full Initial Review</title>
-<link href="Styling/app.css" rel="stylesheet"/>
+<link href="Styling/home.css" rel="stylesheet"/>
+    <link href="Styling/navigation.css" rel="stylesheet"/>
+    <link href="Styling/typography.css" rel="stylesheet"/>
+    <link href="Styling/shared.css" rel="stylesheet"/>
+     <link href="Styling/onboarding.css" rel="stylesheet"/>
+      <link href="Styling/workbench.css" rel="stylesheet"/>
+ <link href="{{ url_for('static', filename='/validation.css') }}" />
 </head>
 <body>
 <header class="ir-header">
@@ -385,19 +391,287 @@
 <div class="case-field"><label for="specificPolicyDate">Requested Policy Date</label><input id="specificPolicyDate" type="date"/></div>
 </div>
 <details class="card collapsible-card" hidden="" id="Illustration-Validation" open>
-<summary class="collapsible-summary"><span class="summary-heading"><span class="summary-title">Illustration Validation</span></span><span aria-hidden="true" class="collapse-indicator">▼</span></summary>
-<div class="collapsible-content">
-<details class="workspace-help"><summary><strong>How to use</strong></summary><ol><li>Enter the value shown on the Part 1.</li><li>Enter the corresponding value shown on the illustration.</li><li>Select Not Applicable for items that do not apply.</li><li>Review the validation result and identified mismatches.</li></ol></details>
-<div class="validation-column-headings"><span>Policy Design Item</span><span>Part 1</span><span>Illustration</span><span>Result</span></div>
-<div id="illustrationComparisonRows"></div>
-<div class="validation-actions"><button class="primary-button" id="validateIllustration" type="button">Validate Illustration</button><button class="secondary-button" id="clearIllustrationValidation" type="button">Clear</button></div>
-<section aria-live="polite" class="illustration-validation-result validation-neutral" id="illustrationValidationResult">
-<div class="validation-result-header"><div><span class="validation-result-label">Validation Result</span><strong id="illustrationValidationTitle">Enter the Part 1 and illustration values.</strong></div><span id="illustrationMatchCount">0 of 0 reviewed</span></div>
-<div id="illustrationValidationDetails"></div>
-</section>
-<section class="illustration-mismatch-output" hidden="" id="illustrationMismatchRequirementSection">
-<label for="illustrationMismatchRequirement">Generated Requirement</label><textarea id="illustrationMismatchRequirement" readonly="" rows="7"></textarea>
-<button class="secondary-button" id="copyIllustrationMismatchRequirement" type="button">Copy Requirement</button><span aria-live="polite" class="copy-status" id="illustrationMismatchCopyStatus"></span>
+<!-- ======================================================
+     ILLUSTRATION VALIDATION
+====================================================== -->
+<section
+    id="illustrationValidationSection"
+    class="review-section illustration-validation-section"
+>
+    <div class="section-header">
+        <div>
+            <span class="section-eyebrow">
+                Automated validation
+            </span>
+
+            <h2>
+                Application &amp; Illustration Validation
+            </h2>
+
+            <p>
+                Compare the Part 1 application against the sales
+                illustration using Python PDF extraction and OCR.
+            </p>
+        </div>
+
+        <span
+            id="irValidatorServiceStatus"
+            class="validation-status validation-status-pending"
+        >
+            Checking service...
+        </span>
+    </div>
+
+    <div class="validation-notice">
+        <strong>Reviewer confirmation required.</strong>
+        Confirm extracted values, checkbox selections, signatures,
+        dates, and mismatches before completing the case review.
+    </div>
+
+    <!-- State and controls -->
+    <div class="validation-control-bar">
+        <div class="validation-field">
+            <label for="irValidationState">
+                Contract state
+            </label>
+
+            <select id="irValidationState">
+                <option value="">Select state</option>
+                <option value="NY">New York</option>
+                <option value="OTHER">Other</option>
+            </select>
+        </div>
+
+        <div class="validation-rule-message">
+            <span
+                id="irValidationRuleBadge"
+                class="validation-status validation-status-neutral"
+            >
+                Standard comparison rules
+            </span>
+        </div>
+    </div>
+
+    <!-- Upload cards -->
+    <div class="validation-upload-grid">
+        <article class="validation-upload-card">
+            <div class="validation-upload-heading">
+                <span class="validation-step">1</span>
+
+                <div>
+                    <h3>Part 1 application</h3>
+                    <p>Upload the completed Part 1 PDF.</p>
+                </div>
+            </div>
+
+            <label
+                id="irApplicationDropZone"
+                class="validation-drop-zone"
+                for="irApplicationFile"
+            >
+                <span class="validation-drop-icon">A1</span>
+
+                <strong>
+                    Drop Part 1 PDF here
+                </strong>
+
+                <span>
+                    or select a PDF
+                </span>
+
+                <input
+                    id="irApplicationFile"
+                    type="file"
+                    accept="application/pdf,.pdf"
+                >
+            </label>
+
+            <div
+                id="irApplicationFileMeta"
+                class="validation-file-meta"
+            >
+                No application selected
+            </div>
+        </article>
+
+        <article class="validation-upload-card">
+            <div class="validation-upload-heading">
+                <span class="validation-step">2</span>
+
+                <div>
+                    <h3>Sales illustration</h3>
+                    <p>Upload the matching sales illustration.</p>
+                </div>
+            </div>
+
+            <label
+                id="irIllustrationDropZone"
+                class="validation-drop-zone"
+                for="irIllustrationFile"
+            >
+                <span class="validation-drop-icon">ILL</span>
+
+                <strong>
+                    Drop illustration PDF here
+                </strong>
+
+                <span>
+                    or select a PDF
+                </span>
+
+                <input
+                    id="irIllustrationFile"
+                    type="file"
+                    accept="application/pdf,.pdf"
+                >
+            </label>
+
+            <div
+                id="irIllustrationFileMeta"
+                class="validation-file-meta"
+            >
+                No illustration selected
+            </div>
+        </article>
+    </div>
+
+    <div
+        id="irValidationError"
+        class="validation-error"
+        hidden
+    ></div>
+
+    <div class="validation-action-bar">
+        <button
+            id="irRunValidationButton"
+            class="btn btn-primary"
+            type="button"
+            disabled
+        >
+            Extract &amp; Validate
+        </button>
+
+        <button
+            id="irResetValidationButton"
+            class="btn btn-secondary"
+            type="button"
+        >
+            Reset Validation
+        </button>
+
+        <span
+            id="irValidationRunStatus"
+            class="validation-status validation-status-pending"
+        >
+            Waiting for both PDFs
+        </span>
+    </div>
+
+    <!-- Summary -->
+    <div
+        id="irValidationSummary"
+        class="validation-summary-grid"
+        hidden
+    >
+        <article class="validation-summary-card validation-summary-match">
+            <span>Matches</span>
+            <strong id="irMatchCount">0</strong>
+        </article>
+
+        <article class="validation-summary-card validation-summary-mismatch">
+            <span>Mismatches</span>
+            <strong id="irMismatchCount">0</strong>
+        </article>
+
+        <article class="validation-summary-card validation-summary-review">
+            <span>Manual review</span>
+            <strong id="irReviewCount">0</strong>
+        </article>
+
+        <article class="validation-summary-card validation-summary-excluded">
+            <span>Not applicable</span>
+            <strong id="irExcludedCount">0</strong>
+        </article>
+    </div>
+
+    <!-- Extracted information -->
+    <div
+        id="irExtractedValuesArea"
+        class="validation-extracted-grid"
+        hidden
+    >
+        <article class="validation-results-card">
+            <h3>Part 1 extracted values</h3>
+
+            <div
+                id="irApplicationExtractedFields"
+                class="validation-fields-grid"
+            ></div>
+
+            <details class="validation-text-details">
+                <summary>
+                    View extracted Part 1 text
+                </summary>
+
+                <textarea
+                    id="irApplicationExtractedText"
+                    readonly
+                ></textarea>
+            </details>
+        </article>
+
+        <article class="validation-results-card">
+            <h3>Illustration extracted values</h3>
+
+            <div
+                id="irIllustrationExtractedFields"
+                class="validation-fields-grid"
+            ></div>
+
+            <details class="validation-text-details">
+                <summary>
+                    View extracted illustration text
+                </summary>
+
+                <textarea
+                    id="irIllustrationExtractedText"
+                    readonly
+                ></textarea>
+            </details>
+        </article>
+    </div>
+
+    <!-- Comparison table -->
+    <article
+        id="irValidationResultsCard"
+        class="validation-results-card"
+        hidden
+    >
+        <div class="validation-results-heading">
+            <div>
+                <h3>Comparison results</h3>
+
+                <p>
+                    Values marked for review or mismatch require
+                    reviewer confirmation.
+                </p>
+            </div>
+
+            <button
+                id="irAddValidationRequirementButton"
+                class="btn btn-secondary"
+                type="button"
+                hidden
+            >
+                Add Mismatches to Requirements
+            </button>
+        </div>
+
+        <div
+            id="irValidationComparisonResults"
+            class="validation-table-wrapper"
+        ></div>
+    </article>
 </section>
 </div>
 </details>
@@ -910,5 +1184,6 @@
 <script src="scripts/initial-review.js"></script>
 <!-- Output and supporting tools -->
 <script src="scripts/review-output-package.js"></script>
+ <script src="{{ url_for('static', filename='/validation.js') }}"></script>
 </body>
 </html>

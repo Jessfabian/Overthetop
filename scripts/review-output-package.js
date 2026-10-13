@@ -295,3 +295,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
   compileReviewOutputs();
 });
+function getIllustrationValidationOutput() {
+  const validation = window.fullIRIllustrationValidation;
+
+  if (!validation || !validation.completed) {
+    return "";
+  }
+
+  const summary = validation.summary;
+
+  const lines = [
+    "ILLUSTRATION VALIDATION",
+    `Matches: ${summary.matches}`,
+    `Mismatches: ${summary.mismatches}`,
+    `Manual review: ${summary.reviews}`,
+  ];
+
+  validation.actionableItems.forEach((item) => {
+    lines.push(
+      `${item.label}: ` +
+        `${item.application} / ` +
+        `${item.illustration} - ` +
+        `${item.status}`,
+    );
+  });
+
+  return lines.join("\n");
+}

@@ -1,457 +1,752 @@
-(function () {
+(() => {
   "use strict";
 
-  const comparisonItems = [
-    {
-      key: "planType",
-      label: "Plan Type",
-      question: "C2 / C16",
-    },
-    {
-      key: "faceAmount",
-      label: "Face Amount",
-      question: "C1 / C3 / C17",
-    },
-    {
-      key: "automaticPremiumLoan",
-      label: "Automatic Premium Loan",
-      question: "C4",
-    },
-    {
-      key: "loanRate",
-      label: "Loan Rate",
-      question: "C5",
-    },
-    {
-      key: "dividendOption",
-      label: "Dividend Option",
-      question: "C6",
-    },
-    {
-      key: "waiverOfPremium",
-      label: "Waiver of Premium",
-      question: "C7 / C18",
-    },
-    {
-      key: "ltcr",
-      label: "Long-Term Care Rider",
-      question: "C9",
-    },
-    {
-      key: "gir",
-      label: "Guaranteed Insurability Rider",
-      question: "C10",
-    },
-    {
-      key: "alir",
-      label: "Additional Life Insurance Rider",
-      question: "C11",
-    },
-    {
-      key: "palir",
-      label: "Renewable Term Rider",
-      question: "C11",
-    },
-    {
-      key: "lisr",
-      label: "Renewable Term Rider",
-      question: "C11",
-    },
-    {
-      key: "paymentFrequency",
-      label: "Payment Frequency",
-      question: "G4 / G5",
-    },
-  ];
+  const API_URL = "/api/validate";
 
-  function normalizeComparisonValue(value) {
-    return String(value || "")
-      .trim()
-      .toLowerCase()
-      .replace(/\$/g, "")
-      .replace(/,/g, "")
-      .replace(/\s+/g, " ")
-      .replace(/\byes\b/g, "yes")
-      .replace(/\bno\b/g, "no");
+  const validatorState = {
+    applicationFile: null,
+    illustrationFile: null,
+    report: null,
+    mismatches: [],
+  };
+
+  const fieldLabels = {
+    insuredName: "Insured name",
+    plan: "Plan",
+    faceAmount: "Face amount",
+    apl: "Automatic Premium Loan",
+    loanRate: "Loan rate",
+    dividend: "Dividend option",
+    waiver: "Waiver of Premium",
+    gir: "GIR",
+    rtr: "RTR",
+    lisr: "LISR",
+    lisrTfa: "LISR Target Face Amount",
+    lisrModal: "LISR Modal Payment",
+    lisrLumpSum: "LISR Unscheduled Lump Sum",
+    alirModal: "ALIR Modal Payment",
+    alirDuration: "ALIR Payment Duration",
+    alirUnscheduled: "ALIR Unscheduled",
+    frequency: "Payment frequency",
+    signedDate: "Signature date",
+    signatureEvidence: "Signature evidence",
+    applicationCityState: "Application signed in",
+  };
+
+  function getElement(id) {
+    return document.getElementById(id);
   }
 
-  function valuesMatch(firstValue, secondValue) {
-    return (
-      normalizeComparisonValue(firstValue) ===
-      normalizeComparisonValue(secondValue)
+  function escapeHtml(value) {
+    return String(value ?? "").replace(
+      /[&<>"']/g,
+      (character) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#039;",
+        })[character],
     );
   }
 
-  function createComparisonRows() {
-    const container = document.getElementById("illustrationComparisonRows");
+  function showValidationError(message = "") {
+    const errorElement = getElement("irValidationError");
 
-    if (!container) {
+    if (!errorElement) {
       return;
     }
+
+    errorElement.textContent = message;
+    errorElement.hidden = !message;
+  }
+
+  function updateRunButton() {
+    const runButton = getElement("irRunValidationButton");
+
+    const statusElement = getElement("irValidationRunStatus");
+
+    const ready = Boolean(
+      validatorState.applicationFile && validatorState.illustrationFile,
+    );
+
+    runButton.disabled = !ready;
+
+    statusElement.textContent = ready
+      ? "Ready for validation"
+      : "Waiting for both PDFs";
+
+    statusElement.className = ready
+      ? "validation-status validation-status-good"
+      : "validation-status validation-status-pending";
+  }
+
+  function validatePdfFile(file) {
+    if (!file) {
+      return false;
+    }
+
+    const fileName = file.name.toLowerCase();
+
+    return file.type === "application/pdf" || fileName.endsWith(".pdf");
+  }
+
+  function setSelectedFile(fileType, file) {
+    if (!validatePdfFile(file)) {
+      showValidationError("Please select a valid PDF file.");
+
+      return;
+    }
+
+    showValidationError("");
+
+    if (fileType === "application") {
+      validatorState.applicationFile = file;
+
+      getElement("irApplicationFileMeta").textContent =
+        formatFileDescription(file);
+    }
+
+    if (fileType === "illustration") {
+      validatorState.illustrationFile = file;
+
+      getElement("irIllustrationFileMeta").textContent =
+        formatFileDescription(file);
+    }
+
+    updateRunButton();
+  }
+
+  function formatFileDescription(file) {
+    const sizeInMegabytes = (file.size / 1024 / 1024).toFixed(2);
+
+    return `${file.name} • ${sizeInMegabytes} MB`;
+  }
+
+  function configureDropZone({ dropZoneId, fileInputId, fileType }) {
+    const dropZone = getElement(dropZoneId);
+    const fileInput = getElement(fileInputId);
+
+    if (!dropZone || !fileInput) {
+      return;
+    }
+
+    fileInput.addEventListener("change", () => {
+      const selectedFile = fileInput.files?.[0];
+
+      setSelectedFile(fileType, selectedFile);
+    });
+
+    ["dragenter", "dragover"].forEach((eventName) => {
+      dropZone.addEventListener(eventName, (event) => {
+        event.preventDefault();
+
+        dropZone.classList.add("is-dragging");
+      });
+    });
+
+    ["dragleave", "drop"].forEach((eventName) => {
+      dropZone.addEventListener(eventName, (event) => {
+        event.preventDefault();
+
+        dropZone.classList.remove("is-dragging");
+      });
+    });
+
+    dropZone.addEventListener("drop", (event) => {
+      const droppedFile = event.dataTransfer?.files?.[0];
+
+      setSelectedFile(fileType, droppedFile);
+    });
+  }
+
+  async function checkValidatorService() {
+    const serviceStatus = getElement("irValidatorServiceStatus");
+
+    try {
+      const response = await fetch("/api/health");
+
+      if (!response.ok) {
+        throw new Error("Service health check failed.");
+      }
+
+      serviceStatus.textContent = "Python service ready";
+
+      serviceStatus.className = "validation-status " + "validation-status-good";
+    } catch (error) {
+      console.error(error);
+
+      serviceStatus.textContent = "Python service unavailable";
+
+      serviceStatus.className =
+        "validation-status " + "validation-status-error";
+    }
+  }
+
+  async function runIllustrationValidation() {
+    const runButton = getElement("irRunValidationButton");
+
+    const runStatus = getElement("irValidationRunStatus");
+
+    if (!validatorState.applicationFile || !validatorState.illustrationFile) {
+      showValidationError("Upload both PDFs before running validation.");
+
+      return;
+    }
+
+    runButton.disabled = true;
+
+    runStatus.textContent = "Extracting PDFs and running OCR...";
+
+    runStatus.className = "validation-status " + "validation-status-warning";
+
+    showValidationError("");
+
+    const uploadData = new FormData();
+
+    uploadData.append("application", validatorState.applicationFile);
+
+    uploadData.append("illustration", validatorState.illustrationFile);
+
+    uploadData.append("state", getElement("irValidationState").value);
+
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        body: uploadData,
+      });
+
+      const report = await response.json();
+
+      if (!response.ok) {
+        throw new Error(report.error || "Validation request failed.");
+      }
+
+      const documentErrors = [
+        ...(report.application?.errors || []),
+        ...(report.illustration?.errors || []),
+      ];
+
+      if (documentErrors.length) {
+        throw new Error(documentErrors.join(" "));
+      }
+
+      validatorState.report = report;
+
+      validatorState.mismatches = getActionableMismatches(
+        report.comparison || [],
+      );
+
+      renderValidationReport(report);
+
+      saveValidationToCase(report);
+
+      runStatus.textContent = "Validation complete";
+
+      runStatus.className = "validation-status " + "validation-status-good";
+    } catch (error) {
+      console.error(error);
+
+      showValidationError(
+        error.message || "The documents could not be validated.",
+      );
+
+      runStatus.textContent = "Validation failed";
+
+      runStatus.className = "validation-status " + "validation-status-error";
+    } finally {
+      runButton.disabled = false;
+    }
+  }
+
+  function getActionableMismatches(rows) {
+    return rows.filter(
+      (row) =>
+        row.status === "Mismatch" ||
+        row.status === "Review" ||
+        row.status === "Failed",
+    );
+  }
+
+  function renderValidationReport(report) {
+    renderValidationSummary(report.summary || {});
+
+    renderExtractedFields(
+      "irApplicationExtractedFields",
+      report.application?.fields || {},
+    );
+
+    renderExtractedFields(
+      "irIllustrationExtractedFields",
+      report.illustration?.fields || {},
+    );
+
+    getElement("irApplicationExtractedText").value = buildExtractedText(
+      report.application?.pages || [],
+    );
+
+    getElement("irIllustrationExtractedText").value = buildExtractedText(
+      report.illustration?.pages || [],
+    );
+
+    renderComparisonTable(report.comparison || []);
+
+    getElement("irValidationSummary").hidden = false;
+
+    getElement("irExtractedValuesArea").hidden = false;
+
+    getElement("irValidationResultsCard").hidden = false;
+
+    getElement("irAddValidationRequirementButton").hidden =
+      validatorState.mismatches.length === 0;
+  }
+
+  function renderValidationSummary(summary) {
+    getElement("irMatchCount").textContent = summary.matches || 0;
+
+    getElement("irMismatchCount").textContent = summary.mismatches || 0;
+
+    getElement("irReviewCount").textContent = summary.reviews || 0;
+
+    getElement("irExcludedCount").textContent = summary.excluded || 0;
+  }
+
+  function renderExtractedFields(containerId, fields) {
+    const container = getElement(containerId);
 
     container.innerHTML = "";
 
-    comparisonItems.forEach(function (item) {
-      const row = document.createElement("div");
+    Object.entries(fieldLabels).forEach(([fieldKey, label]) => {
+      const field = fields[fieldKey] || {};
+      const value = field.value || "";
 
-      row.className = "illustration-comparison-row";
-      row.dataset.comparisonKey = item.key;
+      const card = document.createElement("article");
 
-      row.className = "validation-row";
+      card.className = [
+        "validation-field-card",
+        getConfidenceClass(field),
+      ].join(" ");
 
-      row.innerHTML = `
+      card.innerHTML = `
+                    <div class="validation-field-heading">
+                        <strong>
+                            ${escapeHtml(label)}
+                        </strong>
 
-    <div class="validation-item-name">
-             ${item.label}
-    </div>
+                        <span class="validation-confidence">
+                            ${
+                              field.excluded
+                                ? "N/A"
+                                : `${field.confidence || 0}%`
+                            }
+                        </span>
+                    </div>
 
-    <div>
-        <input
-            type="text"
-            placeholder="Enter Part 1 value">
-    </div>
+                    <div class="validation-field-value">
+                        ${escapeHtml(value) || "Not found"}
+                    </div>
 
-    <div>
-        <input
-            type="text"
-            placeholder="Enter Illustration value">
-    </div>
+                    <small class="validation-field-source">
+                        ${
+                          field.page_number
+                            ? `Page ${field.page_number} • `
+                            : ""
+                        }
+                        ${escapeHtml(field.source || "No source identified")}
+                    </small>
+                `;
 
-    <div class="validation-result-cell">
-        Not Reviewed
-    </div>
-
-`;
-
-      container.appendChild(row);
+      container.appendChild(card);
     });
   }
 
-  function setValidationBadge(status, text) {
-    const badge = document.getElementById("illustrationValidationBadge");
+  function getConfidenceClass(field) {
+    if (field.excluded) {
+      return "is-excluded";
+    }
 
-    if (!badge) {
+    const confidence = Number(field.confidence || 0);
+
+    if (confidence >= 85) {
+      return "is-high";
+    }
+
+    if (confidence >= 50) {
+      return "is-medium";
+    }
+
+    return "is-low";
+  }
+
+  function buildExtractedText(pages) {
+    return pages
+      .map(
+        (page) =>
+          `PAGE ${page.page_number} ` +
+          `[${page.source}]\n` +
+          `${page.text || ""}`,
+      )
+      .join("\n\n");
+  }
+
+  function renderComparisonTable(rows) {
+    const container = getElement("irValidationComparisonResults");
+
+    const tableRows = rows
+      .map(
+        (row) => `
+            <tr>
+                <td>
+                    ${escapeHtml(row.label)}
+                </td>
+
+                <td>
+                    ${escapeHtml(row.application)}
+                </td>
+
+                <td>
+                    ${escapeHtml(row.illustration)}
+                </td>
+
+                <td>
+                    ${renderResultBadge(row.status)}
+                </td>
+
+                <td>
+                    ${escapeHtml(row.note)}
+                </td>
+            </tr>
+        `,
+      )
+      .join("");
+
+    container.innerHTML = `
+            <table class="validation-table">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Part 1</th>
+                        <th>Illustration</th>
+                        <th>Result</th>
+                        <th>Review note</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    ${tableRows}
+                </tbody>
+            </table>
+        `;
+  }
+
+  function renderResultBadge(status) {
+    const statusClassMap = {
+      Match: "validation-status-good",
+      Mismatch: "validation-status-error",
+      Review: "validation-status-warning",
+      Excluded: "validation-status-neutral",
+      Failed: "validation-status-error",
+    };
+
+    const statusClass = statusClassMap[status] || "validation-status-neutral";
+
+    return `
+            <span
+                class="validation-status ${statusClass}"
+            >
+                ${escapeHtml(status)}
+            </span>
+        `;
+  }
+
+  function saveValidationToCase(report) {
+    /*
+     * Shared Full IR result object.
+     * Other Full IR scripts can access:
+     *
+     * window.fullIRIllustrationValidation
+     */
+
+    window.fullIRIllustrationValidation = {
+      completed: true,
+      completedAt: report.generatedAt || new Date().toISOString(),
+
+      state: report.state || "",
+
+      summary: {
+        matches: report.summary?.matches || 0,
+
+        mismatches: report.summary?.mismatches || 0,
+
+        reviews: report.summary?.reviews || 0,
+
+        excluded: report.summary?.excluded || 0,
+
+        failed: report.summary?.failed || 0,
+      },
+
+      application: report.application?.fields || {},
+
+      illustration: report.illustration?.fields || {},
+
+      comparison: report.comparison || [],
+
+      actionableItems: validatorState.mismatches,
+    };
+
+    localStorage.setItem(
+      "fullIRIllustrationValidation",
+      JSON.stringify(window.fullIRIllustrationValidation),
+    );
+
+    document.dispatchEvent(
+      new CustomEvent("fullIRIllustrationValidationComplete", {
+        detail: window.fullIRIllustrationValidation,
+      }),
+    );
+  }
+
+  function addValidationRequirements() {
+    const mismatches = validatorState.mismatches;
+
+    if (!mismatches.length) {
       return;
     }
 
-    badge.className = "validation-badge " + status;
-    badge.textContent = text;
+    mismatches.forEach((row) => {
+      const requirementText = buildRequirementText(row);
+
+      addRequirementToFullIR(requirementText, row);
+    });
+
+    document.dispatchEvent(new CustomEvent("fullIRRequirementsUpdated"));
+
+    const button = getElement("irAddValidationRequirementButton");
+
+    button.textContent = "Requirements Added";
+
+    button.disabled = true;
   }
 
-  function buildRequirement(mismatches) {
-    if (!mismatches.length) {
-      return "";
+  function buildRequirementText(row) {
+    if (row.status === "Mismatch") {
+      return (
+        `Illustration validation mismatch - ` +
+        `${row.label}: ` +
+        `Part 1 reflects ` +
+        `"${row.application}" while the ` +
+        `illustration reflects ` +
+        `"${row.illustration}". ` +
+        `Please provide corrected documentation.`
+      );
     }
-
-    const mismatchLines = mismatches
-      .map(function (item) {
-        return (
-          "• " +
-          item.label +
-          ": The Part 1 indicates " +
-          item.partOneValue +
-          "; however, the illustration indicates " +
-          item.illustrationValue +
-          "."
-        );
-      })
-      .join("\n");
 
     return (
-      "Please confirm the intended policy design for the following items:\n\n" +
-      mismatchLines
+      `Illustration validation review required - ` + `${row.label}: ${row.note}`
     );
   }
 
-  function validateIllustration() {
-    const matches = [];
-    const mismatches = [];
-    const incomplete = [];
+  function addRequirementToFullIR(requirementText, comparisonRow) {
+    /*
+     * Use the Full IR requirement function when it
+     * already exists.
+     */
 
-    comparisonItems.forEach(function (item) {
-      const row = document.querySelector(`[data-comparison-key="${item.key}"]`);
+    if (typeof window.addSavedRequirement === "function") {
+      window.addSavedRequirement(requirementText);
 
-      if (!row) {
+      return;
+    }
+
+    if (typeof window.addRequirement === "function") {
+      window.addRequirement(requirementText);
+
+      return;
+    }
+
+    /*
+     * Fallback for your shared requirement array.
+     */
+
+    window.globalSavedRequirements = window.globalSavedRequirements || [];
+
+    const alreadyExists = window.globalSavedRequirements.some((requirement) => {
+      const existingText =
+        typeof requirement === "string" ? requirement : requirement.text;
+
+      return existingText === requirementText;
+    });
+
+    if (!alreadyExists) {
+      window.globalSavedRequirements.push({
+        id: `illustration-validation-` + `${comparisonRow.field}`,
+
+        type: "illustration-validation",
+
+        source: "Full Initial Review",
+
+        text: requirementText,
+
+        field: comparisonRow.field,
+
+        applicationValue: comparisonRow.application,
+
+        illustrationValue: comparisonRow.illustration,
+
+        status: comparisonRow.status,
+
+        createdAt: new Date().toISOString(),
+      });
+    }
+
+    localStorage.setItem(
+      "globalSavedRequirements",
+      JSON.stringify(window.globalSavedRequirements),
+    );
+  }
+
+  function resetIllustrationValidation() {
+    validatorState.applicationFile = null;
+    validatorState.illustrationFile = null;
+    validatorState.report = null;
+    validatorState.mismatches = [];
+
+    getElement("irApplicationFile").value = "";
+    getElement("irIllustrationFile").value = "";
+
+    getElement("irApplicationFileMeta").textContent = "No application selected";
+
+    getElement("irIllustrationFileMeta").textContent =
+      "No illustration selected";
+
+    getElement("irValidationSummary").hidden = true;
+
+    getElement("irExtractedValuesArea").hidden = true;
+
+    getElement("irValidationResultsCard").hidden = true;
+
+    getElement("irApplicationExtractedFields").innerHTML = "";
+
+    getElement("irIllustrationExtractedFields").innerHTML = "";
+
+    getElement("irApplicationExtractedText").value = "";
+
+    getElement("irIllustrationExtractedText").value = "";
+
+    getElement("irValidationComparisonResults").innerHTML = "";
+
+    const requirementsButton = getElement("irAddValidationRequirementButton");
+
+    requirementsButton.hidden = true;
+    requirementsButton.disabled = false;
+    requirementsButton.textContent = "Add Mismatches to Requirements";
+
+    showValidationError("");
+    updateRunButton();
+  }
+
+  function initializeStateIntegration() {
+    const validationStateField = getElement("irValidationState");
+
+    /*
+     * Attempts to copy the existing Full IR
+     * contract-state selection.
+     */
+
+    const existingStateField =
+      getElement("contractState") ||
+      getElement("contractStateSelect") ||
+      getElement("caseContractState");
+
+    if (existingStateField && existingStateField.value) {
+      const stateValue = existingStateField.value.trim().toUpperCase();
+
+      validationStateField.value = stateValue === "NY" ? "NY" : "OTHER";
+    }
+
+    validationStateField.addEventListener("change", () => {
+      const isNewYork = validationStateField.value === "NY";
+
+      const ruleBadge = getElement("irValidationRuleBadge");
+
+      ruleBadge.textContent = isNewYork
+        ? "NY Reg 74 checks enabled"
+        : "Standard comparison rules";
+
+      ruleBadge.className = isNewYork
+        ? "validation-status " + "validation-status-warning"
+        : "validation-status " + "validation-status-neutral";
+    });
+  }
+
+  function restoreSavedValidation() {
+    try {
+      const savedValue = localStorage.getItem("fullIRIllustrationValidation");
+
+      if (!savedValue) {
         return;
       }
 
-      const partOneInput = row.querySelector(".part-one-comparison-value");
-
-      const illustrationInput = row.querySelector(
-        ".illustration-comparison-value",
+      window.fullIRIllustrationValidation = JSON.parse(savedValue);
+    } catch (error) {
+      console.warn(
+        "Could not restore illustration " + "validation results.",
+        error,
       );
-
-      const result = row.querySelector(".comparison-result");
-
-      const partOneValue = partOneInput ? partOneInput.value.trim() : "";
-
-      const illustrationValue = illustrationInput
-        ? illustrationInput.value.trim()
-        : "";
-
-      row.classList.remove("row-match", "row-mismatch", "row-incomplete");
-
-      if (!partOneValue && !illustrationValue) {
-        if (result) {
-          result.className = "comparison-result not-applicable";
-
-          result.textContent = "Not Reviewed";
-        }
-
-        return;
-      }
-
-      if (!partOneValue || !illustrationValue) {
-        incomplete.push({
-          label: item.label,
-          partOneValue: partOneValue,
-          illustrationValue: illustrationValue,
-        });
-
-        row.classList.add("row-incomplete");
-
-        if (result) {
-          result.className = "comparison-result pending";
-
-          result.textContent = "Incomplete";
-        }
-
-        return;
-      }
-
-      if (valuesMatch(partOneValue, illustrationValue)) {
-        matches.push({
-          label: item.label,
-          partOneValue: partOneValue,
-          illustrationValue: illustrationValue,
-        });
-
-        row.classList.add("row-match");
-
-        if (result) {
-          result.className = "comparison-result match";
-
-          result.textContent = "Matches";
-        }
-
-        return;
-      }
-
-      mismatches.push({
-        label: item.label,
-        partOneValue: partOneValue,
-        illustrationValue: illustrationValue,
-      });
-
-      row.classList.add("row-mismatch");
-
-      if (result) {
-        result.className = "comparison-result mismatch";
-
-        result.textContent = "Does Not Match";
-      }
-    });
-
-    updateValidationSummary(matches, mismatches, incomplete);
-  }
-
-  function updateValidationSummary(matches, mismatches, incomplete) {
-    const resultSection = document.getElementById(
-      "illustrationValidationResult",
-    );
-
-    const title = document.getElementById("illustrationValidationTitle");
-
-    const count = document.getElementById("illustrationMatchCount");
-
-    const details = document.getElementById("illustrationValidationDetails");
-
-    const requirementSection = document.getElementById(
-      "illustrationMismatchRequirementSection",
-    );
-
-    const requirementOutput = document.getElementById(
-      "illustrationMismatchRequirement",
-    );
-
-    const reviewedCount = matches.length + mismatches.length;
-
-    if (count) {
-      count.textContent =
-        reviewedCount + " reviewed, " + incomplete.length + " incomplete";
-    }
-
-    if (mismatches.length > 0) {
-      setValidationBadge(
-        "validation-mismatch",
-        mismatches.length + " Mismatch",
-      );
-
-      if (resultSection) {
-        resultSection.className =
-          "illustration-validation-result " + "validation-result-mismatch";
-      }
-
-      if (title) {
-        title.textContent = "The illustration does not match the Part 1.";
-      }
-    } else if (incomplete.length > 0) {
-      setValidationBadge("validation-incomplete", "Incomplete");
-
-      if (resultSection) {
-        resultSection.className =
-          "illustration-validation-result " + "validation-result-incomplete";
-      }
-
-      if (title) {
-        title.textContent =
-          "Additional information is needed to complete validation.";
-      }
-    } else if (matches.length > 0) {
-      setValidationBadge("validation-match", "Matches");
-
-      if (resultSection) {
-        resultSection.className =
-          "illustration-validation-result " + "validation-result-match";
-      }
-
-      if (title) {
-        title.textContent =
-          "The illustration matches the Part 1 as applied for.";
-      }
-    } else {
-      setValidationBadge("validation-not-started", "Not Started");
-
-      if (resultSection) {
-        resultSection.className =
-          "illustration-validation-result validation-neutral";
-      }
-
-      if (title) {
-        title.textContent = "Enter the Part 1 and illustration values.";
-      }
-    }
-
-    const detailItems = [];
-
-    matches.forEach(function (item) {
-      detailItems.push(`
-        <li class="validation-detail-item match">
-          <strong>${item.label}:</strong>
-          Matches at ${item.partOneValue}.
-        </li>
-      `);
-    });
-
-    mismatches.forEach(function (item) {
-      detailItems.push(`
-        <li class="validation-detail-item mismatch">
-          <strong>${item.label}:</strong>
-          Part 1 shows ${item.partOneValue};
-          illustration shows ${item.illustrationValue}.
-        </li>
-      `);
-    });
-
-    incomplete.forEach(function (item) {
-      detailItems.push(`
-        <li class="validation-detail-item incomplete">
-          <strong>${item.label}:</strong>
-          A value is missing from the Part 1 or illustration.
-        </li>
-      `);
-    });
-
-    if (details) {
-      details.innerHTML = detailItems.length
-        ? `<ul class="validation-detail-list">
-             ${detailItems.join("")}
-           </ul>`
-        : "";
-    }
-
-    if (requirementSection) {
-      requirementSection.hidden = mismatches.length === 0;
-    }
-
-    if (requirementOutput) {
-      requirementOutput.value = buildRequirement(mismatches);
     }
   }
 
-  function clearValidation() {
-    document
-      .querySelectorAll(
-        ".part-one-comparison-value, " + ".illustration-comparison-value",
-      )
-      .forEach(function (input) {
-        input.value = "";
-      });
+  function initializeIllustrationValidator() {
+    const section = getElement("illustrationValidationSection");
 
-    document
-      .querySelectorAll(".illustration-comparison-row")
-      .forEach(function (row) {
-        row.classList.remove("row-match", "row-mismatch", "row-incomplete");
+    if (!section) {
+      return;
+    }
 
-        const result = row.querySelector(".comparison-result");
+    configureDropZone({
+      dropZoneId: "irApplicationDropZone",
 
-        if (result) {
-          result.className = "comparison-result pending";
+      fileInputId: "irApplicationFile",
 
-          result.textContent = "Not Reviewed";
-        }
-      });
+      fileType: "application",
+    });
 
-    updateValidationSummary([], [], []);
-  }
+    configureDropZone({
+      dropZoneId: "irIllustrationDropZone",
 
-  function initializeIllustrationValidation() {
-    createComparisonRows();
+      fileInputId: "irIllustrationFile",
 
-    document
-      .getElementById("validateIllustration")
-      ?.addEventListener("click", validateIllustration);
+      fileType: "illustration",
+    });
 
-    document
-      .getElementById("clearIllustrationValidation")
-      ?.addEventListener("click", clearValidation);
+    getElement("irRunValidationButton").addEventListener(
+      "click",
+      runIllustrationValidation,
+    );
 
-    document
-      .getElementById("copyIllustrationMismatchRequirement")
-      ?.addEventListener("click", function () {
-        const output = document.getElementById(
-          "illustrationMismatchRequirement",
-        );
+    getElement("irResetValidationButton").addEventListener(
+      "click",
+      resetIllustrationValidation,
+    );
 
-        const status = document.getElementById(
-          "illustrationMismatchCopyStatus",
-        );
+    getElement("irAddValidationRequirementButton").addEventListener(
+      "click",
+      addValidationRequirements,
+    );
 
-        if (!output || !output.value.trim()) {
-          return;
-        }
-
-        navigator.clipboard.writeText(output.value);
-
-        if (status) {
-          status.textContent = "✓ Requirement copied";
-
-          window.setTimeout(function () {
-            status.textContent = "";
-          }, 2000);
-        }
-      });
+    initializeStateIntegration();
+    restoreSavedValidation();
+    updateRunButton();
+    checkValidatorService();
   }
 
   if (document.readyState === "loading") {
     document.addEventListener(
       "DOMContentLoaded",
-      initializeIllustrationValidation,
-      {
-        once: true,
-      },
+      initializeIllustrationValidator,
     );
   } else {
-    initializeIllustrationValidation();
+    initializeIllustrationValidator();
   }
 })();

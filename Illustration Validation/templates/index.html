@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Application & Illustration Validator</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='/validation.css') }}" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <span class="eyebrow">MMSD Case Navigator</span>
+        <h1>Application & Illustration Validator</h1>
+        <p>
+          Python-powered PDF extraction, OCR fallback, comparison, and review.
+        </p>
+      </div>
+      <span id="serverBadge" class="status pending">
+        Checking Python service…
+      </span>
+    </header>
+
+    <main class="shell">
+      <div class="notice">
+        <strong>Human review required.</strong>
+        Confirm extracted checkboxes, handwriting, signatures, dates, and
+        generated results before case communication.
+      </div>
+
+      <section class="card controls">
+        <label for="state"><strong>Contract state</strong></label>
+        <select id="state">
+          <option value="">Select state</option>
+          <option value="NY">NY</option>
+          <option value="Other">Other</option>
+        </select>
+        <span id="ruleBadge" class="status pending">Standard rules</span>
+      </section>
+
+      <div class="grid upload-grid">
+        <section class="card">
+          <h2>1. Part 1 application</h2>
+          <label id="appDrop" class="drop" tabindex="0">
+            <span class="drop-icon">A1</span>
+            <span class="drop-title">Drop Part 1 PDF here</span>
+            <span class="drop-hint">or click to browse</span>
+            <input id="appFile" type="file" accept="application/pdf,.pdf" />
+          </label>
+          <div id="appMeta" class="meta">No file selected</div>
+          <div class="progress"><span id="appProgress"></span></div>
+        </section>
+
+        <section class="card">
+          <h2>2. Sales illustration</h2>
+          <label id="illDrop" class="drop" tabindex="0">
+            <span class="drop-icon">ILL</span>
+            <span class="drop-title">Drop illustration PDF here</span>
+            <span class="drop-hint">or click to browse</span>
+            <input id="illFile" type="file" accept="application/pdf,.pdf" />
+          </label>
+          <div id="illMeta" class="meta">No file selected</div>
+          <div class="progress"><span id="illProgress"></span></div>
+        </section>
+      </div>
+
+      <div id="errorBox" class="errorbox"></div>
+
+      <div class="toolbar">
+        <button id="extractBtn" class="btn" disabled>
+          Extract and validate
+        </button>
+        <button id="resetBtn" class="btn secondary">Reset</button>
+        <span id="runStatus" class="status pending">Waiting for two PDFs</span>
+      </div>
+
+      <section id="summaryCards" class="summary-grid" hidden>
+        <article>
+          <span>Matches</span>
+          <strong id="matchCount">0</strong>
+        </article>
+        <article>
+          <span>Mismatches</span>
+          <strong id="mismatchCount">0</strong>
+        </article>
+        <article>
+          <span>Manual review</span>
+          <strong id="reviewCount">0</strong>
+        </article>
+        <article>
+          <span>Excluded</span>
+          <strong id="excludedCount">0</strong>
+        </article>
+      </section>
+
+      <div class="grid">
+        <section class="card">
+          <h2>Part 1 extracted values</h2>
+          <div id="appFields" class="fields">
+            <div class="empty">Upload and extract Part 1.</div>
+          </div>
+          <details>
+            <summary>View extracted text</summary>
+            <textarea id="appText" readonly></textarea>
+          </details>
+        </section>
+        <section class="card">
+          <h2>Illustration extracted values</h2>
+          <div id="illFields" class="fields">
+            <div class="empty">Upload and extract the illustration.</div>
+          </div>
+          <details>
+            <summary>View extracted text</summary>
+            <textarea id="illText" readonly></textarea>
+          </details>
+        </section>
+      </div>
+
+      <section class="card full results-card">
+        <h2>3. Validation results</h2>
+        <div id="results" class="empty">No validation has been run.</div>
+      </section>
+    </main>
+    <script src="{{ url_for('static', filename='/validation.js') }}"></script>
+  </body>
+</html>
