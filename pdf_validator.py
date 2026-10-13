@@ -389,29 +389,70 @@ def ocr_page(path: Path, page_number: int) -> tuple[str, int]:
     return pytesseract.image_to_string(image, config="--oem 3 --psm 6"), rotation
 
 
-def extract_pages(pdf_path: str, max_pages: int = 25) -> list[PageText]:
+def extract_pages(
+    pdf_path: str,
+    max_pages: int = 25,
+    *,
+    progress_callback: Optional[
+        Callable[[int, int], None]
+    ] = None,
+) -> list[PageText]:
     path = Path(pdf_path)
     validate_pdf(path)
     pages: list[PageText] = []
+
     with pdfplumber.open(path) as pdf:
-        for index, page in enumerate(pdf.pages[:max_pages], start=1):
+        selected_pages = pdf.pages[:max_pages]
+        total_pages = len(selected_pages)
+
+        for index, page in enumerate(selected_pages, start=1):
             warnings: list[str] = []
+
             try:
                 native = page.extract_text(layout=True) or ""
             except Exception as exc:
                 native = ""
                 warnings.append(f"Native extraction failed: {exc}")
-            text, source, rotation = native, "native", 0
-            if len(clean(native)) < 120 or quality_score(native) < 0.35 or "(cid:" in native:
+
+            text = native
+            source = "native"
+            rotation = 0
+
+            needs_ocr = (
+                len(clean(native)) < 120
+                or quality_score(native) < 0.35
+                or "(cid:" in native
+            )
+
+            if needs_ocr:
                 try:
                     ocr_text, rotation = ocr_page(path, index)
                     if quality_score(ocr_text) >= quality_score(native):
-                        text, source = ocr_text, "ocr"
+                        text = ocr_text
+                        source = "ocr"
                 except Exception as exc:
                     warnings.append(f"OCR failed: {exc}")
-            pages.append(PageText(index, text, source, rotation, len(native), warnings))
+
+            pages.append(
+                PageText(
+                    index,
+                    text,
+                    source,
+                    rotation,
+                    len(native),
+                    warnings,
+                )
+            )
+
+            # Report factual progress after this page is fully processed.
+            if progress_callback is not None:
+                progress_callback(index, total_pages)
+
     if not any(clean(page.text) for page in pages):
-        raise RuntimeError("No readable text could be extracted from the PDF")
+        raise RuntimeError(
+            "No readable text could be extracted from the PDF"
+        )
+
     return pages
 
 
@@ -715,20 +756,54 @@ def parse_illustration(pages: list[PageText]) -> dict[str, FieldValue]:
     return result
 
 
-def parse_document(pdf_path: str, expected_type: str, max_pages: int = 25) -> DocumentResult:
-    result = DocumentResult(path=pdf_path, expected_type=expected_type)
+def parse_document(
+    pdf_path: str,
+    expected_type: str,
+    max_pages: int = 25,
+    *,
+    progress_callback: Optional[
+        Callable[[int, int], None]
+    ] = None,
+) -> DocumentResult:
+    result = DocumentResult(
+        path=pdf_path,
+        expected_type=expected_type,
+    )
+
     try:
-        result.pages = extract_pages(pdf_path, max_pages)
+        result.pages = extract_pages(
+            pdf_path,
+            max_pages=max_pages,
+            progress_callback=progress_callback,
+        )
+
         result.detected_type = detect_document_type(result.pages)
-        if result.detected_type != "unknown" and result.detected_type != expected_type:
-            result.errors.append(f"Wrong file type: expected {expected_type}, detected {result.detected_type}")
+
+        if (
+            result.detected_type != "unknown"
+            and result.detected_type != expected_type
+        ):
+            result.errors.append(
+                "Wrong file type: expected "
+                f"{expected_type}, detected {result.detected_type}"
+            )
             return result
-        result.fields = parse_application(result.pages) if expected_type == "app" else parse_illustration(result.pages)
+
+        if expected_type == "app":
+            result.fields = parse_application(result.pages)
+        else:
+            result.fields = parse_illustration(result.pages)
+
         for page in result.pages:
-            result.warnings.extend(f"Page {page.page_number}: {warning}" for warning in page.warnings)
+            for warning in page.warnings:
+                result.warnings.append(
+                    f"Page {page.page_number}: {warning}"
+                )
+
     except Exception as exc:
         result.errors.append(str(exc))
         LOGGER.exception("Failed to parse %s", pdf_path)
+
     return result
 
 

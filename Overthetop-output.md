@@ -3,7 +3,7 @@
 ## 📊 Project Information
 
 - **Project Name**: `Overthetop`
-- **Generated On**: 2026-10-13 15:29:43 (America/Chicago / GMT-05:00)
+- **Generated On**: 2026-10-13 18:01:13 (America/Chicago / GMT-05:00)
 - **Total Files Processed**: 138
 - **Export Tool**: Easy Whole Project to Single Text File for LLMs v1.1.0
 - **Tool Author**: Jota / José Guilherme Pandolfi
@@ -21,8 +21,8 @@
 
 ```
 ├── 📁 __pycache__/
-│   ├── 📄 app.cpython-315.pyc (5.6 KB)
-│   └── 📄 pdf_validator.cpython-315.pyc (58.2 KB)
+│   ├── 📄 app.cpython-315.pyc (12.57 KB)
+│   └── 📄 pdf_validator.cpython-315.pyc (58.5 KB)
 ├── 📁 data/
 │   ├── 📁 Families/
 │   │   ├── 📄 california.json (407 B)
@@ -107,7 +107,7 @@
 │   │   └── 📄 validation.js (7.3 KB)
 │   ├── 📁 templates/
 │   │   └── 📄 index.html (4.34 KB)
-│   └── 📄 README.md (886 B)
+│   └── 📄 README.md (878 B)
 ├── 📁 images/
 │   ├── 📄 home.png (2.88 KB)
 │   ├── 📄 mmsd-logo.png (11.25 KB)
@@ -139,7 +139,7 @@
 │   ├── 📄 forms-library-data.js (296.99 KB)
 │   ├── 📄 forms-library.js (10.84 KB)
 │   ├── 📄 home.js (409 B)
-│   ├── 📄 illustration-validation.js (19.48 KB)
+│   ├── 📄 illustration-validation.js (26.52 KB)
 │   ├── 📄 initial-review.js (65.37 KB)
 │   ├── 📄 issue.js (1.03 KB)
 │   ├── 📄 library.js (6.5 KB)
@@ -156,17 +156,17 @@
 │   ├── 📄 forms-library.css (10.54 KB)
 │   ├── 📄 home.css (3.83 KB)
 │   ├── 📄 navigation.css (2.76 KB)
-│   ├── 📄 onboarding.css (17.87 KB)
+│   ├── 📄 onboarding.css (19 KB)
 │   ├── 📄 shared.css (6.25 KB)
 │   ├── 📄 typography.css (595 B)
 │   ├── 📄 verbiage-only.css (17.27 KB)
 │   └── 📄 workbench.css (18.65 KB)
-├── 📄 app.py (3.91 KB)
+├── 📄 app.py (10.99 KB)
 ├── 📄 forms-library.html (15.79 KB)
 ├── 📄 home.html (2.36 KB)
-├── 📄 index.html (41.68 KB)
+├── 📄 index.html (42.78 KB)
 ├── 📄 NY.html (7.02 KB)
-├── 📄 pdf_validator.py (34.08 KB)
+├── 📄 pdf_validator.py (35.18 KB)
 ├── 📄 requirements.txt (78 B)
 ├── 📄 UW.html (10.55 KB)
 └── 📄 verbiage-only.html (12.2 KB)
@@ -301,7 +301,7 @@
 | Total Directories | 12 |
 | Text Files | 114 |
 | Binary Files | 24 |
-| Total Size | 1.33 MB |
+| Total Size | 1.35 MB |
 
 ### 📄 File Types Distribution
 
@@ -15600,15 +15600,15 @@ th {
 ### <a id="📄-illustration-validation-readme-md"></a>📄 `Illustration Validation/README.md`
 
 **File Info:**
-- **Size**: 886 B
+- **Size**: 878 B
 - **Extension**: `.md`
 - **Language**: `text`
 - **Location**: `Illustration Validation/README.md`
 - **Relative Path**: `Illustration Validation`
 - **Created**: 2026-10-13 14:51:10 (America/Chicago / GMT-05:00)
-- **Modified**: 2026-10-13 12:05:37 (America/Chicago / GMT-05:00)
-- **MD5**: `ea420df200ff21213a2861e389075cbd`
-- **SHA256**: `762ac0992131f776ef435b12963ec51003682861cc99866555d920f3ec479843`
+- **Modified**: 2026-10-13 18:01:13 (America/Chicago / GMT-05:00)
+- **MD5**: `aa2ffaeb797298d3b0ce24d90c31292a`
+- **SHA256**: `8b4c49f1cf223db9c2a82239ea250028db0b8ddf80b90b144aaa90d26f2283d1`
 - **Encoding**: ASCII
 
 **File code content:**
@@ -15635,7 +15635,7 @@ Poppler must provide `pdftoppm` and `pdfinfo` on PATH.
 ## Start the website
 
 ~~~~powershell
-python app.py
+cleat
 ~~~~
 
 Open:
@@ -27197,15 +27197,15 @@ document.addEventListener("DOMContentLoaded", () => {
 ### <a id="📄-scripts-illustration-validation-js"></a>📄 `scripts/illustration-validation.js`
 
 **File Info:**
-- **Size**: 19.48 KB
+- **Size**: 26.52 KB
 - **Extension**: `.js`
 - **Language**: `javascript`
 - **Location**: `scripts/illustration-validation.js`
 - **Relative Path**: `scripts`
 - **Created**: 2026-10-08 23:50:54 (America/Chicago / GMT-05:00)
-- **Modified**: 2026-10-13 14:45:17 (America/Chicago / GMT-05:00)
-- **MD5**: `6cbb18a2d82081d2785fe936bdea25f6`
-- **SHA256**: `c10e5a871f8236a94835f6a6fd9ceab92c3b2e9e303a0e4a860dc095a65baa45`
+- **Modified**: 2026-10-13 18:01:06 (America/Chicago / GMT-05:00)
+- **MD5**: `a7a963ba0d0691ce8f11f36e5101de10`
+- **SHA256**: `542b3a000e07fb59913212ffbc3da5b8ed78dfcdbcca99b51253239001bed832`
 - **Encoding**: ASCII
 
 **File code content:**
@@ -27214,7 +27214,7 @@ document.addEventListener("DOMContentLoaded", () => {
 (() => {
   "use strict";
 
-  const API_URL = "/api/validate";
+  const API_URL = "/api/validate-stream";
 
   const validatorState = {
     applicationFile: null,
@@ -27319,6 +27319,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       getElement("irApplicationFileMeta").textContent =
         formatFileDescription(file);
+
+      const applicationStatus = getElement("applicationUploadStatus");
+      if (applicationStatus) {
+        applicationStatus.textContent = "✓ Uploaded";
+      }
     }
 
     if (fileType === "illustration") {
@@ -27326,6 +27331,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       getElement("irIllustrationFileMeta").textContent =
         formatFileDescription(file);
+
+      const illustrationStatus = getElement("illustrationUploadStatus");
+      if (illustrationStatus) {
+        illustrationStatus.textContent = "✓ Uploaded";
+      }
     }
 
     updateRunButton();
@@ -27377,6 +27387,10 @@ document.addEventListener("DOMContentLoaded", () => {
   async function checkValidatorService() {
     const serviceStatus = getElement("irValidatorServiceStatus");
 
+    if (!serviceStatus) {
+      return;
+    }
+
     try {
       const response = await fetch("/api/health");
 
@@ -27397,32 +27411,140 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function markStepComplete(stepId) {
+    const step = getElement(stepId);
+
+    if (!step) {
+      return;
+    }
+
+    step.classList.remove("active", "pending");
+    step.classList.add("complete");
+
+    const icon = step.querySelector(".step-icon");
+    if (icon) {
+      icon.textContent = "✓";
+    }
+  }
+
+  function markPreviousStepsComplete(stage) {
+    if (["illustration", "comparison", "output", "complete"].includes(stage)) {
+      markStepComplete("stepReadApplication");
+    }
+
+    if (["comparison", "output", "complete"].includes(stage)) {
+      markStepComplete("stepReadIllustration");
+    }
+
+    if (["output", "complete"].includes(stage)) {
+      markStepComplete("stepCompareValues");
+    }
+
+    if (stage === "complete") {
+      markStepComplete("stepReviewOutput");
+    }
+  }
+
+  function updateValidationProgress({
+    percent = 0,
+    stage = "",
+    message = "Processing documents",
+    elapsedSeconds,
+  }) {
+    const safePercent = Math.max(0, Math.min(100, Number(percent) || 0));
+    const progressFill = getElement("ivProgressFill");
+    const progressPercent = getElement("ivProgressPercent");
+    const progressMessage = getElement("ivProgressMessage");
+    const elapsedElement = getElement("ivElapsedTime");
+
+    if (progressFill) {
+      progressFill.style.width = `${safePercent}%`;
+    }
+
+    if (progressPercent) {
+      progressPercent.textContent = `${safePercent}%`;
+    }
+
+    if (progressMessage) {
+      progressMessage.textContent = message;
+    }
+
+    if (elapsedElement && typeof elapsedSeconds === "number") {
+      elapsedElement.textContent = `Elapsed: ${elapsedSeconds.toFixed(1)}s`;
+    }
+
+    document.querySelectorAll(".iv-step").forEach((step) => {
+      step.classList.remove("active");
+    });
+
+    const stageMap = {
+      application: "stepReadApplication",
+      illustration: "stepReadIllustration",
+      comparison: "stepCompareValues",
+      output: "stepReviewOutput",
+    };
+
+    const currentStep = getElement(stageMap[stage]);
+    if (currentStep) {
+      currentStep.classList.remove("pending");
+      currentStep.classList.add("active");
+    }
+
+    markPreviousStepsComplete(stage);
+  }
+
+  function resetProgressDisplay() {
+    const progressFill = getElement("ivProgressFill");
+    const progressPercent = getElement("ivProgressPercent");
+    const progressMessage = getElement("ivProgressMessage");
+    const elapsedTime = getElement("ivElapsedTime");
+
+    if (progressFill) progressFill.style.width = "0%";
+    if (progressPercent) progressPercent.textContent = "0%";
+    if (progressMessage) progressMessage.textContent = "Ready to begin";
+    if (elapsedTime) elapsedTime.textContent = "Elapsed: 0.0s";
+
+    document.querySelectorAll(".iv-step").forEach((step) => {
+      step.classList.remove("active", "complete");
+      step.classList.add("pending");
+      const icon = step.querySelector(".step-icon");
+      if (icon) icon.textContent = "○";
+    });
+  }
+
   async function runIllustrationValidation() {
     const runButton = getElement("irRunValidationButton");
-
     const runStatus = getElement("irValidationRunStatus");
 
     if (!validatorState.applicationFile || !validatorState.illustrationFile) {
       showValidationError("Upload both PDFs before running validation.");
+      return;
+    }
 
+    if (!runButton || !runStatus) {
+      console.error("The validation button or status element is missing.");
       return;
     }
 
     runButton.disabled = true;
-
-    runStatus.textContent = "Extracting PDFs and running OCR...";
-
-    runStatus.className = "validation-status " + "validation-status-warning";
-
+    runStatus.textContent = "Validation in progress";
+    runStatus.className = "validation-status validation-status-warning";
     showValidationError("");
+    resetProgressDisplay();
+
+    updateValidationProgress({
+      percent: 1,
+      stage: "application",
+      message: "Uploading documents...",
+      elapsedSeconds: 0,
+    });
 
     const uploadData = new FormData();
-
     uploadData.append("application", validatorState.applicationFile);
-
     uploadData.append("illustration", validatorState.illustrationFile);
 
-    uploadData.append("state", getElement("irValidationState").value);
+    const stateField = getElement("irValidationState");
+    uploadData.append("state", stateField?.value || "");
 
     try {
       const response = await fetch(API_URL, {
@@ -27430,44 +27552,103 @@ document.addEventListener("DOMContentLoaded", () => {
         body: uploadData,
       });
 
-      const report = await response.json();
-
       if (!response.ok) {
-        throw new Error(report.error || "Validation request failed.");
+        let errorMessage = "Validation request failed.";
+        try {
+          const errorResult = await response.json();
+          errorMessage = errorResult.error || errorMessage;
+        } catch (_parseError) {
+          // Keep the default message when the error response is not JSON.
+        }
+        throw new Error(errorMessage);
+      }
+
+      if (!response.body) {
+        throw new Error(
+          "The browser could not read the validation progress stream.",
+        );
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder("utf-8");
+      let remainingText = "";
+      let finalReport = null;
+
+      while (true) {
+        const { value, done } = await reader.read();
+
+        if (done) {
+          break;
+        }
+
+        remainingText += decoder.decode(value, { stream: true });
+        const lines = remainingText.split("\n");
+        remainingText = lines.pop() || "";
+
+        for (const line of lines) {
+          const cleanLine = line.trim();
+          if (!cleanLine) continue;
+
+          const event = JSON.parse(cleanLine);
+
+          if (event.type === "progress") {
+            updateValidationProgress(event);
+          } else if (event.type === "complete") {
+            updateValidationProgress(event);
+            finalReport = event.report;
+          } else if (event.type === "error") {
+            throw new Error(event.message || "Validation failed.");
+          }
+        }
+      }
+
+      if (remainingText.trim()) {
+        const event = JSON.parse(remainingText.trim());
+        if (event.type === "complete") {
+          updateValidationProgress(event);
+          finalReport = event.report;
+        } else if (event.type === "error") {
+          throw new Error(event.message || "Validation failed.");
+        }
+      }
+
+      if (!finalReport) {
+        throw new Error("Validation finished without returning a report.");
       }
 
       const documentErrors = [
-        ...(report.application?.errors || []),
-        ...(report.illustration?.errors || []),
+        ...(finalReport.application?.errors || []),
+        ...(finalReport.illustration?.errors || []),
       ];
 
       if (documentErrors.length) {
         throw new Error(documentErrors.join(" "));
       }
 
-      validatorState.report = report;
-
+      validatorState.report = finalReport;
       validatorState.mismatches = getActionableMismatches(
-        report.comparison || [],
+        finalReport.comparison || [],
       );
 
-      renderValidationReport(report);
+      renderValidationReport(finalReport);
+      saveValidationToCase(finalReport);
 
-      saveValidationToCase(report);
+      updateValidationProgress({
+        percent: 100,
+        stage: "complete",
+        message: "Validation complete",
+        elapsedSeconds: Number(finalReport.elapsedSeconds) || undefined,
+      });
 
       runStatus.textContent = "Validation complete";
-
-      runStatus.className = "validation-status " + "validation-status-good";
+      runStatus.className = "validation-status validation-status-good";
     } catch (error) {
       console.error(error);
-
       showValidationError(
         error.message || "The documents could not be validated.",
       );
-
       runStatus.textContent = "Validation failed";
-
-      runStatus.className = "validation-status " + "validation-status-error";
+      runStatus.className = "validation-status validation-status-error";
     } finally {
       runButton.disabled = false;
     }
@@ -27825,35 +28006,49 @@ document.addEventListener("DOMContentLoaded", () => {
     validatorState.report = null;
     validatorState.mismatches = [];
 
-    getElement("irApplicationFile").value = "";
-    getElement("irIllustrationFile").value = "";
+    resetProgressDisplay();
 
-    getElement("irApplicationFileMeta").textContent = "No application selected";
+    const applicationInput = getElement("irApplicationFile");
+    const illustrationInput = getElement("irIllustrationFile");
+    if (applicationInput) applicationInput.value = "";
+    if (illustrationInput) illustrationInput.value = "";
 
-    getElement("irIllustrationFileMeta").textContent =
-      "No illustration selected";
+    const applicationMeta = getElement("irApplicationFileMeta");
+    const illustrationMeta = getElement("irIllustrationFileMeta");
+    if (applicationMeta)
+      applicationMeta.textContent = "No application selected";
+    if (illustrationMeta)
+      illustrationMeta.textContent = "No illustration selected";
 
-    getElement("irValidationSummary").hidden = true;
+    const applicationStatus = getElement("applicationUploadStatus");
+    const illustrationStatus = getElement("illustrationUploadStatus");
+    if (applicationStatus) applicationStatus.textContent = "Not Uploaded";
+    if (illustrationStatus) illustrationStatus.textContent = "Not Uploaded";
 
-    getElement("irExtractedValuesArea").hidden = true;
+    const summary = getElement("irValidationSummary");
+    const extractedArea = getElement("irExtractedValuesArea");
+    const resultsCard = getElement("irValidationResultsCard");
+    if (summary) summary.hidden = true;
+    if (extractedArea) extractedArea.hidden = true;
+    if (resultsCard) resultsCard.hidden = true;
 
-    getElement("irValidationResultsCard").hidden = true;
-
-    getElement("irApplicationExtractedFields").innerHTML = "";
-
-    getElement("irIllustrationExtractedFields").innerHTML = "";
-
-    getElement("irApplicationExtractedText").value = "";
-
-    getElement("irIllustrationExtractedText").value = "";
-
-    getElement("irValidationComparisonResults").innerHTML = "";
+    const applicationFields = getElement("irApplicationExtractedFields");
+    const illustrationFields = getElement("irIllustrationExtractedFields");
+    const applicationText = getElement("irApplicationExtractedText");
+    const illustrationText = getElement("irIllustrationExtractedText");
+    const comparisonResults = getElement("irValidationComparisonResults");
+    if (applicationFields) applicationFields.innerHTML = "";
+    if (illustrationFields) illustrationFields.innerHTML = "";
+    if (applicationText) applicationText.value = "";
+    if (illustrationText) illustrationText.value = "";
+    if (comparisonResults) comparisonResults.innerHTML = "";
 
     const requirementsButton = getElement("irAddValidationRequirementButton");
-
-    requirementsButton.hidden = true;
-    requirementsButton.disabled = false;
-    requirementsButton.textContent = "Add Mismatches to Requirements";
+    if (requirementsButton) {
+      requirementsButton.hidden = true;
+      requirementsButton.disabled = false;
+      requirementsButton.textContent = "Add Mismatches to Requirements";
+    }
 
     showValidationError("");
     updateRunButton();
@@ -27862,35 +28057,40 @@ document.addEventListener("DOMContentLoaded", () => {
   function initializeStateIntegration() {
     const validationStateField = getElement("irValidationState");
 
-    /*
-     * Attempts to copy the existing Full IR
-     * contract-state selection.
-     */
+    if (!validationStateField) {
+      return;
+    }
+
+    const displayState = () => {
+      const display = getElement("validationStateDisplay");
+      if (display) {
+        display.textContent = validationStateField.value || "Not Selected";
+      }
+
+      const ruleBadge = getElement("irValidationRuleBadge");
+      if (ruleBadge) {
+        const isNewYork = validationStateField.value === "NY";
+        ruleBadge.textContent = isNewYork
+          ? "NY Reg 74 checks enabled"
+          : "Standard comparison rules";
+        ruleBadge.className = isNewYork
+          ? "validation-status validation-status-warning"
+          : "validation-status validation-status-neutral";
+      }
+    };
 
     const existingStateField =
       getElement("contractState") ||
       getElement("contractStateSelect") ||
       getElement("caseContractState");
 
-    if (existingStateField && existingStateField.value) {
+    if (existingStateField?.value) {
       const stateValue = existingStateField.value.trim().toUpperCase();
-
       validationStateField.value = stateValue === "NY" ? "NY" : "OTHER";
     }
 
-    validationStateField.addEventListener("change", () => {
-      const isNewYork = validationStateField.value === "NY";
-
-      const ruleBadge = getElement("irValidationRuleBadge");
-
-      ruleBadge.textContent = isNewYork
-        ? "NY Reg 74 checks enabled"
-        : "Standard comparison rules";
-
-      ruleBadge.className = isNewYork
-        ? "validation-status " + "validation-status-warning"
-        : "validation-status " + "validation-status-neutral";
-    });
+    validationStateField.addEventListener("change", displayState);
+    displayState();
   }
 
   function restoreSavedValidation() {
@@ -34536,15 +34736,15 @@ html {
 ### <a id="📄-styling-onboarding-css"></a>📄 `Styling/onboarding.css`
 
 **File Info:**
-- **Size**: 17.87 KB
+- **Size**: 19 KB
 - **Extension**: `.css`
 - **Language**: `css`
 - **Location**: `Styling/onboarding.css`
 - **Relative Path**: `Styling`
 - **Created**: 2026-10-12 23:21:34 (America/Chicago / GMT-05:00)
-- **Modified**: 2026-10-13 14:44:54 (America/Chicago / GMT-05:00)
-- **MD5**: `3a6fabdc65098722b171c398e60eb54d`
-- **SHA256**: `29fdde311ea54c25a7ef2257261ff54acbc220195b81626cc8373e91b678afae`
+- **Modified**: 2026-10-13 15:35:14 (America/Chicago / GMT-05:00)
+- **MD5**: `4385fb6bdc7573b6bffdef01c26a23b0`
+- **SHA256**: `a8bc09eae2baa6278b73b02e3e2fa2b3e6387936a32089d1cb044d6e9055f519`
 - **Encoding**: ASCII
 
 **File code content:**
@@ -35126,7 +35326,6 @@ html {
   transform: none;
 }
 
-
 #qualificationSummary {
   box-sizing: border-box;
   width: min(600px, calc(100% - 40px));
@@ -35135,7 +35334,9 @@ html {
   padding: 0;
   position: static;
   text-align: center;
-  transition: opacity 500ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 500ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 #qualificationSummary h3 {
   margin: 0 0 16px;
@@ -35169,8 +35370,6 @@ html {
 
   text-align: center;
 }
-
-
 
 #qualificationComplete h2 {
   margin: 0 !important;
@@ -35218,7 +35417,6 @@ html {
 
   text-align: center;
 }
-
 
 #launchWorkbench {
   min-width: 260px;
@@ -35307,406 +35505,540 @@ html {
 ====================================================== */
 
 .illustration-validation-section {
-    padding: 24px;
-    margin-top: 24px;
-    border: 1px solid #d6e1ec;
-    border-radius: 18px;
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.98),
-            rgba(244, 249, 255, 0.98)
-        );
-    box-shadow: 0 12px 32px rgba(0, 46, 107, 0.08);
+  padding: 24px;
+  margin-top: 24px;
+  border: 1px solid #d6e1ec;
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(244, 249, 255, 0.98)
+  );
+  box-shadow: 0 12px 32px rgba(0, 46, 107, 0.08);
 }
 
 .illustration-validation-section .section-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 24px;
-    margin-bottom: 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
 }
 
 .illustration-validation-section .section-header h2 {
-    margin: 4px 0;
-    color: #002e6b;
-    font-size: 1.55rem;
+  margin: 4px 0;
+  color: #002e6b;
+  font-size: 1.55rem;
 }
 
 .illustration-validation-section .section-header p {
-    margin: 0;
-    color: #5a6a7c;
+  margin: 0;
+  color: #5a6a7c;
 }
 
 .section-eyebrow {
-    color: #0076a8;
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+  color: #0076a8;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .validation-notice {
-    padding: 12px 14px;
-    margin-bottom: 18px;
-    border: 1px solid #b9dff2;
-    border-left: 5px solid #4dc7eb;
-    border-radius: 10px;
-    background: #f0faff;
-    color: #123b5d;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border: 1px solid #b9dff2;
+  border-left: 5px solid #4dc7eb;
+  border-radius: 10px;
+  background: #f0faff;
+  color: #123b5d;
 }
 
 .validation-control-bar {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 16px;
-    margin-bottom: 18px;
-    border-radius: 12px;
-    background: #f5f8fc;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  background: #f5f8fc;
 }
 
 .validation-field {
-    display: grid;
-    gap: 6px;
-    min-width: 220px;
+  display: grid;
+  gap: 6px;
+  min-width: 220px;
 }
 
 .validation-field label {
-    color: #26384b;
-    font-size: 0.84rem;
-    font-weight: 800;
+  color: #26384b;
+  font-size: 0.84rem;
+  font-weight: 800;
 }
 
 .validation-field select {
-    width: 100%;
-    min-height: 42px;
-    padding: 8px 10px;
-    border: 1px solid #aebed0;
-    border-radius: 9px;
-    background: #ffffff;
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid #aebed0;
+  border-radius: 9px;
+  background: #ffffff;
 }
 
 .validation-upload-grid,
 .validation-extracted-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .validation-upload-card,
 .validation-results-card {
-    padding: 18px;
-    border: 1px solid #d7e1ed;
-    border-radius: 14px;
-    background: #ffffff;
+  padding: 18px;
+  border: 1px solid #d7e1ed;
+  border-radius: 14px;
+  background: #ffffff;
 }
 
 .validation-upload-heading {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
 .validation-upload-heading h3,
 .validation-results-card h3 {
-    margin: 0;
-    color: #002e6b;
+  margin: 0;
+  color: #002e6b;
 }
 
 .validation-upload-heading p,
 .validation-results-heading p {
-    margin: 3px 0 0;
-    color: #637386;
-    font-size: 0.86rem;
+  margin: 3px 0 0;
+  color: #637386;
+  font-size: 0.86rem;
 }
 
 .validation-step {
-    display: grid;
-    place-items: center;
-    width: 32px;
-    height: 32px;
-    flex: 0 0 32px;
-    border-radius: 50%;
-    background: #002e6b;
-    color: #ffffff;
-    font-weight: 900;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border-radius: 50%;
+  background: #002e6b;
+  color: #ffffff;
+  font-weight: 900;
 }
 
 .validation-drop-zone {
-    position: relative;
-    display: grid;
-    place-items: center;
-    gap: 5px;
-    min-height: 170px;
-    padding: 24px;
-    border: 2px dashed #8da8c3;
-    border-radius: 14px;
-    background: #f8fbff;
-    color: #002e6b;
-    text-align: center;
-    cursor: pointer;
-    transition:
-        border-color 160ms ease,
-        background 160ms ease,
-        transform 160ms ease;
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: 5px;
+  min-height: 170px;
+  padding: 24px;
+  border: 2px dashed #8da8c3;
+  border-radius: 14px;
+  background: #f8fbff;
+  color: #002e6b;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
 }
 
 .validation-drop-zone:hover,
 .validation-drop-zone.is-dragging {
-    border-color: #0265ff;
-    background: #edf5ff;
-    transform: translateY(-2px);
+  border-color: #0265ff;
+  background: #edf5ff;
+  transform: translateY(-2px);
 }
 
 .validation-drop-zone input {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .validation-drop-icon {
-    display: grid;
-    place-items: center;
-    width: 52px;
-    height: 52px;
-    border-radius: 15px;
-    background: #e5f1ff;
-    color: #002e6b;
-    font-weight: 900;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
+  background: #e5f1ff;
+  color: #002e6b;
+  font-weight: 900;
 }
 
 .validation-file-meta {
-    margin-top: 10px;
-    color: #637386;
-    font-size: 0.82rem;
+  margin-top: 10px;
+  color: #637386;
+  font-size: 0.82rem;
 }
 
 .validation-action-bar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin: 18px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 18px 0;
 }
 
 .validation-status {
-    display: inline-flex;
-    align-items: center;
-    padding: 5px 10px;
-    border-radius: 999px;
-    font-size: 0.74rem;
-    font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 800;
 }
 
 .validation-status-pending,
 .validation-status-neutral {
-    background: #eef2f6;
-    color: #596879;
+  background: #eef2f6;
+  color: #596879;
 }
 
 .validation-status-good {
-    background: #e8f7ef;
-    color: #147a4f;
+  background: #e8f7ef;
+  color: #147a4f;
 }
 
 .validation-status-warning {
-    background: #fff4d4;
-    color: #8b6000;
+  background: #fff4d4;
+  color: #8b6000;
 }
 
 .validation-status-error {
-    background: #feeceb;
-    color: #b42318;
+  background: #feeceb;
+  color: #b42318;
 }
 
 .validation-error {
-    padding: 12px 14px;
-    margin-top: 14px;
-    border: 1px solid #efb6b2;
-    border-radius: 10px;
-    background: #feeceb;
-    color: #a62117;
-    font-weight: 700;
+  padding: 12px 14px;
+  margin-top: 14px;
+  border: 1px solid #efb6b2;
+  border-radius: 10px;
+  background: #feeceb;
+  color: #a62117;
+  font-weight: 700;
 }
 
 .validation-summary-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 12px;
-    margin-bottom: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
 }
 
 .validation-summary-card {
-    padding: 16px;
-    border: 1px solid #d7e1ed;
-    border-radius: 12px;
-    background: #ffffff;
+  padding: 16px;
+  border: 1px solid #d7e1ed;
+  border-radius: 12px;
+  background: #ffffff;
 }
 
 .validation-summary-card span {
-    display: block;
-    color: #637386;
-    font-size: 0.78rem;
-    font-weight: 800;
+  display: block;
+  color: #637386;
+  font-size: 0.78rem;
+  font-weight: 800;
 }
 
 .validation-summary-card strong {
-    display: block;
-    margin-top: 4px;
-    color: #002e6b;
-    font-size: 1.75rem;
+  display: block;
+  margin-top: 4px;
+  color: #002e6b;
+  font-size: 1.75rem;
 }
 
 .validation-fields-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
 }
 
 .validation-field-card {
-    padding: 11px;
-    border: 1px solid #d7e1ed;
-    border-left: 5px solid #4dc7eb;
-    border-radius: 10px;
-    background: #ffffff;
+  padding: 11px;
+  border: 1px solid #d7e1ed;
+  border-left: 5px solid #4dc7eb;
+  border-radius: 10px;
+  background: #ffffff;
 }
 
 .validation-field-card.is-high {
-    border-left-color: #168454;
+  border-left-color: #168454;
 }
 
 .validation-field-card.is-medium {
-    border-left-color: #0265ff;
+  border-left-color: #0265ff;
 }
 
 .validation-field-card.is-low {
-    border-left-color: #eca940;
+  border-left-color: #eca940;
 }
 
 .validation-field-card.is-excluded {
-    border-left-color: #8996a3;
-    background: #f7f9fb;
+  border-left-color: #8996a3;
+  background: #f7f9fb;
 }
 
 .validation-field-heading {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
 }
 
 .validation-field-heading strong {
-    color: #102a43;
-    font-size: 0.82rem;
+  color: #102a43;
+  font-size: 0.82rem;
 }
 
 .validation-confidence {
-    color: #637386;
-    font-size: 0.7rem;
-    font-weight: 900;
+  color: #637386;
+  font-size: 0.7rem;
+  font-weight: 900;
 }
 
 .validation-field-value {
-    min-height: 38px;
-    padding: 8px 9px;
-    border: 1px solid #b7c7d8;
-    border-radius: 8px;
-    background: #ffffff;
-    color: #071e35;
-    font-weight: 800;
+  min-height: 38px;
+  padding: 8px 9px;
+  border: 1px solid #b7c7d8;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #071e35;
+  font-weight: 800;
 }
 
 .validation-field-source {
-    display: block;
-    margin-top: 6px;
-    color: #637386;
-    font-size: 0.7rem;
+  display: block;
+  margin-top: 6px;
+  color: #637386;
+  font-size: 0.7rem;
 }
 
 .validation-results-card {
-    margin-top: 18px;
+  margin-top: 18px;
 }
 
 .validation-results-heading {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
 }
 
 .validation-table-wrapper {
-    overflow-x: auto;
-    margin-top: 14px;
+  overflow-x: auto;
+  margin-top: 14px;
 }
 
 .validation-table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .validation-table th,
 .validation-table td {
-    padding: 11px;
-    border-bottom: 1px solid #d7e1ed;
-    text-align: left;
-    vertical-align: top;
+  padding: 11px;
+  border-bottom: 1px solid #d7e1ed;
+  text-align: left;
+  vertical-align: top;
 }
 
 .validation-table th {
-    background: #f3f7fb;
-    color: #002e6b;
-    font-size: 0.76rem;
-    text-transform: uppercase;
+  background: #f3f7fb;
+  color: #002e6b;
+  font-size: 0.76rem;
+  text-transform: uppercase;
 }
 
 .validation-text-details {
-    margin-top: 14px;
+  margin-top: 14px;
 }
 
 .validation-text-details summary {
-    color: #002e6b;
-    font-weight: 800;
-    cursor: pointer;
+  color: #002e6b;
+  font-weight: 800;
+  cursor: pointer;
 }
 
 .validation-text-details textarea {
-    width: 100%;
-    min-height: 220px;
-    margin-top: 10px;
-    padding: 12px;
-    border: 1px solid #b7c7d8;
-    border-radius: 9px;
-    font-family: Consolas, monospace;
-    font-size: 0.75rem;
-    resize: vertical;
+  width: 100%;
+  min-height: 220px;
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px solid #b7c7d8;
+  border-radius: 9px;
+  font-family: Consolas, monospace;
+  font-size: 0.75rem;
+  resize: vertical;
 }
 
 @media (max-width: 900px) {
-    .validation-upload-grid,
-    .validation-extracted-grid,
-    .validation-summary-grid {
-        grid-template-columns: 1fr;
-    }
+  .validation-upload-grid,
+  .validation-extracted-grid,
+  .validation-summary-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .validation-fields-grid {
-        grid-template-columns: 1fr;
-    }
+  .validation-fields-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .illustration-validation-section .section-header,
-    .validation-control-bar,
-    .validation-results-heading {
-        align-items: stretch;
-        flex-direction: column;
-    }
+  .illustration-validation-section .section-header,
+  .validation-control-bar,
+  .validation-results-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
 }
+
+.iv-workflow-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+
+  border: 1px solid #d6e1ec;
+
+  margin-bottom: 24px;
+}
+
+.iv-workflow-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.iv-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  color: #0265ff;
+
+  display: block;
+  margin-bottom: 5px;
+}
+
+.iv-workflow-top h3 {
+  margin: 0;
+  color: #002e6b;
+}
+
+.iv-status-pill {
+  padding: 8px 16px;
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.iv-status-pill.ready {
+  background: #e7f7eb;
+  color: #107c41;
+}
+
+.iv-file-status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 24px;
+}
+
+.iv-file-status {
+  background: #f8fbff;
+  border: 1px solid #d9e6f5;
+
+  border-radius: 14px;
+
+  padding: 16px;
+}
+
+.iv-file-status span {
+  display: block;
+
+  color: #74869a;
+  margin-bottom: 8px;
+}
+
+.iv-file-status strong {
+  color: #002e6b;
+}
+
+.iv-progress-track {
+  height: 14px;
+
+  background: #e6edf7;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  margin-top: 10px;
+}
+
+.iv-progress-fill {
+  width: 0%;
+
+  height: 100%;
+
+  background: linear-gradient(90deg, #0265ff, #02a9ff);
+
+  transition: width 0.4s ease;
+}
+
+.iv-step-list {
+  margin-top: 24px;
+
+  display: grid;
+  gap: 10px;
+}
+
+.iv-step {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 14px;
+
+  border-radius: 12px;
+
+  background: #f8fbff;
+}
+
+.iv-step.complete {
+  background: #ebf9ef;
+
+  color: #107c41;
+}
+
+.iv-step.active {
+  background: #e8f2ff;
+
+  color: #0265ff;
+}
+
+.iv-step .step-icon {
+  font-weight: 700;
+}
+
 ```
 
 ---
@@ -38524,15 +38856,15 @@ color: #eef2f8;
 ### <a id="📄-app-py"></a>📄 `app.py`
 
 **File Info:**
-- **Size**: 3.91 KB
+- **Size**: 10.99 KB
 - **Extension**: `.py`
 - **Language**: `python`
 - **Location**: `app.py`
 - **Relative Path**: `root`
 - **Created**: 2026-10-13 14:51:10 (America/Chicago / GMT-05:00)
-- **Modified**: 2026-10-13 15:05:23 (America/Chicago / GMT-05:00)
-- **MD5**: `e2a8219555f232f8135aeb1d5e6cd496`
-- **SHA256**: `21bd03d773351df126563e8b2b15e946d56b74544509884285715f3ad22abc33`
+- **Modified**: 2026-10-13 17:45:46 (America/Chicago / GMT-05:00)
+- **MD5**: `79a1305ba9ae04c9c9f6330278c7f93d`
+- **SHA256**: `6e19ee299774db801e9f825787dea9be874a4d131bf2c31963c862a0611f2738`
 - **Encoding**: ASCII
 
 **File code content:**
@@ -38543,8 +38875,19 @@ from __future__ import annotations
 import logging
 import tempfile
 from pathlib import Path
+import json
+import queue
+import threading
+import time
 
-from flask import Flask, jsonify, request, send_from_directory
+from flask import (
+    Flask,
+    Response,
+    jsonify,
+    request,
+    send_from_directory,
+    stream_with_context,
+)
 from werkzeug.utils import secure_filename
 
 from pdf_validator import build_report, compare_documents, parse_document
@@ -38638,6 +38981,291 @@ def validate_documents():
         )
 
         return jsonify(report)
+
+@app.post("/api/validate-stream")
+def validate_documents_stream():
+    application_file = request.files.get(
+        "application"
+    )
+
+    illustration_file = request.files.get(
+        "illustration"
+    )
+
+    state = (
+        request.form.get("state") or ""
+    ).strip().upper()
+
+    if (
+        application_file is None
+        or illustration_file is None
+    ):
+        return jsonify(
+            {
+                "error": (
+                    "Both the Part 1 application "
+                    "and illustration PDFs are required."
+                )
+            }
+        ), 400
+
+    if not is_pdf(application_file.filename):
+        return jsonify(
+            {
+                "error": (
+                    "The Part 1 application "
+                    "must be a PDF."
+                )
+            }
+        ), 400
+
+    if not is_pdf(
+        illustration_file.filename
+    ):
+        return jsonify(
+            {
+                "error": (
+                    "The illustration must be a PDF."
+                )
+            }
+        ), 400
+
+    event_queue: queue.Queue = queue.Queue()
+
+    temporary_directory = (
+        tempfile.TemporaryDirectory(
+            prefix=(
+                "illustration-validator-stream-"
+            )
+        )
+    )
+
+    temporary_path = Path(
+        temporary_directory.name
+    )
+
+    application_path = (
+        temporary_path
+        / secure_filename(
+            application_file.filename
+            or "application.pdf"
+        )
+    )
+
+    illustration_path = (
+        temporary_path
+        / secure_filename(
+            illustration_file.filename
+            or "illustration.pdf"
+        )
+    )
+
+    application_file.save(
+        application_path
+    )
+
+    illustration_file.save(
+        illustration_path
+    )
+
+    def send_event(
+        event_type: str,
+        **payload,
+    ) -> None:
+        event_queue.put(
+            {
+                "type": event_type,
+                **payload,
+            }
+        )
+
+    def worker() -> None:
+        start_time = time.monotonic()
+
+        try:
+            send_event(
+                "progress",
+                percent=2,
+                stage="application",
+                message=(
+                    "Preparing Part 1 application"
+                ),
+                elapsedSeconds=0.0,
+            )
+
+            def application_progress(
+                completed: int,
+                total: int,
+            ) -> None:
+                page_fraction = (
+                    completed / max(total, 1)
+                )
+
+                percent = round(
+                    5 + page_fraction * 40
+                )
+
+                send_event(
+                    "progress",
+                    percent=percent,
+                    stage="application",
+                    message=(
+                        "Reading application "
+                        f"page {completed} of {total}"
+                    ),
+                    completedPages=completed,
+                    totalPages=total,
+                    elapsedSeconds=round(
+                        time.monotonic()
+                        - start_time,
+                        1,
+                    ),
+                )
+
+            application_result = parse_document(
+                str(application_path),
+                "app",
+                progress_callback=(
+                    application_progress
+                ),
+            )
+
+            send_event(
+                "progress",
+                percent=48,
+                stage="illustration",
+                message=(
+                    "Preparing sales illustration"
+                ),
+                elapsedSeconds=round(
+                    time.monotonic()
+                    - start_time,
+                    1,
+                ),
+            )
+
+            def illustration_progress(
+                completed: int,
+                total: int,
+            ) -> None:
+                page_fraction = (
+                    completed / max(total, 1)
+                )
+
+                percent = round(
+                    50 + page_fraction * 34
+                )
+
+                send_event(
+                    "progress",
+                    percent=percent,
+                    stage="illustration",
+                    message=(
+                        "Reading illustration "
+                        f"page {completed} of {total}"
+                    ),
+                    completedPages=completed,
+                    totalPages=total,
+                    elapsedSeconds=round(
+                        time.monotonic()
+                        - start_time,
+                        1,
+                    ),
+                )
+
+            illustration_result = parse_document(
+                str(illustration_path),
+                "ill",
+                progress_callback=(
+                    illustration_progress
+                ),
+            )
+
+            send_event(
+                "progress",
+                percent=88,
+                stage="comparison",
+                message="Comparing extracted values",
+                elapsedSeconds=round(
+                    time.monotonic()
+                    - start_time,
+                    1,
+                ),
+            )
+
+            comparison_rows = compare_documents(
+                application_result,
+                illustration_result,
+                state,
+            )
+
+            send_event(
+                "progress",
+                percent=96,
+                stage="output",
+                message="Creating review output",
+                elapsedSeconds=round(
+                    time.monotonic()
+                    - start_time,
+                    1,
+                ),
+            )
+
+            report = build_report(
+                application_result,
+                illustration_result,
+                comparison_rows,
+                state,
+            )
+
+            send_event(
+                "complete",
+                percent=100,
+                stage="complete",
+                message="Validation complete",
+                elapsedSeconds=round(
+                    time.monotonic()
+                    - start_time,
+                    1,
+                ),
+                report=report,
+            )
+
+        except Exception as exc:
+            app.logger.exception(
+                "Streaming validation failed"
+            )
+
+            send_event(
+                "error",
+                message=str(exc),
+            )
+
+        finally:
+            temporary_directory.cleanup()
+
+    threading.Thread(
+        target=worker,
+        daemon=True,
+    ).start()
+
+    def event_stream():
+        while True:
+            event = event_queue.get()
+            yield json.dumps(event) + "\n"
+
+            if event["type"] in {"complete", "error"}:
+                break
+
+    return Response(
+        stream_with_context(event_stream()),
+        mimetype="application/x-ndjson",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",
+            "X-Content-Type-Options": "nosniff",
+        },
+    )
 
 
 def is_pdf(filename: str | None) -> bool:
@@ -39392,15 +40020,15 @@ Requirements, Underwriting and Case Management.
 ### <a id="📄-index-html"></a>📄 `index.html`
 
 **File Info:**
-- **Size**: 41.68 KB
+- **Size**: 42.78 KB
 - **Extension**: `.html`
 - **Language**: `html`
 - **Location**: `index.html`
 - **Relative Path**: `root`
 - **Created**: 2026-10-08 13:42:25 (America/Chicago / GMT-05:00)
-- **Modified**: 2026-10-13 15:19:36 (America/Chicago / GMT-05:00)
-- **MD5**: `ff1c253735151e1cf5ce59e4501dbfc1`
-- **SHA256**: `88ee0899599f28238dea9028b682103ab46cafc93c116ccbf8c9c465d65cc84b`
+- **Modified**: 2026-10-13 17:16:10 (America/Chicago / GMT-05:00)
+- **MD5**: `a5ebb57dd96ac7ec08b0953cfdd1de2d`
+- **SHA256**: `172da8b08bf501ffdbc49a6e82788d18b8cc0a2ab1d2605381526d003a3dd66b`
 - **Encoding**: ASCII
 
 **File code content:**
@@ -39772,7 +40400,7 @@ Requirements, Underwriting and Case Management.
 <select id="policyDating"><option value="">Select Policy Dating</option><option value="saveAge">Save Age</option><option value="currentDate">Current Date</option><option value="specificDate">Specific Date</option></select>
 </div>
 <div class="case-field">
-<label for="illustrationStatus">Signed Illustration as Applied For?</label>
+<label for="illustrationStatus">Illustration included?</label>
 <select id="illustrationStatus"><option value="">Select</option><option value="yes">Yes</option><option value="no">No</option><option value="notReceived">Not Received</option></select>
 <small class="field-guidance" id="illustrationGuidance"></small>
 </div>
@@ -39805,60 +40433,162 @@ Requirements, Underwriting and Case Management.
 <section
     id="illustrationValidationSection"
     class="review-section illustration-validation-section"
->
-    <div class="section-header">
+><div class="iv-workflow-card">
+
+    <div class="iv-workflow-top">
+
         <div>
-            <span class="section-eyebrow">
-                Automated validation
+            <span class="iv-label">
+                Illustration Review
             </span>
 
-            <h2>
-                Application &amp; Illustration Validation
-            </h2>
 
-            <p>
-                Compare the Part 1 application against the sales
-                illustration using Python PDF extraction and OCR.
-            </p>
-        </div>
-
-        <span
-            id="irValidatorServiceStatus"
-            class="validation-status validation-status-pending"
-        >
-            Checking service...
-        </span>
     </div>
 
-    <div class="validation-notice">
-        <strong>Reviewer confirmation required.</strong>
-        Confirm extracted values, checkbox selections, signatures,
-        dates, and mismatches before completing the case review.
-    </div>
+    <div class="iv-file-status-grid">
 
-    <!-- State and controls -->
-    <div class="validation-control-bar">
-        <div class="validation-field">
-            <label for="irValidationState">
-                Contract state
-            </label>
+        <div class="iv-file-status">
 
-            <select id="irValidationState">
-                <option value="">Select state</option>
-                <option value="NY">New York</option>
-                <option value="OTHER">Other</option>
-            </select>
+            <span>Application</span>
+
+            <strong
+                id="applicationUploadStatus">
+                Not Uploaded
+            </strong>
+
         </div>
 
-        <div class="validation-rule-message">
-            <span
-                id="irValidationRuleBadge"
-                class="validation-status validation-status-neutral"
-            >
-                Standard comparison rules
-            </span>
+        <div class="iv-file-status">
+
+
+    <span>Contract State</span>
+
+    <select
+    id="irValidationState"
+    class="validation-state-select"
+>
+    <option value="">
+        Select State
+    </option>
+
+    <option value="NY">
+        New York
+    </option>
+
+    <option value="OTHER">
+        Other
+    </option>
+</select>
+
+</div>
+<span
+    id="irValidatorServiceStatus"
+    class="validation-status validation-status-neutral"
+>
+    Checking service...
+</span>
+            <span>Illustration</span>
+
+            <strong
+                id="illustrationUploadStatus">
+                Not Uploaded
+            </strong>
+
         </div>
+
+        <div class="iv-file-status">
+
+            <span>Contract State</span>
+
+            <strong
+                id="validationStateDisplay">
+                Not Selected
+            </strong>
+
+        </div>
+
     </div>
+
+    <div class="iv-progress-section">
+
+        <div class="iv-progress-header">
+
+          <div class="iv-progress-header">
+  <div>
+    <span>Extraction Progress</span>
+
+    <small id="ivProgressMessage">
+      Ready to begin
+    </small>
+  </div>
+
+  <div class="iv-progress-numbers">
+    <strong id="ivProgressPercent">
+      0%
+    </strong>
+
+    <span id="ivElapsedTime">
+      Elapsed: 0.0s
+    </span>
+  </div>
+</div>
+
+        <div class="iv-progress-track">
+
+            <div
+                id="ivProgressFill"
+                class="iv-progress-fill">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="iv-step-list">
+
+        <div
+            id="stepReadApplication"
+            class="iv-step pending">
+
+            <span class="step-icon">○</span>
+
+            Reading Application
+
+        </div>
+
+        <div
+            id="stepReadIllustration"
+            class="iv-step pending">
+
+            <span class="step-icon">○</span>
+
+            Reading Illustration
+
+        </div>
+
+        <div
+            id="stepCompareValues"
+            class="iv-step pending">
+
+            <span class="step-icon">○</span>
+
+            Comparing Values
+
+        </div>
+
+        <div
+            id="stepReviewOutput"
+            class="iv-step pending">
+
+            <span class="step-icon">○</span>
+
+            Creating Review Output
+
+        </div>
+
+    </div>
+
+</div>
 
     <!-- Upload cards -->
     <div class="validation-upload-grid">
@@ -39877,7 +40607,7 @@ Requirements, Underwriting and Case Management.
                 class="validation-drop-zone"
                 for="irApplicationFile"
             >
-                <span class="validation-drop-icon">A1</span>
+                <span class="validation-drop-icon">1</span>
 
                 <strong>
                     Drop Part 1 PDF here
@@ -40592,7 +41322,7 @@ Requirements, Underwriting and Case Management.
 <script src="scripts/initial-review.js"></script>
 <!-- Output and supporting tools -->
 <script src="scripts/review-output-package.js"></script>
- <script src="{{ url_for('static', filename='/validation.js') }}"></script>
+
 </body>
 </html>
 ```
@@ -40966,15 +41696,15 @@ Requirements, Underwriting and Case Management.
 ### <a id="📄-pdf-validator-py"></a>📄 `pdf_validator.py`
 
 **File Info:**
-- **Size**: 34.08 KB
+- **Size**: 35.18 KB
 - **Extension**: `.py`
 - **Language**: `python`
 - **Location**: `pdf_validator.py`
 - **Relative Path**: `root`
 - **Created**: 2026-10-13 14:51:10 (America/Chicago / GMT-05:00)
-- **Modified**: 2026-10-13 14:22:44 (America/Chicago / GMT-05:00)
-- **MD5**: `a079837fc035665c854c430c52c67581`
-- **SHA256**: `98bbf94769b305ccb64e25f05b05cf955446c6aa2564dfe9aef7790ca77af6e4`
+- **Modified**: 2026-10-13 17:46:14 (America/Chicago / GMT-05:00)
+- **MD5**: `2bb5acaa1a42d4d3b347fd3d3ce34dc2`
+- **SHA256**: `566d56a8313c067b4348c7f15b991727ded6b023ccf44b15c272311f7f90b8e9`
 - **Encoding**: ASCII
 
 **File code content:**
@@ -41371,29 +42101,70 @@ def ocr_page(path: Path, page_number: int) -> tuple[str, int]:
     return pytesseract.image_to_string(image, config="--oem 3 --psm 6"), rotation
 
 
-def extract_pages(pdf_path: str, max_pages: int = 25) -> list[PageText]:
+def extract_pages(
+    pdf_path: str,
+    max_pages: int = 25,
+    *,
+    progress_callback: Optional[
+        Callable[[int, int], None]
+    ] = None,
+) -> list[PageText]:
     path = Path(pdf_path)
     validate_pdf(path)
     pages: list[PageText] = []
+
     with pdfplumber.open(path) as pdf:
-        for index, page in enumerate(pdf.pages[:max_pages], start=1):
+        selected_pages = pdf.pages[:max_pages]
+        total_pages = len(selected_pages)
+
+        for index, page in enumerate(selected_pages, start=1):
             warnings: list[str] = []
+
             try:
                 native = page.extract_text(layout=True) or ""
             except Exception as exc:
                 native = ""
                 warnings.append(f"Native extraction failed: {exc}")
-            text, source, rotation = native, "native", 0
-            if len(clean(native)) < 120 or quality_score(native) < 0.35 or "(cid:" in native:
+
+            text = native
+            source = "native"
+            rotation = 0
+
+            needs_ocr = (
+                len(clean(native)) < 120
+                or quality_score(native) < 0.35
+                or "(cid:" in native
+            )
+
+            if needs_ocr:
                 try:
                     ocr_text, rotation = ocr_page(path, index)
                     if quality_score(ocr_text) >= quality_score(native):
-                        text, source = ocr_text, "ocr"
+                        text = ocr_text
+                        source = "ocr"
                 except Exception as exc:
                     warnings.append(f"OCR failed: {exc}")
-            pages.append(PageText(index, text, source, rotation, len(native), warnings))
+
+            pages.append(
+                PageText(
+                    index,
+                    text,
+                    source,
+                    rotation,
+                    len(native),
+                    warnings,
+                )
+            )
+
+            # Report factual progress after this page is fully processed.
+            if progress_callback is not None:
+                progress_callback(index, total_pages)
+
     if not any(clean(page.text) for page in pages):
-        raise RuntimeError("No readable text could be extracted from the PDF")
+        raise RuntimeError(
+            "No readable text could be extracted from the PDF"
+        )
+
     return pages
 
 
@@ -41697,20 +42468,54 @@ def parse_illustration(pages: list[PageText]) -> dict[str, FieldValue]:
     return result
 
 
-def parse_document(pdf_path: str, expected_type: str, max_pages: int = 25) -> DocumentResult:
-    result = DocumentResult(path=pdf_path, expected_type=expected_type)
+def parse_document(
+    pdf_path: str,
+    expected_type: str,
+    max_pages: int = 25,
+    *,
+    progress_callback: Optional[
+        Callable[[int, int], None]
+    ] = None,
+) -> DocumentResult:
+    result = DocumentResult(
+        path=pdf_path,
+        expected_type=expected_type,
+    )
+
     try:
-        result.pages = extract_pages(pdf_path, max_pages)
+        result.pages = extract_pages(
+            pdf_path,
+            max_pages=max_pages,
+            progress_callback=progress_callback,
+        )
+
         result.detected_type = detect_document_type(result.pages)
-        if result.detected_type != "unknown" and result.detected_type != expected_type:
-            result.errors.append(f"Wrong file type: expected {expected_type}, detected {result.detected_type}")
+
+        if (
+            result.detected_type != "unknown"
+            and result.detected_type != expected_type
+        ):
+            result.errors.append(
+                "Wrong file type: expected "
+                f"{expected_type}, detected {result.detected_type}"
+            )
             return result
-        result.fields = parse_application(result.pages) if expected_type == "app" else parse_illustration(result.pages)
+
+        if expected_type == "app":
+            result.fields = parse_application(result.pages)
+        else:
+            result.fields = parse_illustration(result.pages)
+
         for page in result.pages:
-            result.warnings.extend(f"Page {page.page_number}: {warning}" for warning in page.warnings)
+            for warning in page.warnings:
+                result.warnings.append(
+                    f"Page {page.page_number}: {warning}"
+                )
+
     except Exception as exc:
         result.errors.append(str(exc))
         LOGGER.exception("Failed to parse %s", pdf_path)
+
     return result
 
 

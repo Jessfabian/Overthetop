@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const API_URL = "/api/validate";
+  const API_URL = "/api/validate-stream";
 
   const validatorState = {
     applicationFile: null,
@@ -106,6 +106,11 @@
 
       getElement("irApplicationFileMeta").textContent =
         formatFileDescription(file);
+
+      const applicationStatus = getElement("applicationUploadStatus");
+      if (applicationStatus) {
+        applicationStatus.textContent = "✓ Uploaded";
+      }
     }
 
     if (fileType === "illustration") {
@@ -113,6 +118,11 @@
 
       getElement("irIllustrationFileMeta").textContent =
         formatFileDescription(file);
+
+      const illustrationStatus = getElement("illustrationUploadStatus");
+      if (illustrationStatus) {
+        illustrationStatus.textContent = "✓ Uploaded";
+      }
     }
 
     updateRunButton();
@@ -164,6 +174,10 @@
   async function checkValidatorService() {
     const serviceStatus = getElement("irValidatorServiceStatus");
 
+    if (!serviceStatus) {
+      return;
+    }
+
     try {
       const response = await fetch("/api/health");
 
@@ -184,32 +198,140 @@
     }
   }
 
+  function markStepComplete(stepId) {
+    const step = getElement(stepId);
+
+    if (!step) {
+      return;
+    }
+
+    step.classList.remove("active", "pending");
+    step.classList.add("complete");
+
+    const icon = step.querySelector(".step-icon");
+    if (icon) {
+      icon.textContent = "✓";
+    }
+  }
+
+  function markPreviousStepsComplete(stage) {
+    if (["illustration", "comparison", "output", "complete"].includes(stage)) {
+      markStepComplete("stepReadApplication");
+    }
+
+    if (["comparison", "output", "complete"].includes(stage)) {
+      markStepComplete("stepReadIllustration");
+    }
+
+    if (["output", "complete"].includes(stage)) {
+      markStepComplete("stepCompareValues");
+    }
+
+    if (stage === "complete") {
+      markStepComplete("stepReviewOutput");
+    }
+  }
+
+  function updateValidationProgress({
+    percent = 0,
+    stage = "",
+    message = "Processing documents",
+    elapsedSeconds,
+  }) {
+    const safePercent = Math.max(0, Math.min(100, Number(percent) || 0));
+    const progressFill = getElement("ivProgressFill");
+    const progressPercent = getElement("ivProgressPercent");
+    const progressMessage = getElement("ivProgressMessage");
+    const elapsedElement = getElement("ivElapsedTime");
+
+    if (progressFill) {
+      progressFill.style.width = `${safePercent}%`;
+    }
+
+    if (progressPercent) {
+      progressPercent.textContent = `${safePercent}%`;
+    }
+
+    if (progressMessage) {
+      progressMessage.textContent = message;
+    }
+
+    if (elapsedElement && typeof elapsedSeconds === "number") {
+      elapsedElement.textContent = `Elapsed: ${elapsedSeconds.toFixed(1)}s`;
+    }
+
+    document.querySelectorAll(".iv-step").forEach((step) => {
+      step.classList.remove("active");
+    });
+
+    const stageMap = {
+      application: "stepReadApplication",
+      illustration: "stepReadIllustration",
+      comparison: "stepCompareValues",
+      output: "stepReviewOutput",
+    };
+
+    const currentStep = getElement(stageMap[stage]);
+    if (currentStep) {
+      currentStep.classList.remove("pending");
+      currentStep.classList.add("active");
+    }
+
+    markPreviousStepsComplete(stage);
+  }
+
+  function resetProgressDisplay() {
+    const progressFill = getElement("ivProgressFill");
+    const progressPercent = getElement("ivProgressPercent");
+    const progressMessage = getElement("ivProgressMessage");
+    const elapsedTime = getElement("ivElapsedTime");
+
+    if (progressFill) progressFill.style.width = "0%";
+    if (progressPercent) progressPercent.textContent = "0%";
+    if (progressMessage) progressMessage.textContent = "Ready to begin";
+    if (elapsedTime) elapsedTime.textContent = "Elapsed: 0.0s";
+
+    document.querySelectorAll(".iv-step").forEach((step) => {
+      step.classList.remove("active", "complete");
+      step.classList.add("pending");
+      const icon = step.querySelector(".step-icon");
+      if (icon) icon.textContent = "○";
+    });
+  }
+
   async function runIllustrationValidation() {
     const runButton = getElement("irRunValidationButton");
-
     const runStatus = getElement("irValidationRunStatus");
 
     if (!validatorState.applicationFile || !validatorState.illustrationFile) {
       showValidationError("Upload both PDFs before running validation.");
+      return;
+    }
 
+    if (!runButton || !runStatus) {
+      console.error("The validation button or status element is missing.");
       return;
     }
 
     runButton.disabled = true;
-
-    runStatus.textContent = "Extracting PDFs and running OCR...";
-
-    runStatus.className = "validation-status " + "validation-status-warning";
-
+    runStatus.textContent = "Validation in progress";
+    runStatus.className = "validation-status validation-status-warning";
     showValidationError("");
+    resetProgressDisplay();
+
+    updateValidationProgress({
+      percent: 1,
+      stage: "application",
+      message: "Uploading documents...",
+      elapsedSeconds: 0,
+    });
 
     const uploadData = new FormData();
-
     uploadData.append("application", validatorState.applicationFile);
-
     uploadData.append("illustration", validatorState.illustrationFile);
 
-    uploadData.append("state", getElement("irValidationState").value);
+    const stateField = getElement("irValidationState");
+    uploadData.append("state", stateField?.value || "");
 
     try {
       const response = await fetch(API_URL, {
@@ -217,44 +339,103 @@
         body: uploadData,
       });
 
-      const report = await response.json();
-
       if (!response.ok) {
-        throw new Error(report.error || "Validation request failed.");
+        let errorMessage = "Validation request failed.";
+        try {
+          const errorResult = await response.json();
+          errorMessage = errorResult.error || errorMessage;
+        } catch (_parseError) {
+          // Keep the default message when the error response is not JSON.
+        }
+        throw new Error(errorMessage);
+      }
+
+      if (!response.body) {
+        throw new Error(
+          "The browser could not read the validation progress stream.",
+        );
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder("utf-8");
+      let remainingText = "";
+      let finalReport = null;
+
+      while (true) {
+        const { value, done } = await reader.read();
+
+        if (done) {
+          break;
+        }
+
+        remainingText += decoder.decode(value, { stream: true });
+        const lines = remainingText.split("\n");
+        remainingText = lines.pop() || "";
+
+        for (const line of lines) {
+          const cleanLine = line.trim();
+          if (!cleanLine) continue;
+
+          const event = JSON.parse(cleanLine);
+
+          if (event.type === "progress") {
+            updateValidationProgress(event);
+          } else if (event.type === "complete") {
+            updateValidationProgress(event);
+            finalReport = event.report;
+          } else if (event.type === "error") {
+            throw new Error(event.message || "Validation failed.");
+          }
+        }
+      }
+
+      if (remainingText.trim()) {
+        const event = JSON.parse(remainingText.trim());
+        if (event.type === "complete") {
+          updateValidationProgress(event);
+          finalReport = event.report;
+        } else if (event.type === "error") {
+          throw new Error(event.message || "Validation failed.");
+        }
+      }
+
+      if (!finalReport) {
+        throw new Error("Validation finished without returning a report.");
       }
 
       const documentErrors = [
-        ...(report.application?.errors || []),
-        ...(report.illustration?.errors || []),
+        ...(finalReport.application?.errors || []),
+        ...(finalReport.illustration?.errors || []),
       ];
 
       if (documentErrors.length) {
         throw new Error(documentErrors.join(" "));
       }
 
-      validatorState.report = report;
-
+      validatorState.report = finalReport;
       validatorState.mismatches = getActionableMismatches(
-        report.comparison || [],
+        finalReport.comparison || [],
       );
 
-      renderValidationReport(report);
+      renderValidationReport(finalReport);
+      saveValidationToCase(finalReport);
 
-      saveValidationToCase(report);
+      updateValidationProgress({
+        percent: 100,
+        stage: "complete",
+        message: "Validation complete",
+        elapsedSeconds: Number(finalReport.elapsedSeconds) || undefined,
+      });
 
       runStatus.textContent = "Validation complete";
-
-      runStatus.className = "validation-status " + "validation-status-good";
+      runStatus.className = "validation-status validation-status-good";
     } catch (error) {
       console.error(error);
-
       showValidationError(
         error.message || "The documents could not be validated.",
       );
-
       runStatus.textContent = "Validation failed";
-
-      runStatus.className = "validation-status " + "validation-status-error";
+      runStatus.className = "validation-status validation-status-error";
     } finally {
       runButton.disabled = false;
     }
@@ -612,35 +793,49 @@
     validatorState.report = null;
     validatorState.mismatches = [];
 
-    getElement("irApplicationFile").value = "";
-    getElement("irIllustrationFile").value = "";
+    resetProgressDisplay();
 
-    getElement("irApplicationFileMeta").textContent = "No application selected";
+    const applicationInput = getElement("irApplicationFile");
+    const illustrationInput = getElement("irIllustrationFile");
+    if (applicationInput) applicationInput.value = "";
+    if (illustrationInput) illustrationInput.value = "";
 
-    getElement("irIllustrationFileMeta").textContent =
-      "No illustration selected";
+    const applicationMeta = getElement("irApplicationFileMeta");
+    const illustrationMeta = getElement("irIllustrationFileMeta");
+    if (applicationMeta)
+      applicationMeta.textContent = "No application selected";
+    if (illustrationMeta)
+      illustrationMeta.textContent = "No illustration selected";
 
-    getElement("irValidationSummary").hidden = true;
+    const applicationStatus = getElement("applicationUploadStatus");
+    const illustrationStatus = getElement("illustrationUploadStatus");
+    if (applicationStatus) applicationStatus.textContent = "Not Uploaded";
+    if (illustrationStatus) illustrationStatus.textContent = "Not Uploaded";
 
-    getElement("irExtractedValuesArea").hidden = true;
+    const summary = getElement("irValidationSummary");
+    const extractedArea = getElement("irExtractedValuesArea");
+    const resultsCard = getElement("irValidationResultsCard");
+    if (summary) summary.hidden = true;
+    if (extractedArea) extractedArea.hidden = true;
+    if (resultsCard) resultsCard.hidden = true;
 
-    getElement("irValidationResultsCard").hidden = true;
-
-    getElement("irApplicationExtractedFields").innerHTML = "";
-
-    getElement("irIllustrationExtractedFields").innerHTML = "";
-
-    getElement("irApplicationExtractedText").value = "";
-
-    getElement("irIllustrationExtractedText").value = "";
-
-    getElement("irValidationComparisonResults").innerHTML = "";
+    const applicationFields = getElement("irApplicationExtractedFields");
+    const illustrationFields = getElement("irIllustrationExtractedFields");
+    const applicationText = getElement("irApplicationExtractedText");
+    const illustrationText = getElement("irIllustrationExtractedText");
+    const comparisonResults = getElement("irValidationComparisonResults");
+    if (applicationFields) applicationFields.innerHTML = "";
+    if (illustrationFields) illustrationFields.innerHTML = "";
+    if (applicationText) applicationText.value = "";
+    if (illustrationText) illustrationText.value = "";
+    if (comparisonResults) comparisonResults.innerHTML = "";
 
     const requirementsButton = getElement("irAddValidationRequirementButton");
-
-    requirementsButton.hidden = true;
-    requirementsButton.disabled = false;
-    requirementsButton.textContent = "Add Mismatches to Requirements";
+    if (requirementsButton) {
+      requirementsButton.hidden = true;
+      requirementsButton.disabled = false;
+      requirementsButton.textContent = "Add Mismatches to Requirements";
+    }
 
     showValidationError("");
     updateRunButton();
@@ -649,35 +844,40 @@
   function initializeStateIntegration() {
     const validationStateField = getElement("irValidationState");
 
-    /*
-     * Attempts to copy the existing Full IR
-     * contract-state selection.
-     */
+    if (!validationStateField) {
+      return;
+    }
+
+    const displayState = () => {
+      const display = getElement("validationStateDisplay");
+      if (display) {
+        display.textContent = validationStateField.value || "Not Selected";
+      }
+
+      const ruleBadge = getElement("irValidationRuleBadge");
+      if (ruleBadge) {
+        const isNewYork = validationStateField.value === "NY";
+        ruleBadge.textContent = isNewYork
+          ? "NY Reg 74 checks enabled"
+          : "Standard comparison rules";
+        ruleBadge.className = isNewYork
+          ? "validation-status validation-status-warning"
+          : "validation-status validation-status-neutral";
+      }
+    };
 
     const existingStateField =
       getElement("contractState") ||
       getElement("contractStateSelect") ||
       getElement("caseContractState");
 
-    if (existingStateField && existingStateField.value) {
+    if (existingStateField?.value) {
       const stateValue = existingStateField.value.trim().toUpperCase();
-
       validationStateField.value = stateValue === "NY" ? "NY" : "OTHER";
     }
 
-    validationStateField.addEventListener("change", () => {
-      const isNewYork = validationStateField.value === "NY";
-
-      const ruleBadge = getElement("irValidationRuleBadge");
-
-      ruleBadge.textContent = isNewYork
-        ? "NY Reg 74 checks enabled"
-        : "Standard comparison rules";
-
-      ruleBadge.className = isNewYork
-        ? "validation-status " + "validation-status-warning"
-        : "validation-status " + "validation-status-neutral";
-    });
+    validationStateField.addEventListener("change", displayState);
+    displayState();
   }
 
   function restoreSavedValidation() {

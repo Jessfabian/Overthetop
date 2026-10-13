@@ -364,7 +364,7 @@
 <select id="policyDating"><option value="">Select Policy Dating</option><option value="saveAge">Save Age</option><option value="currentDate">Current Date</option><option value="specificDate">Specific Date</option></select>
 </div>
 <div class="case-field">
-<label for="illustrationStatus">Signed Illustration as Applied For?</label>
+<label for="illustrationStatus">Illustration included?</label>
 <select id="illustrationStatus"><option value="">Select</option><option value="yes">Yes</option><option value="no">No</option><option value="notReceived">Not Received</option></select>
 <small class="field-guidance" id="illustrationGuidance"></small>
 </div>
@@ -397,60 +397,162 @@
 <section
     id="illustrationValidationSection"
     class="review-section illustration-validation-section"
->
-    <div class="section-header">
+><div class="iv-workflow-card">
+
+    <div class="iv-workflow-top">
+
         <div>
-            <span class="section-eyebrow">
-                Automated validation
+            <span class="iv-label">
+                Illustration Review
             </span>
 
-            <h2>
-                Application &amp; Illustration Validation
-            </h2>
 
-            <p>
-                Compare the Part 1 application against the sales
-                illustration using Python PDF extraction and OCR.
-            </p>
-        </div>
-
-        <span
-            id="irValidatorServiceStatus"
-            class="validation-status validation-status-pending"
-        >
-            Checking service...
-        </span>
     </div>
 
-    <div class="validation-notice">
-        <strong>Reviewer confirmation required.</strong>
-        Confirm extracted values, checkbox selections, signatures,
-        dates, and mismatches before completing the case review.
-    </div>
+    <div class="iv-file-status-grid">
 
-    <!-- State and controls -->
-    <div class="validation-control-bar">
-        <div class="validation-field">
-            <label for="irValidationState">
-                Contract state
-            </label>
+        <div class="iv-file-status">
 
-            <select id="irValidationState">
-                <option value="">Select state</option>
-                <option value="NY">New York</option>
-                <option value="OTHER">Other</option>
-            </select>
+            <span>Application</span>
+
+            <strong
+                id="applicationUploadStatus">
+                Not Uploaded
+            </strong>
+
         </div>
 
-        <div class="validation-rule-message">
-            <span
-                id="irValidationRuleBadge"
-                class="validation-status validation-status-neutral"
-            >
-                Standard comparison rules
-            </span>
+        <div class="iv-file-status">
+
+
+    <span>Contract State</span>
+
+    <select
+    id="irValidationState"
+    class="validation-state-select"
+>
+    <option value="">
+        Select State
+    </option>
+
+    <option value="NY">
+        New York
+    </option>
+
+    <option value="OTHER">
+        Other
+    </option>
+</select>
+
+</div>
+<span
+    id="irValidatorServiceStatus"
+    class="validation-status validation-status-neutral"
+>
+    Checking service...
+</span>
+            <span>Illustration</span>
+
+            <strong
+                id="illustrationUploadStatus">
+                Not Uploaded
+            </strong>
+
         </div>
+
+        <div class="iv-file-status">
+
+            <span>Contract State</span>
+
+            <strong
+                id="validationStateDisplay">
+                Not Selected
+            </strong>
+
+        </div>
+
     </div>
+
+    <div class="iv-progress-section">
+
+        <div class="iv-progress-header">
+
+          <div class="iv-progress-header">
+  <div>
+    <span>Extraction Progress</span>
+
+    <small id="ivProgressMessage">
+      Ready to begin
+    </small>
+  </div>
+
+  <div class="iv-progress-numbers">
+    <strong id="ivProgressPercent">
+      0%
+    </strong>
+
+    <span id="ivElapsedTime">
+      Elapsed: 0.0s
+    </span>
+  </div>
+</div>
+
+        <div class="iv-progress-track">
+
+            <div
+                id="ivProgressFill"
+                class="iv-progress-fill">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="iv-step-list">
+
+        <div
+            id="stepReadApplication"
+            class="iv-step pending">
+
+            <span class="step-icon">○</span>
+
+            Reading Application
+
+        </div>
+
+        <div
+            id="stepReadIllustration"
+            class="iv-step pending">
+
+            <span class="step-icon">○</span>
+
+            Reading Illustration
+
+        </div>
+
+        <div
+            id="stepCompareValues"
+            class="iv-step pending">
+
+            <span class="step-icon">○</span>
+
+            Comparing Values
+
+        </div>
+
+        <div
+            id="stepReviewOutput"
+            class="iv-step pending">
+
+            <span class="step-icon">○</span>
+
+            Creating Review Output
+
+        </div>
+
+    </div>
+
+</div>
 
     <!-- Upload cards -->
     <div class="validation-upload-grid">
@@ -469,7 +571,7 @@
                 class="validation-drop-zone"
                 for="irApplicationFile"
             >
-                <span class="validation-drop-icon">A1</span>
+                <span class="validation-drop-icon">1</span>
 
                 <strong>
                     Drop Part 1 PDF here
@@ -1184,6 +1286,6 @@
 <script src="scripts/initial-review.js"></script>
 <!-- Output and supporting tools -->
 <script src="scripts/review-output-package.js"></script>
- <script src="{{ url_for('static', filename='/validation.js') }}"></script>
+
 </body>
 </html>
