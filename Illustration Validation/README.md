@@ -19,7 +19,7 @@ Poppler must provide `pdftoppm` and `pdfinfo` on PATH.
 ## Start the website
 
 ```powershell
-cleat
+python app.py
 ```
 
 Open:
